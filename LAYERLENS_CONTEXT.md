@@ -4,45 +4,62 @@ This is what makes the research ours. The agent reads this every run and ties fi
 
 Status marker: [SEEDED] = drafted by Claude from internal docs, pending Javier's confirmation. [CONFIRMED] = Javier verified. [OPEN] = an active design question the research should target.
 
-## What LayerLens is [SEEDED]
+## What LayerLens is [CONFIRMED: public site, Sep 2026]
 
-LayerLens builds verification infrastructure for AI. Stratix is the flagship evaluation platform: the independent proof layer that turns AI claims into verifiable evidence. Status: pre-launch, small real enterprise footprint (order of tens of active users on core actions as of September 2026).
+LayerLens is the **Agent Readiness Platform**. Tagline: **"Your business is your benchmark."** The pitch: test agents against the work your business actually requires, the systems your agents use, the situations they need to handle, and the outcomes your business requires, then use the evidence to guide the next change.
 
-The moat is verification made legible: environment-versus-agent attribution, a leak-gated optimization loop, and attested receipts. The backend already builds this; the experience is where the differentiation is still being invested.
+It is **one platform with three connected pillars**, short form **"Evaluate. Simulate. Generate.":**
+1. **Environments** (flagship): give the agent somewhere to work; test it with the tools and records the task needs.
+2. **Evaluations**: check the agent's outputs and actions against your requirements. No environment required.
+3. **Synthetic Data**: test situations your current data leaves out. Ground truth included.
 
-## What Environments is [SEEDED]
+Use one, or connect all three to keep testing as the agent evolves.
 
-Environments are simulated API services (called twins or worlds) that an agent is evaluated against. Key properties:
+The load-bearing idea, stated on the home page: **where a failure happens is everything.** Every verdict points either to the agent or to the environment. That attribution, plus results you can reproduce and defend ("on record"), is the spine of the product.
 
-- A world is minted deterministically from a type, a seed, knobs, and a cast. No model call is needed to mint it, so iterating a world costs nothing.
+Status: pre-launch, small real enterprise footprint (order of tens of active users on core actions as of September 2026). Note on naming: the public brand is **LayerLens**; **Stratix** is the internal name of the application. Describe capabilities, not version labels.
+
+## What Environments is [CONFIRMED public framing + SEEDED internal architecture]
+
+Public framing (the flagship pillar): "Test agents with the tools and records they need." The user chooses the systems and starting records, runs the task and inspects the actions, and reviews what changed in the environment. Every value is labelled either **recorded** (from real data) or **filled in with the answer key** (synthetic, to cover a gap). World types available: **Salesforce, Linear, SEC EDGAR, Stripe, Gmail**, with more on the way.
+
+Internal architecture (deeper truth behind the pillar, from the app):
+- A world (also called a twin) is minted **deterministically** from a type, a seed, knobs, and a cast. No model call is needed to mint it, so iterating a world costs nothing.
 - Every tool call is computed from the world at request time. Every answer an agent can be graded on is in the answer key by construction, written in the same act as the data.
-- The trust wall: the seed and knobs are never served to an agent-facing key, so an agent can never compute its own grade.
-- World types shipped: SEC EDGAR, Stripe, Gmail, Salesforce, Linear, Google Calendar. Some support writes on live state.
-- Graders: answer, actions, judge, state. The agent's own claims are stored beside verdicts but never used as evidence.
+- **The trust wall**: the seed and knobs are never served to an agent-facing key, so an agent can never compute its own grade.
 - The optimizer: a structured prompt artifact per (environment, student model), improved over rounds. It uses 70/30 tuning/holdout slices, only ever sees tuning failures, gates every candidate for answer leakage on the composed prompt, and promotes only when holdout gained is positive and lost is zero.
 - Attribution: leave-one-out analysis of what each prompt addition contributed.
 
-The information architecture is three surfaces: **Build** (Overview, Environment, Chat), **Train** (Tasks, Runs, Optimize), **Prove** (Insights/Evidence, Assets), with Activity as history. An environment detail replaces the global sidebar with its own rail.
+The public five-step loop is **Build, Run, Eval, Optimize, On record** (ending in a readiness report). Internally the app groups the same work under a **Build / Train / Prove** rail (Build: Overview, Environment, Chat; Train: Tasks, Runs, Optimize; Prove: Insights/Evidence, Assets; plus Activity).
 
-## The differentiators to preserve [SEEDED]
+## The three grader types [CONFIRMED: public site]
 
-1. **Env-versus-agent attribution.** Four honest buckets per failed attempt (agent missed it, environment could not answer, agent stopped early, cannot attribute), derived from the transcript, never from the agent's claim.
-2. **The leak-gated optimizer.** A governed, gated prompt-improvement loop in a UI. Nobody else is known to ship this.
-3. **Provenance and receipts.** Immutable environment, task, and prompt versions; runs stamped with the versions they ran against; the grid refuses to average across mismatched versions; cost measured from real usage, never estimated.
-4. **Deterministic free minting.** Worlds mint with no model call; the answer key is written with the data.
-5. **Prompt-diff mechanics.** Sentences as lines, word-level highlight, every change carrying its reason and its gained/lost tasks (partially shipped).
-6. **The cast and composites.** "These are the same companies" as a checked fact across services, so cross-service questions stay honest.
+Evaluations grade one answer in up to three ways. The example: the agent returned $40, the answer key says $28.
+- **Graders** (deterministic, answer-key): mechanical, no model in the loop, identical every run. "A verdict you can reproduce and defend."
+- **Judges** (AI judge, your rubric): tuned to your team's review criteria, so it applies your policy rather than a generic one.
+- **Scorers** (LLM rubric, 0 to 5): rates dimensions like correctness, groundedness, readability, so you see how good and where it breaks, not just pass/fail.
 
-## Who uses it [SEEDED]
+Bring your own: private and fine-tuned models, benchmarks as CSV or JSON, or auto-generated from your docs. Compare and track: models head to head, and re-run to compare versions.
 
-Primary (P0) users relevant to Environments:
-- **Devon**, AI/ML developer and agent builder: builds reliable agents, debugs, iterates fast, evaluates in CI/CD.
-- **Evan**, ML evaluation specialist: designs evals, builds custom scorers and judges, cares about reproducibility.
-- **Mina**, AI observability analyst: monitors production agents, evaluates production traces.
+## The differentiators to preserve
 
-Also relevant: Taylor (QA/testing, regression gates), Alex (analyst, model comparison), Riley (compliance, attestation and evidence export). Design rule: light mode is non-negotiable; several personas are non-engineering.
+1. **Env-versus-agent attribution** [CONFIRMED, the headline]. Every verdict points to the agent ("the twin served recorded values; the claim did not match") or to the environment ("the working copy refused to make something up; record the field and the test gets stronger"). Derived from the transcript, never from the agent's claim.
+2. **Deterministic free minting and the trust wall** [SEEDED]. The answer key is minted from recorded values; iterating a world costs nothing; the seed and knobs are never served.
+3. **Reproducible, defensible grading** [CONFIRMED]. Mechanical grading, nothing self-scored; the deterministic grader gives the same verdict every run while a self-check "wobbles."
+4. **The leak-gated optimizer** [SEEDED]. A governed, gated prompt-improvement loop in a UI. Nobody else is known to ship this.
+5. **Provenance, "On record"** [CONFIRMED + SEEDED]. Every result carries its evidence; immutable environment, task, and prompt versions; runs stamped with the versions they ran against; the grid refuses to average across mismatched versions; cost measured from real usage, never estimated.
+6. **The cast and composites** [SEEDED]. "These are the same companies" as a checked fact across services, so cross-service questions stay honest.
 
-The Environments user, concretely, is the person who builds or configures a world, authors or generates tasks, runs agents against it, reads the optimizer rounds, and reviews the proof. Success is: they can tell whether a failure was the agent's or the environment's, whether two runs are comparable, and what to fix next.
+## Who uses it [CONFIRMED public framing + SEEDED internal personas]
+
+Public framing, "built for the people on the hook":
+- **AI and platform engineers**: grade their own agent, inspect every verdict and its evidence, review the steps behind the result.
+- **Engineering and product leaders**: compare agent versions against the tasks and outcomes the business requires; one readiness report to share.
+- **Risk and compliance**: review requirements, results, and supporting evidence together; defined terms, stated limitations, mechanical grading, everything on record.
+
+Internal personas behind those groups: Devon (agent builder, P0), Evan (eval specialist, P0), Mina (observability, P0), Taylor (QA/regression), Alex (analyst/model comparison), Riley (compliance). Design rule: light mode is non-negotiable; several personas are non-engineering.
+
+The Environments user, concretely, is the person who assembles a world, authors or generates tasks, runs agents against it, reads the optimizer rounds, and reviews the proof. Success is: they can tell whether a failure was the agent's or the environment's, whether two runs are comparable, and what to fix next.
 
 ## Open design questions the research should target [OPEN]
 
