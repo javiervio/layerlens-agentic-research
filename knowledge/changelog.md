@@ -2,18 +2,18 @@
 
 What changed each run, and why. This is the audit trail: every confirmation, contradiction, and supersession lands here so the `git diff` alone never has to carry the reasoning. Newest first.
 
-No changes yet. The first run will start the log.
-
 ---
 
-## Template for an entry
+### 2026-09-25 - run 2026-09-25 (first run)
 
-### <date> - run <id>
+- **Change**: added (all claims and competitive entries below are new; this is the system's first populated run).
+- **Claim affected**: C-0001, C-0002, C-0003, C-0004 (all new); competitive entries for BenchJack, IOV Labs (self-preference), Sierra Research (tau2-bench), Microsoft Research (Magentic-UI), Prime Intellect, E2B.
+- **New evidence**: See `knowledge/claims.md` and `knowledge/competitive.md` for full source links. Headline items: BenchJack's 8/8 benchmark exploitability audit; a measured +0.14 mean self-preference index in blind LLM-judge pairwise comparisons; tau2-bench's v1.0.1 release notes explicitly declaring pre/post scores non-comparable after a grading fix.
+- **What holds / what changes / what is still disputed**: Nothing yet superseded (first run). Two items are explicitly flagged unconfirmed pending further access: BenchJack's claimed "<10% hackable after iterative patching" result (search-snippet only), and E2B's specific session-lifecycle time limits (both corroborating blog sources were blocked by this session's network egress policy).
+- **Confidence and reasons**: Highest confidence in C-0003 (tau2-bench versioning notice — first-party, unambiguous, directly read). Moderate in C-0001 and C-0002 (concrete numbers, but from a single audit / single pilot study each, not independently corroborated). Lowest confidence-as-news in C-0004 (Anthropic context engineering — solid but foundational and ~1 year old, not new this week).
+- **Possible design implication**: C-0001 and C-0003 both argue for treating LayerLens's trust wall and immutable-versioning differentiators as answers to *documented, already-occurring* failure modes rather than hypothetical ones — useful framing for internal/external communication. C-0002 suggests the product may want to surface when a Judge model shares a vendor/family with the agent under test.
+- **Needs Javier's review**: yes — this is the first run, so all of `LAYERLENS_CONTEXT.md`'s [SEEDED] items remain unconfirmed by Javier, and the two "possible applications to LayerLens" hypotheses in this week's brief (BenchJack vulnerability-class checklist; same-family judge test) both need someone with actual product access to run the small test described, which this research agent cannot do itself (read-only to the outside world, per `PROTOCOL.md`).
 
-- **Change**: added / extended / contradicted / superseded / rechecked.
-- **Claim affected**: id and prior version.
-- **New evidence**: source and locator.
-- **What holds / what changes / what is still disputed**.
-- **Confidence and reasons**.
-- **Possible design implication**.
-- **Needs Javier's review**: yes/no and why.
+### Run infrastructure note (not a knowledge change, but worth recording here for continuity)
+
+This run discovered that this session's network egress policy blocks most of the source domains named in `SOURCES.md` and referenced by `LAYERLENS_CONTEXT.md`'s reference list — including arxiv.org (all paths tried), huggingface.co, en.wikipedia.org, modelcontextprotocol.io, docs.langchain.com, primeintellect.ai and docs.primeintellect.ai, braintrust.dev, modal.com, blaxel.ai, bex.co, and pith.science. Reachable this run: github.com and raw.githubusercontent.com (any repo), anthropic.com, and microsoft.com. WebSearch itself worked normally and returned real content/summaries throughout — only direct page fetches (WebFetch) to most vendor/paper domains were blocked. This materially narrowed which sources could be opened and read (as PROTOCOL.md requires) versus only discovered via a search snippet. See `runs/2026-09-25.md` for the full list of failed fetches. This is worth Javier's attention: if this is meant to be a "full internet" research environment, the egress allowlist may need widening; if it is intentionally restrictive, future runs will keep hitting this same ceiling on arXiv-heavy topics.
