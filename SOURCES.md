@@ -1,0 +1,70 @@
+# Sources
+
+Where the agent looks. A seed list, not a cage. The agent should follow citations backward and forward and add new authors and organizations when they bring real evidence, always recording the channel that surfaced them.
+
+## Discovery must combine four angles
+
+Do not rely on a single search. Every run should mix:
+1. **Category feeds and searches** (arXiv, below).
+2. **Named team channels** (docs, changelogs, engineering blogs, status pages).
+3. **Citations** (what a strong paper cites, and what cites it).
+4. **Public posts** from identified people and teams (with permalinks and verified affiliation).
+
+## arXiv categories
+
+Search across, not only the latest week (foundations are often older):
+`cs.AI`, `cs.CL`, `cs.HC`, `cs.LG`, `cs.DC`, `cs.OS`, `cs.SE`.
+
+Feeds (for reference; verify before relying on any as a live connector):
+- https://rss.arxiv.org/rss/cs.AI
+- https://rss.arxiv.org/rss/cs.CL
+- https://rss.arxiv.org/rss/cs.HC
+- https://rss.arxiv.org/rss/cs.LG
+
+## Search vocabulary
+
+Use as building blocks, adapt syntax to the search tool. Search by problem, not by lab name.
+
+| Area | Terms |
+|---|---|
+| Environments | agent environment, stateful sandbox, agentic training infrastructure, environment generation, executable environment, task feasibility, world simulation |
+| Infrastructure | sandbox lifecycle, microVM, snapshot, pause resume, provisioning, environment reproducibility, rollout orchestration |
+| Evaluation | agent evaluation, trajectory, outcome verification, benchmark contamination, reward hacking, reproducibility, run comparability |
+| UX and control | human-agent interaction, co-planning, intervention, oversight, recovery, agent observability, handoff, failure attribution |
+| Synthetic data | synthetic trajectories, user simulation, scenario generation, diversity, validation, distribution shift, model collapse |
+| Context and memory | agent memory, context engineering, retrieval, stale memory, long-horizon agents |
+| Integration | MCP, AG-UI, A2A, tool calling, structured state, streaming events |
+| Team experience | lessons learned, postmortem, incident, bottleneck, what broke, tradeoffs, migration, release notes |
+
+Keep roughly 20% of the search budget for evidence that could contradict what we currently believe, or that comes from an adjacent field. This is a deliberate guard against an echo chamber.
+
+## Reference points and benchmarks (verify each)
+
+- WebArena, tau-bench, tau2-bench (reproducible task environments with simulated users and domain policies).
+- Anthropic engineering writing on building agents, context engineering, and evaluating agents.
+- Microsoft HAX guidelines and Magentic-UI (human/agent interaction research).
+- MCP (https://modelcontextprotocol.io), AG-UI (https://docs.ag-ui.com), A2A (https://a2a-protocol.org).
+
+## Teams and companies to watch (seed list, confirm relevance)
+
+Framed as "possible reference or competitor, pending our context." For each, find from their official site: docs, changelog, repo, status page, engineering blog, and public social. Record which exist and which were reachable this run.
+
+| Entity | Why it might matter | What to investigate |
+|---|---|---|
+| Braintrust | Evaluation and observability | How they compare experiments and runs, sandboxed evals, sharing |
+| Arize | Evaluation and observability | Moving from detected problems to criteria, tests, decisions |
+| E2B | Sandbox infrastructure | Sandbox lifecycle, tool integration, session continuity |
+| Browserbase | Web execution and interaction | Latency, developer experience, what they measure |
+| Prime Intellect | Training and environments | Environment construction, verification, RL sandboxes |
+| Modal | Infrastructure | Coordination of training, execution, environments; bottlenecks |
+
+Note: earlier planning material referenced a project called "OpenClaw" and some specific vendor posts and paper ids. Those were not independently verified and must not be treated as real until confirmed by a reachable canonical source.
+
+## Evidence labels (use on every claim)
+
+- **Documented capability**: an official source states a product behavior. Check version and access.
+- **Bounded empirical evidence**: a study describes method and results for specific conditions.
+- **Independent corroboration**: different groups give compatible evidence (confirm they are not the same experiment).
+- **Proposal or interpretation**: a framework, position, or our own inference.
+- **Anecdotal signal**: a single reported experience. Useful to investigate, not to prove prevalence.
+- **Incomplete access**: only abstract, fragment, or a secondary reference was available.
