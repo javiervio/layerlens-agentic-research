@@ -17,7 +17,7 @@ Budget guidance per run: about ten searches, split roughly four on research, fou
 
 ## 2. Read and record
 
-Open original sources. A search snippet only justifies discovery, never a claim. Open up to two sources deeply this run; skim the rest to triage. For each source that earns a card, create `cards/<short-slug>.md` using the template in `cards/README.md`. Record: title, authors or organization, canonical URL, the URL you discovered it through, date (or "date unknown" if only relative), version, date read, how much you read, the claims with their locators, evidence label, and limitations.
+Open original sources. A search snippet only justifies discovery, never a claim. Open up to two sources deeply this run; skim the rest to triage. Mind the cloud network limits (see the "Network reality" section in `SOURCES.md`): to read deeply, prefer reachable mirrors such as a paper's GitHub repo, and use WebSearch content; when only a search summary is available, mark the card "incomplete access (search summary only)" and still record the canonical link for Javier. A blocked fetch is never a run failure. For each source that earns a card, create `cards/<short-slug>.md` using the template in `cards/README.md`. Record: title, authors or organization, canonical URL, the URL you discovered it through, date (or "date unknown" if only relative), version, date read, how much you read, the claims with their locators, evidence label, and limitations.
 
 If you could only reach the abstract, say so and do not describe methods or results you did not see.
 

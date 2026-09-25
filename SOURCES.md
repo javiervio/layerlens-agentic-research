@@ -2,6 +2,21 @@
 
 Where the agent looks. A seed list, not a cage. The agent should follow citations backward and forward and add new authors and organizations when they bring real evidence, always recording the channel that surfaced them.
 
+## Network reality in the cloud sandbox (read this first)
+
+The weekly run happens in a cloud sandbox with a restricted network (a current platform limitation as of late September 2026, not a choice of ours). Work with it, do not fight it:
+
+- **WebSearch works** and returns real content and summaries. Treat it as the primary tool for BOTH discovery and first-pass reading.
+- **WebFetch reliably reaches:** github.com, raw.githubusercontent.com, anthropic.com, microsoft.com, plus package registries and major version-control and cloud hosts.
+- **WebFetch is blocked for** arxiv.org (all paths), huggingface.co, wikipedia, modelcontextprotocol.io, and most vendor blogs.
+
+How to read deeply anyway, in priority order:
+1. Discover with WebSearch.
+2. To actually read a source, prefer a **reachable mirror**: an arXiv paper almost always has a companion **GitHub repo** (README, docs, sometimes the full text) that IS reachable; a tool or protocol usually has its repo and docs on GitHub; Anthropic and Microsoft pages can be fetched directly.
+3. If the only thing available is a WebSearch summary and no reachable original exists, that is **incomplete access**. Label the claim and the card accordingly per `PROTOCOL.md`, do not describe methods or results you could not open, and **still record the canonical link** (for example the arxiv.org URL) so Javier can open it himself.
+
+Never mark a blocked fetch as a run failure. It is an expected constraint; route around it and report coverage honestly in the run log.
+
 ## Discovery must combine four angles
 
 Do not rely on a single search. Every run should mix:
