@@ -62,6 +62,68 @@ What other teams are doing, framed so it feeds LayerLens design decisions. The a
 - **Action**: investigate (deeper read needed before any adopt/explore/do-nothing call).
 - **Evidence links and dates**: canonical: https://www.microsoft.com/en-us/research/publication/magentic-ui/; discovered via our own SOURCES.md seed list; date unknown; read 2026-09-25 (page summary only).
 
+**2026-09-28 update — the mechanism, read directly**: Action guards are a three-tier, per-agent tool-approval policy (`auto_approve`, `require_approval_untrusted` [default], `require_approval_all`), configured via YAML per agent (orchestrator or web_surfer). Source: raw.githubusercontent.com/microsoft/magentic-ui/main/docs/configuration.md, read in full 2026-09-28. This answers "how does a human set the agent's caution level" but the docs as read do not say whether a confirmation names the specific consequence of the pending action (open question #7's exact phrasing) — recorded as undocumented-in-what-we-read, not as absent. See `cards/magentic-ui.md` (C-0011) for the full claim.
+
+---
+
+### Braintrust — comparison and sandboxing claims are directionally relevant but still unread (two runs in a row blocked)
+
+- **Documented problem**: Comparing two eval runs meaningfully requires more than a single score delta; and running untrusted agent code inside an eval pipeline risks leaking platform credentials to that code.
+- **Their solution**: Reportedly, an "Experiments" comparison view showing score breakdowns, regression detection, and output diffs "at the test case level" side by side; and a "Harbor" sandboxed-eval mode that keeps the Braintrust API key in the host process, out of reach of code running inside the task container.
+- **Known limits**: We do not know, because www.braintrust.dev has been EGRESS_BLOCKED two runs running (2026-09-25 and 2026-09-28), whether the "output diff" is step/trajectory-level or only a final-answer diff, or what Harbor's sandboxing actually enforces versus merely intends.
+- **Result reported**: n/a — no independently-read result.
+- **Availability**: Generally available (commercial eval platform); Harbor described as an "integration," exact availability tier unconfirmed.
+- **Our users' need**: Devon and Evan (open questions #1 comparability, #9 comparison as signature surface) need to know whether a competitor's "diff" view already operates at the step level LayerLens's v3 "unified DAG diff for comparing trajectories" direction is aiming for — if so, that's a bar to clear, not a novel bet.
+- **LayerLens alternative (hypothesis, pending validation)**: Unknown whether Braintrust's diff is trajectory-level; until confirmed, treat the v3 "DAG diff" direction as neither validated nor invalidated by this competitor.
+- **How to validate**: Next run, retry www.braintrust.dev directly; if blocked a third time, ask Javier whether he has a saved/authorized link per PROTOCOL.md, since this vendor is explicitly named in SOURCES.md and remains the least-verified entry on our "teams to watch" list.
+- **Action**: investigate (blocked twice; escalate priority for a saved link if blocked again).
+- **Evidence links and dates**: canonical: https://www.braintrust.dev/foundations/comparing-experiments, https://www.braintrust.dev/blog/harbor-agent-evals, https://www.braintrust.dev/docs/platform/experiments; discovered via WebSearch 2026-09-28 (and 2026-09-25); read 2026-09-28 (search summary only, both runs).
+
+---
+
+### Princeton PLI (HAL / Holistic Agent Leaderboard) — cost-blind leaderboards are uninformative; the same lab has now pivoted from comparability to reliability
+
+- **Documented problem**: Agent benchmark leaderboards historically rank by accuracy alone, which the authors argue is uninformative for a real adoption decision — "what does it mean if an agent has 1% higher accuracy but is 10x more expensive?"
+- **Their solution**: HAL, a standardized harness across 9+ benchmarks (SWE-bench Verified/Mini, USACO, AppWorld, CORE-bench, tau-bench, SciCode variants, AssistantBench, ScienceAgentBench, CollaborativeAgentBench) that tracks cost by default and visualizes results as a cost-accuracy Pareto frontier instead of a single rank.
+- **Known limits**: The project is now archived (2026-07-01); the maintainers' own README states they've moved on to agent-reliability work instead (see the reliability-paper card/claim, C-0008) — meaning the Pareto-leaderboard approach was apparently not the team's final answer to comparability, or at least not where they chose to keep investing.
+- **Result reported**: A secondary (unverified) summary reported "100x cost differentials for 1% accuracy gains" and "less than one-third of models on the Pareto frontier for any given benchmark" — flagged incomplete access, not confirmed against the README itself.
+- **Availability**: Was generally available (open source, GitHub); archived and no longer accepting submissions as of 2026-07-01.
+- **Our users' need**: Taylor (the accountable lead, open question #10 "the readiness report") and Devon/Evan (open questions #1, #9) need comparisons that show tradeoffs, not just a rank — exactly HAL's stated design goal.
+- **LayerLens alternative (hypothesis, pending validation)**: LayerLens's model-comparison and Insights/Evidence surfaces should be checked against HAL's specific framing: does LayerLens ever present a single "winner" without a cost or reliability axis alongside it? If so, HAL's own archival-and-pivot (choosing to stop investing in the pure-comparability framing) is a mild caution that comparability alone may not be the most differentiating axis for LayerLens either — reliability (open question #5) may deserve equal design weight.
+- **How to validate**: Have someone with product access check LayerLens's own comparison views (model head-to-head, Optimize) for whether cost and reliability are shown by default alongside accuracy/pass rate, the way HAL's README argues they should be.
+- **Action**: explore alternative (adopt the "always show cost/reliability alongside accuracy" framing as a design check, not necessarily HAL's specific harness or Pareto visualization).
+- **Evidence links and dates**: canonical: https://github.com/princeton-pli/hal-harness (README read in full, directly, 2026-09-28); companion paper reportedly arXiv:2510.11977 (not independently read); discovered via WebSearch 2026-09-28 (following a GitHub search for the reliability paper's authors); read 2026-09-28.
+
+---
+
+### Arize — observability-to-evaluation framing, not yet differentiated from generic competitors (rotation coverage only)
+
+- **Documented problem**: Teams need to move from "something looks wrong in this trace" (observability) to "did this pass or fail against a criterion" (evaluation) without re-deriving the pipeline each time.
+- **Their solution**: Per search-summary descriptions only, Arize frames this as tracing + evals + monitoring, with deterministic checks for objective criteria and LLM judges for semantic ones, plus an "Agent-as-a-Judge" pattern for dynamically exploring a trace across multiple steps.
+- **Known limits**: This run only surfaced generic marketing/blog-style content (arize.com/resources, arize.com/blog); no product docs, pricing, or a specific worked example were opened. This is meaningfully thinner coverage than this run's Braintrust or HAL entries.
+- **Result reported**: n/a.
+- **Availability**: Generally available (commercial observability/eval platform, per general knowledge; not independently confirmed this run).
+- **Our users' need**: n/a until differentiated further — currently indistinguishable from generic "LLM observability platform" positioning.
+- **LayerLens alternative (hypothesis, pending validation)**: none yet — insufficient evidence to state a difference in behavior.
+- **How to validate**: Next run, open a specific Arize docs page (not a blog/resources listing) and look for one concrete, checkable mechanic (e.g., how "Agent-as-a-Judge" actually decides what to explore) rather than framing language.
+- **Action**: do nothing this run (rotation coverage only — SOURCES.md flagged Arize as untouched since inception; this run's search budget did not stretch to a deep read).
+- **Evidence links and dates**: canonical: https://arize.com/resources/, https://arize.com/blog/best-ai-observability-tools-for-autonomous-agents-in-2026/; discovered via WebSearch 2026-09-28; read 2026-09-28 (search summary only).
+
+---
+
+### Browserbase — latency/reliability numbers found only via third-party comparison sites, not Browserbase's own docs (rotation coverage only)
+
+- **Documented problem**: Teams running browser-using agents need to know cold-start latency, session success rate, and stealth quality before committing to a provider.
+- **Their solution**: Unknown from what was read this run — no Browserbase-authored page was opened, only third-party comparison content.
+- **Known limits**: The only numbers found ("browserbench averages, January 2026, 5,000 runs per provider," Browserbase reportedly at 40-50% success rate with higher latency than some competitors) came from third-party review/comparison sites (aimultiple.com-style aggregators), not from Browserbase's own docs or a neutral, named benchmark methodology page. Per PROTOCOL.md's rule 4 ("a vendor announcement is not proof") and general evidence discipline, a competitor-comparison number from an uncredited third-party site is weaker than a vendor announcement, not stronger — treat as **anecdotal signal**, not bounded empirical evidence.
+- **Result reported**: Unconfirmed third-party numbers only; not repeated here as fact.
+- **Availability**: Generally available (commercial managed browser infrastructure).
+- **Our users' need**: Marginal for LayerLens today — LayerLens's shipped system types (Salesforce, Linear, SEC EDGAR, Stripe, Gmail, Google Calendar) are API/record-based, not browser-driven, so Browserbase-style latency is adjacent infrastructure rather than a direct comparison point unless LayerLens adds a browser-driven system type.
+- **LayerLens alternative (hypothesis, pending validation)**: n/a — no clear product overlap established this run.
+- **How to validate**: Only worth deeper investigation if/when LayerLens's roadmap adds a browser-interaction system type; until then, low priority.
+- **Action**: do nothing (rotation coverage only; weak evidence and unclear product overlap).
+- **Evidence links and dates**: discovered via WebSearch 2026-09-28 ("Browserbase agent browser automation latency benchmark developer experience 2026"); no canonical first-party source opened; read 2026-09-28 (third-party search summaries only).
+
 ---
 
 ### Prime Intellect - Verifiable-reward RL training infrastructure; unclear yet whether it competes with or merely parallels LayerLens Environments

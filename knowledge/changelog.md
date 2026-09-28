@@ -4,6 +4,27 @@ What changed each run, and why. This is the audit trail: every confirmation, con
 
 ---
 
+### 2026-09-28 - run 2026-09-28
+
+- **Change**: added (C-0006 through C-0011, new); extended (C-0005 backfilled into this file — see bookkeeping note below; C-0005/Magentic-UI's "action guards" extended with a directly-read mechanism as C-0011); added (competitive.md entries for Braintrust, Princeton PLI/HAL, Arize, Browserbase; Magentic-UI competitive entry extended in place).
+- **Claim affected**:
+  - C-0005 (bookkeeping): the 2026-09-25 run's `cards/magentic-ui.md` referenced claim id "C-0005" but never added it to this file. Backfilled this run, dated to its original 2026-09-25 discovery, so the card and this file are now consistent. No content changed, only a missing record added.
+  - C-0006, C-0007, C-0008: three new leads (HackDetect/protocol-validity, FeasiGen/task-feasibility, and the Princeton reliability-science paper) — all **incomplete access (search summary only)**, since arxiv.org, alphaxiv.org, huggingface.co, and pith.science were all EGRESS_BLOCKED again this run, same as 2026-09-25. FeasiGen (C-0007) is now the second consecutive run this exact paper could not be opened.
+  - C-0009: new, and the strongest claim of this run — HAL's design rationale and archival status were read directly (full README, github.com reachable), not via search summary.
+  - C-0010: new, Braintrust — second consecutive run blocked from braintrust.dev directly; search-summary only both times.
+  - C-0011: extends C-0005 — Magentic-UI's tool-approval mechanism (three-tier policy) was read directly this run via raw.githubusercontent.com, upgrading part of last week's incomplete-access card to documented capability.
+- **New evidence**: See `knowledge/claims.md` and `knowledge/competitive.md` for full source links and cards for each new source. Headline: Princeton's HAL project (cost-blind leaderboards are uninformative; use a Pareto frontier) is now archived, with the same two named authors (Kapoor, Narayanan) having moved to a reliability-science paper that distinguishes pass@k from pass^k — read directly for HAL, still unread (search-summary only) for the reliability paper itself.
+- **What holds / what changes / what is still disputed**: C-0001 (BenchJack) and C-0003 (tau2-bench) from last run are unchanged, not rechecked this run (their recheck dates are 2026-12-24 and 2026-10-25 respectively, not yet due). C-0006 is a plausible-but-unconfirmed extension of C-0001, explicitly not yet promoted to independent corroboration. Nothing this run contradicts a prior claim.
+- **Confidence and reasons**: Highest confidence in C-0009 (HAL design/archival facts — first-party, directly read, unambiguous), matching last run's pattern of first-party primary sources earning the highest confidence. Lowest confidence in C-0006/C-0007/C-0008 (all incomplete access; C-0007 in particular is a second consecutive miss on the same paper, which is itself a coverage signal worth escalating).
+- **Possible design implication**: C-0009's archival-and-pivot fact suggests a credible academic group judged reliability (open question #5) as more worth pursuing than comparability (open question #1) once they'd built comparability infrastructure — a data point (not proof) that LayerLens's own roadmap weighting between these two open questions could look to. C-0011 gives a concrete competitor mechanism (three-tier tool approval) to benchmark LayerLens's own confirmation UI against, once product access allows checking whether LayerLens's confirmations name specific consequences (open question #7) where Magentic-UI's documentation, as read, does not say either way.
+- **Needs Javier's review**: yes — (1) the network egress restriction flagged last run persists unchanged three days later (arxiv.org, huggingface.co, braintrust.dev, alphaxiv.org, e2b.dev, pith.science all still blocked; only github.com/raw.githubusercontent.com, anthropic.com, microsoft.com reachable) — worth a definitive answer on whether this is intended, since two papers (protocol-validity and FeasiGen) are now stuck at search-summary-only for a second run each; (2) whether a designer can run the two small tests proposed in this week's brief (both require product access this research agent does not have).
+
+### Run infrastructure note (continuity, not a knowledge change)
+
+Confirmed unchanged from the 2026-09-25 run's note: EGRESS_BLOCKED this run for arxiv.org (abs/html/pdf all tried), alphaxiv.org (new attempt, also blocked), huggingface.co/papers (new attempt, also blocked), pith.science, www.braintrust.dev, e2b.dev/docs. Reachable and used successfully this run: github.com, raw.githubusercontent.com (multiple repos). WebSearch worked normally throughout. This is the second run in a row with an identical blocked-domain list — the restriction looks stable/structural rather than transient, which strengthens the case (per last run's flag) for Javier to check whether this is the intended configuration for this research environment.
+
+---
+
 ### 2026-09-25 - run 2026-09-25 (first run)
 
 - **Change**: added (all claims and competitive entries below are new; this is the system's first populated run).

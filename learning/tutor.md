@@ -16,3 +16,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## pass@k versus pass^k (agent reliability)
+
+- **Plain explanation** (from the brief): pass@k asks "does at least one of k attempts succeed" — a capability question, fine when you can discard the failures and keep the one that worked. pass^k asks "do all k attempts succeed" — a reliability question. An agent can score high on the first and low on the second at once: it can usually find *a* way to succeed while still being unpredictable on any single try.
+- **Example / counterexample**: an agent that independently succeeds 80% of the time has pass@5 near 100% (very likely at least one of five works) but pass^5 around 33% (0.8^5) — all five succeeding is a much higher bar. That gap between the two numbers is the reliability problem, made concrete. Counterexample/boundary: if an agent's failures are correlated (it fails the exact same way every time, not randomly), pass@k and pass^k stop being simple powers of a single success rate — the independent-trials arithmetic above is a simplification worth checking against real repeated-run data, not a universal formula.
+- **When it does not apply**: pass@k is the right lens when only one good outcome is needed and the rest can be thrown away (e.g. sample several drafts, a human picks the best). It's the wrong lens whenever every single run has to be trusted unsupervised — which is closer to how a real agent, or a LayerLens environment run, gets used in production.
+- **This week's exercise**: Sketch (words or paper) what a pass^k-style reliability indicator could look like next to a run's score in LayerLens's Runs or Insights/Evidence view — a second number, a range, a small sparkline of k repeats? What's the smallest version that's still honest?
+- **Source status**: the paper that proposed this distinction ("Towards a Science of AI Agent Reliability," arXiv:2602.16666) was only reachable via search summary this run (arxiv.org and mirrors were blocked) — the concept itself is solid arithmetic, but the paper's specific findings (15 models, "only small reliability improvements despite capability gains") are not yet independently confirmed. See `cards/ai-agent-reliability-science.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
