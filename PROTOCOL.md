@@ -36,6 +36,16 @@ Every competitive or applied finding follows this sequence:
 
 "Different" must name a difference in behavior. "Better" must say better for whom and by how much: time to diagnose, comprehension, ability to correct, recovery, effort, or cost. Adding a feature is not a differentiator. A conclusion may be: adopt this practice, explore an alternative, investigate a need, or do nothing. "Do nothing" is a valid and often correct outcome.
 
+## The ideas backlog (where findings accumulate into product)
+
+Individual findings are not enough on their own. The durable payoff is `ideas/backlog.md`: a growing, deduplicated ledger of ideas for the Environments experience, each tied to a pain point, a persona, a user outcome, the open design question it answers, and its accumulating evidence (claim IDs and links).
+
+Every run must feed this backlog, not just the weekly brief. For each finding with a product implication:
+- Attach its evidence to an existing idea if one already covers that pain point or open question (raise that idea's evidence count and, if warranted, its maturity), OR
+- Create a new idea entry at maturity L0.
+
+The maturity ladder (L0 nascent, L1 developing, L2 ready to spec, L3 decided) is defined in `ideas/backlog.md`. The hard rule: **a single mention never reaches L2 (ready to spec).** Promotion to L2 requires multiple independent sources, or one strong source plus a clear user outcome and a validation plan, plus a named persona and open question. The system proposes and gathers evidence; it never builds, files tickets, or decides. Javier decides and promotes L2 ideas to Linear or Figma himself.
+
 ## Limits (hard constraints)
 
 - **Read-only to the outside world.** This system researches and writes to this repo only. It never posts, sends messages, files tickets, follows accounts, subscribes, or changes any product. No Linear, no anywhere. This is 100% internal to Javier.

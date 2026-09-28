@@ -30,6 +30,7 @@ For each new claim, compare it to `knowledge/claims.md`: does it confirm, extend
 1. Add or update claims in `knowledge/claims.md`, each with its source link, date, and confidence-with-reasons.
 2. Update `knowledge/competitive.md` for any team finding, using the sequence in `PROTOCOL.md`: problem, their solution, its limits, our users' need, a LayerLens alternative, the comparison that would validate it.
 3. Append to `knowledge/changelog.md`: what changed this run, which prior claim it affects, and what is still in dispute.
+4. Update `ideas/backlog.md` (see `PROTOCOL.md`, "The ideas backlog"): for each finding with a product implication, attach its evidence to an existing idea (raise its evidence count and maturity if warranted) or create a new L0 idea. Update the prioritization table at the top. Never let a single mention reach L2 (ready to spec).
 
 ## 5. Write the weekly brief
 
@@ -39,6 +40,7 @@ Write `briefs/YYYY-Www.md` (ISO week, for example `2026-W40.md`) AND overwrite `
 - **What changed in what we know**: prior claim, new evidence, current status.
 - **One concept to understand better**: a plain-language explanation, an example, and when it does not apply. Tie it to a LayerLens open question where you can.
 - **Possible applications to LayerLens** (one or two): problem, how others solve it, the gap, the assumption about our product, and a small test a designer could run. Reference the specific open question from `LAYERLENS_CONTEXT.md` by number.
+- **Ideas that advanced**: which `ideas/backlog.md` entries gained evidence or moved up a maturity level this run (id, what moved, new level). Omit if nothing moved.
 - **For you**: one comprehension question and one small design exercise.
 - **Coverage and gaps**: what you reviewed, what was inaccessible, what is pending. Never claim complete coverage of a field from a few searches.
 
