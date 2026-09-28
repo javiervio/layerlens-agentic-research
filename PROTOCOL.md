@@ -46,6 +46,17 @@ Every run must feed this backlog, not just the weekly brief. For each finding wi
 
 The maturity ladder (L0 nascent, L1 developing, L2 ready to spec, L3 decided) is defined in `ideas/backlog.md`. The hard rule: **a single mention never reaches L2 (ready to spec).** Promotion to L2 requires multiple independent sources, or one strong source plus a clear user outcome and a validation plan, plus a named persona and open question. The system proposes and gathers evidence; it never builds, files tickets, or decides. Javier decides and promotes L2 ideas to Linear or Figma himself.
 
+## The feature matrix (the system owns the translation to product)
+
+The pipeline does not stop at ideas. `features/matrix.csv` (rules in `features/README.md`) is the ranked sheet of concrete feature recommendations for the Environments experience. The system **owns** this translation: Javier wants to see and understand everything, but even when he is not looking, accumulated knowledge must keep converting into scored, traceable feature recommendations he can act on later.
+
+Ownership means:
+- Every idea with a product-shaped hypothesis gets a matrix row (F-xxxx) linked back through its idea (I-xxxx), claims (C-xxxx), pain point, and source links. Full chain: source → claim → pain point → idea → hypothesis → feature → decision.
+- The system scores Impact and Effort itself, with anchored scales, and derives Confidence from evidence maturity (never from enthusiasm). Priority = Impact × Confidence / Effort.
+- The system re-ranks as evidence accumulates and says plainly when new evidence weakens a previously recommended feature.
+- On the first run of each month, the brief carries a ranked recommendation: the top candidates, why now, and what would change the ranking.
+- The decision line never moves: the system recommends with conviction and evidence; Javier decides. Effort scores are estimates pending engineering sizing.
+
 ## Limits (hard constraints)
 
 - **Read-only to the outside world.** This system researches and writes to this repo only. It never posts, sends messages, files tickets, follows accounts, subscribes, or changes any product. No Linear, no anywhere. This is 100% internal to Javier.

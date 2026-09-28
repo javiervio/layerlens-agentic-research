@@ -4,6 +4,8 @@ The durable place where research turns into product ideas for the LayerLens Envi
 
 The system proposes and gathers evidence. It never builds, files tickets, or decides. Javier decides, and promotes ready ideas to Linear/Figma himself.
 
+Ideas with a product-shaped hypothesis also get a row in `features/matrix.csv` (F-xxxx), the ranked sheet where Impact, Effort, evidence-derived Confidence, and Priority live. This file is the deep-traceability layer behind that sheet.
+
 ## Maturity ladder
 
 - **L0 Nascent**: one source, or a bare idea. Interesting, not actionable.

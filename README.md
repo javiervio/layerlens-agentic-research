@@ -19,7 +19,8 @@ The agent has zero memory of its own. **This repo is its memory.** Everything it
 - **`briefs/`**: every past brief, dated.
 - **`knowledge/claims.md`**: the current state of what we believe, each claim with a link, date, and how confident we are.
 - **`knowledge/competitive.md`**: what other teams are doing, framed as problem, their solution, its limits, and the LayerLens opportunity.
-- **`ideas/backlog.md`**: the payoff. A durable, prioritized ledger of ideas for the Environments experience, each tied to a pain point, a user outcome, its evidence, and a maturity level (nascent to ready-to-spec). This is where you decide what to build.
+- **`ideas/backlog.md`**: a durable ledger of ideas for the Environments experience, each tied to a pain point, a user outcome, its evidence, and a maturity level (nascent to ready-to-spec). The deep-traceability layer.
+- **`features/matrix.csv`**: the payoff. The ranked feature sheet (opens in Excel/Sheets): impact, effort, evidence-derived confidence, auto-computed priority, and labels (quick win, big bet, needs evidence). Rules in `features/README.md`. This is where you decide what to build.
 - **`learning/tutor.md`**: concepts explained plainly plus your running comprehension log.
 
 ## The files the agent obeys (change these to steer it)
