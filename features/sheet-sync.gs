@@ -43,7 +43,9 @@ function syncMatrix() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var tab = ss.getSheetByName('Data') || ss.insertSheet('Data');
   tab.clearContents();
-  tab.getRange(1, 1, rows.length, width).setValues(rows);
+  var range = tab.getRange(1, 1, rows.length, width);
+  range.setNumberFormat('@'); // force plain text so dates mirror the CSV verbatim (no serial coercion)
+  range.setValues(rows);
   tab.getRange('A1').setNote('Synced from ' + REPO + '/' + FILE_PATH + ' at ' + new Date().toISOString() + '. Do not edit this tab; use Overrides.');
 }
 
