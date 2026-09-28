@@ -28,7 +28,9 @@ Do not rely on a single search. Every run should mix:
 ## arXiv categories
 
 Search across, not only the latest week (foundations are often older):
-`cs.AI`, `cs.CL`, `cs.HC`, `cs.LG`, `cs.DC`, `cs.OS`, `cs.SE`.
+`cs.MA` (multiagent systems, directly on-topic), `cs.AI`, `cs.CL`, `cs.HC`, `cs.LG`, `cs.DC`, `cs.OS`, `cs.SE`.
+
+The cs.MA recent listing is a high-signal feed to watch: https://arxiv.org/list/cs.MA/recent
 
 Feeds (for reference; verify before relying on any as a live connector):
 - https://rss.arxiv.org/rss/cs.AI
