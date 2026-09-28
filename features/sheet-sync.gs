@@ -61,7 +61,7 @@ function setupSheet() {
   ov.setFrozenRows(1);
   var m = ss.getSheetByName('Matrix') || ss.insertSheet('Matrix', 0);
   m.clear();
-  var H = ['Feature ID', 'Feature', 'Area', 'Pain point', 'Persona', 'Open Q', 'Idea ID', 'Evidence links', 'Source dates', 'Maturity', 'Impact', 'Effort', 'Confidence', 'Priority', 'Label', 'Status', 'Overridden', 'Differentiator angle', 'Notes', 'Date added', 'Last update'];
+  var H = ['Feature ID', 'Feature', 'Area', 'Pain point', 'Persona', 'Open Q', 'Idea ID', 'Evidence links', 'Source dates', 'Maturity', 'Impact', 'Effort', 'Confidence', 'Priority', 'Label', 'Status', 'Override applied?', 'Differentiator angle', 'Notes', 'Date added', 'Last update'];
   m.getRange(1, 1, 1, H.length).setValues([H]).setFontWeight('bold');
   m.setFrozenRows(1);
   m.setFrozenColumns(2);
