@@ -1,6 +1,8 @@
 # Feature matrix
 
-`matrix.csv` is the sheet where research becomes product: every feature recommendation for the Environments experience, scored and ranked. It opens directly in Excel, Numbers, or Google Sheets. The agent owns keeping it current; Javier owns decisions.
+**Live sheet: https://docs.google.com/spreadsheets/d/1tRhbi2gFUaG30n4ioDpNjEafBay1rgTtPCvGPAj8LY4/edit** (permanent URL, never recreated). It self-syncs from this repo hourly via the Apps Script in `sheet-sync.gs`: the Data tab mirrors `matrix.csv`, the Matrix tab computes Confidence, Priority, and Label with live formulas, and the Overrides tab is where Javier's Impact/Effort/Decision overrides go (they always win over synced values; the agent folds them back into the CSV, recorded as overrides).
+
+`matrix.csv` is the canonical data where research becomes product: every feature recommendation for the Environments experience, scored and ranked. It opens directly in Excel, Numbers, or Google Sheets. The agent owns keeping it current; Javier owns decisions.
 
 ## The traceability chain (nothing enters without it)
 
