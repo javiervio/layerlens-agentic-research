@@ -57,6 +57,13 @@ Ownership means:
 - On the first run of each month, the brief carries a ranked recommendation: the top candidates, why now, and what would change the ranking.
 - The decision line never moves: the system recommends with conviction and evidence; Javier decides. Effort scores are estimates pending engineering sizing.
 
+## The synthesis layers (worldview, not just rows)
+
+Above the weekly loop sit three layers that make months of data compound:
+- **`knowledge/theses.md`**: the living field theses, each requiring two independent evidence families, carrying a direction arrow, dated evidence timeline, counter-evidence, and a falsifier. Findings update theses first; the theses are the cross-time comparison instrument.
+- **Monthly synthesis** (first run of each month): a top-down pass over the whole corpus for thesis deltas, three-source convergence, contradictions, white space (documented-but-unsolved problems, the innovation lane), and stale-claim review. Defined in `AGENT_RUNBOOK.md` 4b.
+- **Quarterly decision brief** (`decisions/YYYY-Qn.md`) plus **`decisions/track-record.md`**: the translation into what Stratix does next, in four currencies (feature bets, design principles, positioning ammunition, risks), with every past call scored honestly. Defined in `AGENT_RUNBOOK.md` 4c.
+
 ## Limits (hard constraints)
 
 - **Read-only to the outside world.** This system researches and writes to this repo only. It never posts, sends messages, files tickets, follows accounts, subscribes, or changes any product. No Linear, no anywhere. This is 100% internal to Javier.

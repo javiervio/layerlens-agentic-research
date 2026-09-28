@@ -20,6 +20,8 @@ The agent has zero memory of its own. **This repo is its memory.** Everything it
 - **`knowledge/claims.md`**: the current state of what we believe, each claim with a link, date, and how confident we are.
 - **`knowledge/competitive.md`**: what other teams are doing, framed as problem, their solution, its limits, and the LayerLens opportunity.
 - **`ideas/backlog.md`**: a durable ledger of ideas for the Environments experience, each tied to a pain point, a user outcome, its evidence, and a maturity level (nascent to ready-to-spec). The deep-traceability layer.
+- **`knowledge/theses.md`**: the living field theses (direction arrows, evidence timelines, falsifiers), the system point of view built from months of evidence.
+- **`decisions/`**: quarterly decision briefs for Stratix (bets, design principles, positioning ammunition, risks) and the scored track record of past calls.
 - **`features/matrix.csv`**: the payoff. The ranked feature sheet (opens in Excel/Sheets): impact, effort, evidence-derived confidence, auto-computed priority, and labels (quick win, big bet, needs evidence). Rules in `features/README.md`. This is where you decide what to build.
 - **`learning/tutor.md`**: concepts explained plainly plus your running comprehension log.
 

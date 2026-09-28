@@ -37,7 +37,22 @@ For each new claim, compare it to `knowledge/claims.md`: does it confirm, extend
 2. Update `knowledge/competitive.md` for any team finding, using the sequence in `PROTOCOL.md`: problem, their solution, its limits, our users' need, a LayerLens alternative, the comparison that would validate it.
 3. Append to `knowledge/changelog.md`: what changed this run, which prior claim it affects, and what is still in dispute.
 4. Update `ideas/backlog.md` (see `PROTOCOL.md`, "The ideas backlog"): for each finding with a product implication, attach its evidence to an existing idea (raise its evidence count and maturity if warranted) or create a new L0 idea. Update the prioritization table at the top. Never let a single mention reach L2 (ready to spec).
-5. Update `features/matrix.csv` (rules in `features/README.md`): add a row for any idea that gained a product-shaped hypothesis, refresh evidence links and maturity on existing rows, recompute Confidence, Priority, and Label. Never delete a row. If this is the first run of the month, prepare the ranked top-3 recommendation for the brief.
+5. Update `features/matrix.csv` (rules in `features/README.md`): add a row for any idea that gained a product-shaped hypothesis, refresh evidence links and maturity on existing rows, recompute Confidence, Priority, and Label. Never delete a row.
+6. Update `knowledge/theses.md` direction arrows for any thesis the corroboration pass touched, appending the dated evidence to its timeline (support and counter-evidence alike). Promote a nursery item to a thesis only when a second independent evidence family arrives.
+
+## 4b. Monthly synthesis (first run of each month, top-down)
+
+The weekly loop asks "what is new?"; this asks "what does the whole corpus say now?" Re-read `knowledge/theses.md`, `knowledge/claims.md`, `ideas/backlog.md`, and `features/matrix.csv` end to end, then write into the brief a synthesis section covering:
+- **Thesis deltas**: which theses strengthened, weakened, or broke this month, and why.
+- **Convergence**: where research, practitioner experience, and competitor moves point the same way (a three-source convergence is an act signal; say so).
+- **Contradictions**: claims or theses in tension, with what would resolve them.
+- **White space**: problems documented repeatedly that nobody ships an answer to, the innovation lane. Name candidates explicitly.
+- **Stale review**: claims past their recheck date; recheck or mark them.
+- **Ranked recommendation**: the top 3 matrix candidates by priority, one line of "why now" each, and what evidence would change the ranking.
+
+## 4c. Quarterly decision brief (first run of January, April, July, October)
+
+Write `decisions/YYYY-Qn.md`: the actionable translation of the quarter's knowledge for Stratix. Sections: top 3 bets (from the matrix, each with its full evidence chain); 2-3 cross-cutting design principles the corpus now supports; positioning ammunition (evidence-backed statements usable externally, each with its links); risk register (what threatens the differentiators, with evidence); park/kill recommendations; and a track-record review, scoring every open call in `decisions/track-record.md` as confirmed, refuted, or still open, with the evidence. Log this quarter's new calls there too. Honest scoring is the point; a refuted call recorded plainly is worth more than a hedge.
 
 ## 5. Write the weekly brief
 
