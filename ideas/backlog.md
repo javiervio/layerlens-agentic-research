@@ -114,6 +114,21 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Maturity**: L0 nascent (one source, and it is an infra paper, not a product/UX study). To reach L1: a second source or a confirmed user need.
 - **Last update**: 2026-09-29.
 
+## I-0008: Establish ground truth for a user-built or prod-imported world
+
+- **Problem / pain point**: the stated goal is a synthetic world users can fully mess with AND that mirrors their real prod, so they can thoroughly test agents. But a world a user hand-edits or imports from prod is realistic yet arrives with no answer key, so "what is correct" is unknown and agents cannot be graded against it deterministically.
+- **Persona**: Devon (agent engineer), Evan (evaluation owner).
+- **User outcome**: users can bring in (or freely build) their real world and still get trustworthy, gradeable results, keeping realism and verifiability together instead of trading one for the other.
+- **Open design question(s)**: task feasibility and synthetic-data legibility (where ground truth comes from and how it is validated).
+- **Framing correction (from the 2026-09-29 discussion)**: it is NOT realism vs verifiability. Mutation, branching, and checkpointing are all realistic and verifiable, because grading looks at outcomes (actions/state graders already do this), and a snapshot is just a reproducible starting point. The real constraint is narrow: any state you want to GRADE against must be reproducible and have a knowable correct answer. Minted worlds get the answer key for free; user-built or prod-imported worlds do not, so this idea is about capturing ground truth for the realistic end of that spectrum, and guiding which grader (answer / actions / state / judge) applies where.
+- **Evidence**:
+  - C-0012, DeepSeek DSec: prompted the statefulness/mutability discussion (stateful, branchable worlds at scale). https://arxiv.org/abs/2609.22978
+  - Internal: builds on LayerLens's existing learned-world (connect-source) capability and the actions/state/judge grader types.
+- **Hypothesis**: if we give users a way to declare or infer what "correct" means for a world we did not mint, we extend verifiable grading from minted worlds to imported/edited ones, unlocking "bring your real world and still trust the verdict."
+- **How to validate**: external corroboration or a direct user-need signal (an actual user asking to grade against their own imported world), plus a prototype of a ground-truth-capture flow.
+- **Maturity**: L0 nascent, and honestly weaker than most: internally derived from a conversation, no external research corroboration yet. Needs a real user-need signal or a second source to reach L1.
+- **Last update**: 2026-09-29.
+
 ## I-0006: Confirmations that name the specific consequence
 
 - **Problem / pain point**: approve/deny confirmations gate risky actions but do not inform the decision.
