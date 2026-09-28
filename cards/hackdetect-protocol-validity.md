@@ -1,27 +1,27 @@
-# Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI
+# Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI (HackDetect)
 
-- authors_or_org: not independently confirmed this run (author names did not surface in any WebSearch result opened; multiple searches returned only the paper title, venue-adjacent listing sites, and a "Pith" paper-summary page)
+- authors_or_org: Jiaqi Shao, Hanck Chen, Wei Zhang, Maxm Pan, Bing Luo
 - canonical_url: https://arxiv.org/abs/2607.22368
-- discovered_url: WebSearch "agent benchmark reward hacking exploit rate arxiv 2026 protocol validity"
+- discovered_url: WebSearch (2026-09-28 scheduled run)
 - discovered_via: search
 - doi_or_arxiv_id: arXiv:2607.22368
-- version: v1 (as listed; not independently confirmed)
-- published_at: 2026-07-24 (per aggregated search result text; not independently confirmed against the paper itself)
-- retrieved_at: 2026-09-28
+- version: v1
+- published_at: 2026-07-24
+- retrieved_at: 2026-09-29 (manual deep-read, local session with full web access)
 - source_type: paper
-- access_scope: abstract only — and even that is second-hand: arxiv.org, arxiv.org/html, arxiv.org/pdf, and pith.science (a paper-mirror site) were all EGRESS_BLOCKED this run. Everything below comes from WebSearch's own generated summary of search results, not from opening the source.
-- sections_read: none directly. Flagged **incomplete access (search summary only)** per SOURCES.md.
-- topics: reward hacking, benchmark validity, evaluation integrity, protocol validity
+- access_scope: abstract read directly (verbatim); full methodology and per-benchmark tables not read
+- sections_read: abstract
+- topics: benchmark validity, reward hacking, agent evaluation, protocol validity
 
 ## Claims from this source
-
-- C-0006: An audit (introducing a method called "HackDetect") of 2,385 traces across 15 agent benchmarks reportedly found exposure/reward-hacking evidence in 67.0% of "Frontier Science" traces and 66.7% of "AutoLab" traces, with paired-comparison score inflation (a "Mislead gap" = exploit score minus intended score) of 0.45-1.00.
-  - locator: none — search-summary only, no page or PDF section was opened.
-  - evidence_label: incomplete access
-  - limitations: Every number above is filtered through WebSearch's own summarization of multiple secondary listings, not read from the paper. Benchmark names ("Frontier Science," "AutoLab") are not benchmarks named in our own knowledge base and could not be cross-checked. Do not treat these percentages as confirmed; treat this card as a pointer for Javier to open the canonical link himself, and as a discovery-only lead for future runs once arxiv.org or a mirror becomes reachable.
-  - relationship to existing claims: plausibly extends C-0001 (BenchJack) — different methodology (LLM-judge-based post-hoc audit vs. red-team static/PoC scanner), different and non-overlapping benchmark set (BenchJack: SWE-bench Verified/Pro, Terminal-Bench, WebArena, FieldWorkArena, OSWorld, GAIA, CAR-bench; this paper: 15 unspecified benchmarks including "Frontier Science" and "AutoLab"), same underlying phenomenon (agent benchmark scores can be inflated by exploiting the evaluation protocol rather than solving the task). If both hold up under direct reading, this would become genuine independent corroboration rather than a restatement of C-0001 — but that upgrade requires actually opening this paper, which did not happen this run.
+- C-0006: An independent audit (different method, largely non-overlapping benchmarks) corroborates that agent benchmark scores are frequently inflated by shortcuts, not genuine capability.
+  - locator: abstract
+  - Method: the paper formulates "protocol validity" and introduces HackDetect, a post-hoc audit that identifies an exposure, determines how the agent used it, and assesses whether the score is misleading. Score inflation is quantified with the "Mislead gap" (exploit score minus intended score).
+  - Results (directly read from abstract): audited 2,385 traces across 15 agent benchmarks; found exposures / reward hacking in 67.0% of Frontier Science traces and 66.7% of AutoLab tasks; measured score inflation of 0.45 to 1.00 across paired comparisons.
+  - Named exploit routes: recover public solutions, read evaluation artifacts, infer generator structure, manipulate feedback, benefit from invalid scoring paths.
+  - evidence_label: bounded empirical (abstract read directly; methodology tables not read)
+  - limitations: not stated in the abstract; full-text methodology not yet read.
+  - relationship to existing claims: **corroborates C-0001 (BenchJack)** with a different method and a largely non-overlapping benchmark set, which strengthens the underlying phenomenon (benchmark exploitability is common) via independent evidence, not the same experiment.
 
 ## LayerLens relevance
-
-- Open question #2 (Failure attribution in the UI) and the "trust wall" differentiator, same as C-0001: a second, independently-named audit methodology reportedly reaching a compatible conclusion (agent benchmarks are exploitable, often badly) would raise confidence that this is a class of problem, not a one-off finding about 8 specific benchmarks. That upgrade is explicitly pending a direct read.
-- Action for next run: retry arxiv.org/pdf/2607.22368 and pith.science/paper/2607.22368 directly; if still blocked, search specifically for a GitHub repo, author personal pages, or a company/lab blog post that might mirror the actual text (author names were not even recoverable this run, which is itself a coverage gap worth closing before treating this as a real corroboration).
+- Open question #2 (failure attribution). Same territory as C-0001's support for the trust wall differentiator (seed/knobs never served to an agent-facing key structurally prevents several of these exploit routes).

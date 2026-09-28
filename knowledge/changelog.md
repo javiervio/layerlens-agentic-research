@@ -4,6 +4,22 @@ What changed each run, and why. This is the audit trail: every confirmation, con
 
 ---
 
+### 2026-09-29 - manual deep-read enrichment (not a scheduled run)
+
+- **Change**: upgraded (C-0006, C-0007, C-0008 from incomplete access to directly read); corrected (one C-0007 figure).
+- **Trigger**: Javier asked a local Claude Code session (full web access, unlike the egress-restricted cloud routine) to open the three arXiv papers the 2026-09-28 run could only reach as search summaries.
+- **Claim affected**:
+  - **C-0006 (HackDetect, arXiv:2607.22368)**: abstract read directly. Numbers confirmed verbatim (2,385 traces, 15 benchmarks, 67.0% Frontier Science, 66.7% AutoLab, Mislead gap 0.45-1.00). Upgraded to bounded empirical; now a confirmed independent corroboration of C-0001 (BenchJack), not a lead.
+  - **C-0007 (FeasiGen, arXiv:2605.28532)**: abstract + body read directly. University of Edinburgh affiliation confirmed. FCR range 23.5% (GPT-5.5) to 73.9% (Qwen3.5-9B), single-agent avg 54.6%, best multi-agent pair 2.6%. **Correction**: the earlier "54.6% to 17.5%" multi-agent figure was NOT in the paper; corrected to the confirmed 2.6% best-pair anchor.
+  - **C-0008 (reliability science, arXiv:2602.16666)**: abstract + body read directly. 12 metrics / 4 dimensions listed; benchmarks GAIA + tau-bench; 15 models; finding "minimal reliability improvement over 24 months." pass@k/pass^k noted as used-but-not-formally-defined-in-sections-read.
+- **What holds / what changes**: all three phenomena now rest on directly-read primary text rather than search summaries. C-0001's benchmark-exploitability finding is now independently corroborated (C-0006). One propagated inaccuracy (FeasiGen 17.5%) removed from the record.
+- **Confidence and reasons**: raised on all three (abstract or body read directly). Full result tables still not exhaustively read, so labeled bounded empirical, not "fully verified."
+- **Possible design implication**: C-0007 (FeasiGen's mask-a-critical-tool mechanism) is a concrete candidate for a "why is this environment/task not solvable" explanation surface (open question #4). C-0008 gives ready vocabulary (pass@k vs pass^k, the 4 reliability dimensions) for open question #5.
+- **Needs Javier's review**: the two brief hypotheses still need someone with product access to run the small tests (comparison-view cost/reliability default; environment-write confirmation specificity).
+- **Cards updated**: cards/hackdetect-protocol-validity.md, cards/feasigen-task-feasibility.md, cards/ai-agent-reliability-science.md (all rewritten as directly-read).
+
+---
+
 ### 2026-09-28 - run 2026-09-28
 
 - **Change**: added (C-0006 through C-0011, new); extended (C-0005 backfilled into this file — see bookkeeping note below; C-0005/Magentic-UI's "action guards" extended with a directly-read mechanism as C-0011); added (competitive.md entries for Braintrust, Princeton PLI/HAL, Arize, Browserbase; Magentic-UI competitive entry extended in place).

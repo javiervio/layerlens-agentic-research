@@ -74,45 +74,47 @@ The current state of what we believe about agentic environments. Each claim carr
 
 ---
 
-### C-0006: An independent benchmark-exploitability audit (different methodology, largely non-overlapping benchmark set) reportedly reaches a compatible conclusion to BenchJack, but is not yet independently read
+### C-0006: An independent benchmark-exploitability audit (different methodology, largely non-overlapping benchmark set) corroborates BenchJack (abstract read directly 2026-09-29)
 
-- **Statement**: A paper titled "Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI" reportedly audited 2,385 traces across 15 agent benchmarks (via a method called HackDetect) and found exposure/reward-hacking evidence in 67.0% of "Frontier Science" traces and 66.7% of "AutoLab" traces, with score inflation ("Mislead gap") of 0.45-1.00 in paired comparisons.
-- **Source(s)**: arXiv:2607.22368, authors not confirmed, date unconfirmed (~2026-07-24 per aggregated search text), read scope: **none directly** — arxiv.org and a mirror (pith.science) were both blocked; this is search-summary only.
-- **Discovered via**: search.
-- **Evidence label**: incomplete access.
-- **Limits**: This is the weakest-confidence claim in this file. No primary text, not even an abstract, was opened. Numbers come from WebSearch's own aggregation across secondary listing pages. Treat as a lead, not a corroboration, until directly read.
-- **Relates to**: plausibly extends/corroborates C-0001 (BenchJack) — different method, different (non-overlapping named) benchmarks, same general phenomenon — but this upgrade from "plausible" to "confirmed" requires a direct read that has not happened in two attempts (this run and implicitly available since May per publication date).
+- **Statement**: The paper "Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI" audited 2,385 traces across 15 agent benchmarks (via a method called HackDetect) and found exposure/reward-hacking evidence in 67.0% of "Frontier Science" traces and 66.7% of "AutoLab" traces, with score inflation ("Mislead gap", defined as exploit score minus intended score) of 0.45-1.00 in paired comparisons. Named exploit routes: recover public solutions, read evaluation artifacts, infer generator structure, manipulate feedback, benefit from invalid scoring paths.
+- **Source(s)**: [Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI](https://arxiv.org/abs/2607.22368), Jiaqi Shao, Hanck Chen, Wei Zhang, Maxm Pan, Bing Luo, 2026-07-24, read scope: **abstract read directly** (manual deep-read 2026-09-29, local full-web session); full methodology tables not read.
+- **Discovered via**: search (cloud run), upgraded via manual deep-read.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: only the abstract was read; per-benchmark tables and the HackDetect method internals not verified. Two benchmark families named (Frontier Science, AutoLab); the other 13 of the 15 are not individually confirmed here.
+- **Relates to**: **corroborates C-0001 (BenchJack)** — different method, largely non-overlapping benchmarks, same phenomenon. Now upgraded from "plausible" to confirmed corroboration via direct read (independent evidence, not the same experiment).
 - **LayerLens relevance**: Open question #2 (failure attribution); same territory as C-0001's support for the "trust wall" differentiator.
-- **Confidence**: Low — search-summary only, cannot rule out misattribution or aggregation error in the numbers themselves.
-- **Recheck after**: 2026-10-12 (short — this should be retried again next run before the normal 30-day cycle, since it's a discovery-only lead, not a settled claim).
+- **Confidence**: Moderate-high — abstract read directly, headline numbers confirmed verbatim; full methodology not yet read.
+- **Recheck after**: 2027-01-24 (~180 days; the phenomenon is now doubly corroborated, no longer a discovery-only lead).
 
 ---
 
-### C-0007: Current models show weak infeasible-task detection; multi-agent setups reportedly help substantially (not yet independently read)
+### C-0007: Current models show weak infeasible-task detection; multi-agent planner-executor setups help substantially (abstract + body read directly 2026-09-29)
 
-- **Statement**: A paper proposing "FeasiGen" (a pipeline that builds infeasible tool-use tasks by masking tools that successful runs consistently require) reportedly found false continue rates (proceeding despite infeasibility) of 23.5%-73.9% across nine single-agent models, and that multi-agent architectures cut the average false continue rate from 54.6% to 17.5%.
-- **Source(s)**: [FeasiGen paper](https://arxiv.org/abs/2605.28532), Liang Cheng, Mingsheng Cai, Jiuming Jiang, Luo Mai (University of Edinburgh), 2026-05-27, read scope: **none directly** — search-summary only; arxiv.org blocked again this run (second run in a row this exact paper could not be opened).
-- **Discovered via**: search (flagged high-priority pending from the 2026-09-25 run).
-- **Evidence label**: incomplete access.
-- **Limits**: no primary text opened; cannot confirm task domains, exact multi-agent configuration, or the >94% infeasibility-annotation-accuracy claim about the benchmark's own construction.
-- **Relates to**: none yet — first claim on this exact topic in our knowledge base.
-- **LayerLens relevance**: Open question #4 (task feasibility) — directly on point, though note the paper is about agents recognizing infeasibility at run time, which is the mirror image of LayerLens's question of authors constructing solvable scenarios at design time.
-- **Confidence**: Low — search-summary only; author names and affiliation are confirmed (a rare case where WebSearch surfaced them explicitly), which is a mild positive signal for genuineness, but does not substitute for reading the methodology.
-- **Recheck after**: 2026-10-12 (short — retry before normal cycle; two consecutive runs unable to open a directly-relevant paper is itself worth escalating).
+- **Statement**: FeasiGen (a pipeline that builds infeasible tool-use tasks by masking tools that successful runs consistently require; infeasibility annotations human-verified at over 94% accuracy) found false continue rates (proceeding despite infeasibility) ranging **23.5% (GPT-5.5, best) to 73.9% (Qwen3.5-9B, worst)** across nine single-agent models, with a single-agent average of **54.6%**. Multi-agent planner-executor architectures reduced this substantially: the best pair (Qwen-122B planner, GPT-OSS executor) reached **2.6% FCR, nearly a 10x reduction** versus the best single agent.
+- **Source(s)**: [Do Agents Know What They Can't Do?](https://arxiv.org/abs/2605.28532), Liang Cheng, Mingsheng Cai, Jiuming Jiang, Luo Mai (University of Edinburgh), 2026-05-27, read scope: **abstract + HTML body read directly** (manual deep-read 2026-09-29, local full-web session); full result tables not exhaustively read.
+- **Discovered via**: search (flagged high-priority pending from the 2026-09-25 run), upgraded via manual deep-read.
+- **Evidence label**: bounded empirical (directly read).
+- **Correction**: the earlier search-summary figure "multi-agent cut the average from 54.6% to 17.5%" was NOT confirmed on direct read. Confirmed anchors are single-agent average 54.6% and best multi-agent pair 2.6%; no "17.5%" figure was found in the sections read.
+- **Limits (stated by authors)**: FeasiGen operates on benchmarks with fixed, fully predefined tool pools; in open-ended settings where agents dynamically retrieve or invoke arbitrary tools, the masked-dependency construction may not transfer. Metrics: FCR, success rate, token cost to early stop, token cost to task failure.
+- **Relates to**: first and only claim on task feasibility.
+- **LayerLens relevance**: Open question #4 (task feasibility) — directly on point. Note the mirror-image framing: the paper is about agents recognizing infeasibility at run time; LayerLens's question is about authors constructing solvable scenarios and seeing why one is not solvable at design time. The FeasiGen mechanism (mask a critical tool, task becomes infeasible) is itself a candidate for a "why is this not solvable" explanation surface.
+- **Confidence**: Moderate-high — directly read, key numbers confirmed and one earlier error corrected; still a single paper, not independently corroborated.
+- **Recheck after**: 2026-12-24 (~90 days; model-dependent).
 
 ---
 
-### C-0008: A proposed reliability-science framework distinguishes pass@k (capability) from pass^k (reliability) and reportedly finds capability gains have not translated into reliability gains (not yet independently read)
+### C-0008: A reliability-science framework decomposes agent reliability into 12 metrics across 4 dimensions and finds capability gains have not translated into reliability gains (abstract + body read directly 2026-09-29)
 
-- **Statement**: "Towards a Science of AI Agent Reliability" (Rabanser, Kapoor, Kirgis, Liu, Utpala, Narayanan — Princeton, ICML 2026 poster) proposes twelve metrics across four dimensions (consistency, robustness, predictability, safety), distinguishes pass@k (at least one success in k attempts) from pass^k (all k attempts succeed), and reportedly evaluated 15 models across two benchmarks (K=5 repeats, J=5 paraphrases, p_fault=0.2 fault injection), finding only small reliability improvements despite capability gains.
-- **Source(s)**: arXiv:2602.16666, read scope: **none directly** — arxiv.org, alphaxiv.org, and huggingface.co/papers all blocked this run; a reported companion GitHub repo's URL could not be located via search.
-- **Discovered via**: search (via the deliberate contradicting-evidence search slice on non-determinism in agent evaluation).
-- **Evidence label**: incomplete access.
-- **Limits**: no primary text opened; specific metrics, benchmarks, and models unconfirmed. Author reputation (same lab as HAL, ICML acceptance) is noted as a mild confidence factor but explicitly not treated as evidence.
-- **Relates to**: connects to C-0009 (HAL) — same lab, and HAL's own README states the team "are focusing our current work on agent reliability," which is consistent with (though does not independently confirm) this paper being that follow-on work.
-- **LayerLens relevance**: Open question #5, nearly verbatim ("how do we express variation across attempts — reliability versus one lucky pass"). The single best-matched open question of this run, despite the weak access.
-- **Confidence**: Low on the numbers (search-summary only); moderate that the general framing (pass@k vs pass^k as a real, useful distinction) is sound, since this distinction is corroborated independently by other sources found this run (e.g. a CORE-bench reference to "pass^k... chance that all k task trials are successful").
-- **Recheck after**: 2026-10-12 (short — high-value paper, retry before normal cycle).
+- **Statement**: "Towards a Science of AI Agent Reliability" (Rabanser, Kapoor, Kirgis, Liu, Utpala, Narayanan — Princeton, ICML 2026) proposes twelve metrics across four dimensions: **Consistency** (outcome, trajectory-distributional, trajectory-sequential, resource), **Robustness** (fault, environment, prompt), **Predictability** (calibration, AUROC, Brier), **Safety** (compliance, harm severity). It evaluated 15 models (OpenAI, Google, Anthropic families) across two benchmarks, **GAIA (165 validation tasks)** and **tau-bench (26 verified tasks)**, and found (verbatim) "overall reliability shows minimal improvement over time, despite 24 months of model releases."
+- **Source(s)**: [Towards a Science of AI Agent Reliability](https://arxiv.org/abs/2602.16666), Princeton, ICML 2026, v1 2026-02-18 / v3 2026-06-02, read scope: **abstract + HTML body read directly** (manual deep-read 2026-09-29, local full-web session); full result tables not exhaustively read.
+- **Discovered via**: search (deliberate contradicting-evidence slice on non-determinism), upgraded via manual deep-read.
+- **Evidence label**: bounded empirical (directly read).
+- **Limits (stated by authors)**: two benchmarks cover a narrow task slice; single scaffold per benchmark; LLM-based safety judging is itself a reliability concern; metric decomposition is subjective; temperature 0 may overestimate achievable reliability.
+- **On pass@k vs pass^k**: the paper uses the pass@k / pass^k terminology within its consistency dimension; the crisp definitions used in the brief (pass@k = at least one of k succeeds; pass^k = all k succeed) are field-standard and consistent with the paper's usage, but the paper's own formal definition was not quoted verbatim in the sections read.
+- **Relates to**: connects to C-0009 (HAL) — same lab; HAL's README states the team is "focusing our current work on agent reliability," consistent with this being that follow-on work.
+- **LayerLens relevance**: Open question #5, nearly verbatim ("how do we express variation across attempts — reliability versus one lucky pass"). The best-matched open question in the knowledge base.
+- **Confidence**: High for the framework, metrics, benchmarks, and headline finding (directly read); the specific K/J/fault-injection parameters cited earlier were from a search summary and were not re-verified in this read.
+- **Recheck after**: 2027-03-24 (~180 days; foundational framework).
 
 ---
 
