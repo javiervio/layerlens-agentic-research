@@ -40,9 +40,9 @@ Every competitive or applied finding follows this sequence:
 
 Individual findings are not enough on their own. The durable payoff is `ideas/backlog.md`: a growing, deduplicated ledger of ideas for the Environments experience, each tied to a pain point, a persona, a user outcome, the open design question it answers, and its accumulating evidence (claim IDs and links).
 
-Every run must feed this backlog, not just the weekly brief. For each finding with a product implication:
+Every run must feed this backlog, not just the weekly brief. **Corroboration before creation**: new findings are first walked against every existing claim, idea, and feature to confirm, strengthen, weaken, or contradict them; confidence and maturity move accordingly. Only what survives that pass may become a new entry, and only after a dedup check against all existing entries (recorded as a one-line dedup note on the new entry). Volume is not a goal; a run that only strengthens or weakens existing hypotheses is a successful run. For each remaining finding with a product implication:
 - Attach its evidence to an existing idea if one already covers that pain point or open question (raise that idea's evidence count and, if warranted, its maturity), OR
-- Create a new idea entry at maturity L0.
+- Create a new idea entry at maturity L0, with its dedup note.
 
 The maturity ladder (L0 nascent, L1 developing, L2 ready to spec, L3 decided) is defined in `ideas/backlog.md`. The hard rule: **a single mention never reaches L2 (ready to spec).** Promotion to L2 requires multiple independent sources, or one strong source plus a clear user outcome and a validation plan, plus a named persona and open question. The system proposes and gathers evidence; it never builds, files tickets, or decides. Javier decides and promotes L2 ideas to Linear or Figma himself.
 

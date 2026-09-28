@@ -10,6 +10,10 @@ Every row must be traceable end to end:
 
 A feature row without an Idea ID and at least one evidence link is invalid. The deep reasoning lives in the idea entry; the matrix is the ranked, scannable view on top of it.
 
+**Completeness and dating are hard rules.** Every cell in every row must be filled — no blanks, ever ("date unknown" is a valid value; an empty cell is not). Every evidence link travels with its dates in the `Source dates` column: publication date (or "date unknown") and the date we read it. `Date added` and `Last update` are always stamped. Before committing, the agent must validate the CSV (equal column counts, no empty cells, Priority = round(Impact x Confidence / Effort, 2)); a run that would commit an invalid matrix must fix it first.
+
+**Duplicates are forbidden.** A new row requires a dedup check against all existing rows (by pain point and area) recorded in Notes; near-duplicates merge as added evidence on the existing row instead.
+
 ## Scoring (same scheme as the MinervaBlue matrix, adapted)
 
 **Priority = Impact × Confidence / Effort**, rounded to 2 decimals.

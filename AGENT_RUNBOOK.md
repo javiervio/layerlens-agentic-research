@@ -27,6 +27,12 @@ For each new claim, compare it to `knowledge/claims.md`: does it confirm, extend
 
 ## 4. Update the knowledge files
 
+**Order is mandatory: re-analyze the existing record FIRST, create new entries LAST.** Nothing is ever added "because it is Monday." A run with zero new entries but two confidence upgrades is a good run.
+
+0a. **Corroboration pass (before creating anything).** Walk every new finding against the existing claims, ideas, and feature rows. For each, decide: does it confirm, strengthen, weaken, or contradict something we already hold? Apply those effects first — raise or lower confidence, bump idea maturity, recompute matrix scores. Slow validation of existing hypotheses is the primary product of a run; new entries are the leftover.
+
+0b. **Dedup gate (for whatever remains).** A new claim, pain point, idea, or feature may only be created after checking it against ALL existing entries (claims by topic, ideas by pain point and open question, features by area and pain point). Near-duplicates get merged into the existing entry as added evidence, never created twice. Every genuinely new entry must carry a one-line dedup note: "Dedup: checked against I-xxxx / F-xxxx; distinct because ...". An entry without that line is invalid.
+
 1. Add or update claims in `knowledge/claims.md`, each with its source link, date, and confidence-with-reasons.
 2. Update `knowledge/competitive.md` for any team finding, using the sequence in `PROTOCOL.md`: problem, their solution, its limits, our users' need, a LayerLens alternative, the comparison that would validate it.
 3. Append to `knowledge/changelog.md`: what changed this run, which prior claim it affects, and what is still in dispute.
