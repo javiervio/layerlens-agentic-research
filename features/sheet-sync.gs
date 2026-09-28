@@ -61,11 +61,12 @@ function setupSheet() {
   ov.setFrozenRows(1);
   var m = ss.getSheetByName('Matrix') || ss.insertSheet('Matrix', 0);
   m.clear();
-  var H = ['Feature ID', 'Feature', 'Area', 'Pain point', 'Persona', 'Open Q', 'Idea ID', 'Evidence links', 'Source dates', 'Maturity', 'Impact', 'Effort', 'Confidence', 'Priority', 'Label', 'Status', 'Overridden', 'Notes', 'Last update'];
+  var H = ['Feature ID', 'Feature', 'Area', 'Pain point', 'Persona', 'Open Q', 'Idea ID', 'Evidence links', 'Source dates', 'Maturity', 'Impact', 'Effort', 'Confidence', 'Priority', 'Label', 'Status', 'Overridden', 'Differentiator angle', 'Notes', 'Date added', 'Last update'];
   m.getRange(1, 1, 1, H.length).setValues([H]).setFontWeight('bold');
   m.setFrozenRows(1);
   m.setFrozenColumns(2);
-  var pass = { A: 'A', B: 'B', C: 'C', D: 'D', E: 'E', F: 'F', G: 'G', H: 'H', I: 'I', J: 'J', P: 'P', R: 'R' };
+  // Matrix col -> Data col. R=Differentiator(Data Q), S=Notes(Data R), T=Date added(Data S), U=Last update(Data T)
+  var pass = { A: 'A', B: 'B', C: 'C', D: 'D', E: 'E', F: 'F', G: 'G', H: 'H', I: 'I', J: 'J', P: 'P', R: 'Q', S: 'R', T: 'S', U: 'T' };
   for (var col in pass) {
     m.getRange(col + '2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,Data!' + pass[col] + '2:' + pass[col] + '))');
   }
@@ -75,7 +76,6 @@ function setupSheet() {
   m.getRange('N2').setFormula('=ARRAYFORMULA(IF(A2:A="",,ROUND(K2:K*M2:M/L2:L,2)))');
   m.getRange('O2').setFormula('=ARRAYFORMULA(IF(A2:A="",,LET(d,IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(J2:J="L0","Needs evidence",IF((K2:K>=4)*(L2:L<=2),"Quick win",IF((K2:K>=4)*(L2:L>=4),"Big bet",IF((K2:K<=2)*(L2:L>=4),"Reconsider","Proposed"))))))))');
   m.getRange('Q2').setFormula('=ARRAYFORMULA(IF(A2:A="",,IF((IFERROR(VLOOKUP(A2:A,Overrides!A:D,2,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,3,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),"")<>""),"yes","")))');
-  m.getRange('S2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,Data!T2:T))');
   data.hideSheet(); // Data is the machine-written mirror; keep only Matrix + Overrides visible
   ss.setActiveSheet(m);
 }
