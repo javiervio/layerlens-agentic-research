@@ -64,3 +64,4 @@ Rules:
 
 - **N-01: Multi-agent architectures are being adopted as a reliability mechanism, not just a capability one.** FeasiGen's planner-executor pair cut false-continues ~10x [C-0007]. Needs a second independent family.
 - **N-02: LLM judges carry structural biases that will push evaluation back toward deterministic grading.** One pilot on self-preference [C-0002]. Needs corroboration at scale.
+- **N-03: Agent environments/sandboxes have become an industrial-scale layer that frontier labs build in-house, while the verification layer on top remains unbuilt by them.** DeepSeek's DSec runs ~3M sandboxes/day for RL training yet does no verification, generation, or answer keys [C-0012]. Strong single source; needs a second independent family (another lab or vendor publishing environment infra at scale) to promote. Strategic implication if it holds: environments are the center of gravity, and the verification instrument on top is open ground, LayerLens's lane.

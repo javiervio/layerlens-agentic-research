@@ -157,3 +157,17 @@ The current state of what we believe about agentic environments. Each claim carr
 - **LayerLens relevance**: Open questions #6/#7 (human control and recovery — "do confirmations show specific consequences?"). A concrete, comparable design to benchmark LayerLens's own confirmation UI against.
 - **Confidence**: High for the three-tier mechanism itself (directly read, unambiguous). No confidence either way on the consequence-preview question — explicitly unresolved.
 - **Recheck after**: 2026-12-24 (~90 days).
+
+---
+
+### C-0012: A frontier lab published production-scale sandbox infrastructure for agentic training that explicitly does no verification, generation, or answer keys (a different stack layer from LayerLens)
+
+- **Statement**: DeepSeek Elastic Compute (DSec) is DeepSeek's production sandbox platform (four backends behind one SDK, co-designed with their RL framework) that served all RL training and evaluation sandbox workloads from DeepSeek V3.2 to V4.1: ~160 nodes, ~3M sandboxes/day, ~380K concurrent, 5,000+ creations/second. It provides stateful pause/resume (Firecracker snapshots) and `pack_diff` checkpoint-and-restore. It explicitly does NOT do environment generation, verification/grading, or answer keys; it is a runtime substrate, not a verification product.
+- **Source(s)**: [DeepSeek Elastic Compute (DSec)](https://arxiv.org/abs/2609.22978), DeepSeek (Jialiang Huang et al., 131 authors), 2026-09-19, read scope: abstract + HTML body (architecture, lifecycle, scale, evaluation), read directly 2026-09-29.
+- **Discovered via**: Javier (deep-read request).
+- **Evidence label**: bounded empirical (first-party systems paper, self-reported metrics, not reproduced).
+- **Limits**: single vendor's internal platform; nothing about agent correctness or task validity; infra metrics self-reported.
+- **Relates to**: feeds nursery thesis N-03; contrasts with LayerLens's verification layer (do not conflate infra-to-run with instrument-to-verify).
+- **LayerLens relevance**: Positioning (infra to run vs instrument to verify) and open questions on environment lifecycle/state and deterministic replay; basis for idea I-0007.
+- **Confidence**: High for what the system is and does (directly read); the "explicitly no verification" point is a genuine, load-bearing distinction.
+- **Recheck after**: 2027-03-19 (~180 days; infra landscape).

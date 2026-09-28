@@ -100,6 +100,20 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Maturity**: L0 nascent (single pilot). To reach L1: corroborating evidence beyond one pilot, or a strong outcome + validation confirmed.
 - **Last update**: 2026-09-29.
 
+## I-0007: Make environment lifecycle legible, and let users checkpoint/branch a run
+
+- **Problem / pain point**: users cannot see, while working in an environment, what state it keeps across a run, when it will stop existing, or cheaply save a checkpoint and branch off to try a variation. Lifecycle is invisible.
+- **Persona**: Devon (agent engineer), Evan (evaluation owner).
+- **User outcome**: users understand and control an environment's state and lifetime, and can explore variants (reproduce, branch, compare) without rebuilding, which also strengthens reproducibility.
+- **Open design question(s)**: env state/lifetime (control and recovery) and deterministic replay as a visible surface.
+- **Evidence**:
+  - C-0012, DeepSeek DSec: stateful pause/resume via snapshots and `pack_diff` (checkpoint a sandbox, restore as a new one) exist as backend capabilities at industrial scale. https://arxiv.org/abs/2609.22978
+- **Hypothesis**: the infra capability (snapshot, checkpoint/branch) is proven and commoditizing; LayerLens's opportunity is not to build the infra but to make lifecycle legible and verifiable in the product, show what state persists, when an environment ends, and offer checkpoint/branch/replay as first-class, attributable actions.
+- **Differentiator angle**: DSec makes checkpointing a backend feature; making it a legible, verifiable product surface (deterministic replay you can see and trust) is the LayerLens expression, tied to our replayability moat asset.
+- **How to validate**: a second independent source on lifecycle-as-UX (not just infra), plus a designer prototype of a checkpoint/branch/replay affordance on an environment run.
+- **Maturity**: L0 nascent (one source, and it is an infra paper, not a product/UX study). To reach L1: a second source or a confirmed user need.
+- **Last update**: 2026-09-29.
+
 ## I-0006: Confirmations that name the specific consequence
 
 - **Problem / pain point**: approve/deny confirmations gate risky actions but do not inform the decision.
