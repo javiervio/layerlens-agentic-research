@@ -10,8 +10,10 @@ The weekly run happens in a cloud sandbox with a restricted network (a current p
 - **WebFetch reliably reaches:** github.com, raw.githubusercontent.com, anthropic.com, microsoft.com, plus package registries and major version-control and cloud hosts.
 - **WebFetch is blocked for** arxiv.org (all paths), huggingface.co, wikipedia, modelcontextprotocol.io, and most vendor blogs.
 
+**The arXiv inbox (primary fix for the egress block):** a GitHub Actions harvester (`.github/workflows/arxiv-harvest.yml`, script `tools/arxiv_harvest.py`) runs on GitHub's own runners (full internet) before each Monday run and commits recent, relevance-filtered arXiv papers, with verbatim abstracts and canonical links, into `inbox/arxiv/LATEST.md`. Read that first: it is directly-read primary text, not a search summary, and it needs no arxiv.org fetch. For full text of a specific paper beyond its abstract, hand it to a local deep-read session.
+
 How to read deeply anyway, in priority order:
-1. Discover with WebSearch.
+1. Read the arXiv inbox (`inbox/arxiv/LATEST.md`), then discover more with WebSearch.
 2. To actually read a source, prefer a **reachable mirror**: an arXiv paper almost always has a companion **GitHub repo** (README, docs, sometimes the full text) that IS reachable; a tool or protocol usually has its repo and docs on GitHub; Anthropic and Microsoft pages can be fetched directly.
 3. If the only thing available is a WebSearch summary and no reachable original exists, that is **incomplete access**. Label the claim and the card accordingly per `PROTOCOL.md`, do not describe methods or results you could not open, and **still record the canonical link** (for example the arxiv.org URL) so Javier can open it himself.
 

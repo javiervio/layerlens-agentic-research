@@ -1,0 +1,39 @@
+name: arXiv harvest
+
+# GitHub Actions runners have full internet, so they can reach arxiv.org even
+# though the cloud research routine cannot. This fetches recent papers and
+# commits them into inbox/arxiv/ for the Monday routine to read.
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # Mondays 05:00 UTC, a few hours before the 09:00 UTC research routine
+  workflow_dispatch: {}   # allow manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arxiv-harvest
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Harvest arXiv
+        run: python tools/arxiv_harvest.py
+      - name: Commit results
+        run: |
+          git config user.name "arxiv-harvester"
+          git config user.email "actions@github.com"
+          git add inbox/arxiv
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "arXiv harvest: $(date -u +%Y-%m-%d)"
+            git push
+          fi

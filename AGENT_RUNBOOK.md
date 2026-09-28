@@ -11,7 +11,7 @@ The exact steps of a single weekly run. You (the cloud agent) start with zero co
 
 ## 1. Discover
 
-Combine the four angles in `SOURCES.md`: category searches, named team channels, citations, and public posts. Search by problem, not by lab name. Use a seven-day overlap window against the last run's date so late-published work is not missed. Consider up to about 25 candidates. Deduplicate by arXiv id, DOI, event, and evidence family. A blog, a LinkedIn post, and an X thread about one launch are one event.
+Start by reading `inbox/arxiv/LATEST.md`: a GitHub Actions harvester runs before each Monday and commits recent arXiv papers there with verbatim abstracts and canonical links, precisely the content the sandbox cannot fetch from arxiv.org directly. Triage that inbox first (these abstracts are directly-read, not search summaries; cite them as such), then combine the four angles in `SOURCES.md`: category searches, named team channels, citations, and public posts. Search by problem, not by lab name. Use a seven-day overlap window against the last run's date so late-published work is not missed. Consider up to about 25 candidates. Deduplicate by arXiv id, DOI, event, and evidence family. A blog, a LinkedIn post, and an X thread about one launch are one event.
 
 Budget guidance per run: about ten searches, split roughly four on research, four on teams and competitors, two on deliberate exploration or contradicting evidence. Rotate which teams you check so the whole `SOURCES.md` list gets covered over several weeks. If a family is skipped, note it as pending for next run.
 
