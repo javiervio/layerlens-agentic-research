@@ -61,21 +61,47 @@ function setupSheet() {
   ov.setFrozenRows(1);
   var m = ss.getSheetByName('Matrix') || ss.insertSheet('Matrix', 0);
   m.clear();
-  var H = ['Feature ID', 'Feature', 'Area', 'Pain point', 'Persona', 'Open Q', 'Idea ID', 'Evidence links', 'Source dates', 'Maturity', 'Impact', 'Effort', 'Confidence', 'Priority', 'Label', 'Status', 'Override applied?', 'Differentiator angle', 'Notes', 'Date added', 'Last update'];
-  m.getRange(1, 1, 1, H.length).setValues([H]).setFontWeight('bold');
+  // Designer-first Matrix layout. Each entry: [header, kind, arg].
+  // kind 'd' = pass-through from Data column arg; kind 'f' = literal formula arg.
+  // Data cols: A FeatureID B Feature C Area D Pain E Persona F OpenQ G IdeaID
+  // H Evidence I SourceDates J Maturity K Impact L Effort ... P Status Q Diff R Notes S DateAdded T LastUpdate U InPlainTerms
+  var COLS = [
+    ['Feature ID', 'd', 'A'],
+    ['Feature', 'd', 'B'],
+    ['In plain terms', 'd', 'U'],
+    ['Priority', 'f', '=ARRAYFORMULA(IF(A2:A="",,ROUND(F2:F*H2:H/G2:G,2)))'],
+    ['Label', 'f', '=ARRAYFORMULA(IF(Data!A2:A="",,LET(d,IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(Data!J2:J="L0","Needs evidence",IF((F2:F>=4)*(G2:G<=2),"Quick win",IF((F2:F>=4)*(G2:G>=4),"Big bet",IF((F2:F<=2)*(G2:G>=4),"Reconsider","Proposed"))))))))'],
+    ['Impact', 'f', '=ARRAYFORMULA(IF(Data!A2:A="",,IF(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,2,0),"")<>"",IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,2,0),""),Data!K2:K)))'],
+    ['Effort', 'f', '=ARRAYFORMULA(IF(Data!A2:A="",,IF(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),"")<>"",IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),""),Data!L2:L)))'],
+    ['Confidence', 'f', '=ARRAYFORMULA(IF(Data!A2:A="",,LET(b,IF(Data!J2:J="L2",0.9,IF(Data!J2:J="L1",0.6,0.3))+IF(Data!P2:P="Checked",0.1,0),IF(b>1,1,b))))'],
+    ['Maturity', 'd', 'J'],
+    ['Area', 'd', 'C'],
+    ['Pain point', 'd', 'D'],
+    ['Persona', 'd', 'E'],
+    ['Differentiator angle', 'd', 'Q'],
+    ['Open Q', 'd', 'F'],
+    ['Status', 'd', 'P'],
+    ['Override applied?', 'f', '=ARRAYFORMULA(IF(Data!A2:A="",,IF((IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,2,0),"")<>"")+(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,3,0),"")<>"")+(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,4,0),"")<>""),"yes","")))'],
+    ['Idea ID', 'd', 'G'],
+    ['Evidence links', 'd', 'H'],
+    ['Source dates', 'd', 'I'],
+    ['Notes', 'd', 'R'],
+    ['Date added', 'd', 'S'],
+    ['Last update', 'd', 'T']
+  ];
+  var headers = COLS.map(function (c) { return c[0]; });
+  m.getRange(1, 1, 1, headers.length).setValues([headers]).setFontWeight('bold');
   m.setFrozenRows(1);
   m.setFrozenColumns(2);
-  // Matrix col -> Data col. R=Differentiator(Data Q), S=Notes(Data R), T=Date added(Data S), U=Last update(Data T)
-  var pass = { A: 'A', B: 'B', C: 'C', D: 'D', E: 'E', F: 'F', G: 'G', H: 'H', I: 'I', J: 'J', P: 'P', R: 'Q', S: 'R', T: 'S', U: 'T' };
-  for (var col in pass) {
-    m.getRange(col + '2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,Data!' + pass[col] + '2:' + pass[col] + '))');
+  function colLetter(i) { var s = ''; i++; while (i > 0) { var r = (i - 1) % 26; s = String.fromCharCode(65 + r) + s; i = Math.floor((i - 1) / 26); } return s; }
+  for (var i = 0; i < COLS.length; i++) {
+    var f = COLS[i][1] === 'd'
+      ? '=ARRAYFORMULA(IF(Data!A2:A="",,Data!' + COLS[i][2] + '2:' + COLS[i][2] + '))'
+      : COLS[i][2];
+    m.getRange(colLetter(i) + '2').setFormula(f);
   }
-  m.getRange('K2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,IF(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,2,0),"")<>"",IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,2,0),""),Data!K2:K)))');
-  m.getRange('L2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,IF(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),"")<>"",IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),""),Data!L2:L)))');
-  m.getRange('M2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,LET(b,IF(Data!J2:J="L2",0.9,IF(Data!J2:J="L1",0.6,0.3))+IF(Data!P2:P="Checked",0.1,0),IF(b>1,1,b))))');
-  m.getRange('N2').setFormula('=ARRAYFORMULA(IF(A2:A="",,ROUND(K2:K*M2:M/L2:L,2)))');
-  m.getRange('O2').setFormula('=ARRAYFORMULA(IF(A2:A="",,LET(d,IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(J2:J="L0","Needs evidence",IF((K2:K>=4)*(L2:L<=2),"Quick win",IF((K2:K>=4)*(L2:L>=4),"Big bet",IF((K2:K<=2)*(L2:L>=4),"Reconsider","Proposed"))))))))');
-  m.getRange('Q2').setFormula('=ARRAYFORMULA(IF(A2:A="",,IF((IFERROR(VLOOKUP(A2:A,Overrides!A:D,2,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,3,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),"")<>""),"yes","")))');
+  m.setColumnWidth(3, 380);      // widen "In plain terms"
+  m.getRange('C:C').setWrap(true);
   data.hideSheet(); // Data is the machine-written mirror; keep only Matrix + Overrides visible
   ss.setActiveSheet(m);
 }

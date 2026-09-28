@@ -14,6 +14,8 @@ A feature row without an Idea ID and at least one evidence link is invalid. The 
 
 **Completeness and dating are hard rules.** Every cell in every row must be filled — no blanks, ever ("date unknown" is a valid value; an empty cell is not). Every evidence link travels with its dates in the `Source dates` column: publication date (or "date unknown") and the date we read it. `Date added` and `Last update` are always stamped. Before committing, the agent must validate the CSV (equal column counts, no empty cells, Priority = round(Impact x Confidence / Effort, 2)); a run that would commit an invalid matrix must fix it first.
 
+**Plain-language is mandatory.** Every feature carries an **In plain terms** value: two to four jargon-free sentences saying what the feature would do and why it helps, written so Javier understands the feature without opening a single paper. No LayerLens/ML jargon, no citations, no metric names, just what it is and what changes for the user. This column leads the sheet view (right after the feature name). A feature without a plain-terms explanation is incomplete.
+
 **Duplicates are forbidden.** A new row requires a dedup check against all existing rows (by pain point and area) recorded in Notes; near-duplicates merge as added evidence on the existing row instead.
 
 ## Scoring (same scheme as the MinervaBlue matrix, adapted)
