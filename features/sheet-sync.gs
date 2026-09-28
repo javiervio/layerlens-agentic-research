@@ -76,6 +76,8 @@ function setupSheet() {
   m.getRange('O2').setFormula('=ARRAYFORMULA(IF(A2:A="",,LET(d,IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(J2:J="L0","Needs evidence",IF((K2:K>=4)*(L2:L<=2),"Quick win",IF((K2:K>=4)*(L2:L>=4),"Big bet",IF((K2:K<=2)*(L2:L>=4),"Reconsider","Proposed"))))))))');
   m.getRange('Q2').setFormula('=ARRAYFORMULA(IF(A2:A="",,IF((IFERROR(VLOOKUP(A2:A,Overrides!A:D,2,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,3,0),"")<>"")+(IFERROR(VLOOKUP(A2:A,Overrides!A:D,4,0),"")<>""),"yes","")))');
   m.getRange('S2').setFormula('=ARRAYFORMULA(IF(Data!A2:A="",,Data!T2:T))');
+  data.hideSheet(); // Data is the machine-written mirror; keep only Matrix + Overrides visible
+  ss.setActiveSheet(m);
 }
 
 function installTrigger() {
