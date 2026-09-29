@@ -4,14 +4,14 @@ Recent posts from frontier-lab blogs and high-signal analysts, pulled from their
 
 ## Coverage this run
 - OpenAI: 6 posts via https://openai.com/blog/rss.xml
-- Google DeepMind: 6 posts via https://deepmind.google/sitemap.xml (sitemap fallback)
+- Google DeepMind: 6 posts via https://deepmind.google/blog/rss.xml
 - Google Research: 6 posts via https://research.google/blog/rss/
 - Microsoft Research: 6 posts via https://www.microsoft.com/en-us/research/feed/
 - Hugging Face: 6 posts via https://huggingface.co/blog/feed.xml
 - Anthropic: 6 posts via https://www.anthropic.com/sitemap.xml (sitemap fallback)
 - Meta AI: NO FEED OR SITEMAP FOUND (cover via WebSearch; home https://ai.meta.com/blog/)
 - Interconnects (Nathan Lambert): 6 posts via https://www.interconnects.ai/feed
-- Import AI (Jack Clark): 6 posts via https://importai.substack.com/feed
+- Import AI (Jack Clark): NO FEED OR SITEMAP FOUND (cover via WebSearch; home https://importai.substack.com/)
 - Simon Willison: 6 posts via https://simonwillison.net/atom/everything/
 - Latent Space: 6 posts via https://www.latent.space/feed
 
@@ -49,31 +49,33 @@ GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and it
 
 With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.
 ## Google DeepMind
-Source: https://deepmind.google/sitemap.xml (sitemap fallback) | Home: https://deepmind.google/discover/blog/
+Source: https://deepmind.google/blog/rss.xml | Home: https://deepmind.google/discover/blog/
 
-### Evaluating frontier models for stealth and situational awareness
-- date: 2026-09-25
-- link: https://deepmind.google/research/publications/157938/
+### Introducing Gemini 3.8 Live with Live Avatar
+- date: Thu, 24 Sep 2026
+- link: https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
 
 ### Advancing Private AI Compute with secure, server-side memory
-- date: 2026-09-23
+- date: Wed, 23 Sep 2026
 - link: https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
 
-### alphagenome atlas a predictive map of every possible dna letter change in the human genome
-- date: 2026-09-15
+Introducing private, server-side memory to Private AI Compute for personal AI.
+### Gemini 3.8 text-to-speech says hello
+- date: Wed, 23 Sep 2026
+- link: https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
+
+### Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking
+- date: Tue, 15 Sep 2026
+- link: https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/
+
+### AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome
+- date: Tue, 08 Sep 2026
 - link: https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/
 
-### D4RT: Unified, Fast 4D Scene Reconstruction & Tracking
-- date: 2026-09-11
-- link: https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/
-
-### Designing Proactive Thought Partners for Writing
-- date: 2026-09-04
-- link: https://deepmind.google/research/publications/265605/
-
-### Visual General Intelligence: A White Paper
-- date: 2026-08-27
-- link: https://deepmind.google/research/publications/270149/
+AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.
+### Introducing WeatherNext 3, our most advanced and accurate global weather AI model
+- date: Thu, 03 Sep 2026
+- link: https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
 
 ## Google Research
 Source: https://research.google/blog/rss/ | Home: https://research.google/blog/
@@ -234,39 +236,6 @@ Some quick notes on a truly weird week.
 - link: https://www.interconnects.ai/p/when-will-average-people-feel-ais
 
 We&#8217;re <5 years into a compounding revolution which could take a century, and how the AI industry should manage this.
-## Import AI (Jack Clark)
-Source: https://importai.substack.com/feed | Home: https://importai.substack.com/
-
-### Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop
-- date: Mon, 28 Sep 2026
-- link: https://importai.substack.com/p/import-ai-474-platonic-mindspace
-
-Where do you exceed the capabilities of an LLM?
-### Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics
-- date: Mon, 21 Sep 2026
-- link: https://importai.substack.com/p/import-ai-473-the-uss-superintelligence
-
-Is the wall AI is hitting in the room with us right now?
-### Import AI 472: DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman
-- date: Mon, 07 Sep 2026
-- link: https://importai.substack.com/p/import-ai-472-deepminds-cheating
-
-Plus, a machine hermeneutics story
-### Import AI 471: Why Hugging Face worries me; space mining; FIve Eyes on AI
-- date: Mon, 31 Aug 2026
-- link: https://importai.substack.com/p/import-ai-471-why-hugging-face-worries
-
-Plus, a live event with Robin Sloan!
-### Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye
-- date: Mon, 24 Aug 2026
-- link: https://importai.substack.com/p/import-ai-470-no-rights-for-machines
-
-Differential acceleration of cyber, math, and AI
-### Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism
-- date: Mon, 17 Aug 2026
-- link: https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator
-
-The new frontier of AI is developing capable autonomous researchers
 ## Simon Willison
 Source: https://simonwillison.net/atom/everything/ | Home: https://simonwillison.net/
 
