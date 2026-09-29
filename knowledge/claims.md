@@ -312,3 +312,87 @@ The current state of what we believe about agentic environments. Each claim carr
 - **LayerLens relevance**: Open Q #5, directly. If LayerLens ships a pass^k-style readout (F-0001/I-0001), the "k attempts" must be genuinely independent full-task rollouts, not sub-task or per-tool-call checks dressed up as attempts. Added as a build caution to I-0001, not a new feature.
 - **Confidence**: Moderate (directly read companion artifact; underlying paper itself unconfirmed).
 - **Recheck after**: 2026-12-29 (~90 days).
+
+### C-0025: AgentRewind — checkpoints agent context + environment together for runtime recovery on long-horizon tasks (incomplete access)
+
+- **Statement**: AgentRewind is a runtime recovery framework recording aligned checkpoints of an agent's context and its "controlled environment" (workspace directory tree, tracked via file-level changes), letting an agent roll back to an earlier checkpoint and resume with information from a failed attempt, instead of restarting cold. Introduces MettleBench, a benchmark of real-world, multi-requirement long-horizon engineering tasks. Reported to improve task success and checklist progress across models, execution strategies, and agent harnesses.
+- **Source(s)**: [AgentRewind](https://arxiv.org/abs/2608.14380), Yu Zhuang, Kefei Chen, Yitong Duan, Shuxin Zheng, Jian Li, Xu-Yao Zhang, 2026-08-14, read scope: incomplete access (arxiv.org blocked; assembled from consistent WebSearch summaries, no primary text).
+- **Discovered via**: search.
+- **Evidence label**: incomplete access.
+- **Limits**: no primary text; no quantitative deltas captured; single paper.
+- **Relates to**: **fourth independent family for T-06** (environment-lifecycle convergence), alongside C-0012 (DSec), C-0020 (Planarian), C-0023 (Counterfactual Rollout Replay) — the closest yet to a product-facing agent-runtime-recovery use case.
+- **LayerLens relevance**: Open Q #7 (recovery), #3 (replayability). Strengthens I-0007/F-0007.
+- **Confidence**: Low-moderate (incomplete access, but consistent across multiple independent summaries).
+- **Recheck after**: 2027-02-14 (~180 days; infra landscape claim).
+
+### C-0026: A rollback-security study argues "correct rollback does not imply secure recovery" — counter-evidence/risk for the checkpoint-rollback convergence thesis (incomplete access)
+
+- **Statement**: The first systematic security study of checkpoint/rollback (C/R) in agent systems. Core finding: a checkpoint can be faithfully, state-correctly restored yet resume an execution whose states, assumptions, and external effects never coexisted in any valid history, because the world outside a frozen sandbox (other services, other agents, real external side effects) kept moving. Introduces "execution continuity" as a security requirement distinct from state-correctness, and characterizes the design space and recovery boundaries of existing C/R mechanisms.
+- **Source(s)**: [Safe to Resume? Breaking Execution Continuity of Agent Execution via Rollback](https://arxiv.org/abs/2608.29381), Guanlong Wu, Dahui Li, Ke Jiang, Jianyu Niu, Cong Wang, Yinqian Zhang, 2026-08-29, read scope: incomplete access (arxiv.org blocked; WebSearch summaries only).
+- **Discovered via**: search (following the T-06/DeltaBox checkpoint-rollback cluster).
+- **Evidence label**: incomplete access.
+- **Limits**: no primary text; no concrete attack case studies or quantitative failure rates captured; single paper, part of an apparently active sub-cluster (ACRFence, "When Can Agents Safely Checkpoint, Fork, Restore, and Merge?", "Recoverability as a System Primitive" — none individually read this run, noted for future follow-up).
+- **Relates to**: **counter-evidence / risk complication for T-06** — the other four T-06 families treat checkpoint/rollback/fork as a maturing, near-commodity mechanism; this paper argues its security dimension is largely unexamined and can silently fail even when state-restoration is technically correct.
+- **LayerLens relevance**: Open Q #7 (recovery), #3 (replayability). A direct build caution for I-0007/F-0007: if a checkpoint/branch feature is ever built over remote system-type state (Salesforce, Stripe, etc.), state-correct restore is necessary but not sufficient — whether the resumed execution's assumptions about the outside world still hold needs its own design answer.
+- **Confidence**: Low-moderate (incomplete access; the core argument — rollback correctness and execution-continuity are different properties — is conceptually clear even without primary-text numbers).
+- **Recheck after**: 2027-02-14 (~180 days; infra landscape claim, paired with C-0025).
+
+### C-0027: A large-scale systematic study of 21 LLM judges finds high test-retest reliability coexists with severe bias — "the most reproducible judges are among the least valid" (incomplete access)
+
+- **Statement**: A systematic evaluation of 21 LLM-as-judge models from 9 providers across three benchmarks (MT-Bench, JudgeBench, RewardBench), under three protocols (agreement, consistency, bias audit), over 118 runs and ~541,000 individual judgments. Raw percent-agreement overstates chance-corrected discrimination (vs. Cohen's kappa) by 33-41 percentage points across the 21 models. High test-retest reliability (kappa >= 0.95 for some judges) coexists with severe position bias (>0.10) in some of the same, production-deployed judges.
+- **Source(s)**: [Reliability without Validity](https://arxiv.org/abs/2606.19544), Justin D. Norman, Michael U. Rivera, D. Alex Hughes, 2026-06-17, read scope: incomplete access (arxiv.org blocked; consistent WebSearch summaries citing the same specific figures across independent snippets; authors state code/data release is deferred to publication).
+- **Discovered via**: search (this run's deliberate contradicting-evidence slice against T-05).
+- **Evidence label**: incomplete access (but a large, well-specified systematic study, not an anecdote).
+- **Limits**: no primary text; cannot verify per-benchmark breakdowns or the exact model list independently.
+- **Relates to**: **third independent family for T-05** (LLM judges carry structural bias), alongside C-0002 (self-preference pilot) and C-0014 (identity conformity). Distinct emphasis: general reliability/validity/position-bias, not specifically same-model-family favoritism — strengthens T-05's broad claim without being additional evidence specifically for I-0005/F-0005's narrower same-family-flag hypothesis.
+- **LayerLens relevance**: Open Q #2 (attribution), differentiator #3 (reproducible, defensible grading). The "reproducible but not valid" framing directly cautions against showing a Judge's re-run consistency as reassurance of its correctness.
+- **Confidence**: Moderate (incomplete access, but large-N systematic study with figures repeated consistently across independent search summaries).
+- **Recheck after**: 2026-12-17 (~90 days; model/provider-dependent judge claim).
+
+### C-0028: E2B's own blog confirms pause and fork as sandbox lifecycle primitives (first-party, feed-summary only)
+
+- **Statement**: E2B's own blog (via its RSS feed) describes a reference agent workbench (built on OpenAI's Agents API) with "application-managed lifecycle, one sandbox per chat, pause and fork" — confirming pause and fork exist as first-class E2B sandbox lifecycle primitives, at least in this reference pattern.
+- **Source(s)**: [Build an Agent Workbench on OpenAI's Agents API](https://e2b.dev/resources/build-an-agent-workbench-on-openais-agents-api), E2B, published 2026-09-10, read scope: RSS feed description only (one sentence), via `inbox/competitors/LATEST.md`; the full post was not reachable (e2b.dev EGRESS_BLOCKED to WebFetch, confirmed again this run).
+- **Discovered via**: feed (inbox harvester).
+- **Evidence label**: documented capability (first-party) at abstract/summary-only access scope.
+- **Limits**: one-sentence feed summary; underlying mechanics, guarantees, and limitations of "pause and fork" not described in what was read.
+- **Relates to**: **fifth data point for T-06** (environment-lifecycle convergence) — the first from an already-commercial, productized sandbox vendor rather than a research paper, i.e. the pattern is already shipping in industry infrastructure, not only academic. Resolves, in direction, the prior `knowledge/competitive.md` note that E2B's session-lifecycle claims were third-party-blog-only and unconfirmed.
+- **LayerLens relevance**: Open Q #7, #3. Updates the E2B competitive entry from "insufficient evidence" to a thin, first-party-confirmed capability.
+- **Confidence**: Moderate (first-party, but a one-sentence summary, not the full post).
+- **Recheck after**: 2026-12-29 (~90 days; vendor capability claim).
+
+### C-0029: A trajectory-level security-debt metric finds most benchmarks' security scanners barely agree with each other (abstract read directly)
+
+- **Statement**: Proposes the Security Debt Line Integral (SDLI), accumulating static-analysis (SAST) risk over an agent's intermediate code states each time it reaches a new best test-pass ratio, instead of scoring only the final artifact. Instantiated with four SAST tools across 830 passing SWE-bench runs, 712 ProgramBench final workspaces, and 13 public MirrorCode trajectories. Two-tool CWE-class agreement occurred in only 3.9% of SWE-bench runs and 26.2% of the higher-passing ProgramBench subset (6.2% after excluding three advisory-heavy classes) — authors are explicit these are scanner findings, not confirmed exploitable vulnerabilities. A repair case study reduced scanner signal while preserving tested behavior, but showed sensitivity to equivalent API rewrites.
+- **Source(s)**: [Trajectory-Level Security Debt in LLM Coding Agents](https://arxiv.org/abs/2609.35199), Prateek Kumar Rajput, Abdoul Kader Kabore, Yewei Song, Melissa Tessa, Tailia Malloy, Jacques Klein et al., 2026-09-28, read scope: abstract read directly via `inbox/arxiv/LATEST.md`.
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; low two-tool scanner agreement (3.9-26.2%) is itself a major confound — the "true" security-debt rate is not established, only that trajectory-level tracking surfaces something final-artifact-only evaluation misses; authors state SDLI's value for steering agents or confirming exploits "remains to be established."
+- **Relates to**: new — first claim specifically on security posture tracked across a trajectory rather than the final artifact only. Complements T-03/I-0003 with a distinct dimension (security debt, not correctness), sharing the principle that intermediate states carry information the final state hides.
+- **LayerLens relevance**: Open Q #9 (comparison/trajectory diff), #2 (attribution, general sense). Not tied to an existing idea/feature row this run — recorded as a claim and open-question note per dedup discipline.
+- **Confidence**: Moderate (abstract only, concrete numbers, but low cross-tool agreement limits what can be concluded).
+- **Recheck after**: 2027-03-28 (~180 days).
+
+### C-0030: ControlScope studies workflow-revision granularity (continue / edit-argument / replace) mid-execution, with mixed results (abstract read directly)
+
+- **Statement**: Compares three repair granularities from the same public execution state — KEEP (continue as-is), ARG (edit only the next tool call's data arguments), FULL (replace the unfinished workflow) — framed as "nested permissions" separating available repairs from the actions an agent actually selects. Across filesystem tasks, ALFWorld, and AppWorld, results are mixed: FULL completed 15-16/20 vs. 13 for KEEP under one setup but 10-13 vs. 13 under another; ALFWorld KEEP/ARG/FULL scored 85/86/87 on one cohort and 134/134/127 on another; a 585-instance AppWorld panel showed small differences. A "five-call protection" scheme saved 19.4% of logged output at the cost of one success across 20 runs.
+- **Source(s)**: [ControlScope: Workflow Revision and Reliability in LLM Agents](https://arxiv.org/abs/2609.34313), Jingjie Ning, Xueqi Li, Yibo Kong, Dongting Li, 2026-09-28, read scope: abstract read directly via `inbox/arxiv/LATEST.md`.
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; heterogeneous, non-monotonic results across task suites and draw conditions — not a settled recommendation for how much to revise.
+- **Relates to**: new — first claim specifically on *repair granularity* (how much of a workflow to revise) rather than *whether* rollback/checkpoint is available at all (the rest of T-06's cluster). Distinct evidence for I-0007: recovery is not just "can you branch/checkpoint" but "how much should be changed when recovering."
+- **LayerLens relevance**: Open Q #7 (a concrete taxonomy: continue / edit-argument / replace-workflow), #6 (adjacent).
+- **Confidence**: Low-moderate (abstract only, mixed/non-monotonic results).
+- **Recheck after**: 2027-03-28 (~180 days).
+
+### C-0031: A Workday production report finds progressive (lazy) disclosure of agent skills improves retrieval quality with only marginal latency cost (abstract read directly)
+
+- **Statement**: As Workday's deployed LLM agents' skills libraries (named in-context procedures) grow, operational cost grows with them. Progressive disclosure (lazy-loading skills only as needed, rather than always including the full library in context) empirically improves skill-retrieval quality, and only marginally degrades overall latency.
+- **Source(s)**: [Report: Progressive Disclosure of Agent Skills](https://arxiv.org/abs/2609.35692), Guilin Zhang, Kai Zhao, Priyanka Mudgal, Waleed Ammar, Xiquan Cui, Xu Chu et al. (Workday), 2026-09-28, read scope: abstract read directly via `inbox/arxiv/LATEST.md`.
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly; first-party production report from a named company, not a lab benchmark).
+- **Limits**: abstract only; no specific numbers given; single company/deployment; "marginally degrades" is qualitative.
+- **Relates to**: new — adjacent to but distinct from C-0004 (Anthropic's general context-engineering guidance, which recommends just-in-time retrieval); this is a concrete, measured production instance of the same principle.
+- **LayerLens relevance**: General ("context and tools" scope slice); loosely touches #6. Not tied to an existing idea/feature row this run, per dedup discipline.
+- **Confidence**: Moderate (concrete production claim, but abstract-only, unquantified).
+- **Recheck after**: 2027-03-28 (~180 days).

@@ -48,3 +48,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## Reliability versus validity in a judge: consistent is not the same as correct
+
+- **Plain explanation** (from the brief): A judge (human or AI) can be perfectly *consistent* — give the same verdict every time you show it the same case — while still being *wrong* in a stable, repeatable way. Reliability (does it agree with itself) and validity (is it actually correct) are different properties. A system can score high on one and low on the other at the same time.
+- **Example / counterexample**: a judge that always prefers whichever answer is shown first, regardless of quality, will agree with itself on every re-run of the same ordering — perfect reliability — but flip its verdict the moment the order is swapped, showing its "correctness" was never really there. This week's large-scale study of 21 LLM judges found real instances of this shape: some judges with test-retest reliability of 0.95+ also had severe position bias (>0.10) — the most reproducible were among the least valid. Counterexample/boundary: this gap only shows up where there's a judgment call to make (a Judge or Scorer). A deterministic, answer-key Grader has no such gap — run it twice on the same input and reliability and validity collapse into the same thing, because there's no subjective call for a bias to act on.
+- **When it does not apply**: LayerLens's deterministic Graders (no model in the loop); it's specifically a caution for the Judges/Scorers grader types, and specifically for any UI that might show a judge's own re-run stability as a form of reassurance.
+- **This week's exercise**: Sketch, in words, what a "Judge reliability" indicator would need to show *besides* a consistency/agreement score to actually earn trust. What's the smallest additional signal — a cross-family spot-check, a small human-labeled holdout, something else — that would let someone tell "consistent because correct" apart from "consistent because biased"?
+- **Source status**: this connects last week's self-preference/identity-conformity finding (a specific kind of bias — favoring one's own model family) to a broader, much larger-scale study (21 judges, 9 providers, ~541,000 judgments) about general judge reliability and validity, not specifically same-family bias. Read via WebSearch summaries only this run (arxiv.org blocked); the same headline figures (33-41 percentage-point agreement inflation; 0.95+ reliability co-occurring with >0.10 position bias) appeared consistently across independent search results, which is why it's logged at moderate rather than low confidence despite being incomplete access. See `cards/reliability-without-validity-judges.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
