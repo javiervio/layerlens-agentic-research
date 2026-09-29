@@ -4,6 +4,24 @@ What changed each run, and why. This is the audit trail: every confirmation, con
 
 ---
 
+### 2026-09-29 - cs.MA recent listing sweep (manual, full-web session; the full research loop)
+
+- **Scope**: scanned all 110 papers on the arXiv cs.MA recent listing (both pages), triaged to LayerLens scope, deep-read the 5 highest-value: Same-Winners (2609.34215), Identity-Conformity (2609.33495), Multi-Turn Consistency (2609.29508), Calibration-Is-Not-Verification (2609.25959), ReplayLens (2609.34177). Cards written for all 5.
+- **Corroboration-first outcome (the point of the exercise)**: the sweep mostly RAISED confidence in things we already held rather than spawning features.
+  - **N-02 promoted to thesis T-05** (LLM judges carry structural identity-linked bias): second independent family arrived (C-0014, 12 models) corroborating the C-0002 pilot.
+  - **C-0002 upgraded** moderate -> moderate-high (now independently corroborated).
+  - **T-01 strengthened** to near-established (5 families): added C-0013 and C-0015.
+  - **T-02 strengthened**: added C-0016 (agreement != verification, need a real verifier) and C-0017 (agents exploit outcome info).
+  - **T-03 upgraded** from stable/early to strengthening: added C-0015 (7-category failure taxonomy) and C-0017 (mechanism-level attribution).
+- **New claims**: C-0013..C-0017 (all directly read).
+- **Priority change from findings**: **F-0005 (flag same-family judge/agent pairings) bumped L0 -> L1**, confidence 0.3 -> 0.6, priority 0.90 -> 1.80; it is now the top-ranked feature by score. F-0001 and F-0002 gained corroborating evidence (maturity unchanged, better supported).
+- **New nursery thesis N-04**: multi-agent SYSTEM evaluation (collaboration/coordination/attribution) is emerging as its own subfield (AgentWorld, MASTraceBench, CEO Arena, AsynCodeBench cluster). Added LAYERLENS_CONTEXT open question #13 (multi-agent scope). Not deep-read individually yet; not turned into a feature (scope-dependent).
+- **Dedup discipline**: no new feature rows added despite 5 papers, because each corroborated existing claims/features rather than introducing a distinct pain point. This is the intended behavior (volume is not the goal).
+- **Track record**: R-0002 (T-01 will strengthen) tracking-confirmed early; new call R-0004 (F-0005 near top of build list).
+- **Needs Javier's review**: the multi-agent scope question (#13) is a genuine strategic call only he/team can make; the F-0005 product check (is Judge-vs-agent model identity even surfaced today?) needs someone with product access.
+
+---
+
 ### 2026-09-29 - manual deep-read enrichment (not a scheduled run)
 
 - **Change**: upgraded (C-0006, C-0007, C-0008 from incomplete access to directly read); corrected (one C-0007 figure).

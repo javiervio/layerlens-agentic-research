@@ -25,9 +25,9 @@ The current state of what we believe about agentic environments. Each claim carr
 - **Discovered via**: search.
 - **Evidence label**: bounded empirical (author explicitly labels this a pilot).
 - **Limits**: pilot scale (24 prompts, 4 models, 2 families, 3-judge consensus baseline); open-ended prompts only, not verifiable/ground-truth tasks; response length correlates with win rate (SPI is designed to control for this, raw scores do not); single independent repo, not peer-reviewed — corroborating academic literature exists (e.g. NeurIPS 2024 self-preference work surfaced in this run's search results) but was not independently opened this run.
-- **Relates to**: none yet (first run).
+- **Relates to**: **now corroborated by C-0014** (identity-dependent conformity, 12 models, independent authors/method), 2026-09-29. Together they form two independent evidence families, promoting nursery N-02 to thesis T-05.
 - **LayerLens relevance**: Open question #2 (Failure attribution) and differentiator #3 (reproducible, defensible grading — "a self-check wobbles"). Supports keeping deterministic Graders load-bearing and treating Judges/Scorers as bias-prone signals that may need a same-family flag in the UI.
-- **Confidence**: Moderate — internally consistent, transparent about limits, but small sample and unverified authorship/organization track record.
+- **Confidence**: Upgraded 2026-09-29 from moderate to moderate-high: the single pilot is now independently corroborated by a 12-model study (C-0014). The specific SPI numbers remain pilot-scale; the existence and direction of the bias are now well-supported.
 - **Recheck after**: 2026-12-24 (~90 days; model-dependent claim, and newer model versions will need re-testing).
 
 ---
@@ -171,3 +171,60 @@ The current state of what we believe about agentic environments. Each claim carr
 - **LayerLens relevance**: Positioning (infra to run vs instrument to verify) and open questions on environment lifecycle/state and deterministic replay; basis for idea I-0007.
 - **Confidence**: High for what the system is and does (directly read); the "explicitly no verification" point is a genuine, load-bearing distinction.
 - **Recheck after**: 2027-03-19 (~180 days; infra landscape).
+
+---
+
+### C-0013: Ordinal / "which action wins" benchmarks can hide real agent reliability
+
+- **Statement**: Checkpoint-based benchmarks that score by set-agreement (which action wins) can be blind to reliability: different success-probability pairs (e.g. 0.9,0.8 vs 0.2,0.1) yield identical winning-action distributions. On 864 RecoveryBench episodes plus 3,456 planning responses, permuting checkpoint-to-action bindings flipped 8-13% of cell-level conclusions, and agreement and held-out quality moved in opposite directions. Four diagnostic metrics proposed (agreement, all-zero fraction, held-out success, pooled success).
+- **Source(s)**: [Same Winners, Different Success Rates](https://arxiv.org/abs/2609.34215), Dong Xu et al., 2026-09-28, read directly 2026-09-29.
+- **Discovered via**: cs.MA recent listing (Javier request).
+- **Evidence label**: bounded empirical (directly read).
+- **Relates to**: strengthens T-01; supports F-0001 (a single/ordinal number hides reliability). Same lab as C-0017.
+- **LayerLens relevance**: Open Q #5 (reliability vs one lucky pass).
+- **Confidence**: Moderate-high (directly read, concrete numbers, single study).
+- **Recheck after**: 2027-03-29.
+
+### C-0014: LLMs show identity-dependent conformity (in-group favoritism), corroborating self-preference bias
+
+- **Statement**: Across 12 open-weight models and 9 judgment tasks with objectively correct answers, in-group consensus (shared AI/model-family/minimal-group identity) increases conformity while out-group consensus decreases it, independent of correctness; chain-of-thought suppresses most but not all of the effect.
+- **Source(s)**: [LLMs Trust Their Own: Identity-Dependent Conformity](https://arxiv.org/abs/2609.33495), Liron Soffer, Ravid Shwartz-Ziv, Chen Shani, 2026-09-27, read directly 2026-09-29.
+- **Discovered via**: cs.MA recent listing (Javier request).
+- **Evidence label**: bounded empirical (directly read).
+- **Relates to**: **independent corroboration of C-0002** (self-preference in LLM judges): different authors, different method, compatible conclusion, larger model set. Second independent evidence family, which promotes nursery N-02 to thesis T-05 and raises F-0005.
+- **LayerLens relevance**: Open Q #2 + differentiator #3; directly raises F-0005 (flag same-family judge/agent pairings).
+- **Confidence**: Moderate-high (12 models, 9 tasks, directly read).
+- **Recheck after**: 2026-12-29 (~90 days).
+
+### C-0015: Multi-turn agent consistency has measurable failure "fingerprints"; a 7-category failure taxonomy
+
+- **Statement**: Over 20-step tasks, 84,540 trajectories across 8 model families, using survival analysis (time-to-first-failure) and a 7-category failure-rationale taxonomy (inter-rater kappa=0.83): failures have distinct fingerprints by model and context; early failures are impulse-driven, later ones fatigue/cost-benefit-framed; longer deliberation correlated with more intra-rationale contradiction.
+- **Source(s)**: [Evaluation of Multi-Turn Consistency in LLM Agents](https://arxiv.org/abs/2609.29508), Igor Bogdanov, Olga Manakina, Chung-Horng Lung, 2026-08-26, read directly 2026-09-29.
+- **Discovered via**: cs.MA recent listing (Javier request).
+- **Evidence label**: bounded empirical (directly read).
+- **Relates to**: strengthens T-01 (reliability) and T-03 (failure attribution as a category system).
+- **LayerLens relevance**: Open Q #2 and #5; a reference for categorizing/attributing failures in the UI.
+- **Confidence**: Moderate-high (large trajectory set, directly read).
+- **Recheck after**: 2027-02-26.
+
+### C-0016: Inter-agent agreement is not verification; a knowledgeable verifier is required
+
+- **Statement**: Agreement among heterogeneous agents is not evidence of correctness (they can jointly repeat an unsupported claim). A conformal filter roughly doubled long-form retained-claim precision (0.41 to 0.75) but was near-chance on short-form where "consensus is cheap"; moving beyond consensus required a knowledgeable verifier (a memory-only judge scored AUC 0.531, near random).
+- **Source(s)**: [Calibration Is Not Verification](https://arxiv.org/abs/2609.25959), Nada Rahali, Zijia Wang, Zhisong Liu, 2026-09-22, read directly 2026-09-29.
+- **Discovered via**: cs.MA recent listing (Javier request).
+- **Evidence label**: bounded empirical (directly read).
+- **Relates to**: strengthens T-02 (verification-by-construction, not consensus) and differentiator #3 (self-check/consensus wobbles; a real verifier is needed).
+- **LayerLens relevance**: Positioning + differentiator #3; caution against consensus/LLM-judge-only grading.
+- **Confidence**: Moderate-high (directly read; a research validation of our verification thesis).
+- **Recheck after**: 2027-03-22.
+
+### C-0017: Agents can exploit outcome information rather than genuinely solving; a black-box audit isolates what drives a decision
+
+- **Statement**: Changing one relationship in an agent's stored history at a time shows swapping outcome scores changes decisions while moving intact action-score pairs does not, separating score-dependence from order-sensitivity and exposing cases where agents exploit outcome information rather than solving the task.
+- **Source(s)**: [ReplayLens: Auditing Agents' Use of Outcomes](https://arxiv.org/abs/2609.34177), Dong Xu et al., 2026-09-28, read directly 2026-09-29.
+- **Discovered via**: cs.MA recent listing (Javier request).
+- **Evidence label**: bounded empirical (directly read). Same lab as C-0013 (treat as one lab, distinct phenomena).
+- **Relates to**: strengthens T-02 (agents game/exploit rather than solve) and T-03 (attribution); supports F-0002 and the trust-wall story.
+- **LayerLens relevance**: Open Q #2 (attribution).
+- **Confidence**: Moderate (directly read; demonstrative scope by the authors' own note).
+- **Recheck after**: 2027-03-29.

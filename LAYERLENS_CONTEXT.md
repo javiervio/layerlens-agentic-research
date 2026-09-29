@@ -119,6 +119,7 @@ When a finding speaks to one of these, say so explicitly. Several concern the v3
 10. **The readiness report.** Who is its actual recipient, and what does "ready under budget" need to show to be trusted and shared upward?
 11. **The reviewer surface.** What does a risk or compliance reviewer need to accept a claim without trusting the claimant, given attestation is API-only today?
 12. **Are Devon and Evan one person** at target customers, or two? This shapes the whole information architecture.
+13. **Multi-agent scope.** Does the environment/verification model extend to grading multi-agent *systems*, collaboration quality, coordination, attribution of which agent contributed, or is LayerLens single-agent-against-environment for now? (Open strategic question raised by the multi-agent-evaluation research wave, thesis N-04; not yet decided.)
 
 ## What NOT to assume
 

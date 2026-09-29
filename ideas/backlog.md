@@ -93,11 +93,13 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Persona**: Evan, Alex, Riley.
 - **User outcome**: judge verdicts trusted appropriately; bias surfaced, not hidden.
 - **Open design question(s)**: #2 (attribution), differentiator #3 (reproducible, defensible grading).
-- **Evidence**:
+- **Evidence** (accumulating):
   - C-0002, "The Judge in the Mirror" (pilot): mean self-preference index +0.14, present even without self-recognition. https://github.com/hankimis/self-preference
+  - C-0014, "LLMs Trust Their Own" (12 open-weight models, 9 tasks): in-group consensus increases conformity, out-group decreases it, independent of correctness. https://arxiv.org/abs/2609.33495
+  - Backed by thesis T-05 (structural identity-linked judge bias).
 - **Hypothesis**: when a Judge model shares a vendor/family with the agent under test, flag it and suggest a cross-family judge or a deterministic Grader.
-- **How to validate**: cross-family re-judge test (2026-W39 brief).
-- **Maturity**: L0 nascent (single pilot). To reach L1: corroborating evidence beyond one pilot, or a strong outcome + validation confirmed.
+- **How to validate**: cross-family re-judge test (2026-W39 brief), then a product check on whether the Judge/agent model identities are even surfaced today.
+- **Maturity**: **L1 developing (upgraded 2026-09-29** from L0): two independent evidence families now, plus a promoted thesis. To reach L2: the product check result plus a named user outcome.
 - **Last update**: 2026-09-29.
 
 ## I-0007: Make environment lifecycle legible, and let users checkpoint/branch a run
