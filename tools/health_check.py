@@ -78,8 +78,10 @@ if os.path.exists(ctx):
     if not d:
         problems.append("LAYERLENS_CONTEXT.md has no CONTEXT_REVIEWED marker; cannot tell if it is current.")
     elif days_since(d) > 60:
-        problems.append(f"LAYERLENS_CONTEXT.md was last reviewed {d} ({days_since(d)} days ago). "
-                        "Confirm or correct it, then bump the CONTEXT_REVIEWED date. Applied hypotheses drift when this goes stale.")
+        problems.append(f"The LayerLens product context was last reviewed {d} ({days_since(d)} days ago). "
+                        "To resolve: tell Claude in plain language what has changed about Stratix / Environments "
+                        "(or that nothing has), and Claude will update the context file and reset this timer. "
+                        "You do not need to edit any file yourself. Applied hypotheses drift when this goes stale.")
 
 if problems:
     print("RESEARCH SYSTEM HEALTH: problems found\n")
