@@ -82,6 +82,17 @@ Framed as "possible reference or competitor, pending our context." For each, fin
 | Prime Intellect | Training and environments | Environment construction, verification, RL sandboxes |
 | Modal | Infrastructure | Coordination of training, execution, environments; bottlenecks |
 
+The competitor harvester (`tools/competitor_harvest.py`) tries each source's RSS/Atom feed first, then falls back to its **sitemap.xml** for feedless sites (this reaches Braintrust, Browserbase, Modal, and Prime Intellect blogs/changelogs, which have no feed). Only sources with neither are logged "cover via WebSearch."
+
+## Social / X (all companies)
+
+X (Twitter) is a good, timely source for every company here. The harvester cannot pull it (X requires auth, blocks automated fetch, and scraping is against its terms), so **social is WebSearch best-effort**: each run, for the rotation's companies, WebSearch their recent public posts and record what was reachable vs not (never claim full coverage of X). For each watchlist company, find and verify its official X handle from its own site, then record it here as you confirm it.
+
+### Saved links (provided by Javier, use directly)
+
+- Braintrust blog: https://www.braintrust.dev/blog
+- Braintrust X: https://x.com/braintrust/highlights
+
 Note: earlier planning material referenced a project called "OpenClaw" and some specific vendor posts and paper ids. Those were not independently verified and must not be treated as real until confirmed by a reachable canonical source.
 
 ## Evidence labels (use on every claim)
