@@ -64,38 +64,18 @@ function buildAll() {
   if (evidence) writeHidden('EvidenceData', evidence);
   if (theses) writeHidden('ThesesData', theses);
 
-  var ov = ensureOverrides();
-  var overrides = readOverrides(ov);
-
   var evTab = buildEvidence(evidence, matrix);   // build first so Next up can link to its gid
-  buildNextUp(matrix, overrides, evTab.getSheetId());
+  buildNextUp(matrix, evTab.getSheetId());
   buildTheses(theses);
 
   ['Data', 'EvidenceData', 'ThesesData'].forEach(function (n) { var s = ss.getSheetByName(n); if (s) s.hideSheet(); });
-  var old = ss.getSheetByName('Matrix'); if (old) ss.deleteSheet(old); // remove the old dense tab
+  ['Matrix', 'Overrides'].forEach(function (n) { var s = ss.getSheetByName(n); if (s) ss.deleteSheet(s); }); // remove old/retired tabs
   ss.setActiveSheet(ss.getSheetByName('Next up'));
-}
-
-function ensureOverrides() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var ov = ss.getSheetByName('Overrides') || ss.insertSheet('Overrides');
-  if (ov.getRange('A1').getValue() !== 'Feature ID') {
-    ov.getRange(1, 1, 1, 5).setValues([['Feature ID', 'Impact override', 'Effort override', 'Decision', 'Note']]).setFontWeight('bold');
-    ov.setFrozenRows(1);
-  }
-  return ov;
-}
-function readOverrides(ov) {
-  var map = {}, last = ov.getLastRow();
-  if (last < 2) return map;
-  var vals = ov.getRange(2, 1, last - 1, 4).getValues();
-  vals.forEach(function (r) { if (r[0]) map[String(r[0]).trim()] = { impact: r[1], effort: r[2], decision: r[3] }; });
-  return map;
 }
 
 function num(v) { var n = parseFloat(v); return isNaN(n) ? '' : n; }
 
-function buildNextUp(matrix, overrides, evGid) {
+function buildNextUp(matrix, evGid) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var h = idx(matrix[0]);
   var items = [];
@@ -103,17 +83,14 @@ function buildNextUp(matrix, overrides, evGid) {
     var r = matrix[i];
     if (!r[h['Feature ID']]) continue;
     var id = r[h['Feature ID']];
-    var o = overrides[id] || {};
-    var impact = num(o.impact !== undefined && o.impact !== '' ? o.impact : r[h['Impact (1-5)']]);
-    var effort = num(o.effort !== undefined && o.effort !== '' ? o.effort : r[h['Effort (1-5)']]);
+    var impact = num(r[h['Impact (1-5)']]);
+    var effort = num(r[h['Effort (1-5)']]);
     var maturity = r[h['Maturity']];
     var checked = r[h['Status']] === 'Checked';
     var conf = maturity === 'L2' ? 0.9 : (maturity === 'L1' ? 0.6 : 0.3); if (checked) conf = Math.min(1, conf + 0.1);
     var priority = (impact && effort) ? Math.round(impact * conf / effort * 100) / 100 : 0;
-    var decision = o.decision;
     var rec;
-    if (decision) rec = decision;
-    else if (maturity === 'L0') rec = 'Gather evidence first';
+    if (maturity === 'L0') rec = 'Gather evidence first';
     else if (impact >= 4 && effort <= 2) rec = 'Build next (quick win)';
     else if (impact >= 4 && effort >= 4) rec = 'Plan a slot (big bet)';
     else if (impact <= 2 && effort >= 4) rec = 'Reconsider';

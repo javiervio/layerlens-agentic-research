@@ -1,6 +1,6 @@
 # Feature matrix
 
-**Live sheet: https://docs.google.com/spreadsheets/d/1tRhbi2gFUaG30n4ioDpNjEafBay1rgTtPCvGPAj8LY4/edit** (permanent URL, never recreated). It self-syncs from this repo hourly via the Apps Script in `sheet-sync.gs`: the Data tab mirrors `matrix.csv`, the Matrix tab computes Confidence, Priority, and Label with live formulas, and the Overrides tab is where Javier's Impact/Effort/Decision overrides go (they always win over synced values; the agent folds them back into the CSV, recorded as overrides).
+**Live sheet: https://docs.google.com/spreadsheets/d/1tRhbi2gFUaG30n4ioDpNjEafBay1rgTtPCvGPAj8LY4/edit** (permanent URL, never recreated). It self-syncs from this repo hourly via the Apps Script in `sheet-sync.gs`, which builds human-first tabs: **Next up** (features ranked best-first, plain description, word-based Impact/Effort, a recommendation in words, Why now, and a one-click link to evidence), **Evidence** (one readable row per source with a clickable link), and **Theses** (field hypotheses and their direction). The repo CSVs (`matrix.csv`, `evidence.csv`, `knowledge/theses.csv`) are canonical. Javier's decisions and score adjustments are made by editing the repo (or asking Claude to), not in the sheet.
 
 `matrix.csv` is the canonical data where research becomes product: every feature recommendation for the Environments experience, scored and ranked. It opens directly in Excel, Numbers, or Google Sheets. The agent owns keeping it current; Javier owns decisions.
 
@@ -55,4 +55,4 @@ This is why a single mention can never rank high: at L0 the confidence multiplie
 
 - **The agent (every run)**: adds rows when an idea earns one, updates evidence links and maturity, recomputes Confidence, Priority, and Label, and never deletes a row (dropped rows are labeled, not removed).
 - **The agent (first run of each month)**: writes a short ranked recommendation in the brief — the top 3 candidates by priority with a one-line "why now" each, plus anything whose evidence changed enough to re-rank.
-- **Javier**: validates Impact/Effort where he disagrees (his numbers win; the agent records the override), runs or delegates the product checks, and decides Promote / Park / Drop.
+- **Javier**: validates Impact/Effort where he disagrees (tell Claude and the repo CSV is updated), runs or delegates the product checks, and decides Promote / Park / Drop.
