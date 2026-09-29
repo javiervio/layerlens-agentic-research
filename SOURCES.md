@@ -14,9 +14,10 @@ The weekly run happens in a cloud sandbox with a restricted network (a current p
 
 **The inboxes (primary fix for the egress block):** GitHub Actions harvesters run on GitHub's own runners (full internet) before each Monday run and commit content the cloud sandbox cannot fetch:
 - `inbox/arxiv/LATEST.md` (`tools/arxiv_harvest.py`): recent, relevance-filtered arXiv papers with verbatim abstracts and canonical links.
-- `inbox/competitors/LATEST.md` (`tools/competitor_harvest.py`): recent posts from competitor and reference-team blogs/changelogs (Braintrust, Arize, E2B, Browserbase, Modal, Prime Intellect, LangChain), pulled from their feeds, plus a coverage note listing any source with no feed (cover those via WebSearch).
+- `inbox/competitors/LATEST.md` (`tools/competitor_harvest.py`): recent posts from the 17-company competitor watchlist (feeds + sitemaps), plus a coverage note for any with no feed.
+- `inbox/reference/LATEST.md` (`tools/reference_harvest.py`): recent posts from frontier-lab blogs (OpenAI, Google DeepMind, Google Research, Microsoft Research, Hugging Face, Anthropic) and high-signal analysts (Interconnects, Import AI, Simon Willison, Latent Space). Curated for signal, not volume.
 
-Read BOTH inboxes first: they are directly-read primary text, not search summaries, and need no blocked fetch. They do not replace the four angles, they seed research and competitor coverage reliably so a run is never arxiv-only. Social (LinkedIn, X) has no harvester (those sites block automated fetch); cover it best-effort via WebSearch and log the gap honestly. For full text of a specific source, hand it to a local deep-read session.
+Read ALL THREE inboxes first: they are directly-read primary text, not search summaries, and need no blocked fetch. They do not replace the four angles, they seed research and competitor coverage reliably so a run is never arxiv-only. Social (LinkedIn, X) has no harvester (those sites block automated fetch); cover it best-effort via WebSearch and log the gap honestly. For full text of a specific source, hand it to a local deep-read session.
 
 How to read deeply anyway, in priority order:
 1. Read the arXiv inbox (`inbox/arxiv/LATEST.md`), then discover more with WebSearch.
