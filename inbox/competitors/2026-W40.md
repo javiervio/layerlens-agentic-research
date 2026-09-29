@@ -125,15 +125,15 @@ Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetche
 - date: 2026-09-29
 - link: https://browserbase.com/blog/why-you-can-t-just-run-chromium-in-a-sandbox
 
-### 1
+### The Browser Blog
 - date: 2026-09-29
 - link: https://browserbase.com/blog/page/1/
 
-### 2
+### The Browser Blog
 - date: 2026-09-29
 - link: https://browserbase.com/blog/page/2/
 
-### 3
+### The Browser Blog
 - date: 2026-09-29
 - link: https://browserbase.com/blog/page/3/
 
