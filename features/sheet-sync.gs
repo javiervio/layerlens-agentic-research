@@ -70,7 +70,8 @@ function setupSheet() {
   var EFFORT = 'IF(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),"")<>"",IFERROR(VLOOKUP(Data!A2:A,Overrides!A:C,3,0),""),Data!L2:L)';
   var CONF = 'LET(b,IF(Data!J2:J="L2",0.9,IF(Data!J2:J="L1",0.6,0.3))+IF(Data!P2:P="Checked",0.1,0),IF(b>1,1,b))';
   var PRIORITY = '=ARRAYFORMULA(IF(Data!A2:A="",,ROUND((' + IMPACT + ')*(' + CONF + ')/(' + EFFORT + '),2)))';
-  var LABEL = '=ARRAYFORMULA(IF(Data!A2:A="",,LET(im,' + IMPACT + ',ef,' + EFFORT + ',d,IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(Data!J2:J="L0","Needs evidence",IF((im>=4)*(ef<=2),"Quick win",IF((im>=4)*(ef>=4),"Big bet",IF((im<=2)*(ef>=4),"Reconsider","Proposed"))))))))';
+  // im/ef coerced to numbers via *1: Data is stored as text, and Sheets treats text>=number as always TRUE, which would break the comparisons.
+  var LABEL = '=ARRAYFORMULA(IF(Data!A2:A="",,LET(im,(' + IMPACT + ')*1,ef,(' + EFFORT + ')*1,d,IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,4,0),""),IF(d<>"",d,IF(Data!J2:J="L0","Needs evidence",IF((im>=4)*(ef<=2),"Quick win",IF((im>=4)*(ef>=4),"Big bet",IF((im<=2)*(ef>=4),"Reconsider","Proposed"))))))))';
   var OVERRIDE = '=ARRAYFORMULA(IF(Data!A2:A="",,IF((IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,2,0),"")<>"")+(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,3,0),"")<>"")+(IFERROR(VLOOKUP(Data!A2:A,Overrides!A:D,4,0),"")<>""),"yes","")))';
 
   // Matrix view. 'd' = pass-through Data col; 'f' = literal formula. Idea ID (Data G) intentionally NOT in the view.
