@@ -37,10 +37,11 @@ For each new claim, compare it to `knowledge/claims.md`: does it confirm, extend
 2. Update `knowledge/competitive.md` for any team finding, using the sequence in `PROTOCOL.md`: problem, their solution, its limits, our users' need, a LayerLens alternative, the comparison that would validate it.
 3. Append to `knowledge/changelog.md`: what changed this run, which prior claim it affects, and what is still in dispute.
 4. Update `ideas/backlog.md` (see `PROTOCOL.md`, "The ideas backlog"): for each finding with a product implication, attach its evidence to an existing idea (raise its evidence count and maturity if warranted) or create a new L0 idea. Update the prioritization table at the top. Never let a single mention reach L2 (ready to spec).
-5. Update `features/matrix.csv` (rules in `features/README.md`): add a row for any idea that gained a product-shaped hypothesis, refresh evidence links and maturity on existing rows, recompute Confidence, Priority, and Label. Never delete a row.
+5. Update `features/matrix.csv` (rules in `features/README.md`): add a row for any idea that gained a product-shaped hypothesis; keep **Impact (1-5), Effort (1-5), Maturity (L0/L1/L2), Status** accurate on every row. The Google Sheet DERIVES Confidence, Priority, the recommendation, and the label from those, so you do not hand-compute them for display; keep the CSV's own Confidence/Priority/Label columns roughly consistent but they are secondary. Every row must have all 24 columns filled (no blank cells; use "date unknown" etc., never blank). Never delete a row. Exact column order is the header of `features/matrix.csv`, match it.
 6. Update `knowledge/theses.md` direction arrows for any thesis the corroboration pass touched, appending the dated evidence to its timeline (support and counter-evidence alike). Promote a nursery item to a thesis only when a second independent evidence family arrives. Then mirror the change into `knowledge/theses.csv` (the sheet's Theses tab reads this): keep one row per thesis/nursery item with Direction, Evidence (#), Last change, and Stratix implication current.
 7. Keep `features/evidence.csv` current: one readable row per (feature, source) with the real source title, its link, what it says in plain language, and how it moved the feature (validated a hypothesis, raised priority, established the problem). This is what the sheet's Evidence tab shows a human, so no bare IDs; write it so someone can understand it cold. Keep a plain **Why now** sentence per feature in `matrix.csv`.
 8. Keep the two movement columns in `features/matrix.csv` current: **Evidence (#)** (count of independent evidence families for that feature) and **What moved** (a short dated line describing this run's change to the row: priority up/down, maturity change, new corroboration, or "no change"). These make validation and re-ranking visible in the sheet; do not bury movement in Notes.
+9. **Validate before committing (mandatory).** Run `python3 tools/validate.py`. It checks `matrix.csv`, `evidence.csv`, and `theses.csv` for correct headers, no blank cells, valid Impact/Effort/Maturity, unique feature IDs, and that every feature has at least one evidence row and every evidence row points to a real feature. If it prints problems, FIX them and re-run until it passes. Do not push a state that fails validation. (The three CSVs feed the Google Sheet; a malformed file half-fills or breaks the reader's view.)
 
 ## 4b. Monthly synthesis (first run of each month, top-down)
 
@@ -81,7 +82,10 @@ Create `runs/YYYY-MM-DD.md` recording: date, sources reviewed, sources that fail
 
 ## 8. Commit and push
 
+First validate (see step 9 of "Update the knowledge files"), then commit:
+
 ```
+python3 tools/validate.py    # must print "Validation passed"; fix and re-run if not
 git add -A
 git commit -m "Weekly research run: <date> (<n> cards, <m> claim changes)"
 git push origin main
