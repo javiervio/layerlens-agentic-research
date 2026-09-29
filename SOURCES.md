@@ -73,14 +73,26 @@ Keep roughly 20% of the search budget for evidence that could contradict what we
 
 Framed as "possible reference or competitor, pending our context." For each, find from their official site: docs, changelog, repo, status page, engineering blog, and public social. Record which exist and which were reachable this run.
 
-| Entity | Why it might matter | What to investigate |
-|---|---|---|
-| Braintrust | Evaluation and observability | How they compare experiments and runs, sandboxed evals, sharing |
-| Arize | Evaluation and observability | Moving from detected problems to criteria, tests, decisions |
-| E2B | Sandbox infrastructure | Sandbox lifecycle, tool integration, session continuity |
-| Browserbase | Web execution and interaction | Latency, developer experience, what they measure |
-| Prime Intellect | Training and environments | Environment construction, verification, RL sandboxes |
-| Modal | Infrastructure | Coordination of training, execution, environments; bottlenecks |
+Some entries below are inferred from LayerLens's own moat and persona docs (which name Braintrust, LangSmith, Opik, Databricks, Galileo, Vals AI) plus obvious peers; Javier should prune or add. "auto" = the harvester pulls its blog/changelog via feed or sitemap; "WebSearch" = no harvestable blog path, covered via search.
+
+| Entity | Category | Harvest | What to investigate |
+|---|---|---|---|
+| Braintrust | Evaluation / observability | auto (sitemap) | Comparing experiments and runs, sandboxed evals, sharing |
+| Arize | Evaluation / observability | auto (feed) | Moving from detected problems to criteria, tests, decisions |
+| Galileo | Evaluation / observability | auto (sitemap) | Agent eval, guardrails, how they frame reliability |
+| Comet / Opik | Evaluation / observability | auto (feed) | Open-source eval, tracing, judge/scorer approach |
+| Databricks | Eval platform (Mosaic AI Agent Eval) | auto (feed, broad) | Agent evaluation inside a data platform |
+| Patronus AI | Evaluation / guardrails | auto (sitemap) | Automated eval, hallucination/safety scoring |
+| Humanloop | Evaluation / prompt ops | auto (sitemap) | Eval workflows, human feedback |
+| Confident AI (DeepEval) | Open-source eval | auto (sitemap) | Metrics, judges, test-style evals |
+| Langfuse | Tracing / eval (open source) | WebSearch | Tracing, datasets, eval; verify blog/changelog path |
+| Vals AI | Independent model/agent evals | WebSearch | Named "most dangerous" in the moat doc; independent benchmarking |
+| E2B | Sandbox infrastructure | auto (feed) | Sandbox lifecycle, tool integration, session continuity |
+| Browserbase | Web execution and interaction | auto (sitemap) | Latency, developer experience, what they measure |
+| Daytona | Agent sandbox infrastructure | auto (feed) | Sandbox lifecycle, dev environments for agents |
+| Runloop | Agent sandbox infrastructure | auto (sitemap) | Sandboxes, benchmarking harnesses |
+| Prime Intellect | Training and environments | auto (sitemap) | Environment construction, verification, RL sandboxes |
+| Modal | Infrastructure | auto (sitemap) | Coordination of training, execution, environments; bottlenecks |
 
 The competitor harvester (`tools/competitor_harvest.py`) tries each source's RSS/Atom feed first, then falls back to its **sitemap.xml** for feedless sites (this reaches Braintrust, Browserbase, Modal, and Prime Intellect blogs/changelogs, which have no feed). Only sources with neither are logged "cover via WebSearch."
 

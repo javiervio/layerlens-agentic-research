@@ -30,6 +30,18 @@ SOURCES = [
         "https://www.primeintellect.ai/blog/rss.xml", "https://www.primeintellect.ai/rss.xml", "https://www.primeintellect.ai/index.xml"]),
     ("LangChain / LangSmith", "https://blog.langchain.com/", [
         "https://blog.langchain.com/rss/", "https://blog.langchain.dev/rss/"]),
+    # Evaluation / observability competitors (grounded in LayerLens moat + persona docs, plus obvious peers).
+    ("Galileo", "https://galileo.ai/blog", []),                       # sitemap
+    ("Comet / Opik", "https://www.comet.com/blog", ["https://www.comet.com/blog/feed"]),
+    ("Databricks", "https://www.databricks.com/blog", ["https://www.databricks.com/rss.xml"]),
+    ("Patronus AI", "https://www.patronus.ai/blog", []),              # sitemap
+    ("Humanloop", "https://humanloop.com/blog", []),                  # sitemap
+    ("Confident AI (DeepEval)", "https://www.confident-ai.com/blog", []),  # sitemap
+    ("Langfuse", "https://langfuse.com/blog", ["https://langfuse.com/rss.xml"]),  # likely WebSearch-only
+    ("Vals AI", "https://www.vals.ai", []),                           # no blog path; WebSearch-only, kept on radar
+    # Environment / sandbox infrastructure peers (flagship-adjacent).
+    ("Daytona", "https://www.daytona.io/blog", ["https://www.daytona.io/rss.xml"]),
+    ("Runloop", "https://www.runloop.ai/blog", []),                   # sitemap
 ]
 MAX_PER_SOURCE = 6
 WINDOW_DAYS = 120  # competitors post slowly; keep a wide window so the inbox is not empty
