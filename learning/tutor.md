@@ -64,3 +64,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## "System One" decision models versus generative LLM-as-judge
+
+- **Plain explanation** (from the brief): most AI judges today are LLMs writing a verdict in open-ended text ("this is correct because..."). A "System One" model does something narrower: it only answers questions you defined in advance, from a fixed set of possible answers (yes/no, a score, a choice among options), and it returns a confidence number with each answer instead of prose. Because it isn't generating open-ended text, it can be dramatically cheaper and faster — and a "confidence cascade" design (accept its verdict when confident, hand the case to a full LLM judge when not) can end up *more* accurate than either judge alone, not just cheaper.
+- **Example / counterexample**: this week's CMU paper (JEV-as-a-Judge) found a decision-only judge came within ~3 points of a top LLM judge at ~0.36% of its fee wherever a verdict could be read straight off the text — but it fell behind specifically on tasks needing a *derived* verdict (math, code, logic), where there's no shortcut from "read the text" to "know the answer." Counterexample/boundary: a confidence threshold tuned for one task did not transfer to another task in what was read — it has to be refit per task, so this isn't a drop-in universal judge.
+- **When it does not apply**: open-ended or novel judgments nobody predefined a question set for (does this proof hold? is this a good creative rewrite?) — exactly where LayerLens's own rubric-tuned Judge mechanism (distinct from a fixed answer-key Grader) already lives. A decision-only model has nowhere to route a question it wasn't built to ask.
+- **This week's exercise**: pick one thing LayerLens's Evaluations pillar currently checks with an AI Judge or Scorer. Could that specific check be decomposed into a handful of narrow, predefined yes/no or scored questions the way this pattern requires — and if so, what judgment-call flexibility would you lose by doing that?
+- **Source status**: read directly via two GitHub repos this run (a companion research scaffold citing the CMU paper's own numbers, and a separate reference harness implementing the same pattern for code-review gating) — the underlying arXiv paper itself was not reached (arxiv.org blocked). The headline numbers were also consistent across several independent secondary blog summaries (all separately blocked to direct fetch), which is part of why this is logged at moderate rather than low confidence despite the primary paper being unread. The bigger, separately-notable fact is that four competing eval/observability vendors (Arize, Confident AI, Langfuse, Browserbase) all covered this pattern independently within the same week — see `knowledge/competitive.md`'s new TypeSafe AI entry and `cards/jev-as-a-judge-confidence-cascade.md` / `cards/jev-harness-typed-decision-receipts.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
