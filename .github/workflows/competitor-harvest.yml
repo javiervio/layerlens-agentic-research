@@ -1,0 +1,39 @@
+name: Competitor harvest
+
+# GitHub Actions runners have full internet, so they can reach competitor blogs
+# and changelogs that the cloud research routine cannot. Pulls their RSS/Atom
+# feeds and commits recent posts into inbox/competitors/ for the routine to read.
+
+on:
+  schedule:
+    - cron: "10 5 * * 1"   # Mondays 05:10 UTC, after the arxiv harvest, before the 09:00 UTC research routine
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: competitor-harvest
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Harvest competitor feeds
+        run: python tools/competitor_harvest.py
+      - name: Commit results
+        run: |
+          git config user.name "competitor-harvester"
+          git config user.email "actions@github.com"
+          git add inbox/competitors
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Competitor harvest: $(date -u +%Y-%m-%d)"
+            git push
+          fi
