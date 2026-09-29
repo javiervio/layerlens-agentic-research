@@ -139,6 +139,23 @@ What other teams are doing, framed so it feeds LayerLens design decisions. The a
 - **Action**: investigate.
 - **Evidence links and dates**: canonical: https://github.com/PrimeIntellect-ai/prime-rl, https://github.com/PrimeIntellect-ai/verifiers; discovered via WebSearch 2026-09-25 (Prime Intellect is a seed "team to watch" in SOURCES.md); read 2026-09-25.
 
+**2026-09-29 update — the training-vs-evaluation question, partially answered (still incomplete access)**: A WebSearch summary of Prime Intellect's own "Environments Hub" blog post and docs (primeintellect.ai/blog/environments, docs.primeintellect.ai — both directly blocked again this run) states that the Hub supports both offline evaluation (a standalone CLI running remote-hosted evaluations) and online evaluation during training, using "the same rollout and verification entrypoints ... for either training or evaluation," with no translation layer between evaluation and production training runs, because each environment is a versioned Python package consumed directly by prime-rl. **This resolves the pending question from the 2026-09-25/28 runs in direction (yes, the Hub is used for evaluation, not purely training) but not in confidence** — this is still incomplete access (search-summary only, primeintellect.ai itself unreachable), so treat "evaluation" here as Prime Intellect's own definition (does an environment pass/fail against a verifier), not confirmed to mean versioned, attributed, human-facing evaluation the way LayerLens's Evaluations pillar does. Action: investigate further if primeintellect.ai ever becomes reachable, or ask Javier for a saved link.
+
+---
+
+### Modal — infrastructure-focused sandbox positioning; rotation coverage only, still unread first-party (new this run)
+
+- **Documented problem**: Teams running coding/DevOps/RL agents need code-execution sandboxes with fast cold starts, high concurrency, and (for some workloads) GPU access, without building that infrastructure themselves.
+- **Their solution**: Per search-summary-only descriptions of Modal's own blog ("Best Code Execution Sandboxes for AI Agents," and several workload-specific variants — OpenAI Agents SDK, DevOps agents, Claude Agent SDK, agentic/multi-turn RL), Modal Sandboxes are positioned around fast cold starts, scaling to 50,000+ concurrent sessions, and GPU-accelerated sandboxes alongside secure code execution — the only provider in the comparison set offering both, per the summary. Named users: Ramp (an internal tool, "Ramp Inspect") and Lovable (reportedly 1M+ sandboxes generated in a 48-hour event).
+- **Known limits**: modal.com is EGRESS_BLOCKED this run (a newly-confirmed blocked domain, added to the running list) — nothing here was read from Modal's own page directly, only a WebSearch summary of what appear to be Modal's own comparison/resource pages. Per PROTOCOL.md rule 4, none of these numbers (50,000+ concurrent, 10,000+ teams, the Lovable/Ramp figures) should be treated as confirmed; they read as vendor self-description relayed by search, not an independently verified benchmark.
+- **Result reported**: n/a — no independently-read result.
+- **Availability**: Generally available (commercial sandbox/compute platform).
+- **Our users' need**: Marginal direct overlap today — LayerLens's shipped system types are API/record-based (Salesforce, Linear, SEC EDGAR, Stripe, Gmail), not code-execution sandboxes; Modal is closer to an infra layer LayerLens's own environments could be built on than a product competitor, similar to the DSec/Planarian/DeltaBox lifecycle cluster (T-06) but focused on raw execution rather than state legibility.
+- **LayerLens alternative (hypothesis, pending validation)**: none yet — insufficient first-party evidence to state a difference in behavior or a product overlap.
+- **How to validate**: Next run, attempt modal.com directly again (or ask Javier for a saved link per PROTOCOL.md); if reachable, check whether Modal's sandbox lifecycle (snapshot/resume/fork) matches the pattern in T-06, which would make it directly relevant to I-0007.
+- **Action**: do nothing this run (rotation coverage only, per SOURCES.md's "rotate which teams you check" guidance — Modal had never been touched before this run).
+- **Evidence links and dates**: discovered via WebSearch 2026-09-29 ("Modal engineering blog agent sandbox environments 2026"); no first-party page opened (modal.com blocked); read 2026-09-29 (search summary only).
+
 ---
 
 ### E2B - Sandbox infrastructure; session-lifecycle claims could not be verified this run

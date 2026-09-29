@@ -8,7 +8,7 @@ The weekly run happens in a cloud sandbox with a restricted network (a current p
 
 - **WebSearch works** and returns real content and summaries. Treat it as the primary tool for BOTH discovery and first-pass reading.
 - **WebFetch reliably reaches:** github.com, raw.githubusercontent.com, anthropic.com, microsoft.com, plus package registries and major version-control and cloud hosts.
-- **WebFetch is blocked for** arxiv.org (all paths), huggingface.co, wikipedia, modelcontextprotocol.io, and most vendor blogs.
+- **WebFetch is blocked for** arxiv.org (all paths), huggingface.co, wikipedia, modelcontextprotocol.io, and most vendor blogs — confirmed as of 2026-09-29 to also include alphaxiv.org, pith.science, www.braintrust.dev, e2b.dev, www.primeintellect.ai/docs.primeintellect.ai, and modal.com. GitHub repos remain the reliable workaround: several arXiv papers this run had a companion GitHub repo (README with the paper's own numbers) that was fully reachable even though the paper's own arxiv.org page was not — always check for one before marking a source incomplete access.
 
 **The arXiv inbox (primary fix for the egress block):** a GitHub Actions harvester (`.github/workflows/arxiv-harvest.yml`, script `tools/arxiv_harvest.py`) runs on GitHub's own runners (full internet) before each Monday run and commits recent, relevance-filtered arXiv papers, with verbatim abstracts and canonical links, into `inbox/arxiv/LATEST.md`. Read that first: it is directly-read primary text, not a search summary, and it needs no arxiv.org fetch. For full text of a specific paper beyond its abstract, hand it to a local deep-read session.
 

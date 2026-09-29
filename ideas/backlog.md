@@ -23,12 +23,14 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 
 | ID | Idea | Open Q | Maturity | Evidence | Primary user outcome |
 |---|---|---|---|---|---|
-| I-0003 | Attribution as a location, every attribution a door | #2 | L1 | 2 | Faster, correct failure diagnosis |
+| I-0003 | Attribution as a location, every attribution a door | #2 | L1 | 4 | Faster, correct failure diagnosis |
 | I-0004 | Comparability guardrails + always show a tradeoff axis | #1, #9 | L1 | 2 | No false comparisons; no accuracy-only ranking |
-| I-0001 | Reliability-aware run counts + a pass^k readout | #5 | L1 | 1 | Capability vs reliability made visible; runs spent where they matter |
+| I-0001 | Reliability-aware run counts + a pass^k readout | #5 | L1 (evidence-complete, blocked only on product check) | 4 | Capability vs reliability made visible; runs spent where they matter |
+| I-0007 | Environment lifecycle legibility + checkpoint/branch a run | #7 | L1 | 3 | Understand and control environment state and lifetime |
 | I-0002 | "Why is this not solvable" feasibility explanation | #4 | L0 | 1 | Authors design solvable tasks faster |
-| I-0005 | Flag same-family judge/agent pairings | #2 | L0 | 1 | Judge verdicts trusted appropriately |
+| I-0005 | Flag same-family judge/agent pairings | #2 | L1 | 2 | Judge verdicts trusted appropriately |
 | I-0006 | Confirmations that name the specific consequence | #7 | L0 | 1 | Approve with understanding, not blindly |
+| I-0009 | Agent-actionable error/recovery guidance in tool surfaces | #2, #7 | L0 | 1 | Agents recover from real failures instead of following misleading human-oriented steps |
 
 ---
 
@@ -40,10 +42,13 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Open design question(s)**: #5 (reliability versus one lucky pass), with #1/#9 (comparison).
 - **Evidence** (accumulating):
   - C-0008, "Towards a Science of AI Agent Reliability" (Princeton, ICML 2026): pass@k vs pass^k, 12 reliability metrics across 4 dimensions, finding minimal reliability gains despite capability gains. https://arxiv.org/abs/2602.16666
+  - C-0013, "Same Winners, Different Success Rates": ordinal/set-agreement benchmarks provably hide reliability. https://arxiv.org/abs/2609.34215
+  - C-0019, "Identical Runs, Different Results": 584 real coding-agent runs — run-to-run variance (median 0.0107 AUC) exceeds agent-to-agent difference (mean 0.0095 AUC); three-run comparisons rank pairings unreliably; a third, independent, real-world evidence family. https://arxiv.org/abs/2609.33812
 - **Hypothesis** (Javier's, refined): LayerLens holds the task, the grader type, and, because minting is deterministic and free, can cheaply observe run-to-run variance. So it can (a) surface **pass^k as a first-class reliability readout** beside accuracy, and (b) **recommend how many attempts k** a task warrants, single-shot where an answer-key grader on a stable task suffices, multiple where variance is detected or reliability is the question. The adaptive form ("reliability not yet established, run N more" vs "stable across k, stop") is stronger than a static task-type lookup, because variance is empirical.
+- **Build caution (new, 2026-09-29)**: C-0024 ("Beyond Pass@k") shows some benchmarks compute pass@k wrong by conflating unit-test sub-results with independent rollouts, inflating scores by up to ~0.9 absolute in an illustrative case. Whatever "k attempts" LayerLens counts for a pass^k readout must be genuinely independent full-task rollouts, not sub-task or per-tool-call checks. https://arxiv.org/abs/2608.14711 (via companion repo, github.com/nv78/Research-CodeBench)
 - **Differentiator angle**: re-running is near-free here (deterministic free minting), so k-repeat reliability testing is economically viable in a way a paid or stateful competitor setup may not be. This makes the feature moat-aligned, not generic.
 - **How to validate**: (1) the design exercise, sketch the readout (2026-W40 brief); (2) product check, do Runs/Insights show reliability by default today (open Q#5); (3) user test, show two runs with equal accuracy but different pass^k and see whether users pick the reliable one and can explain why.
-- **Maturity**: L1 developing (one strong source + clear outcome + validation plan). To reach L2: a second independent source on measured run-to-run variance, plus the product check result.
+- **Maturity**: L1 developing — now backed by three independent evidence families plus a clear outcome and validation plan. **Evidence-complete**: the only thing standing between this and L2 is item (2), the product check, which needs someone with LayerLens product access; this idea should not need further external corroboration to be spec-ready once that check runs.
 - **Last update**: 2026-09-29.
 
 ## I-0002: "Why is this not solvable" feasibility explanation at task authoring
@@ -68,9 +73,11 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Evidence**:
   - C-0001, BenchJack: 8/8 audited benchmarks exploitable via weak agent/evaluator isolation and accessible ground truth. https://github.com/benchjack/benchjack
   - C-0006, HackDetect: independent audit, 2,385 traces across 15 benchmarks, 67% and 66.7% exploit rates. https://arxiv.org/abs/2607.22368
+  - C-0021, "Maintaining Benchmarks Against Increasingly Capable Agents": distinguishes evidenced reward-hacking from verifier weakness (env-vs-agent attribution, formalized); benchmark integrity is ongoing maintenance, not one-time. https://arxiv.org/abs/2609.34262
+  - C-0022, "Failure-Transparent Agents": a distinct attribution category (unsupported post-failure success claims); a structured evidence contract cut false-success from 22.8% to 0.8%, independently validating LayerLens's existing "claims stored beside verdicts, never used as evidence" design. https://arxiv.org/abs/2609.35732
 - **Hypothesis**: surface attribution as a location on the trace (where it broke) with a routed next action, not a log line, and make the trust wall's guarantees visible so a passing score is legibly not gameable.
 - **How to validate**: product check on the current attribution UI (open Q#2); design the trace-location surface; test whether users correctly assign blame faster.
-- **Maturity**: L1 developing (two independent corroborating sources + the core differentiator). To reach L2: the product-check result and a named user outcome measured against today's UI.
+- **Maturity**: L1 developing — now four independent corroborating sources plus the core differentiator, including one (C-0022) that validates a choice already shipped in V1. To reach L2: the product-check result and a named user outcome measured against today's UI.
 - **Last update**: 2026-09-29.
 
 ## I-0004: Comparability guardrails and always show a tradeoff axis
@@ -110,10 +117,13 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Open design question(s)**: env state/lifetime (control and recovery) and deterministic replay as a visible surface.
 - **Evidence**:
   - C-0012, DeepSeek DSec: stateful pause/resume via snapshots and `pack_diff` (checkpoint a sandbox, restore as a new one) exist as backend capabilities at industrial scale. https://arxiv.org/abs/2609.22978
+  - C-0020, Planarian: "agent statepoints" generalize snapshot/rollback/fork to both local AND remote system state via compensating actions — a different team, and the closest external match yet to LayerLens's own system-type shape (Salesforce/Linear/Stripe as remote state); reports up to 15x task-quality improvement. https://arxiv.org/abs/2609.35366
+  - C-0023, Counterfactual Rollout Replay: fork/restore applied to RL training reward-shaping, a third distinct angle (training, not infra or runtime UX). https://arxiv.org/abs/2609.33875
+  - (pending, incomplete access) DeltaBox: reported millisecond-level checkpoint/rollback via change-based state capture — not yet independently confirmed; see `cards/deltabox-checkpoint-rollback.md`.
 - **Hypothesis**: the infra capability (snapshot, checkpoint/branch) is proven and commoditizing; LayerLens's opportunity is not to build the infra but to make lifecycle legible and verifiable in the product, show what state persists, when an environment ends, and offer checkpoint/branch/replay as first-class, attributable actions.
-- **Differentiator angle**: DSec makes checkpointing a backend feature; making it a legible, verifiable product surface (deterministic replay you can see and trust) is the LayerLens expression, tied to our replayability moat asset.
-- **How to validate**: a second independent source on lifecycle-as-UX (not just infra), plus a designer prototype of a checkpoint/branch/replay affordance on an environment run.
-- **Maturity**: L0 nascent (one source, and it is an infra paper, not a product/UX study). To reach L1: a second source or a confirmed user need.
+- **Differentiator angle**: DSec makes checkpointing a backend feature; making it a legible, verifiable product surface (deterministic replay you can see and trust) is the LayerLens expression, tied to our replayability moat asset. Planarian's remote-state generalization is especially close to our own product shape.
+- **How to validate**: a designer prototype of a checkpoint/branch/replay affordance on an environment run, and a product check on whether any of this is discoverable in today's UI.
+- **Maturity**: **L1 developing (upgraded 2026-09-29 from L0)**: now three independent evidence families (DSec, Planarian, Counterfactual Rollout Replay) converging on the same mechanism from three different angles (infra scale, agent-runtime UX, RL training) — promotes thesis T-06. To reach L2: a named user outcome and a validation plan result (the designer prototype).
 - **Last update**: 2026-09-29.
 
 ## I-0008: Establish ground truth for a user-built or prod-imported world
@@ -142,4 +152,19 @@ Each entry records: the problem/pain point, the persona, the user outcome (time 
 - **Hypothesis**: for actions that write to an environment, the confirmation names the specific record or field that will change, not a generic "are you sure?"
 - **How to validate**: product check on the current confirmation UI (open Q#7); design a consequence-preview confirmation.
 - **Maturity**: L0 nascent (one source). To reach L1: a second source on consequence-preview confirmations, or a validated outcome.
+- **Last update**: 2026-09-29.
+
+## I-0009: Agent-actionable error and recovery guidance in tool/environment surfaces
+
+- **Problem / pain point**: Tool and API error messages are written for human developers (run a command, edit a config, open a web page). Agents that read these messages often follow the human-oriented step literally, and fail to recover — and, counterintuitively, more capable models follow the bad step more faithfully, not less.
+- **Persona**: Devon (agent engineer, debugging why an agent got stuck on a real system); Evan (evaluation owner, wants failures attributed to the right cause).
+- **User outcome**: agents recover from real, tool-level failures inside a LayerLens environment instead of silently following advice they cannot act on; failures get attributed to "misleading tool surface" rather than misfiled as "agent error."
+- **Open design question(s)**: #2 (failure attribution — a misleading error message is its own nameable failure class), #7 (recovery).
+- **Evidence**:
+  - C-0018, "MCP Error Messages Written for Developers Hurt the Most Capable Agents Most": in 150 MCP servers, 949/3,001 error messages give human-oriented next steps; following them left recovery as low as 6% (rate limits) or cost up to 69 points of task score (credentials, GPT-6 Astra); naming an actual tool call in the message raised recovery to 84-88%. https://arxiv.org/abs/2609.35381
+  - Connects to new thesis T-07 (capability amplifies, not dampens, exploitation of flawed interfaces) via C-0021.
+- **Hypothesis**: LayerLens's own shipped system types (Salesforce, Linear, SEC EDGAR, Stripe, Gmail) wrap real APIs with real, human-authored error surfaces — this is not a hypothetical failure mode for us. An environment could audit or annotate its tool error surfaces for agent-actionability (does the message name a call the agent can actually make?), and surface a "misleading tool surface" attribution category distinct from agent error.
+- **Dedup**: checked against I-0002 (task feasibility, about design-time solvability) and I-0006 (pre-action confirmation consequences); distinct — this is about run-time recovery guidance after a tool failure, not before-the-fact confirmation or task-level solvability.
+- **How to validate**: audit a sample of LayerLens's own system-type error surfaces (Salesforce/Linear/Stripe/etc.) for the same human-oriented-step pattern the paper documents; if found, prototype a tool-call-naming rewrite and measure recovery.
+- **Maturity**: L0 nascent (one source, though it connects to a two-family thesis, T-07). To reach L1: a second source specifically on agent-actionable error design, or the internal audit result.
 - **Last update**: 2026-09-29.

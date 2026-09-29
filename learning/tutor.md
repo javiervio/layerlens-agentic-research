@@ -32,3 +32,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## reliability@k versus (broken) pass@k: what counts as "one try"?
+
+- **Plain explanation** (from the brief): Last week's pass@k vs pass^k distinction assumed you already know how to count "k tries." This week found a sharper problem underneath: some benchmarks count k by treating unit tests *inside one submission* as if they were separate independent attempts, instead of counting genuinely independent full-task rollouts. That's like grading a single exam attempt by counting each question as a separate "try" — it makes a shaky result look far more consistent than it is.
+- **Example / counterexample**: on real SWE-bench tasks, the mean hidden-test pass rate (fraction of individual tests passing, averaged) was 0.80 — looks strong. The strict resolve rate (did the whole task get solved correctly, as one real attempt) was 0.20 for the same runs — a 4x difference, purely from how "k" got counted. Counterexample/boundary: this specific trap only bites when a benchmark reports a "pass@k"-style number built from sub-results within one run; a benchmark that always reports single-attempt pass/fail has nothing to miscount.
+- **When it does not apply**: if LayerLens (or anyone) only ever reports single-attempt, single-task outcomes with no k involved, this exact trap doesn't apply — but the moment a "how often does this agent succeed" number gets built from repeated attempts, this is the first thing to check.
+- **This week's exercise**: pick one of LayerLens's shipped system types (Salesforce, Linear, SEC EDGAR, Stripe, or Gmail) and sketch, in words, what its 2-3 most common tool-call error messages probably look like today. For each, note whether an agent reading it could act on it directly (e.g. names a specific tool to call), or whether it reads like it was written for a human developer (e.g. "check your API key in the dashboard").
+- **Source status**: the correction itself was read directly via a companion GitHub repo (github.com/nv78/Research-CodeBench); the underlying arXiv paper (2608.14711) was not opened directly (arxiv.org blocked) and author identities are not independently confirmed. Treat the mechanism and the qualitative direction as solid; treat the specific numbers as reported-by-the-repo, not independently re-derived. See `cards/reliability-at-k-vs-misapplied-pass-at-k.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
