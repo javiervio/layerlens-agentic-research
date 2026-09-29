@@ -38,7 +38,8 @@ For each new claim, compare it to `knowledge/claims.md`: does it confirm, extend
 3. Append to `knowledge/changelog.md`: what changed this run, which prior claim it affects, and what is still in dispute.
 4. Update `ideas/backlog.md` (see `PROTOCOL.md`, "The ideas backlog"): for each finding with a product implication, attach its evidence to an existing idea (raise its evidence count and maturity if warranted) or create a new L0 idea. Update the prioritization table at the top. Never let a single mention reach L2 (ready to spec).
 5. Update `features/matrix.csv` (rules in `features/README.md`): add a row for any idea that gained a product-shaped hypothesis, refresh evidence links and maturity on existing rows, recompute Confidence, Priority, and Label. Never delete a row.
-6. Update `knowledge/theses.md` direction arrows for any thesis the corroboration pass touched, appending the dated evidence to its timeline (support and counter-evidence alike). Promote a nursery item to a thesis only when a second independent evidence family arrives.
+6. Update `knowledge/theses.md` direction arrows for any thesis the corroboration pass touched, appending the dated evidence to its timeline (support and counter-evidence alike). Promote a nursery item to a thesis only when a second independent evidence family arrives. Then mirror the change into `knowledge/theses.csv` (the sheet's Theses tab reads this): keep one row per thesis/nursery item with Direction, Evidence (#), Last change, and Stratix implication current.
+7. Keep the two movement columns in `features/matrix.csv` current: **Evidence (#)** (count of independent evidence families for that feature) and **What moved** (a short dated line describing this run's change to the row: priority up/down, maturity change, new corroboration, or "no change"). These make validation and re-ranking visible in the sheet; do not bury movement in Notes.
 
 ## 4b. Monthly synthesis (first run of each month, top-down)
 
