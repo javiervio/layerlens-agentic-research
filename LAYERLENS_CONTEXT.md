@@ -2,6 +2,8 @@
 
 This is what makes the research ours. The agent reads this every run and ties findings back to it. **Javier: correct anything wrong or stale. Treat unverified items as unknown, never as fact.**
 
+<!-- CONTEXT_REVIEWED: 2026-09-29 --> **Context reviewed: 2026-09-29.** Bump this date (and the marker comment) whenever you confirm or correct this file. The weekly health check flags it if it goes stale (~60 days), because every "apply to LayerLens" hypothesis rests on this file being current.
+
 **Source of truth is v1, the shipped product.** This file separates three things and labels every section:
 - **[V1]** what exists today, the shipped reality and the source of truth.
 - **[PUBLIC]** the live public site positioning (current).

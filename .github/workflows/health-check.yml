@@ -1,0 +1,48 @@
+name: Health check
+
+# Detects silent failures (missed run, stale/empty inbox, token expiry, stale context)
+# and opens/updates a single GitHub issue so the owner gets an email. Silent when healthy.
+
+on:
+  schedule:
+    - cron: "0 15 * * 1"   # Mondays 15:00 UTC, a few hours after the 09:00 research routine
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # need history for the "last run" check
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run health check
+        id: hc
+        run: |
+          if python tools/health_check.py > health_report.txt 2>&1; then
+            echo "status=ok" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=problems" >> "$GITHUB_OUTPUT"
+          fi
+          cat health_report.txt
+      - name: Open or update issue on problems
+        if: steps.hc.outputs.status == 'problems'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Research system health alert"
+          BODY="$(cat health_report.txt)
+
+          _Automated weekly health check. Re-runs Mondays; this issue updates rather than duplicating. Close it once resolved._"
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
