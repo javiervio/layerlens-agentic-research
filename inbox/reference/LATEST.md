@@ -1,4 +1,4 @@
-# Reference-sources harvest 2026-W42 (fetched 2026-10-12)
+# Reference-sources harvest 2026-W43 (fetched 2026-10-19)
 
 Recent posts from frontier-lab blogs and high-signal analysts, pulled from their feeds/sitemaps by a GitHub Actions runner (the cloud research sandbox cannot reach most of these directly). Read alongside inbox/arxiv/ and inbox/competitors/. Curated for signal, not volume; sources with no feed are listed for WebSearch coverage.
 
@@ -18,68 +18,88 @@ Recent posts from frontier-lab blogs and high-signal analysts, pulled from their
 ## OpenAI
 Source: https://openai.com/blog/rss.xml | Home: https://openai.com/news/
 
-### Sophos cuts threat investigation time by 96% with OpenAI Daybreak
-- date: Fri, 09 Oct 2026
-- link: https://openai.com/index/sophos
+### How Itaú is building generative AI for its entire customer base
+- date: Fri, 16 Oct 2026
+- link: https://openai.com/index/itau-generative-ai
 
-Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.
-### Asana cuts model costs 76x in browser tests with GPT-6.1 Sol
-- date: Fri, 09 Oct 2026
-- link: https://openai.com/index/asana-browser-agent
+With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors.
+### Benefit Street Partners answers questions faster with Codex
+- date: Fri, 16 Oct 2026
+- link: https://openai.com/index/benefit-street-partners
 
-Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.
-### How Oracle turns days of work into minutes with ChatGPT and Codex
-- date: Thu, 08 Oct 2026
-- link: https://openai.com/index/oracle
+Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.
+### Stack Overflow for Agents triples signups with ChatGPT plugin
+- date: Fri, 16 Oct 2026
+- link: https://openai.com/index/stack-overflow-chatgpt-plugin
 
-Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.
-### Pollo AI turns creative ideas into campaigns with OpenAI
-- date: Thu, 08 Oct 2026
-- link: https://openai.com/index/pollo-ai
+Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.
+### Bringing GPT-Rosalind to academic research labs
+- date: Thu, 15 Oct 2026
+- link: https://openai.com/index/introducing-the-rosalind-academic-plan
 
-With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.
-### LegalOn halves Codex costs while maintaining development speed
-- date: Thu, 08 Oct 2026
-- link: https://openai.com/index/legalon-halves-codex-costs
+Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.
+### Teaching students to think and learn through questions
+- date: Thu, 15 Oct 2026
+- link: https://openai.com/index/teaching-students-to-think-and-learn-through-questions
 
-LegalOn cut estimated daily Codex costs by 65% while maintaining development speed. It matched Astra, Sol, and Luna to tasks and managed budgets strategically.
-### Disrupting AI-enabled “false front” operations
-- date: Thu, 08 Oct 2026
-- link: https://openai.com/index/disrupting-ai-enabled-false-front-operations
+Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.
+### Sullivan & Cromwell brings legal expertise into agreement review
+- date: Thu, 15 Oct 2026
+- link: https://openai.com/index/sullivan-cromwell
 
-OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.
+In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.
 ## Google DeepMind
 Source: https://deepmind.google/blog/rss.xml | Home: https://deepmind.google/discover/blog/
+
+### Accelerating the search for antimicrobial peptides with Google Antigravity
+- date: Thu, 15 Oct 2026
+- link: https://deepmind.google/blog/accelerating-antimicrobial-discovery/
+
+Accelerating the search for novel antimicrobial peptides using Google Antigravity for Science.
+### Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection
+- date: Wed, 14 Oct 2026
+- link: https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
+
+Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.
+### Developing Gemini 4 Argon responsibly and safely
+- date: Tue, 13 Oct 2026
+- link: https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/
+
+### Gemini 4 Argon for Robotics
+- date: Tue, 13 Oct 2026
+- link: https://deepmind.google/blog/gemini-4-argon-for-robotics/
+
+### Gemini 4 Argon: Built to solve your hardest problems
+- date: Tue, 13 Oct 2026
+- link: https://deepmind.google/blog/introducing-gemini-4-argon/
 
 ### EmbeddingGemma 2: an open, lightweight multimodal embedding model
 - date: Tue, 06 Oct 2026
 - link: https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
 
-### Gemini 4 Argon: our next era of frontier intelligence
-- date: Wed, 30 Sep 2026
-- link: https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
-
-### Introducing SynthID Bio
-- date: Wed, 30 Sep 2026
-- link: https://deepmind.google/blog/introducing-synthid-bio/
-
-Proof of concept for watermarking AI-generated proteins while preserving biological function.
-### Introducing Gemini 3.8 Live with Live Avatar
-- date: Thu, 24 Sep 2026
-- link: https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
-
-### Advancing Private AI Compute with secure, server-side memory
-- date: Wed, 23 Sep 2026
-- link: https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
-
-Introducing private, server-side memory to Private AI Compute for personal AI.
-### Gemini 3.8 text-to-speech says hello
-- date: Wed, 23 Sep 2026
-- link: https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
-
 ## Google Research
 Source: https://research.google/blog/rss/ | Home: https://research.google/blog/
 
+### Grounding AI agents in biological reality: Building blocks for autonomous wet labs
+- date: Fri, 16 Oct 2026
+- link: https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/
+
+General Science
+### Putting Earth AI to work: Geospatial agents for our planet's biggest challenges
+- date: Wed, 14 Oct 2026
+- link: https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/
+
+Earth AI
+### Analyzing technical documents with Deep Review
+- date: Wed, 14 Oct 2026
+- link: https://research.google/blog/analyzing-technical-documents-with-deep-review/
+
+General Science
+### Research@ 2026: 10 ways we're amplifying human ingenuity
+- date: Wed, 14 Oct 2026
+- link: https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/
+
+General Science
 ### Does better work always mean better workers?
 - date: Wed, 07 Oct 2026
 - link: https://research.google/blog/does-better-work-always-mean-better-workers/
@@ -89,29 +109,21 @@ Source: https://research.google/blog/rss/ | Home: https://research.google/blog/
 - link: https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/
 
 Earth AI
-### Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle
-- date: Mon, 05 Oct 2026
-- link: https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/
-
-Generative AI
-### Toward provably private learning from federated data
-- date: Fri, 02 Oct 2026
-- link: https://research.google/blog/toward-provably-private-learning-from-federated-data/
-
-Mobile Systems
-### How Diffusion Controller unifies and simplifies AI image generation
-- date: Tue, 29 Sep 2026
-- link: https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/
-
-Algorithms & Theory
-### Automating coherent long-form video generation
-- date: Thu, 24 Sep 2026
-- link: https://research.google/blog/coherent-long-form-video-generation/
-
-Generative AI
 ## Microsoft Research
 Source: https://www.microsoft.com/en-us/research/feed/ | Home: https://www.microsoft.com/en-us/research/blog/
 
+### Proof-based general-purpose computing with Magnetar
+- date: Thu, 15 Oct 2026
+- link: https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/
+
+Zero-knowledge proofs can verify computing results without rerunning workloads or exposing sensitive data. Magnetar helps bring them into the mainstream with support for standard programming languages, major speed gains, and quantum-resistant security.
+The post Proof-based general-purpose computing with Magnetar appeared first on Microsoft Research.
+### Simulating student learning for better AI tutoring
+- date: Mon, 12 Oct 2026
+- link: https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/
+
+StudentSim is a research system for evaluating and improving AI tutoring tools before they are tested with learners. It models how individuals may engage with tutors, giving feedback to improve tutor performance across subjects like chess, writing, and mathematics.
+The post Simulating student learning for better AI tutoring appeared first on Microsoft Research.
 ### Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses
 - date: Wed, 07 Oct 2026
 - link: https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/
@@ -136,75 +148,68 @@ The post Forecasting space weather risks on power grids appeared first on Micros
 
 Biology doesn't operate in silos, and neither should the AI representation of it. Quine is an early-stage research effort to create a multimodal world model of biology. By connecting insights across biological scales and modalities, Quine helps scientists computationally search a space far larger than intuition allows and prioritize hypotheses before they reach the lab. Experimental results provide important feedback, helping researchers sharpen future research directions.
 The post Introducing Q
-### One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact
-- date: Mon, 28 Sep 2026
-- link: https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/
-
-Since launching a year ago, the Microsoft Research Asia — Singapore lab has established a strong foundation, deepened collaboration across government, academia, and industry, and explored how frontier AI research can create real-world value.
-The post One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact appeared first on Microsoft Research.
-### Offloaded inference for real-world physical AI robotics
-- date: Wed, 23 Sep 2026
-- link: https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/
-
-Robots are getting smarter, but how can their hardware match that growth? New Microsoft Research findings show that moving AI inference beyond the robot can improve task success, boost efficiency, and support more advanced physical AI workloads.
-The post Offloaded inference for real-world physical AI robotics appeared first on Microsoft Research.
 ## Hugging Face
 Source: https://huggingface.co/blog/feed.xml | Home: https://huggingface.co/blog
 
-### Impactful scheduling for GPU clusters
-- date: Fri, 09 Oct 2026
-- link: https://huggingface.co/blog/allenai/impactful-scheduling
+### Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline
+- date: Fri, 16 Oct 2026
+- link: https://huggingface.co/blog/nvidia/scaling-indic-pretraining
 
-### The model that didn't exist, so you made it yourself
-- date: Thu, 08 Oct 2026
-- link: https://huggingface.co/blog/building-with-ml-intern
+### Welcome Beam: a 501B open model you can own, customize, and scale
+- date: Fri, 16 Oct 2026
+- link: https://huggingface.co/blog/reflection-beam
 
-### Multimodal open d1 decision models for the edge
-- date: Wed, 07 Oct 2026
-- link: https://huggingface.co/blog/LiquidAI/open-d1
+### Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint
+- date: Thu, 15 Oct 2026
+- link: https://huggingface.co/blog/ibm-granite/granite-switch-4-1
 
-### Introducing Falcon ASR
-- date: Wed, 07 Oct 2026
-- link: https://huggingface.co/blog/tiiuae/falcon-asr
+### Apertus 1.5 Release Notes
+- date: Thu, 15 Oct 2026
+- link: https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes
 
-### One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO
-- date: Wed, 07 Oct 2026
-- link: https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026
+### Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
+- date: Thu, 15 Oct 2026
+- link: https://huggingface.co/blog/meta-muse-spark-open
 
-### The Agent Said It Was Done. The Database Disagreed.
-- date: Sat, 03 Oct 2026
-- link: https://huggingface.co/blog/microsoft/thinkingbox
+### Welcome FLUX.3 Image Klein in Diffusers
+- date: Thu, 15 Oct 2026
+- link: https://huggingface.co/blog/flux-3
 
 ## Anthropic
 Source: https://www.anthropic.com/sitemap.xml (sitemap fallback) | Home: https://www.anthropic.com/news
 
-### Investigating unintended model actions in our evaluations and internal use
-- date: 2026-10-10
-- link: https://www.anthropic.com/research/investigating-unintended-model-actions
+### Investing in the public benefit
+- date: 2026-10-18
+- link: https://www.anthropic.com/news/public-benefit-fund
 
-### Introducing Claude Corps
-- date: 2026-10-09
-- link: https://www.anthropic.com/news/claude-corps
+### The AI expectations gap
+- date: 2026-10-17
+- link: https://www.anthropic.com/research/ai-expectations-gap
 
-### An opt-in vulnerability-finding service for open-source software
-- date: 2026-10-09
-- link: https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source
+### Designing more efficient quantum circuits with Claude
+- date: 2026-10-17
+- link: https://www.anthropic.com/research/designing-efficient-quantum-circuits
 
-### Using Claude Science to produce the first complete map of the sky in UV light
-- date: 2026-10-09
-- link: https://www.anthropic.com/research/the-missing-map-of-the-sky
+### Claude reveals ECDSA curve origins
+- date: 2026-10-17
+- link: https://www.anthropic.com/research/ecdsa-curve-origins
 
-### 2026 Usage Policy update
-- date: 2026-10-08
-- link: https://www.anthropic.com/news/2026-usage-policy-update
+### How employment is changing at Anthropic
+- date: 2026-10-17
+- link: https://www.anthropic.com/research/employment-at-anthropic
 
-### Introducing the Anthropic Cyber Mission
-- date: 2026-10-08
-- link: https://www.anthropic.com/news/anthropic-cyber-mission
+### Working at the frontier shapes expectations for the future
+- date: 2026-10-17
+- link: https://www.anthropic.com/research/expectations-for-the-future
 
 ## Interconnects (Nathan Lambert)
 Source: https://www.interconnects.ai/feed | Home: https://www.interconnects.ai/
 
+### Meta shakes up the frontiers, open and closed
+- date: Sat, 17 Oct 2026
+- link: https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open
+
+US open weights are back!
 ### I expect rapid progress but not towards general superintelligence
 - date: Fri, 09 Oct 2026
 - link: https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards
@@ -230,96 +235,99 @@ The expanded form of a testimony I prepared for Congress.
 - link: https://www.interconnects.ai/p/where-i-stand-on-rsi
 
 An &#8220;AI moderate&#8217;s&#8221; view on recent events and the trajectory of frontier models.
-### Open-Source AI & Open Models Reading List
-- date: Fri, 11 Sep 2026
-- link: https://www.interconnects.ai/p/open-source-ai-reading-list
-
-How to get up to speed on open models and their implications.
 ## Simon Willison
 Source: https://simonwillison.net/atom/everything/ | Home: https://simonwillison.net/
 
-### Dwarf Fortress uses version control now
-- date: 2026-10-11
-- link: https://simonwillison.net/2026/Oct/11/dwarf-fortress/
+### llm-tools-datasette 0.1.1
+- date: 2026-10-18
+- link: https://simonwillison.net/2026/Oct/18/llm-tools-datasette/
 
-I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more. That's art.
-I went looking and I'm sad to report that the days without version control appear to have ended. Quoting Tarn Adams over time:
+Release: llm-tools-datasette 0.1.1
+        When I switched LLM over to httpx2 in LLM 0.33 I forget that this would break any plugins which used httpx without directly depending on it. llm-tools-datasette was one of those plugins, now fixed.
+    
+    
+        Tags: datasette, llm
+### llm-echo 0.5
+- date: 2026-10-18
+- link: https://simonwillison.net/2026/Oct/18/llm-echo/
 
-March 2013: "I don't use version control -- I didn't like the feeling of having the code get committed into a black box thi
-### Python 3.15.0 added to actions/python-versions
-- date: 2026-10-10
-- link: https://simonwillison.net/2026/Oct/10/python-actions/
+Release: llm-echo 0.5
+        I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a "model" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account.
+Example usage:
+uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage
 
-Python 3.15.0 added to actions/python-versions
-Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it:
+Outputs:
+First I consider 
+### Inline rendering with document​.currentScript
+- date: 2026-10-17
+- link: https://simonwillison.net/2026/Oct/17/document-currentscript/
 
-Clone https://github.com/actions/python-versions  and git pull once an hour until they add the stable  3.15 - then tell me about it
+Inline rendering with document​.currentScript
+Lean Rada describes a neat trick that takes advantage of the document.currentScript property. You can use that to drop in a tiny inline &lt;script&gt; element that replaces itself when the page loads:
+The year is &lt;script&gt;
+document.currentScript.replaceWith(
+  new Date().getFullYear())&lt;/script&gt;
 
-Now that this has landed, you can add "3.15" to a GitHub Actions testing matrix to run tests against the new Python 3.15.0 release.
+If you define a shortcut function like this:
+$=(...n)=&gt;document.currentScript.replaceWith(...n)
 
+You get a tiny template language:
+The year is 
+### web-edit 0.1a2
+- date: 2026-10-17
+- link: https://simonwillison.net/2026/Oct/17/web-edit/
 
-    Tags: github, python, github-actions, chatgpt
-### Quoting The New York Times
-- date: 2026-10-10
-- link: https://simonwillison.net/2026/Oct/10/the-new-york-times/
+Release: web-edit 0.1a2
+        web-edit (previously) is my tiny web app for browsing and editing files in a folder. I mainly built it for editing files on different machines via Tailscale.
+I added a "copy to clipboard" option for both text and image data. I needed this because I was running pelican prompts on a laptop from my phone (here's DeepSeek 4.1 Flash 1017) and I wanted an easy way to copy the resulting logs into a Gist.
+    
+    
+        Tags: projects, pelican-riding-a-bicycle, deepsee
+### Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang
+- date: 2026-10-16
+- link: https://simonwillison.net/2026/Oct/16/code-review/
 
-Anthropic detailed the activity of its A.I. agents in a blog post on Friday, without naming the targeted websites. But two sources with knowledge of the incidents said Anthropic’s A.I. agents had submitted 20 visa applications through a form available on the State Department’s website. All the applications were incomplete and were not processed, they said.
-&mdash; The New York Times, Anthropic Agents Tried to Fill Out Visa Forms on State Dept. Website
+We think "did a human read the code?" is an imprecise proxy for "what could go wrong with this change, and which check—automated or human—is the right one to catch it?"
+Asking that question also changed when review happens. Before, review was a gate at the end of the road: write the code, open a PR, wait for your colleague.
+Now, review runs continuously, more like spellcheck while you write. Most changes have been reviewed and fixed by Claude at least once before a human is asked to look. This c
+### Chirp Pong
+- date: 2026-10-15
+- link: https://simonwillison.net/2026/Oct/15/chirp-pong/
 
-    Tags: accidental-cyberattacks, anthropi
-### Deno is joining Cloudflare
-- date: 2026-10-09
-- link: https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/
+Tool: Chirp Pong
+        Another game experiment - I wanted to see if it was feasible to have a two player game on two separate phones running in static HTML where the networking code uses chirps sent via the microphone. It seems to work!
 
-Deno is joining Cloudflare
-The Deno team released the first version of celld back in August - their open source implementation of the Durable Objects pattern from Cloudflare Workers.
-Today, Cloudflare are acquiring Deno outright, with the goal of building on celld to "make workerd self-hosting a first-class supported way to build and run apps using the Workers programming model" (see the Cloudflare blog.)
-The bad news is that Deno itself will not be maintained by Cloudflare beyond the next year:
-### Quoting Matthew Green
-- date: 2026-10-09
-- link: https://simonwillison.net/2026/Oct/9/matthew-green/
-
-Everyone is very concerned about being respectable, so I’m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...]
-The problem here is that the speed of AI producing surprises, and the speed of human beings replacing standards (even with the very best AI assistance) are just orders of magnitude different. You only recover from a surpris
-### A new feature for my blog, built using my voice
-- date: 2026-10-09
-- link: https://simonwillison.net/2026/Oct/9/built-using-my-voice/
-
-I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while I cooked dinner.
-Codex voice mode
-I used the ChatGPT desktop app for this, in the Codex tab, using the voice conversation mode, running against a local development environment. Here's what that looks like:
-
-I started the
+Build a two player competitive pong like game where two players use their phones close to each other and the game state is sent via audio noises which the web microphone API can interpret - but add graphical and gameplay twists to make it a lot more fun and in
 ## Latent Space
 Source: https://www.latent.space/feed | Home: https://www.latent.space/
 
-### [Subscriber Exclusive] NYC Subscriber Meetups!
-- date: Sat, 10 Oct 2026
-- link: https://www.latent.space/p/nyc2026
+### [AINews] High Taste Testers Ep. 1
+- date: Sat, 17 Oct 2026
+- link: https://www.latent.space/p/ainews-high-taste-testers-ep-1
 
-Tomorrow and Tuesday. If you see this you&#8217;re in!
-### Building AI for Reliable Execution: Lessons From Industrial Robotics
-- date: Sat, 10 Oct 2026
-- link: https://www.latent.space/p/standard-bots
+a quiet day lets us pilot a new show
+### [AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment
+- date: Fri, 16 Oct 2026
+- link: https://www.latent.space/p/ainews-agents-disprove-polysemanticity
 
-Inside Standard Bots&#8217; AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments.
-### [AINews] TypeSafe/Jev at >$100M ARR, $7.5B valuation 3 weeks after launch
-- date: Sat, 10 Oct 2026
-- link: https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b
+Nick Cammarata out of nowhere with some major claims!
+### [AINews] Modal’s $1B ARR, $16B Series D makes it NYC’s newest AI Infra Decacorn, 3x usage and 3x valuation in 5 months, 15x in 1 yr
+- date: Thu, 15 Oct 2026
+- link: https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d
 
-Wow.
-### Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub
-- date: Sat, 10 Oct 2026
-- link: https://www.latent.space/p/biohub-deepmind
+Sandboxes are all you need.
+### Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents
+- date: Wed, 14 Oct 2026
+- link: https://www.latent.space/p/crossing-the-threshold
 
-From the Bitter Lesson of AI scaling to the unsolved mysteries of protein folding, Google DeepMind&#8217;s Pushmeet Kohli and Biohub&#8217;s Sal Candido are rethinking what it takes to build AI that truly understands biology.
-### [AINews] not much happened today
-- date: Thu, 08 Oct 2026
-- link: https://www.latent.space/p/ainews-not-much-happened-today-60f
+At AI Engineer New York, frontier labs and financial firms explored how to give agents useful autonomy while keeping consequential decisions under control.
+### Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio
+- date: Wed, 14 Oct 2026
+- link: https://www.latent.space/p/lab-in-the-loop-at-compute-speed
 
-a quiet day.
-### Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk
-- date: Thu, 08 Oct 2026
-- link: https://www.latent.space/p/periodic
+How Leash Bio tamed DELs, the assay that traumatizes everyone, and used the data to catch cheating models. And why that same data is perfect for AI agents learning to think like chemists.
+### [AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks
+- date: Wed, 14 Oct 2026
+- link: https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon
 
-A special Science pod and Engineering pod crossover.. with Forward Deployed Engineering kicker!
+Gemini 4 Argon went GA today, but we already gave it title story 2 weeks ago and most benchmarks, like CursorBench, simply independently confirm their claims.
