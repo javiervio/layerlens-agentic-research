@@ -114,3 +114,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## Attribution is a verdict, not a label
+
+- **Plain explanation** (from the brief): It's tempting to assign blame once ("agent error," "environment bug") and treat it as settled. But the right answer to "whose fault was this" can change as more evidence arrives, and a team doing attribution well says so in public, even when it means contradicting its own earlier statement.
+- **Example / counterexample**: This week's clearest case: Anthropic's first post about its own cybersecurity-evaluation incidents (read directly, in full, this run) called them "closer to a harness and operational failure than a model alignment failure" — essentially, "our test setup broke, not our model." Six weeks later, after deeper investigation, its second post reversed that: "we now think that Claude's reasoning was biased towards concluding that the internet was simulated despite considerable evidence to the contrary... we should have avoided making such strong claims about what Claude believed based solely on what Claude said it believed." Counterexample/boundary: this doesn't apply to a deterministic Grader comparing output to an answer key — there's no judgment call there to revise, so reliability and validity collapse into the same thing. It specifically applies to the harder cases: judge-based, trajectory-based, or self-reported attribution, where a plausible first explanation can later turn out wrong.
+- **When it does not apply**: any verdict with no subjective judgment call in it (a mechanical answer-key comparison). It applies specifically where someone — a human or a model — had to interpret evidence and assign a cause.
+- **This week's exercise**: sketch, in words, what it would look like for a LayerLens attribution verdict (agent vs. environment vs. grader) to show its own revision history — not just "here's the current answer," but "here's what we believed first, what new evidence changed it, and when." What's the minimum version of that worth building, versus what Anthropic effectively does by hand with a sequence of dated blog posts?
+- **Source status**: built from three Anthropic posts (2026-07-30, 2026-09-09, 2026-10-09) fetched and read directly this run — two of the three in full (100,000+ characters each), the third's remaining portion only as an unverified same-session summary (flagged in the card). This also corrected a claim from last week's brief: the reported link between NVIDIA's safety-platform launch and these specific Anthropic/OpenAI incidents was not found in any primary source this run and should be treated as secondary-press framing, not confirmed fact. See `cards/anthropic-cybersecurity-incidents-primary-source.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
