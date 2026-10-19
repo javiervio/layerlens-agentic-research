@@ -1,4 +1,4 @@
-# Competitor / team harvest 2026-W42 (fetched 2026-10-12)
+# Competitor / team harvest 2026-W43 (fetched 2026-10-19)
 
 Recent posts from competitor and reference-team blogs, pulled from their RSS/Atom feeds by a GitHub Actions runner (the cloud research sandbox cannot reach these directly). Read this alongside inbox/arxiv/. Sources with no feed are listed so you cover them via WebSearch and log the gap honestly.
 
@@ -24,6 +24,10 @@ Recent posts from competitor and reference-team blogs, pulled from their RSS/Ato
 ## Braintrust
 Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.braintrust.dev/blog
 
+### Run evals 50% cheaper with workflow evals
+- date: 2026-10-15
+- link: https://www.braintrust.dev/blog/workflow-evals
+
 ### Application logs and agent traces in one view
 - date: 2026-10-08
 - link: https://www.braintrust.dev/blog/application-logs
@@ -44,52 +48,58 @@ Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched
 - date: 2026-09-18
 - link: https://www.braintrust.dev/blog/evaluate-agent-responses-with-jev
 
-### One connected system for agent observability
-- date: 2026-09-03
-- link: https://www.braintrust.dev/blog/active-observability-loop-patterns-debugger
-
 ## Arize
 Source: https://arize.com/blog/feed/ | Home: https://arize.com/blog/
 
+### AI agent permissions: Why agents don’t know what you’re allowed to do
+- date: Thu, 15 Oct 2026
+- link: https://arize.com/blog/ai-agent-permissions/
+
+AI agent permissions determine what an agent is allowed to do on someone’s behalf. As agents get more powerful, we’re running into a basic problem: a model can’t reliably verify those permissions just because someone claims to have them in a conversation. The problem agents have with permission goes both ways: sometimes they steadfastly refuse...
+The post AI agent permissions: Why agents don&#8217;t know what you&#8217;re allowed to do appeared first on Arize AI.
+### EU AI Act compliance for AI agents: a practical engineering guide
+- date: Tue, 13 Oct 2026
+- link: https://arize.com/blog/eu-ai-act-compliance-ai-agents/
+
+Learn how agent traces, human oversight, production evaluations, and log retention support EU AI Act compliance with a practical credit-assistant example.
+The post EU AI Act compliance for AI agents: a practical engineering guide appeared first on Arize AI.
+### Does being rude to AI work? What 6 models revealed
+- date: Tue, 13 Oct 2026
+- link: https://arize.com/blog/does-being-rude-to-ai-work/
+
+Does being rude to AI improve answers or lower costs? We tested six models to separate prompt tone from brevity instructions and examine what changes.
+The post Does being rude to AI work? What 6 models revealed appeared first on Arize AI.
+### Together AI integration: Evaluate open models and optimize evaluation costs in Arize AX
+- date: Mon, 12 Oct 2026
+- link: https://arize.com/blog/together-ai-integration-arize-ax/
+
+Evaluate open models with Together AI in Arize AX. Compare model performance, run LLM-as-a-Judge evaluations, and explore lower-cost alternatives.
+The post Together AI integration: Evaluate open models and optimize evaluation costs in Arize AX appeared first on Arize AI.
+### How to test agent tool descriptions with Harbor and Phoenix
+- date: Mon, 12 Oct 2026
+- link: https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix/
+
+Build a reproducible benchmark, compare tool use across agents, and test whether a description change reduces unnecessary work while preserving outcomes.
+The post How to test agent tool descriptions with Harbor and Phoenix appeared first on Arize AI.
 ### Alignment is a human-AI workflow: how Custom Views make agent review possible
 - date: Fri, 09 Oct 2026
 - link: https://arize.com/blog/alignment-is-a-human-ai-workflow-custom-views/
 
 Automated evals can score every agent session, but they do not automatically reflect what your team considers a good outcome. That takes human judgment.
 The post Alignment is a human-AI workflow: how Custom Views make agent review possible appeared first on Arize AI.
-### Cost Agent: find where your LLM and agent spend goes with your traces
-- date: Thu, 08 Oct 2026
-- link: https://arize.com/blog/arize-ax-cost-agent/
-
-AI costs don’t always scale predictably with traffic. A retry loop, oversized context window, or unnecessarily expensive model can make a small number of traces disproportionately expensive.
-The post Cost Agent: find where your LLM and agent spend goes with your traces appeared first on Arize AI.
-### Decision model benchmark: Jev, Kev, Liquid d1, and more
-- date: Wed, 07 Oct 2026
-- link: https://arize.com/blog/decision-model-benchmark/
-
-On 15 September, TypeSafe released Jev, and within a few weeks about 10 companies had shipped something that works the same way. OpenAI, Liquid, Cloudflare, AWS and PostHog all launched one, and an open clone called Kev showed up on Hugging Face in between. If you build agents or run evals, you now have a...
-The post Decision model benchmark: Jev, Kev, Liquid d1, and more appeared first on Arize AI.
-### What agent traces can tell you without an LLM judge
-- date: Tue, 06 Oct 2026
-- link: https://arize.com/blog/agent-traces-without-llm-judge/
-
-Some agent failures are already in the trace. tracelint proves them on Phoenix OpenInference spans and fails CI, without an LLM judge.
-The post What agent traces can tell you without an LLM judge appeared first on Arize AI.
-### How we benchmark AI agents and tools with Harbor and Arize Phoenix
-- date: Mon, 05 Oct 2026
-- link: https://arize.com/blog/ai-agent-benchmarking-harbor-arize-phoenix/
-
-See how Arize uses Harbor and Phoenix to benchmark AI agents, MCP servers, skills, and CLIs in reproducible sandboxes, then inspect traces and annotations.
-The post How we benchmark AI agents and tools with Harbor and Arize Phoenix appeared first on Arize AI.
-### Prompt caching benchmark: high cache reuse doesn’t always mean lower cost
-- date: Fri, 02 Oct 2026
-- link: https://arize.com/blog/prompt-caching-benchmark/
-
-We benchmarked prompt caching across DeepSeek, GLM, GPT, and Claude using Harbor evals and Phoenix traces, so we could compare cache reuse, estimated cost, and latency on the same multi-turn shopping assistant agent.
-The post Prompt caching benchmark: high cache reuse doesn&#8217;t always mean lower cost appeared first on Arize AI.
 ## E2B
 Source: https://e2b.dev/rss.xml | Home: https://e2b.dev/blog
 
+### Sandboxes are dead
+- date: Fri, 16 Oct 2026
+- link: https://e2b.dev/resources/sandboxes-are-dead
+
+From code snippets to entire computers, agents have outgrown the sandbox. E2B's next chapter is an agent-driven private cloud that adapts to every task.
+### Best Code Execution Sandboxes for AI Agents in 2026
+- date: Thu, 15 Oct 2026
+- link: https://e2b.dev/resources/best-code-execution-sandboxes-for-ai-agents
+
+Compare the best 2026 code execution sandboxes for AI agents. See how E2B stacks up against alternatives for isolation, BYOC, billing, and open source.
 ### How ClickUp Runs AI Code on Sensitive Data at Enterprise Scale
 - date: Thu, 08 Oct 2026
 - link: https://e2b.dev/customers/clickup
@@ -100,82 +110,80 @@ How ClickUp Brain² uses E2B sandboxes to run model-written code on sensitive wo
 - link: https://e2b.dev/resources/introducing-e2b-secrets
 
 E2B Secrets keeps credentials outside the sandbox and injects them into the HTTPS request headers you configure, so agents can call external services safely.
+### How I Learned to Stop Worrying and Love the Sandbox
+- date: Mon, 05 Oct 2026
+- link: https://e2b.dev/resources/how-i-learned-to-stop-worrying-and-love-the-sandbox
+
+A hands-on lab in running sandboxes: runaway processes, memory pressure, full disks, idle timeouts and per-user workspaces.
 ### How Arena Puts Frontier AI to the Test with 600,000 E2B Sandboxes a Day
 - date: Thu, 01 Oct 2026
 - link: https://e2b.dev/customers/arena
 
 How Arena uses E2B to give agents full cloud computers for agent evaluations, scaling from a Berkeley SkyLab research project to one of the largest consumer AI apps.
-### Introducing E2B Embed
-- date: Wed, 30 Sep 2026
-- link: https://e2b.dev/resources/introducing-e2b-embed
-
-E2B Embed packages the runtime and dashboard for one machine. Ship it with your product and run sandboxes inside your customer's environment.
-### How Lark Uses E2B to Safely Test Apps with Customer Data
-- date: Thu, 17 Sep 2026
-- link: https://e2b.dev/customers/lark-case-study
-
-How Lark uses E2B sandboxes to test customer apps in Docker-based dev environments
-### Build an Agent Workbench on OpenAI's Agents API
-- date: Thu, 10 Sep 2026
-- link: https://e2b.dev/resources/build-an-agent-workbench-on-openais-agents-api
-
-A workbench built on OpenAI's Agents API (beta) and E2B sandboxes: application-managed lifecycle, one sandbox per chat, pause and fork.
 ## Browserbase
 Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.browserbase.com/blog
 
-### What is Web Bot Auth? Cryptographic Agent Identity
-- date: 2026-10-06
-- link: https://browserbase.com/blog/what-is-web-bot-auth
+### Who let the Bots in?
+- date: 2026-10-16
+- link: https://browserbase.com/blog/who-let-the-bots-in-rethinking-captchas-in-the-age-of-ai-agents
 
-### Best Headless Browsers for Web Scraping (2026 Guide)
-- date: 2026-10-06
-- link: https://browserbase.com/blog/best-web-scraping-headless-browsers
+### WebMCP hooks, PDF exports, and more in Stagehand 4.2
+- date: 2026-10-16
+- link: https://browserbase.com/changelog/stagehand-4-2
 
-### Best Proxy Scraper for Web Automation (2025 Guide)
-- date: 2026-10-06
-- link: https://browserbase.com/blog/best-proxy-scraper-web-automation
+### Search, Fetch, and better WebMCP support in Stagehand 4.1
+- date: 2026-10-16
+- link: https://browserbase.com/changelog/stagehand-4-1
 
-### How General Intelligence Company built an autonomous engineering pipeline with Browserbase
-- date: 2026-10-06
-- link: https://browserbase.com/blog/case-study-general-intelligence-company
+### The Browser Blog
+- date: 2026-10-16
+- link: https://browserbase.com/blog/page/1/
 
-### What is Computer Use? How AI Agents Operate a Screen
-- date: 2026-10-06
-- link: https://browserbase.com/blog/what-is-computer-use
+### The Browser Blog
+- date: 2026-10-16
+- link: https://browserbase.com/blog/page/2/
 
-### Frontier RL Browser Evals: Browserbase x HUD
-- date: 2026-10-06
-- link: https://browserbase.com/blog/browserbase-hud-frontier-evals
+### The Browser Blog
+- date: 2026-10-16
+- link: https://browserbase.com/blog/page/3/
 
 ## Modal
 Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://modal.com/blog
 
-### TypeSafe AI scales Jev to trillions of tokens in three days on Modal
-- date: 2026-10-05
-- link: https://modal.com/blog/typesafeai-case-study
+### Building fast filesystems for VMs
+- date: 2026-10-16
+- link: https://modal.com/blog/vm-sandbox-filesystem
 
-### Modal Clusters are generally available
-- date: 2026-10-01
-- link: https://modal.com/blog/modal-clusters-generally-available
+### New Logs Search Experience
+- date: 2026-10-16
+- link: https://modal.com/changelog/logs-search-v2
 
-### VM Sandboxes: Full computers for agents
-- date: 2026-10-01
-- link: https://modal.com/blog/vm-sandboxes-agent-computers
+### Reflection Beam is now available on Modal
+- date: 2026-10-16
+- link: https://modal.com/changelog/reflection-beam-now-available
 
-### Runtime Roundup: VM Sandboxes, Multi-node clusters, and more
-- date: 2026-10-01
-- link: https://modal.com/blog/runtime-product-update-sandbox-endpoints
+### Muse Spark Open is now available on Modal
+- date: 2026-10-15
+- link: https://modal.com/blog/meta-muse-spark-open-now-available-on-modal
 
-### Sidecars: A low-latency trust boundary for Sandboxes
-- date: 2026-10-01
-- link: https://modal.com/blog/introducing-sandbox-sidecars-trust-boundary
+### Muse Spark Open is now available on Modal
+- date: 2026-10-15
+- link: https://modal.com/changelog/muse-spark-open-now-available
 
-### Give agents a full computer with VM Sandboxes
-- date: 2026-10-01
-- link: https://modal.com/changelog/give-agents-a-full-computer-with-vm-sandboxes
+### NVIDIA Nemotron 3.5 Super VL is now available on Modal
+- date: 2026-10-15
+- link: https://modal.com/changelog/nvidia-nemotron-3-5-super-vl-now-available
 
 ## Prime Intellect
 Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.primeintellect.ai/blog
+
+### Post-Training Nemotron 3.5 Super VL for Long-Horizon Enterprise Work
+- date: 2026-10-15
+- link: https://www.primeintellect.ai/blog/nemotron-3-5-super-vl
+
+### Moondream is joining Prime Intellect
+- date: 2026-10-13
+- link: https://www.primeintellect.ai/blog/moondream
 
 ### Rewriting Prime Agent in Rust
 - date: 2026-10-09
@@ -192,14 +200,6 @@ Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetc
 ### Prime Sandboxes: MicroVMs for Agentic RL Training at Scale
 - date: 2026-09-23
 - link: https://www.primeintellect.ai/blog/sandboxes
-
-### GLM-5.2 RL weight transfer in 4 seconds using NIXL and ModelExpress
-- date: 2026-09-03
-- link: https://www.primeintellect.ai/blog/nixl-modelexpress-weight-transfer
-
-### Uncovering a universal offline sandbox escape
-- date: 2026-08-25
-- link: https://www.primeintellect.ai/blog/universal-offline-sandbox-escape
 
 ## Galileo
 Source: https://galileo.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://galileo.ai/blog
@@ -270,36 +270,36 @@ The post Export TrueFoundry AI Gateway traces to Opik with OpenTelemetry appeare
 ## Databricks
 Source: https://www.databricks.com/rss.xml | Home: https://www.databricks.com/blog
 
-### How California built its Behavioral Health Public County Profile on Databricks
-- date: Fri, 09 Oct 2026
-- link: https://www.databricks.com/blog/how-california-built-its-behavioral-health-public-county-profile-databricks
+### Transactions are Generally Available, advancing warehousing on the Lakehouse
+- date: Fri, 16 Oct 2026
+- link: https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse
 
-The California Department of Health Care Services (DHCS) built the Behavioral Health...
-### Solving defense supply chain visibility through governed data sharing
-- date: Fri, 09 Oct 2026
-- link: https://www.databricks.com/blog/solving-defense-supply-chain-visibility-through-governed-data-sharing
+Multi-Statement Transactions are&nbsp;Generally Available, enabling organizations to run...
+### Closing the Binary Blind Spot: Domain-Knowledge Injection for LLM Malware Triage in npm Packages
+- date: Fri, 16 Oct 2026
+- link: https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages
 
-When every tier of the defense supply chain can share governed data with the people who need it...
-### Announcing Workday Data Connect federation in Unity Catalog
-- date: Thu, 08 Oct 2026
-- link: https://www.databricks.com/blog/announcing-workday-data-connect-federation-unity-catalog
+IntroductionSupply chain attacks on package registries have grown in volume and sophistication [1]...
+### How our AI Research team uses AI Runtime
+- date: Thu, 15 Oct 2026
+- link: https://www.databricks.com/blog/how-our-ai-research-team-uses-ai-runtime
 
-We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog...
-### Introducing Funke: Native HL7v2 Parsing on Databricks
-- date: Thu, 08 Oct 2026
-- link: https://www.databricks.com/blog/introducing-funke-native-hl7v2-parsing-databricks
+At Databricks, we continuously develop and evaluate new AI research techniques to...
+### Stripe Data Pipeline now syncs real-time Stripe data to Lakebase Postgres
+- date: Thu, 15 Oct 2026
+- link: https://www.databricks.com/blog/stripe-data-pipeline-now-syncs-real-time-stripe-data-lakebase-postgres
 
-The HL7v2 problem in the lakehouseHL7v2 is the messaging standard that quietly runs healthcare...
-### Lakebase and Agentic SDLC: Branching Databases for Coding Agents
-- date: Thu, 08 Oct 2026
-- link: https://www.databricks.com/blog/lakebase-and-agentic-sdlc-branching-databases-coding-agents
+If your business runs on Stripe, your application needs access to Stripe data at...
+### Reducing the noise: How Atlassian built an OCSF security lakehouse on Databricks
+- date: Thu, 15 Oct 2026
+- link: https://www.databricks.com/blog/reducing-noise-how-atlassian-built-ocsf-security-lakehouse-databricks
 
-AI has changed how software gets built. As coding agents take on a growing share...
-### Biomedical Imaging's Real Bottleneck Is the Data, Not the Model
-- date: Thu, 08 Oct 2026
-- link: https://www.databricks.com/blog/biomedical-imagings-real-bottleneck-data-not-model
+The challenge: Two decades of logging noise at global scaleAtlassian is a global...
+### Geospatial queries are up to 38X faster with Lakehouse//RT
+- date: Thu, 15 Oct 2026
+- link: https://www.databricks.com/blog/geospatial-queries-are-38x-faster-lakehousert
 
-Part I — The problemFour sectors, one bottleneckHospitals and health systems generate...
+Spatial SQL and spatial joins now run on Lakehouse//RT and they're up to 38X faster...
 ## Patronus AI
 Source: https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.patronus.ai/blog
 
@@ -357,56 +357,56 @@ Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per 
 ## Confident AI (DeepEval)
 Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.confident-ai.com/blog
 
-### Product Changelogs, October 9, 2026
-- date: 2026-10-10
-- link: https://www.confident-ai.com/docs/changelog/2026/10/9
+### Product Changelogs, October 16, 2026
+- date: 2026-10-17
+- link: https://www.confident-ai.com/docs/changelog/2026/10/16
 
-### G-Eval Simply Explained: LLM-as-a-Judge for LLM Evaluation
-- date: 2026-10-09
-- link: https://www.confident-ai.com/blog/g-eval-the-definitive-guide
+### Every Model Request, Evaluated: Confident AI and TrueFoundry AI Gateway
+- date: 2026-10-16
+- link: https://www.confident-ai.com/blog/confident-ai-truefoundry-ai-gateway
 
-### LLM Arena-as-a-Judge: LLM-Evals for Comparison-Based Regression Testing
-- date: 2026-10-08
-- link: https://www.confident-ai.com/blog/llm-arena-as-a-judge-llm-evals-for-comparison-based-testing
+### The Complete Guide to LLM Experimentation: Compare Prompts, Models, and Agents
+- date: 2026-10-16
+- link: https://www.confident-ai.com/blog/llm-experimentation
 
-### LLM Evals Framework That Predicts ROI: A Step-by-Step Guide
-- date: 2026-10-08
-- link: https://www.confident-ai.com/blog/the-ultimate-llm-evaluation-playbook
+### LLM Evaluation for Startups: The Complete Guide
+- date: 2026-10-15
+- link: https://www.confident-ai.com/blog/llm-evaluation-for-startups
 
-### Top LLM Evaluators for Testing LLM Systems at Scale
-- date: 2026-10-08
-- link: https://www.confident-ai.com/blog/top-llm-evaluators-for-testing-llms-at-scale
+### Multi-Turn LLM Evaluation in 2026: What You Need to Know
+- date: 2026-10-15
+- link: https://www.confident-ai.com/blog/multi-turn-llm-evaluation-in-2026
 
-### LLM-as-a-Judge Simply Explained: The Complete Guide to Run LLM Evals at Scale
-- date: 2026-10-08
-- link: https://www.confident-ai.com/blog/why-llm-as-a-judge-is-the-best-llm-evaluation-method
+### The Step-By-Step Guide to MCP Evaluation
+- date: 2026-10-15
+- link: https://www.confident-ai.com/blog/the-step-by-step-guide-to-mcp-evaluation
 
 ## Langfuse
 Source: https://langfuse.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://langfuse.com/blog
 
-### AI Agent Observability, Tracing &amp; Evaluation with Langfuse
-- date: 2026-10-08
-- link: https://langfuse.com/blog/2024-07-ai-agent-observability-with-langfuse
+### Langfuse July Update
+- date: 2026-10-17
+- link: https://langfuse.com/blog/2026-07-31-langfuse-july-update
 
-### Using TypeSafe&#x27;s Jev for evals
-- date: 2026-10-07
-- link: https://langfuse.com/blog/2026-09-18-using-typesafes-jev-for-evals
-
-### Catching conversation signals in Langfuse
-- date: 2026-10-07
-- link: https://langfuse.com/blog/2026-09-23-catching-conversation-signals-in-langfuse
+### Langfuse August Update
+- date: 2026-10-17
+- link: https://langfuse.com/blog/2026-08-31-langfuse-august-update
 
 ### Langfuse September Update
-- date: 2026-10-07
+- date: 2026-10-17
 - link: https://langfuse.com/blog/2026-09-30-langfuse-september-update
 
-### Set expiration dates for API keys
-- date: 2026-10-07
-- link: https://langfuse.com/changelog/2026-10-07-api-key-expirations
+### Halo
+- date: 2026-10-17
+- link: https://langfuse.com/changelog/2026-06-19-langfuse-assistant-public-beta
 
-### Organization usage breakdown by project and type
-- date: 2026-10-06
-- link: https://langfuse.com/changelog/2026-10-06-organization-usage-breakdown
+### Manage dashboards via API, CLI, and MCP
+- date: 2026-10-17
+- link: https://langfuse.com/changelog/2026-07-17-dashboard-and-widget-operations-in-api
+
+### Langfuse v4: Faster at Scale
+- date: 2026-10-17
+- link: https://langfuse.com/changelog/2026-08-17-langfuse-v4
 
 ## Daytona
 Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
