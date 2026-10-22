@@ -26,11 +26,15 @@ jobs:
           python-version: "3.12"
       - name: Harvest arXiv
         run: python tools/arxiv_harvest.py
+      - name: Discover trending papers
+        run: python tools/discovery_harvest.py
+      - name: Fetch full text
+        run: python tools/fulltext_fetch.py
       - name: Commit results
         run: |
           git config user.name "arxiv-harvester"
           git config user.email "actions@github.com"
-          git add inbox/arxiv
+          git add inbox/arxiv inbox/discovery inbox/fulltext inbox/_candidates
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
