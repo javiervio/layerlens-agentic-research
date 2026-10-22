@@ -1,0 +1,12 @@
+# Manual intake for the full-text fetcher (fallback for off-radar / off-arXiv sources).
+#
+# One source per line. Picked up on the next Monday harvest by tools/fulltext_fetch.py,
+# which fetches the full body and commits it to inbox/fulltext/ for the routine to read.
+#
+# Accepts:
+#   - an arXiv id            e.g.  2608.20634
+#   - an arXiv URL           e.g.  https://arxiv.org/abs/2608.20634v1
+#   - any other article URL  e.g.  https://breken.ai/some-post   (fetched generically)
+#
+# Lines starting with "#" and blank lines are ignored. Remove an entry once it has
+# been read (it stays in inbox/fulltext/ regardless).
