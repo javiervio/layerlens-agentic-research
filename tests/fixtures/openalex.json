@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "id": "https://openalex.org/W4600000001",
+      "title": "Agentic Environments for Reliable Evaluation",
+      "display_name": "Agentic Environments for Reliable Evaluation",
+      "doi": "https://doi.org/10.48550/arXiv.2608.20634",
+      "cited_by_count": 12,
+      "abstract_inverted_index": {
+        "We": [0], "build": [1], "agentic": [2], "environments": [3],
+        "with": [4], "sandbox": [5], "rollback": [6], "for": [7],
+        "reliable": [8], "evaluation": [9]
+      },
+      "ids": {"arxiv": "2608.20634"}
+    },
+    {
+      "id": "https://openalex.org/W4600000002",
+      "title": "Denoising Diffusion for Protein Folding",
+      "display_name": "Denoising Diffusion for Protein Folding",
+      "doi": "https://doi.org/10.1000/xyz",
+      "cited_by_count": 5,
+      "abstract_inverted_index": {
+        "A": [0], "study": [1], "of": [2], "protein": [3], "folding": [4]
+      },
+      "ids": {}
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "AgentMercury: Synthetic Environments for Agentic Evaluation",
+    "paper": {
+      "id": "2608.20634",
+      "title": "AgentMercury: Synthetic Environments for Agentic Evaluation",
+      "summary": "A multi-agent sandbox environment with checkpoint and rollback for evaluating agentic systems.",
+      "upvotes": 42,
+      "authors": [{"name": "An Author"}, {"name": "Another Author"}]
+    }
+  },
+  {
+    "title": "A Benchmark for Tool-Use Trajectories",
+    "paper": {
+      "id": "2608.11111",
+      "title": "A Benchmark for Tool-Use Trajectories",
+      "summary": "We introduce a benchmark measuring agent reliability on long-horizon tool-use tasks.",
+      "upvotes": 17,
+      "authors": [{"name": "Third Author"}]
+    }
+  },
+  {
+    "title": "Protein Folding with Diffusion Models",
+    "paper": {
+      "id": "2608.22222",
+      "title": "Protein Folding with Diffusion Models",
+      "summary": "A study of protein structure prediction using denoising diffusion.",
+      "upvotes": 88,
+      "authors": [{"name": "Fourth Author"}]
+    }
+  }
+]
