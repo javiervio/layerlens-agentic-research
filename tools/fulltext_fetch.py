@@ -16,6 +16,7 @@ import json
 import os
 import re
 import time
+import urllib.parse
 import urllib.request
 
 UA = "layerlens-fulltext-fetcher/1.0 (+research)"
@@ -28,9 +29,19 @@ _ARXIV_RE = re.compile(r"(\d{4}\.\d{4,5})(v\d+)?")
 
 
 def arxiv_id_from(s):
-    """Extract a bare arXiv id (no version suffix) from an id or URL, else None."""
+    """Bare arXiv id (no version suffix) from a bare id or an arxiv.org URL, else None.
+
+    A non-arXiv URL whose path merely contains an NNNN.NNNNN-shaped substring (a
+    date, a slug, another site's id) is NOT an arXiv paper: only bare ids and
+    arxiv.org-hosted URLs resolve, so manual off-arXiv links stay on the generic
+    fetch path and keep their real URL.
+    """
     if not s:
         return None
+    if "://" in s:
+        host = urllib.parse.urlparse(s).netloc.lower()
+        if not host.endswith("arxiv.org"):
+            return None
     m = _ARXIV_RE.search(s)
     return m.group(1) if m else None
 
@@ -94,10 +105,15 @@ def render_fulltext_md(meta, body, max_chars):
     ]
     text = body.get("text")
     if text is None:
-        lines.append(
-            "Full text unavailable as HTML (ar5iv/arXiv-HTML did not render); "
-            f"PDF link only: {body.get('url')}"
-        )
+        if body.get("source") == "pdf-link-only":
+            lines.append(
+                "Full text unavailable as HTML (ar5iv/arXiv-HTML did not render); "
+                f"PDF link only: {body.get('url')}"
+            )
+        else:
+            lines.append(
+                f"Full text could not be fetched; canonical link only: {body.get('url')}"
+            )
     else:
         if len(text) > max_chars:
             text = text[:max_chars] + " ... [truncated]"

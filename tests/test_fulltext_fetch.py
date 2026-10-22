@@ -1,5 +1,6 @@
 from tools.fulltext_fetch import (
-    arxiv_id_from, fulltext_urls, html_to_text, fetch_fulltext, render_fulltext_md)
+    arxiv_id_from, fulltext_urls, html_to_text, fetch_fulltext, render_fulltext_md,
+    parse_manual_links, _fetch_target)
 
 
 def test_arxiv_id_strips_version_and_parses_urls():
@@ -34,6 +35,39 @@ def test_fetch_fulltext_falls_back_to_pdf_link_when_html_fails():
         raise OSError("blocked")
     got = fetch_fulltext("2608.20634", fetcher=boom)
     assert got["source"] == "pdf-link-only" and got["text"] is None and "pdf" in got["url"]
+
+
+def test_arxiv_id_ignores_embedded_id_in_non_arxiv_url():
+    # A non-arXiv URL whose path merely contains an NNNN.NNNNN-shaped substring
+    # is NOT an arXiv paper and must not be misrouted to the arXiv fetch path.
+    assert arxiv_id_from("https://breken.ai/2024.12345/post") is None
+    # arxiv-hosted URLs and bare ids still resolve.
+    assert arxiv_id_from("https://arxiv.org/abs/2608.20634") == "2608.20634"
+    assert arxiv_id_from("https://ar5iv.labs.arxiv.org/abs/2608.20634") == "2608.20634"
+    assert arxiv_id_from("2608.20634v2") == "2608.20634"
+
+
+def test_manual_non_arxiv_url_fetched_generically_and_link_preserved():
+    t = parse_manual_links("https://breken.ai/2024.12345/post")[0]
+    assert t["arxiv_id"] is None
+    key, meta, body = _fetch_target(
+        t, fetcher=lambda url: b"<p>" + b"x" * 600 + b"</p>")
+    assert meta["link"] == "https://breken.ai/2024.12345/post"
+    assert body["source"] == "web"
+
+
+def test_render_web_failure_uses_source_neutral_note():
+    md = render_fulltext_md(
+        {"title": "T", "authors": ["A"], "link": "https://breken.ai/x"},
+        {"source": "web-unavailable", "url": "https://breken.ai/x", "text": None},
+        max_chars=10)
+    assert "PDF" not in md and "canonical link only" in md
+    # The arXiv pdf-only path keeps its PDF wording.
+    md2 = render_fulltext_md(
+        {"title": "T", "authors": ["A"], "link": "L"},
+        {"source": "pdf-link-only", "url": "https://arxiv.org/pdf/2608.20634", "text": None},
+        max_chars=10)
+    assert "PDF link only" in md2
 
 
 def test_render_truncates_body():
