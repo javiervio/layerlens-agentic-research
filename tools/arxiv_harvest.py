@@ -16,21 +16,16 @@ import re
 import os
 from xml.etree import ElementTree as ET
 
+try:  # importable as a package (tests) or run as a script on the runner
+    from tools.envkeywords import KEYWORDS
+except ImportError:  # `python tools/arxiv_harvest.py` puts tools/ on sys.path
+    from envkeywords import KEYWORDS
+
 CATEGORIES = ["cs.MA", "cs.AI", "cs.CL", "cs.HC", "cs.LG", "cs.DC", "cs.OS", "cs.SE"]
 MAX_PER_CAT = 40
 WINDOW_DAYS = 9  # slight overlap so nothing published late is missed
 API = "http://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
-
-# Lightweight relevance filter (substring match on title+abstract, lowercased).
-KEYWORDS = [
-    "agent", "agentic", "environment", "sandbox", "tool use", "tool-use",
-    "tool-calling", "tool calling", "evaluation", "benchmark", "reward hacking",
-    "verifier", "verification", "trajectory", "synthetic", "simulation",
-    "multi-agent", "multiagent", "orchestration", "mcp", "human-in-the-loop",
-    "oversight", "reliability", "reproducib", "world model", "task feasibility",
-    "rollout", "self-improve", "optimizer", "llm judge", "llm-as-a-judge",
-]
 
 
 def fetch_category(cat):
