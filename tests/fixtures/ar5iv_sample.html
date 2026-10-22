@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AgentMercury</title>
+  <style>.ltx_page { color: #000; }</style>
+  <script>window.MathJax = {}; function bad(){ return 42; }</script>
+</head>
+<body>
+  <article class="ltx_document">
+    <h1 class="ltx_title">AgentMercury: Synthetic Environments for Agentic Evaluation</h1>
+    <div class="ltx_authors">An Author, Another Author</div>
+    <section class="ltx_section">
+      <h2>Abstract</h2>
+      <p>AgentMercury studies synthetic environments for evaluating agentic systems,
+      with checkpoint and rollback support and a multi-agent sandbox.</p>
+    </section>
+    <section class="ltx_section">
+      <h2>1. Introduction</h2>
+      <p>We present a benchmark and a world model for tool-use trajectories.
+      Agentic systems increasingly act inside long-horizon environments where a
+      single mistake compounds across many steps, so the ability to checkpoint
+      intermediate state and roll back to a known-good point is central to both
+      training and evaluation. In this work we describe the construction of a
+      synthetic environment generator, the way we seed tasks with verifiable
+      success conditions, and how a multi-agent sandbox records full trajectories
+      for later judging. We compare against prior reward-hacking-prone setups and
+      show that explicit rollback reduces wasted rollouts while improving the
+      reliability and reproducibility of the reported numbers.</p>
+    </section>
+  </article>
+  <script>bad();</script>
+</body>
+</html>
