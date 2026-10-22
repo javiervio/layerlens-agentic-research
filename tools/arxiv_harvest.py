@@ -108,8 +108,9 @@ def main():
         f"{len(papers)} relevant papers across {', '.join(CATEGORIES)}, filtered to the "
         f"last {WINDOW_DAYS} days by an agentic-environment keyword set. Abstracts are "
         "verbatim from the arXiv API. Links preserved. The routine reads this from its "
-        "own checkout, so no arxiv.org fetch is needed at run time. Full text for a "
-        "specific paper: hand it to a local deep-read session.",
+        "own checkout, so no arxiv.org fetch is needed at run time. Full text of the "
+        "top candidates is fetched automatically into inbox/fulltext/ by "
+        "tools/fulltext_fetch.py.",
         "",
     ]
     for p in papers:
