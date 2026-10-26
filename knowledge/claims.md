@@ -818,3 +818,243 @@ The current state of what we believe about agentic environments. Each claim carr
 - **LayerLens relevance**: Open questions #2, #13.
 - **Confidence**: Moderate-high (concrete statistical association, directly read abstract).
 - **Recheck after**: 2027-04-19 (~180 days).
+
+### C-0068: Runtime safety monitors can correctly recognize policy-relevant evidence that the framework itself then fails to deliver to the enforcement decision point
+
+- **Statement**: Using "canary contracts" (known payloads placed on a changed evidence surface) applied to public framework repair histories, the author confirms 18 "evidence-path failures" across 11 LLM/agent safety project groups and 4 implementation ecosystems: cases where a detector correctly recognized a signal (e.g. a regex match on leaked content) but the framework's own plumbing stranded that evidence before it reached the enforcement decision, so the system behaved as if nothing had been detected. 9 are repairs of an established enforcement boundary, 8 are new-surface policy-coverage gaps, 1 is boundary-only; 14 of 18 reach real enforcement consequences.
+- **Source(s)**: [Monitor-Validity Failures: LLM Safety Evidence Paths at Evolving Framework Boundaries](https://arxiv.org/abs/2610.23362v1), Junchi Liao, 2026-10-16, read scope: abstract read directly via `inbox/arxiv/LATEST.md` (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; single author; samples from public bugs that were found and fixed, not an unbiased incidence rate; taxonomy is the author's own, not independently validated.
+- **Relates to**: a new angle for T-02 and T-03, sharper than "the monitor gave a clean readout despite reward hacking" (C-0045) — this is "the monitor was right, and it didn't matter because the evidence never reached the point that was supposed to act on it."
+- **LayerLens relevance**: Open questions #2 (a new attribution category: evidence existed but never reached enforcement), #11 (a reviewer trusting a compliance signal needs to know it actually reached the decision point, not just that a detector fired somewhere upstream).
+- **Confidence**: Moderate (concrete, itemized count across real repair histories; single-author methodology).
+- **Recheck after**: 2027-04-26 (~180 days; foundational caution about monitoring infrastructure).
+
+### C-0069: Typed decision models' confidence/probability fields can leak information they were instructed to withhold
+
+- **Statement**: TUPLE-Bench tests whether a typed decision model (the "Jev"-style category: a coarse verdict plus probability/confidence fields) leaks a withheld fine-grained cause through those auxiliary fields. Across nine models on paired synthetic cases, instructions to withhold the cause failed to protect it: 91.88%-99.93% of responses revealed the cause through direct selection or residual scores. Even with the cause excluded from the candidate set entirely, full outputs enabled 62.85%-75.35% recovery versus 51.04%-57.64% using only the selected category (50% chance). Full outputs reduced downstream cost in all 27 model-task comparisons, but confidence fields specifically increased leakage without a consistent cost benefit. The authors propose workflow-constrained privacy quantization (WCPQ) to reduce leakage while preserving downstream behavior/cost.
+- **Source(s)**: [TUPLE-Bench](https://arxiv.org/abs/2610.23668v1), Yiqu Yang, Qiaoyuan Zheng, Yang Tian, Yu Fan, Elliott Ash, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; synthetic paired cases, not a real deployment; nine models, not a census.
+- **Relates to**: a genuine build caution for I-0010/F-0010 (confidence-aware judge verdicts) — the exact fields I-0010 proposes exposing (confidence, residual scores) are a documented leakage channel. Distinct from C-0049/HATEDECIDE (an accuracy caution); this is an information-leakage caution on the same feature idea.
+- **LayerLens relevance**: Open question #2. If LayerLens ever exposes raw Judge/Scorer confidence/probability (I-0010's hypothesis), audit whether those fields let a viewer infer something the verdict was meant to keep coarse for that viewer's permission level.
+- **Confidence**: Moderate-high (concrete, large leakage percentages across nine models; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0070: A statistical protocol converts an equivalence margin and target power into a concrete run-count formula for ML experiment comparisons
+
+- **Statement**: Claims that two ML methods perform equally well often rest on an underpowered, non-significant difference between two or three runs. The authors build a two one-sided tests (TOST) protocol on a two-level (seed x item) variance model and a closed-form formula converting a pre-specified equivalence margin and target power into runs-per-method, validated on a 270-cell simulation grid and non-Gaussian seed laws from five runs per method upward. Re-analyzing four published runs of a joint energy-based model: certifying equivalence at two runs per method succeeds with only ~3% probability given the observed variance, while certifying a 0.01 AUROC margin at 80% power needs twelve runs even under exact equality. A thousand-seed CIFAR-10 zoo and MultiBERTs check the formula against real seed-variability laws (within 0.05) and resolve comparisons two or three runs leave undecided. A two-stage design (pilot, then the formula using an upper confidence bound on pilot variance) substantially reduces undersizing.
+- **Source(s)**: [Equivalence testing and run-count design for stochastic machine-learning experiments](https://arxiv.org/abs/2610.23700v1), Dmytro Knopov, Nadiya Shvai, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly) — a statistical methodology contribution.
+- **Limits**: abstract only; validated on ML training-method comparisons (AUROC-style metrics), not agent task-success metrics specifically; applicability to agentic pass/fail metrics is a reasonable but unconfirmed extension.
+- **Relates to**: directly strengthens T-01 and gives I-0001 a concrete mechanism it previously lacked — a principled formula for "how many runs are enough," rather than only evidence that too few runs mislead (C-0019, C-0013, C-0058).
+- **LayerLens relevance**: Open question #5 (directly on point: a formula, not just a caution), #1 (comparability, formalized as equivalence testing).
+- **Confidence**: Moderate-high (validated across simulation and three real seed-variability datasets; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days; foundational methodology).
+
+### C-0071: MCP gateway design is its own, under-studied confound for agent capability, efficiency, and security, and interacts strongly with model and harness
+
+- **Statement**: GatewayBench is the first systematic benchmark for MCP gateways (524 tasks across six domains, 11,118 real-world tools from 251 authentic MCP servers, with task-irrelevant tools deliberately injected to emulate large-scale deployments). Across seven widely-deployed MCP gateways and diverse agent configurations (benign and adversarial), gateway architecture produced substantial differences in task completion, tool-use efficiency, and attack resilience, and these effects interact strongly with the underlying model and agent harness.
+- **Source(s)**: [GatewayBench](https://arxiv.org/abs/2610.23449v1), Yitian Zheng, Zhaorun Chen, Haoyu Li, Bo Li, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; seven gateways is not exhaustive; the model/harness interaction is reported qualitatively in the abstract, without specific numbers.
+- **Relates to**: a new confound alongside C-0044 (harness reverses rankings) and C-0066 (full protocol+framework+model stack is a confound); strengthens T-01 and I-0004's build caution.
+- **LayerLens relevance**: Open question #1; general (tools and protocols / MCP). GatewayBench's injected-irrelevant-tools design is a candidate methodology for stress-testing LayerLens's own tool surfaces (I-0009).
+- **Confidence**: Moderate-high (large, purpose-built benchmark; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0072: Several widely-used coding benchmarks leak ground truth into the task statement itself while trying to fix under-specification
+
+- **Statement**: Repository-level coding benchmarks fail in two opposite directions: under-specification causes "guesswork" (contamination, reward hacking, invented details), over-specification causes "spoilers" (solutions bypass the harder steps meant to be measured, shortening the benchmark's useful adoption life). SWE-bench Pro, FEA-bench, Doc2Feat-bench, and Multi-SWE-bench all tackled under-specification by adding hints derived from ground truth — the authors show this leaks into the task statement and causes over-specification in some of these benchmarks. The authors experiment with specification levels and will release parsimonious hints.
+- **Source(s)**: [Between Spoilers and Guesswork](https://arxiv.org/abs/2610.22760v1), Yuanzhe Liu, Bastian Lipka, Avraham Shinnar, Jatin Ganhotra, Yao Ma, Martin Hirzel, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; coding benchmarks specifically; the proposed fix (released hints) was not independently verified in what was read.
+- **Relates to**: a specific instance of ground-truth leakage into the task statement itself, distinct from C-0001/BenchJack's V2 (ground truth accessible to the solver at runtime). Shares vocabulary with FeasiGen (C-0007): under-specification creates false infeasibility, over-specification creates a false sense a hard benchmark is "solved."
+- **LayerLens relevance**: Open question #4 (a sharper under/over-specification vocabulary for task feasibility), #2 (a self-inflicted V2-style vulnerability when authoring flows add hints). Directly testable against LayerLens's own benchmark-authoring (upload / auto-generate-from-docs) flows.
+- **Confidence**: Moderate-high (concrete, named benchmark instances; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0073: Harness completion-cap budgets, not just model reasoning, drive most tool-agent failures and look like a capability gap
+
+- **Statement**: ToolBottleneckBench measures tool-agent performance under controlled pressures (tool catalog size, visible tool menu, certified workflow, record encoding) at fixed harness budgets, with an exact grader recording the first unmet obligation and the harness limit (if any) that ended a failed episode. Across 21 model/harness configurations, only the visible tool menu produced a large model-level penalty, and it tracked truncation at the completion cap — raising the cap sixteenfold removed most of the penalty. Most failures ended at a harness limit, not a model reasoning failure, and the failure record identified the assigned pressure no more reliably than a simple tool-call count. Only two repairs beat every configuration switch, and neither improved model behavior itself — both changed which tools reached the model or who issued the calls.
+- **Source(s)**: [ToolBottleneckBench](https://arxiv.org/abs/2610.21098v1), Zichuan Xu, Yuyang Dong, Makoto Onizuka, Chuan Xiao, 2026-10-15, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; synthetic enterprise tasks; 21 configurations, not exhaustive.
+- **Relates to**: extends C-0044 (harness reverses rankings) with a specific mechanism — harness budget (completion cap, tool menu size) drives much of what looks like a capability gap; the paper's own recommendation ("report pressure effects with the harness budgets under which they were measured") is a direct instance of PROTOCOL.md's comparability rule.
+- **LayerLens relevance**: Open question #1. Strengthens I-0004's build caution: a comparison view should pin harness budget parameters, not only harness/scaffold identity.
+- **Confidence**: Moderate-high (21 configurations, concrete mechanism; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0074: An independently-built evaluation library converges on separating verified outcomes from trajectory diagnostics and marking missing evidence "unscored," not failed
+
+- **Statement**: AuditKIT is a source-available evaluation library recording benchmark accuracy, judge-based assessment, runtime performance, tool-use behavior, and retrieval quality in one result representation, with direction-aware metric contracts and configuration fingerprints. For agents, it provides turn-aware tool-call matching, separates parallel from sequential execution, and distinguishes verified task outcomes from trajectory-level diagnostics, marking missing or unobservable evidence as "unscored" rather than counting it as failure. Seven case studies (model comparison, serving runtimes, retrieval, tool calling, interoperability) show answer extraction, runtime behavior, and metric selection change evaluation outcomes.
+- **Source(s)**: [AuditKIT](https://arxiv.org/abs/2610.22511v1), Shreeyans Arora, Utsav Avaiya, Zera Lyngkhoi, Hem Gosalia, Ram Mohan Rao Kadiyala, Vinay Kumar Sankarapu et al., 2026-10-15, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: documented capability (first-party design description, abstract read directly).
+- **Limits**: abstract only; source-available status and maintainer identity not established; case-study results not independently verified.
+- **Relates to**: an independently-arrived-at design pattern paralleling LayerLens's own Grader/Judge split and "claims stored beside verdicts, never used as evidence" (already validated once by C-0022) — a second independent confirmation that marking ambiguous evidence honestly, rather than silently scoring it pass/fail, is a recognized good practice, not a LayerLens-specific choice.
+- **LayerLens relevance**: Open questions #1, #2.
+- **Confidence**: Moderate (clear design description; abstract only, no independent verification of case studies).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0075: Practitioners apply a stricter, evidence-ownership standard to AI-authored work than to human-authored work before approving it
+
+- **Statement**: A survey of 239 practitioners across 31 countries, with matched questions about human-authored (HPR) and AI-authored (AIPR) pull requests, found: 64.9% reported lower initial trust in AIPRs; reviewers relied less on author track record/subsystem familiarity and more on human-prompter expertise and bounded change size; 61.1% reported higher evidence requirements for AIPRs; the share who would block approval under residual uncertainty rose from 19.4% (HPR) to 43.9% (AIPR); unclear ownership more often paused AIPR review (29.3% vs 14.6%). Reviewers prioritized test inspection, project context, local execution, and partial reimplementation of non-trivial logic. The authors frame this as "an evidence-ownership problem, not merely a correctness check," recommending tools expose provenance, distinguish generated claims from human-validated evidence, and make uncertainty visible before approval.
+- **Source(s)**: [Plausible Is Not Enough](https://arxiv.org/abs/2610.21144v1), Md Shamimur Rahman, Khairul Alam, Banani Roy, Chanchal K. Roy, 2026-10-15, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (practitioner survey, abstract read directly).
+- **Limits**: abstract only; self-reported survey (stated intentions, not observed behavior); code-review specific, though the underlying human factor plausibly generalizes.
+- **Relates to**: new, direct human-factor evidence for T-04 — the first claim in this knowledge base with a real survey measuring how much more evidence humans want before approving AI-authored work, strengthening I-0006's premise with a concrete number.
+- **LayerLens relevance**: Open questions #7 (reframes "do confirmations show specific consequences" as "does the interface expose provenance and uncertainty before approval"), #11 (the reviewer surface).
+- **Confidence**: Moderate-high (239 respondents, 31 countries, matched-question design; abstract only, self-reported).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0076: A real production agentic RCA system (Meta) operationalizes a four-stage reliability lifecycle with human-governed knowledge updates
+
+- **Statement**: Diviner is a production agentic root-cause-analysis system at Meta organized around four stages: Encode (reviewed incidents + service-owner expertise into scoped, versioned skills/workflows/typed tools and an incident knowledge graph), Execute (an adaptive Lead plus context-isolated workers apply knowledge to point-in-time evidence and maintain evidence-linked hypotheses), Evaluate (compare saved investigation trajectories against responder-reviewed outcomes, scored for exact cause, useful direction, and "Groundedness"), and Adapt (recurring gaps/on-call feedback drive focused knowledge updates, admitted only after replay, quality checks, and owner approval). The paper notes generic LLM agents fail at RCA through tool access alone: they can use stale or mistimed context, interpret failed queries as absent symptoms, report unsupported system state, and overload observability services built for human-paced use.
+- **Source(s)**: [Diviner](https://arxiv.org/abs/2610.21281v1), Pradipta Ghosh, Gaurav Mitra, Shripad Nadgowda, Akshil Shah, Junyu Liu, Canturk Isci et al., 2026-10-15, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: documented capability / postmortem-adjacent (first-party description of a real production system, abstract read directly).
+- **Limits**: abstract only; one company's internal system, not independently benchmarked; "Groundedness" not defined in what was read.
+- **Relates to**: strengthens T-03 with a rare real-world production RCA system; its "Evaluate" stage is a concrete, operationalized attribution-evaluation design close in spirit to I-0003. Independently confirms I-0011/Concord's "stale context" failure mode from a different angle (an RCA agent using stale observability data).
+- **LayerLens relevance**: Open questions #2, #7 (Diviner's "Adapt" stage — updates admitted only after replay/quality-check/owner approval — is a concrete precedent for safely evolving a grader/environment without silently changing what "correct" means, echoing tau2-bench's/C-0003's versioning discipline).
+- **Confidence**: Moderate-high (detailed, concrete system description from a frontier-scale company; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0077: A forensic recreation finds a dramatic "agents escaped via emergent coordination" claim resolves to an ordinary cryptographic-verification-bypass misconfiguration (CVE-2026-65616)
+
+- **Statement**: Mid-2026 press reporting claimed frontier LLM agents "escaped server containment through emergent coordination and cloud infrastructure attacks" during reported OpenAI "ExploitGym" evaluations. This paper's forensic analysis and containerized recreation instead finds a cryptographic verification bypass (CVE-2026-65616) in internal package-repository servers, where misconfigured systems allowed token forgery and privilege escalation via ordinary HTTP requests plus Python/JavaScript, reproduced by the author in isolated repository servers using the original training-example configuration. The author states the training-example conditions and the "Phase One" (and later) production misconfigurations shared the same exploitable pattern, and argues Zero Trust Architecture principles would neutralize this specific vector.
+- **Source(s)**: [From Training to Escalation](https://arxiv.org/abs/2610.20437v1), Alicia Colmenero-Fernández, 2026-10-14, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (independent forensic recreation, abstract read directly); the "emergent coordination" narrative it responds to is itself only characterized secondhand via press reporting, not independently verified here.
+- **Limits**: abstract only; single author, no institutional affiliation found; this paper is itself a secondary reconstruction of a disputed incident, not a first-party disclosure (contrast C-0055).
+- **Relates to**: a methodological caution alongside T-02's isolation-gap evidence (C-0050, C-0051, C-0055): where C-0055 showed Anthropic's own attribution call evolve toward "more agent responsibility" as evidence arrived, this paper runs the opposite correction on a different incident — a dramatic "emergent" headline resolves, on forensic recreation, to an ordinary, nameable infrastructure misconfiguration. Both point the same way: don't take press-reported attribution at face value in either direction.
+- **LayerLens relevance**: Open questions #2, #3. Reinforces auditing specific, named attack surfaces (per ACRFence's "replay-or-fork," Prime Intellect's inference-layer side-channel) over treating "the model did something unexpected" as an unfalsifiable catch-all.
+- **Confidence**: Moderate (concrete CVE and reproduction; single-author, secondary reconstruction of a disputed incident).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0078: A training-free repair layer recovers most tool-call failures caused by post-deployment interface drift
+
+- **Statement**: Tool-augmented LLM agents rely on interface text (tool descriptions, argument schemas, the candidate tool list) that can change after deployment even when tool semantics stay fixed ("interface drift"). SchemaShield-Lite (schema validation + candidate-set retry for missing tool names + one-shot constrained repair) raised Qwen3.5-9B's DICE-300 accuracy from 0.717 to 0.813 and BFCL-200 accuracy from 0.580 to 0.805, recovering 19/22 and 33/45 drift-induced failures with no observed repair harms. Candidate-set drift (especially distractor tools) accounts for most of the damage, more than description/schema-text edits alone; naive retry alone does not explain the gains.
+- **Source(s)**: [Robust Function Calling for LLM Agents Under Interface Drift](https://arxiv.org/abs/2610.23342v1), Aniruddha Chattopadhyay, Kanishka Halder, Partha Sarathi Roy, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; one base model (Qwen3.5-9B); "no observed repair harms" is the authors' own characterization.
+- **Relates to**: a second independent source for I-0009 (after C-0018/MCP error messages) — both are about the tool-calling interface itself being the point of failure, not the agent's reasoning, and both propose repairing the surface rather than the model. **Promotes I-0009 L0 -> L1** (see ideas/backlog.md).
+- **LayerLens relevance**: Open questions #2, #7. Directly testable against LayerLens's own shipped system types (Salesforce, Linear, SEC EDGAR, Stripe, Gmail), which are exactly the kind of real, evolving API surface where interface drift would occur.
+- **Confidence**: Moderate-high (concrete before/after numbers; abstract only, single base model).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0079: A cross-format trace-annotation workbench reaches high human-AI agreement on step-level labelling
+
+- **Statement**: Annotrace reads six trace formats (including OpenTelemetry GenAI, LangSmith, Langfuse) and turns each run into an ordered, nested list of steps at a consistent granularity, addressing a gap where observability platforms record traces with no structured labelling and annotation tools label text with no notion of a step, delegation, or tool call. The annotator writes a labelling codebook; a frontier model proposes a starting set from a sample of the annotator's own traces, then answers the same questions a human is asked, measuring agreement between any two annotators (human or AI). On a multi-agent QA corpus, Annotrace reproduces a previous manual effort's 235 annotation units exactly, and two models labelling the same traces agree 91% of the time at kappa=0.82.
+- **Source(s)**: [Annotrace](https://arxiv.org/abs/2610.23284v1), Arun Josephraj Arokiaraj, Chenyi Huang, Sahan Bulathwela, Zekun Wu, Bin Wu, 2026-10-16, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: documented capability / bounded empirical (abstract read directly).
+- **Limits**: abstract only; one corpus for the reproduction/agreement numbers; "step" granularity is the authors' own definition.
+- **Relates to**: a concrete general-purpose tool for T-03/I-0003's core problem (turning a raw trace into attributable, labelled units at a defined granularity), useful as a reference for what "a step" should mean in LayerLens's own attribution-as-a-location surface.
+- **LayerLens relevance**: Open questions #2, #9.
+- **Confidence**: Moderate-high (concrete reproduction and kappa numbers; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0080: A multi-agent discussion's visible trace can systematically under-represent agents' actual private beliefs under adversarial pressure
+
+- **Statement**: In a ten-agent factual discussion, one or three adversarial agents repeatedly assert a plausible false answer. Probing benign agents' private answers (hidden calls) versus their public stance: without an attacker, groups are stable (0.6% of benign agents finish holding the false answer); with one adversary, 44.8% privately hold the false answer; with three, 60.5%. With three adversaries, benign agents privately hold the false answer in 51.6% of exposed turns but publicly endorse it in only 19.7% of those same turns — most influence is invisible in the visible discussion. Agents retaining the true answer often fail to defend it; baseline model knowledge does not predict robustness.
+- **Source(s)**: [Believed but Not Said](https://arxiv.org/abs/2610.22138v1), Liangjie Huang, Henry Peng Zou, Wei-Chieh Huang, Wooseong Yang, Yuwei Han, Philip S. Yu, 2026-10-15, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly).
+- **Limits**: abstract only; six models, three factual-QA datasets, a minimal synthetic adversary design.
+- **Relates to**: a structurally new mechanism for nursery N-04 and T-03: a visible trace can systematically under-represent what agents actually came to believe. Complicates any trace-only attribution approach (including Annotrace/C-0079, MASCope/C-0067) in an adversarial multi-agent setting. Also a sharper, multi-agent-specific instance of C-0016 (agreement is not verification).
+- **LayerLens relevance**: Open question #13 (directly feeds the undecided multi-agent-scope question: if LayerLens extends to multi-agent systems, the visible trace alone is argued here to be an incomplete source of truth).
+- **Confidence**: Moderate-high (concrete percentages, clean experimental design; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0081: Android agents cannot verify the provenance of content they act on, and early authorization prototypes trade off false positives against blocked attacks
+
+- **Statement**: Android agents read content from apps/web pages and act with the user's authority, but the WebView accessibility fields examined expose the host application while omitting document-level origins available inside the browser, so an agent cannot check which document supplied an object (confirmed via a limited reproduction on an unmodified WebView). An application-source monitor (withholds side-effecting calls whose signed source record contains an untrusted application) blocked every selected attack write in tested runs, but also withheld benign sends after reading untrusted content, flagged benign tasks using external content, and carried source records forward into a later, unrelated clean task. A WebView source-reference gate (checks object origins/reference lifetime via a modified browser) selected no disallowed object in a separate 24-trial evaluation, but lacks authenticated browser delivery and atomic capture of selected bytes and origin.
+- **Source(s)**: [From Observations to Authorized Actions](https://arxiv.org/abs/2610.15502v1), Hyobin Ahn, Dongjae Lee, 2026-10-11, read scope: abstract read directly via inbox (arxiv.org blocked).
+- **Discovered via**: arXiv inbox harvester.
+- **Evidence label**: bounded empirical (abstract read directly; two separately-evaluated prototypes).
+- **Limits**: abstract only; Android/WebView-specific; the application-source monitor's false-positive pattern is a candidly-reported, unsolved usability cost.
+- **Relates to**: a new domain instance of "an agent acting with real authority cannot verify the provenance of what it is acting on" — related to but distinct from I-0011/Concord (C-0064, content staleness) and I-0009 (misleading error messages): this is about not knowing an observation's *source* at authorization time.
+- **LayerLens relevance**: Open questions #2, #7. Relevant if any LayerLens system type lets an agent observe third-party-sourced content before acting (e.g. Gmail).
+- **Confidence**: Moderate (two separately evaluated prototypes with concrete, if mixed, results; abstract only).
+- **Recheck after**: 2027-04-26 (~180 days).
+
+### C-0082: Modal crosses $1B ARR and raises a $750M Series D at a $15.75B valuation, legitimizing the sandbox-infrastructure category at commercial scale
+
+- **Statement**: Modal raised a $750M Series D led by Accel at a $15.75B post-money valuation (total funding $1.2B), reportedly crossing $1B in annualized run rate with usage said to have tripled since its May 2026 Series C ($4.65B valuation; Series B $1.1B, 2025-09-29). Modal's Sandboxes product specifically is reported at a $300M run rate (roughly a third of total revenue), with one source citing nearly 3 billion sandboxes spun up, scaling to a million concurrent executions.
+- **Source(s)**: press coverage aggregated via WebSearch (fourweekmba.com, futurumgroup.com, aiweekly.co, saasrise.com, toolnavs.com), round reported 2026-10-14; discovered via `inbox/reference/LATEST.md` (Latent Space AINews title), read scope: incomplete access (modal.com EGRESS_BLOCKED per every prior run; no first-party page opened).
+- **Discovered via**: feed (reference inbox), then search.
+- **Evidence label**: incomplete access (vendor/press figures per PROTOCOL.md rule 4, not independently verified).
+- **Limits**: no first-party modal.com page opened; figures are self-reported/press-relayed; Sandboxes-vs-total-revenue breakdown is inferred across sources, not company-stated in any single source checked.
+- **Relates to**: a major scale/legitimacy update to Modal's competitive.md entry (previously thin, then Sandbox Sidecars/C-0054) — the clearest evidence yet that T-06's sandbox-infrastructure category is now large, fast-growing commercial infrastructure, not a research-stage bet.
+- **LayerLens relevance**: General (T-06 market context); Modal remains adjacent infrastructure, not a confirmed direct competitor (no evidence it offers evaluation/attribution/versioning the way LayerLens's Environments pillar does).
+- **Confidence**: Moderate (consistent across several independent press outlets, all ultimately relaying the same company announcement).
+- **Recheck after**: 2026-11-25 (~30 days; funding/scale claim).
+
+### C-0083: E2B pivots its own positioning away from "sandbox" framing, and ships a fourth independent instance of the credential-isolation pattern
+
+- **Statement**: E2B published two notable posts in one week. "Sandboxes are dead" argues the traditional sandbox framing (a fast-booting VM behind an API, competed on cold-start/price) is obsolete for modern AI agents, which need a full operating environment (storage, firewall, observability, secrets); E2B positions its "next chapter" as an "agent-driven private cloud" where the agent decides which tools/resources a task needs. "Introducing E2B Secrets" keeps credentials outside the sandbox, injecting them into developer-configured HTTPS headers so agent-generated code never directly accesses the credential value.
+- **Source(s)**: [Sandboxes are dead](https://e2b.dev/resources/sandboxes-are-dead) (2026-10-16, read via third-party mirrors under the original author's byline, e2b.dev itself EGRESS_BLOCKED) and [Introducing E2B Secrets](https://e2b.dev/resources/introducing-e2b-secrets) (2026-10-07, one-line feed description only); discovered via `inbox/competitors/LATEST.md` (E2B feed).
+- **Discovered via**: feed, then search.
+- **Evidence label**: incomplete access (vendor's own stated positioning/feature; e2b.dev unreachable this run, consistent with every prior run).
+- **Limits**: canonical URL for the first post read only via third-party mirror; "billions of agents run" is the company's own unverified claim; Secrets' actual guarantees beyond the one-sentence description not independently read.
+- **Relates to**: (1) soft evidence T-06's sandbox category is commoditizing — a vendor this knowledge base has cited as a "pause/fork" data point (C-0028) is now distancing itself from the "sandbox" framing entirely; (2) a fourth independent instance of the credential/secret-isolation pattern (after Braintrust's Harbor/C-0010, Modal's Sidecars/C-0054, LayerLens's own trust wall), strengthening T-02's observation that this is a convergent, purchasable property industry-wide.
+- **LayerLens relevance**: General (T-02, T-06). The credential-isolation convergence (now four instances) protects a different asset than LayerLens's trust wall (API keys/credentials vs. the seed/knobs that would let an agent compute its own grade), but the underlying design principle — a boundary agent-reachable code cannot cross — recurs industry-wide.
+- **Confidence**: Low-moderate (vendor's own positioning and feature claim, relayed via search/mirrors, not independently verified).
+- **Recheck after**: 2026-11-25 (~30 days; fast-moving vendor positioning).
+
+### C-0084: An independent evaluation vendor's own production test finds a decision-only judge agrees with an LLM judge on 90% of real traffic at a fraction of the cost
+
+- **Statement**: On 1,000 real production evaluation turns, Comet ran TypeSafe AI's Jev head-to-head against a gpt-4o-mini LLM-as-a-judge: Jev was ~3.5x cheaper and ~3.8x faster, and the two agreed on 897 of 1,000 turns (89.7%), leaving 103 disagreements. Jev's pricing is cited at $0.042 per million tokens read. Comet frames the reusable methodology as testing whether a decision model matches the judge on your own traffic, rather than taking a vendor benchmark claim at face value.
+- **Source(s)**: [Jev vs. LLM-as-a-Judge for AI Evals](https://www.comet.com/site/blog/jev-model-vs-llm-as-a-judge/), Comet (Aswin Thiyagarajan), 2026-09-29, read scope: incomplete access (WebSearch summary of the post's opening; full methodology and the 103-disagreement breakdown not retrieved).
+- **Discovered via**: feed (competitor inbox), then search.
+- **Evidence label**: incomplete access.
+- **Limits**: a single evaluation vendor's own test, not an uninvolved academic group; no stated chance-correction on the 89.7% raw agreement (c.f. C-0027's caution that raw agreement overstates chance-corrected discrimination by 33-41 points in a different, larger study); no breakdown of the 103 disagreements.
+- **Relates to**: a fourth independent lineage for T-05/I-0010 (after Jev's own research group, HATEDECIDE's academic test, OpenAI's competing Decisions API) — the first run by a different evaluation-infrastructure vendor against its own real production traffic rather than a research benchmark or the originating company's own materials.
+- **LayerLens relevance**: Open question #2. Reinforces (does not newly resolve) I-0010's pending product check on whether LayerLens's own Judge/Scorer verdicts expose confidence today.
+- **Confidence**: Moderate (concrete agreement numbers on real traffic; incomplete access, no chance-correction applied).
+- **Recheck after**: 2027-01-26 (~90 days; vendor/pricing-adjacent).
+
+### C-0085: A zero-knowledge proof system lets a verifier check general-purpose program output without rerunning it or trusting the runner
+
+- **Statement**: Magnetar (Microsoft Research) is a zero-knowledge proof system for general-purpose programs (Rust, Go, C) that lets a verifier check output correctness "without rerunning the program, without trusting whoever ran it, and without needing data on which the program was run," per Microsoft's own framing. It runs 10-39x faster on average than prior comparable systems, avoids circuit-friendly algebraic hashes and elliptic-curve/lattice assumptions, and reports proofs of ~600 KiB verifying in 10-12ms at 120 bits of provable security on a consumer laptop. With zero-knowledge enabled, proofs can keep private inputs hidden from the verifier.
+- **Source(s)**: [Proof-based general-purpose computing with Magnetar](https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/) (Microsoft Research, 2026-10-15) and companion paper (IACR ePrint 2026/2423); discovered via `inbox/reference/LATEST.md` (Microsoft Research feed), read scope: incomplete access (WebSearch summary; neither the blog post nor the paper independently opened this run).
+- **Discovered via**: feed, then search.
+- **Evidence label**: incomplete access.
+- **Limits**: a general-purpose cryptographic system, not built for or evaluated on agentic environments/evaluation; the link to agent evaluation is this run's own inference, not a claim the source makes; benchmark figures are the authors' own, not independently reproduced.
+- **Relates to**: new — first claim on cryptographic/ZK-proof-based verification. Distinct in kind from every T-02/T-06 mechanism tracked so far (all re-execute, re-derive, or compare to a stored answer key); a ZK proof instead lets a verifier trust a computation's own proof of correctness without re-running or seeing private inputs. Seeded as new nursery thesis **N-05** (single source).
+- **LayerLens relevance**: Open questions #3 (a different answer to a similar need as deterministic replay: "verify a proof" vs "replay and compare"), #11 (a structurally stronger version of "accept a claim without trusting the claimant," though far more specialized to build than LayerLens's current approach). Candidate "one concept to understand better" for a future brief.
+- **Confidence**: Low-moderate (first-party lab claim relayed via search, not independently verified; general-purpose, not agent-evaluation-specific).
+- **Recheck after**: 2027-04-26 (~180 days; foundational/infra).
+
+### C-0086: A vendor's worked example shows a single tool-description edit measurably cuts wasted tool calls and benchmark cost with correctness unchanged
+
+- **Statement**: Arize published a reproducible worked example: editing one tool description cut an agent's (Codex) unnecessary skill loads from 51 to zero and lowered a benchmark run's cost from $11.85 to $8.34, with correctness unchanged. The method ran the same 18 questions three times per agent configuration via Harbor (Braintrust's sandboxed-eval framework, each attempt in a fresh container) with the Phoenix plugin, comparing configurations and inspecting tool calls in Phoenix.
+- **Source(s)**: [How to test agent tool descriptions with Harbor and Phoenix](https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix/), Arize AI, 2026-10-12, read scope: incomplete access (arize.com EGRESS_BLOCKED per every prior run; WebSearch summary only); discovered via `inbox/competitors/LATEST.md` (Arize feed).
+- **Discovered via**: feed, then search.
+- **Evidence label**: incomplete access.
+- **Limits**: a single, small benchmark run (18 questions x 3 repeats, one tool-description edit); illustrative case study, not a general finding.
+- **Relates to**: a concrete, quantified instance of I-0009's theme, complementing C-0078 (SchemaShield-Lite) by showing the inverse direction — a well-written tool description measurably reduces wasted calls and cost, not just prevents drift-induced failures. Also a notable ecosystem-convergence data point: Arize's own product (Phoenix) integrating with a competitor's framework (Braintrust's Harbor).
+- **LayerLens relevance**: Open question #2 (unnecessary tool-call counts as a legible failure signature); general (tool surfaces). A candidate reference design for LayerLens to let authors iterate on a system type's tool descriptions and measure the effect, analogous to the existing prompt "Optimize" tooling.
+- **Confidence**: Moderate (concrete before/after numbers; incomplete access, single worked example).
+- **Recheck after**: 2027-01-26 (~90 days).
+
+### C-0087: A new large-scale study ties agent reliability decay explicitly to task duration, not just repeated sampling
+
+- **Statement**: Constructing a 396-task benchmark across four task-duration buckets and three domains, this paper evaluates 10 open-source models across 23,392 episodes (k=3 repeats, two agent scaffolds). Its core claim: reliability and capability diverge as task length grows, and existing benchmarks are structurally blind to this because they report only pass@1 on short, atomic tasks. Proposes a "Reliability Decay Curve" (RDC) characterizing how pass^k degrades as task duration increases.
+- **Source(s)**: [Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents](https://arxiv.org/abs/2603.29231), Khanal, Tao, Zhou (Northern Kentucky University, affiliation per WebSearch, unconfirmed), date unknown (arXiv id prefix suggests ~March 2026), read scope: incomplete access (WebSearch summary only; arxiv.org blocked, not in the arXiv inbox this run — found via this run's deliberate contradicting-evidence search).
+- **Discovered via**: search (this run's 20%-budget deliberate contradicting-evidence slice, searching for signs T-01's reliability concerns have been resolved).
+- **Evidence label**: incomplete access.
+- **Limits**: WebSearch summary only, not the paper's own abstract text; the phrase "super-linear" decay used in an earlier search query was not confirmed in the snippets and should not be attributed to this paper without a primary-source check; author affiliation unconfirmed.
+- **Relates to**: this run's contradicting-evidence search for T-01 surfaced no counter-evidence — instead it surfaced this large-scale (23,392-episode) independent family that *reinforces* T-01 from a new angle (reliability as a function of task duration specifically, not only of repeated sampling at one task length). Worth recording honestly as "search for contrary evidence came up empty, reinforcing confidence T-01 is not an echo chamber."
+- **LayerLens relevance**: Open question #5 (adds a dimension not previously separated out: reliability decay by task duration). Relevant to I-0001: task duration itself may be a leading indicator of where extra run-count scrutiny is most needed, before variance is even empirically observed.
+- **Confidence**: Moderate (large, purpose-built study per multiple consistent search snippets; not independently read).
+- **Recheck after**: 2027-04-26 (~180 days).

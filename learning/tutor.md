@@ -130,3 +130,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## Zero-knowledge proofs: a different kind of "verify without re-running"
+
+- **Plain explanation** (from the brief): Every verification idea this knowledge base has tracked so far works by redoing something — replaying a run, comparing to a stored answer key, auditing a trace. A zero-knowledge (ZK) proof is a different shape of answer entirely: the computation itself produces a short cryptographic proof that it ran correctly, and anyone can check that proof in milliseconds without re-running the program, without trusting whoever ran it, and without even needing to see the private data the program ran on.
+- **Example / counterexample**: Microsoft Research's Magnetar proves general-purpose programs (written in Rust, Go, or C) this way — a proof of about 600 KiB verifies in 10-12 milliseconds on an ordinary laptop. Counterexample/boundary: this is general-purpose cryptographic computing, not built for or tested on agent environments at all — the idea that it *could* apply to agent/environment verification is this brief's own inference, not something Microsoft claims. It is also far more specialized and expensive to build than a replay-based system, so it is not a "just add this" feature.
+- **When it does not apply**: anywhere the thing being verified is subjective (a judge's rubric-based verdict) rather than a deterministic computation with a provably correct output — ZK proofs verify that a computation ran as specified, not that the specification itself was the right one to run.
+- **This week's exercise**: in your own words, write one sentence each for "what does LayerLens's trust wall let someone *not* have to do" and "what would a Magnetar-style proof let someone *not* have to do" — are they the same kind of guarantee, or genuinely different ones?
+- **Source status**: incomplete access — read only via WebSearch summary of Microsoft's own blog post and the companion IACR paper's abstract; neither was opened directly this run. See `cards/magnetar-zk-proof-verification.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
