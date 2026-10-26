@@ -1,0 +1,302 @@
+[
+  {
+    "id": "2610.30932",
+    "arxiv_id": "2610.30932",
+    "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
+    "link": "https://arxiv.org/abs/2610.30932",
+    "rank": 0,
+    "signal_kind": "upvotes",
+    "signal": 41,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W7162515531",
+    "arxiv_id": null,
+    "title": "Verus-SpecGym: An Agentic Environment for Evaluating Specification Autoformalization",
+    "link": "https://doi.org/10.48550/arxiv.2605.26457",
+    "rank": 1,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W4415253970",
+    "arxiv_id": null,
+    "title": "ARE: Scaling Up Agent Environments and Evaluations",
+    "link": "https://doi.org/10.48550/arxiv.2509.17158",
+    "rank": 2,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "2610.30753",
+    "arxiv_id": "2610.30753",
+    "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+    "link": "https://arxiv.org/abs/2610.30753",
+    "rank": 3,
+    "signal_kind": "upvotes",
+    "signal": 32,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W4396914156",
+    "arxiv_id": null,
+    "title": "AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments",
+    "link": "https://doi.org/10.3929/ethz-b-000699191",
+    "rank": 4,
+    "signal_kind": "citations",
+    "signal": 24,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "2610.30418",
+    "arxiv_id": "2610.30418",
+    "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
+    "link": "https://arxiv.org/abs/2610.30418",
+    "rank": 5,
+    "signal_kind": "upvotes",
+    "signal": 23,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2515952734",
+    "arxiv_id": null,
+    "title": "Simulation environment for algorithms and agents evaluation.",
+    "link": "https://doi.org/10.14201/adcaij2015438796",
+    "rank": 6,
+    "signal_kind": "citations",
+    "signal": 13,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2103181813",
+    "arxiv_id": null,
+    "title": "Simulations for Evaluating Electronic Markets \u2014 An Agent-Based Environment",
+    "link": "https://doi.org/10.1109/saintw.2005.1620057",
+    "rank": 7,
+    "signal_kind": "citations",
+    "signal": 7,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W7165016123",
+    "arxiv_id": null,
+    "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
+    "link": "https://doi.org/10.48550/arxiv.2606.17546",
+    "rank": 8,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W4414891861",
+    "arxiv_id": null,
+    "title": "DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments",
+    "link": "https://doi.org/10.48550/arxiv.2506.00739",
+    "rank": 9,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W7106848217",
+    "arxiv_id": null,
+    "title": "DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments",
+    "link": "https://doi.org/10.48448/g9gn-5215",
+    "rank": 10,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2150468603",
+    "arxiv_id": null,
+    "title": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
+    "link": "https://doi.org/10.1613/jair.3912",
+    "rank": 11,
+    "signal_kind": "citations",
+    "signal": 2156,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2754879180",
+    "arxiv_id": null,
+    "title": "Revisiting the Arcade Learning Environment: Evaluation Protocols and Open Problems for General Agents",
+    "link": "https://doi.org/10.1613/jair.5699",
+    "rank": 12,
+    "signal_kind": "citations",
+    "signal": 355,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2952509347",
+    "arxiv_id": null,
+    "title": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
+    "link": "https://doi.org/10.48550/arxiv.1207.4708",
+    "rank": 13,
+    "signal_kind": "citations",
+    "signal": 187,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W1968866928",
+    "arxiv_id": null,
+    "title": "An application perspective evaluation of multi-agent system in versatile environments",
+    "link": "https://doi.org/10.1016/j.eswa.2010.07.047",
+    "rank": 14,
+    "signal_kind": "citations",
+    "signal": 55,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W1834473767",
+    "arxiv_id": null,
+    "title": "Farm: A Scalable Environment for Multi-agent Development and Evaluation",
+    "link": "https://doi.org/10.1007/978-3-540-24625-1_13",
+    "rank": 15,
+    "signal_kind": "citations",
+    "signal": 39,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "2610.31162",
+    "arxiv_id": "2610.31162",
+    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+    "link": "https://arxiv.org/abs/2610.31162",
+    "rank": 16,
+    "signal_kind": "upvotes",
+    "signal": 31,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2610.04184",
+    "arxiv_id": "2610.04184",
+    "title": "EvalResearchBench: Can AI Agents Build Their Own Feedback for Recursive Self-Improvement?",
+    "link": "https://arxiv.org/abs/2610.04184",
+    "rank": 17,
+    "signal_kind": "upvotes",
+    "signal": 22,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2610.31066",
+    "arxiv_id": "2610.31066",
+    "title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models",
+    "link": "https://arxiv.org/abs/2610.31066",
+    "rank": 18,
+    "signal_kind": "upvotes",
+    "signal": 13,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2610.23234",
+    "arxiv_id": "2610.23234",
+    "title": "MultiAgent-OPD: End-to-End Training of Hierarchical Multi-Agent Systems with On-Policy Distillation",
+    "link": "https://arxiv.org/abs/2610.23234",
+    "rank": 19,
+    "signal_kind": "upvotes",
+    "signal": 6,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W4294771618",
+    "arxiv_id": null,
+    "title": "Developing, evaluating and scaling learning agents in multi-agent environments",
+    "link": "https://doi.org/10.3233/aic-220113",
+    "rank": 20,
+    "signal_kind": "citations",
+    "signal": 3,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "2610.27782",
+    "arxiv_id": "2610.27782",
+    "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
+    "link": "https://arxiv.org/abs/2610.27782",
+    "rank": 21,
+    "signal_kind": "upvotes",
+    "signal": 2,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2219068168",
+    "arxiv_id": null,
+    "title": "Evaluating Reputation of Agents in E-commerce Multi-Agent Environments",
+    "link": "https://doi.org/10.17485/ijst/2015/v8i30/88014",
+    "rank": 22,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2374052397",
+    "arxiv_id": null,
+    "title": "A Simulation Environment for Performance Evaluation of Mobile Agents",
+    "link": "https://openalex.org/W2374052397",
+    "rank": 23,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W7133565939",
+    "arxiv_id": null,
+    "title": "A Multi-Objective Game Environment for Evaluating AI Agents",
+    "link": "https://doi.org/10.1109/aisummit66170.2025.11410745",
+    "rank": 24,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  }
+]
