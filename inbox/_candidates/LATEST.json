@@ -1,22 +1,10 @@
 [
   {
-    "id": "2610.30932",
-    "arxiv_id": "2610.30932",
-    "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
-    "link": "https://arxiv.org/abs/2610.30932",
-    "rank": 0,
-    "signal_kind": "upvotes",
-    "signal": 41,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
     "id": "https://openalex.org/W7162515531",
     "arxiv_id": null,
     "title": "Verus-SpecGym: An Agentic Environment for Evaluating Specification Autoformalization",
     "link": "https://doi.org/10.48550/arxiv.2605.26457",
-    "rank": 1,
+    "rank": 0,
     "signal_kind": "citations",
     "signal": 0,
     "sources": [
@@ -28,7 +16,7 @@
     "arxiv_id": null,
     "title": "ARE: Scaling Up Agent Environments and Evaluations",
     "link": "https://doi.org/10.48550/arxiv.2509.17158",
-    "rank": 2,
+    "rank": 1,
     "signal_kind": "citations",
     "signal": 0,
     "sources": [
@@ -36,13 +24,25 @@
     ]
   },
   {
-    "id": "2610.30753",
-    "arxiv_id": "2610.30753",
-    "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
-    "link": "https://arxiv.org/abs/2610.30753",
+    "id": "2610.22740",
+    "arxiv_id": "2610.22740",
+    "title": "R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop",
+    "link": "https://arxiv.org/abs/2610.22740",
+    "rank": 2,
+    "signal_kind": "upvotes",
+    "signal": 65,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2610.40339",
+    "arxiv_id": "2610.40339",
+    "title": "Wizard: Manipulate Any World in Real Time via Agentic Control",
+    "link": "https://arxiv.org/abs/2610.40339",
     "rank": 3,
     "signal_kind": "upvotes",
-    "signal": 32,
+    "signal": 24,
     "sources": [
       "hf-daily"
     ]
@@ -60,27 +60,27 @@
     ]
   },
   {
-    "id": "2610.30418",
-    "arxiv_id": "2610.30418",
-    "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
-    "link": "https://arxiv.org/abs/2610.30418",
-    "rank": 5,
-    "signal_kind": "upvotes",
-    "signal": 23,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
     "id": "https://openalex.org/W2515952734",
     "arxiv_id": null,
     "title": "Simulation environment for algorithms and agents evaluation.",
     "link": "https://doi.org/10.14201/adcaij2015438796",
-    "rank": 6,
+    "rank": 5,
     "signal_kind": "citations",
     "signal": 13,
     "sources": [
       "openalex"
+    ]
+  },
+  {
+    "id": "2610.39264",
+    "arxiv_id": "2610.39264",
+    "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps",
+    "link": "https://arxiv.org/abs/2610.39264",
+    "rank": 6,
+    "signal_kind": "upvotes",
+    "signal": 10,
+    "sources": [
+      "hf-daily"
     ]
   },
   {
@@ -96,10 +96,10 @@
     ]
   },
   {
-    "id": "https://openalex.org/W7165016123",
+    "id": "https://openalex.org/W7223890343",
     "arxiv_id": null,
-    "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
-    "link": "https://doi.org/10.48550/arxiv.2606.17546",
+    "title": "ClinVerse: A Realistic Multi-Agent Diagnostic Environment for Training and Evaluating Medical Agents",
+    "link": "https://doi.org/10.48550/arxiv.2610.34878",
     "rank": 8,
     "signal_kind": "citations",
     "signal": 0,
@@ -108,10 +108,10 @@
     ]
   },
   {
-    "id": "https://openalex.org/W4414891861",
+    "id": "https://openalex.org/W7165016123",
     "arxiv_id": null,
-    "title": "DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments",
-    "link": "https://doi.org/10.48550/arxiv.2506.00739",
+    "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
+    "link": "https://doi.org/10.48550/arxiv.2606.17546",
     "rank": 9,
     "signal_kind": "citations",
     "signal": 0,
@@ -132,13 +132,25 @@
     ]
   },
   {
+    "id": "https://openalex.org/W4414891861",
+    "arxiv_id": null,
+    "title": "DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments",
+    "link": "https://doi.org/10.48550/arxiv.2506.00739",
+    "rank": 11,
+    "signal_kind": "citations",
+    "signal": 0,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
     "id": "https://openalex.org/W2150468603",
     "arxiv_id": null,
     "title": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
     "link": "https://doi.org/10.1613/jair.3912",
-    "rank": 11,
+    "rank": 12,
     "signal_kind": "citations",
-    "signal": 2156,
+    "signal": 2189,
     "sources": [
       "openalex"
     ]
@@ -148,21 +160,9 @@
     "arxiv_id": null,
     "title": "Revisiting the Arcade Learning Environment: Evaluation Protocols and Open Problems for General Agents",
     "link": "https://doi.org/10.1613/jair.5699",
-    "rank": 12,
-    "signal_kind": "citations",
-    "signal": 355,
-    "sources": [
-      "openalex"
-    ]
-  },
-  {
-    "id": "https://openalex.org/W2952509347",
-    "arxiv_id": null,
-    "title": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
-    "link": "https://doi.org/10.48550/arxiv.1207.4708",
     "rank": 13,
     "signal_kind": "citations",
-    "signal": 187,
+    "signal": 356,
     "sources": [
       "openalex"
     ]
@@ -192,23 +192,11 @@
     ]
   },
   {
-    "id": "2610.31162",
-    "arxiv_id": "2610.31162",
-    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-    "link": "https://arxiv.org/abs/2610.31162",
+    "id": "2610.40373",
+    "arxiv_id": "2610.40373",
+    "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
+    "link": "https://arxiv.org/abs/2610.40373",
     "rank": 16,
-    "signal_kind": "upvotes",
-    "signal": 31,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
-    "id": "2610.04184",
-    "arxiv_id": "2610.04184",
-    "title": "EvalResearchBench: Can AI Agents Build Their Own Feedback for Recursive Self-Improvement?",
-    "link": "https://arxiv.org/abs/2610.04184",
-    "rank": 17,
     "signal_kind": "upvotes",
     "signal": 22,
     "sources": [
@@ -216,22 +204,34 @@
     ]
   },
   {
-    "id": "2610.31066",
-    "arxiv_id": "2610.31066",
-    "title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models",
-    "link": "https://arxiv.org/abs/2610.31066",
-    "rank": 18,
+    "id": "2610.34722",
+    "arxiv_id": "2610.34722",
+    "title": "CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems",
+    "link": "https://arxiv.org/abs/2610.34722",
+    "rank": 17,
     "signal_kind": "upvotes",
-    "signal": 13,
+    "signal": 19,
     "sources": [
       "hf-daily"
     ]
   },
   {
-    "id": "2610.23234",
-    "arxiv_id": "2610.23234",
-    "title": "MultiAgent-OPD: End-to-End Training of Hierarchical Multi-Agent Systems with On-Policy Distillation",
-    "link": "https://arxiv.org/abs/2610.23234",
+    "id": "2610.40799",
+    "arxiv_id": "2610.40799",
+    "title": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents",
+    "link": "https://arxiv.org/abs/2610.40799",
+    "rank": 18,
+    "signal_kind": "upvotes",
+    "signal": 16,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2610.34298",
+    "arxiv_id": "2610.34298",
+    "title": "Matched Capabilities, Different Behaviors: A Controlled Study of MCP and CLI Interfaces for Language Agents",
+    "link": "https://arxiv.org/abs/2610.34298",
     "rank": 19,
     "signal_kind": "upvotes",
     "signal": 6,
@@ -252,15 +252,15 @@
     ]
   },
   {
-    "id": "2610.27782",
-    "arxiv_id": "2610.27782",
-    "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
-    "link": "https://arxiv.org/abs/2610.27782",
+    "id": "https://openalex.org/W2382262855",
+    "arxiv_id": null,
+    "title": "Implementation of Agent's Environment Evaluation Model in Intelligent Report System",
+    "link": "https://openalex.org/W2382262855",
     "rank": 21,
-    "signal_kind": "upvotes",
-    "signal": 2,
+    "signal_kind": "citations",
+    "signal": 0,
     "sources": [
-      "hf-daily"
+      "openalex"
     ]
   },
   {
