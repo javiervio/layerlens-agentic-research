@@ -1,4 +1,4 @@
-# Competitor / team harvest 2026-W44 (fetched 2026-10-26)
+# Competitor / team harvest 2026-W45 (fetched 2026-11-02)
 
 Recent posts from competitor and reference-team blogs, pulled from their RSS/Atom feeds by a GitHub Actions runner (the cloud research sandbox cannot reach these directly). Read this alongside inbox/arxiv/. Sources with no feed are listed so you cover them via WebSearch and log the gap honestly.
 
@@ -51,6 +51,24 @@ Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched
 ## Arize
 Source: https://arize.com/blog/feed/ | Home: https://arize.com/blog/
 
+### Evil Qwen and activation steering: why SBOMs aren’t enough
+- date: Fri, 30 Oct 2026
+- link: https://arize.com/blog/evil-qwen-activation-steering/
+
+A one-neuron push turns Qwen3.5-4B hostile. At half strength it still does the sums and writes code, and it stops refusing. SBOMs and model signing tell you what you shipped. Only behavioral evals tell you what it does.
+The post Evil Qwen and activation steering: why SBOMs aren&#8217;t enough appeared first on Arize AI.
+### I put a ghost in Claude Code. Then I evaluated it.
+- date: Tue, 27 Oct 2026
+- link: https://arize.com/blog/i-put-a-ghost-in-claude-code-then-i-evaluated-it/
+
+I built a Halloween Claude Code mod that grades each turn as a treat or a trick and blocks dangerous commands, then traced and evaluated it with Arize AX.
+The post I put a ghost in Claude Code. Then I evaluated it. appeared first on Arize AI.
+### A web page talked our agent into leaking a stranger’s data. Here’s how we caught it.
+- date: Mon, 26 Oct 2026
+- link: https://arize.com/blog/indirect-prompt-injection-ai-agents/
+
+A web page told our support agent to look up a different customer, and the agent complied on 28 of 100 runs. Here's how we found the leak in an Arize Phoenix trace, blocked it with a scope guardrail, and set up an Arize AX monitor on the injection rate.
+The post A web page talked our agent into leaking a stranger&#8217;s data. Here&#8217;s how we caught it. appeared first on Arize AI.
 ### How to build a software factory that tests its own prompts
 - date: Thu, 22 Oct 2026
 - link: https://arize.com/blog/how-to-build-a-software-factory-that-tests-its-own-prompts/
@@ -69,24 +87,6 @@ The post Can decision models play games from screenshots? appeared first on Ariz
 
 Anthropic built Scion for an enormous monorepo handling more than 30,000 daily merges. Most teams can keep using Git, but AI coding agents are changing how source control, code review, and CI need to scale.
 The post Why Anthropic replaced Git, and whether you’ll need to appeared first on Arize AI.
-### Agent tool selection: The tool your agent almost called
-- date: Mon, 19 Oct 2026
-- link: https://arize.com/blog/ai-agent-tool-selection-decision-tracing/
-
-Decision spans in Arize Phoenix record a tool router’s choice, alternative probabilities, and confidence. Here’s how we evaluated those decisions and used the results to set a fallback threshold.
-The post Agent tool selection: The tool your agent almost called appeared first on Arize AI.
-### Alyx now available on Google Cloud Marketplace
-- date: Mon, 19 Oct 2026
-- link: https://arize.com/blog/alyx-now-available-on-google-cloud-marketplace/
-
-We’re excited to share that Alyx, the AI engineering agent built into Arize AX, is now available on Google Cloud Marketplace. Teams building and running AI agents on Google Cloud can now add Alyx to their Google Cloud Gemini Enterprise environment and ask how their agents are performing, in plain language, without leaving the tools they already use every day.
-The post Alyx now available on Google Cloud Marketplace appeared first on Arize AI.
-### AI agent permissions: Why agents don’t know what you’re allowed to do
-- date: Thu, 15 Oct 2026
-- link: https://arize.com/blog/ai-agent-permissions/
-
-AI agent permissions determine what an agent is allowed to do on someone’s behalf. As agents get more powerful, we’re running into a basic problem: a model can’t reliably verify those permissions just because someone claims to have them in a conversation. The problem agents have with permission goes both ways: sometimes they steadfastly refuse...
-The post AI agent permissions: Why agents don&#8217;t know what you&#8217;re allowed to do appeared first on Arize AI.
 ## E2B
 Source: https://e2b.dev/rss.xml | Home: https://e2b.dev/blog
 
@@ -150,6 +150,18 @@ Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetche
 ## Modal
 Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://modal.com/blog
 
+### DeepSeek V4.1 Flash 1017 is now available on Shared Endpoints
+- date: 2026-10-27
+- link: https://modal.com/changelog/deepseek-v4-1-flash-1017-now-available-on-shared-endpoints
+
+### Exit Snapshots for Sandboxes available in Beta
+- date: 2026-10-27
+- link: https://modal.com/changelog/exit-snapshots-resume-sandbox-preserve-state
+
+### Launching a trillion-parameter model at Sakana AI
+- date: 2026-10-23
+- link: https://modal.com/blog/sakana-case-study
+
 ### Sunsetting Modal Notebooks, effective today
 - date: 2026-10-23
 - link: https://modal.com/changelog/sunsetting-modal-notebooks
@@ -162,23 +174,11 @@ Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page
 - date: 2026-10-21
 - link: https://modal.com/blog/get-started-with-llm-training-on-modal
 
-### Serverless routing made sticky
-- date: 2026-10-20
-- link: https://modal.com/blog/serverless-routing-made-sticky
-
-### NVIDIA Vera CPUs double throughput for Modal Sandboxes
-- date: 2026-10-19
-- link: https://modal.com/blog/nvidia-vera-sandboxes
-
-### Building fast filesystems for VMs
-- date: 2026-10-16
-- link: https://modal.com/blog/vm-sandbox-filesystem
-
 ## Prime Intellect
 Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.primeintellect.ai/blog
 
 ### Prime Mega MoE: Fast Fused MoE Kernels for Training
-- date: 2026-10-23
+- date: 2026-10-29
 - link: https://www.primeintellect.ai/blog/prime-mega-moe
 
 ### prime-rl 0.10.0: faster training, our new RL loss IPO, and one unified eval stack
@@ -237,6 +237,24 @@ Source: https://www.comet.com/blog/feed | Home: https://www.comet.com/blog
 
 I&#8217;ve been spending time looking at how teams are actually using Claude Code, and one thing keeps coming up: most of the cost surprises aren&#8217;t coming from where people expect. The instinct is to look at conversation history — keep prompts tight, avoid long threads, or explore smaller models. That&#8217;s not wrong, but it&#8217;s often [&#8230;]
 The post Understanding Your Claude Code Spend: What&#8217;s Actually Driving the Cost appeared first on Comet.
+### Opik Security Incident: October 2026
+- date: Tue, 27 Oct 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/security-incident-october-2026/
+
+No customer data, accounts, or API keys were accessed. On October 26, 2026, Comet contained a security incident affecting Opik on comet.com. This post explains what happened, what was affected, and what we have done in response. What happened Between October 24 and 26, 2026, an unauthorized party used a comet.com user API key from [&#8230;]
+The post Opik Security Incident: October 2026 appeared first on Comet.
+### Introducing Opik’s Generative Dashboard Builder
+- date: Mon, 26 Oct 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/introducing-opiks-generative-dashboard-builder/
+
+At Comet, we’ve seen firsthand how teams in finance, tech, e-commerce, and beyond use the Opik platform to track critical metrics for monitoring and improving their agents. Those metrics vary widely — for instance, a financial services team checking that its internal support agent follows company policy will track very different metrics than an automotive [&#8230;]
+The post Introducing Opik&#8217;s Generative Dashboard Builder appeared first on Comet.
+### Train your own decision model
+- date: Mon, 26 Oct 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/train-a-decision-model/
+
+Decision models drew wide attention in September, when TypeSafe AI launched Jev, a model that returns probabilities over a fixed set of answers instead of generating text. Open-source alternatives followed almost immediately: Latent.Space counted six in two days. Most writing about decision models since then defines them by their interface, which uses some sort of [&#8230;]
+The post Train your own decision model appeared first on Comet.
 ### Jev vs. LLM-as-a-Judge for AI Evals
 - date: Tue, 29 Sep 2026
 - link: https://live-comet-marketing-site.pantheonsite.io/blog/jev-model-vs-llm-as-a-judge/
@@ -249,83 +267,65 @@ The post Jev vs. LLM-as-a-Judge for AI Evals appeared first on Comet.
 
 Comet&#8217;s Opik platform is now listed in Nebius AI Cloud Applications, bringing agent observability, evaluation, and the full Comet AI development platform to one of the most powerful AI cloud platforms available today. It is the first step in a broader collaboration between Opik and Nebius to bring observability closer to the infrastructure where AI [&#8230;]
 The post Comet Extends Agent Observability and Evaluation to Nebius AI Cloud appeared first on Comet.
-### Capturing a 400-Turn Claude Code Session in a Single Image
-- date: Mon, 21 Sep 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/claude-code-session-mapping/
-
-We ran a small model over thousands of Claude Code session and discovered how people really use coding agents. Comet Cost Intelligence is a tool for optimizing engineering token spend on Claude Code and Codex. While working on it we started with common issues: default models set too high, skills and MCP servers loaded into [&#8230;]
-The post Capturing a 400-Turn Claude Code Session in a Single Image appeared first on Comet.
-### Prompt Management for AI Agents: The Best Tools Compared (2026)
-- date: Wed, 16 Sep 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/prompt-management-tools/
-
-Despite how often prompts change once an agent is live, most teams don’t have a real prompt management process. Somewhere on a shared drive is prompt_final_v2.txt, and somewhere else is a version someone pasted into a Slack DM that is two edits newer. Neither one matches what runs in production, and nobody can say for [&#8230;]
-The post Prompt Management for AI Agents: The Best Tools Compared (2026) appeared first on Comet.
-### Export TrueFoundry AI Gateway traces to Opik with OpenTelemetry
-- date: Tue, 08 Sep 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/truefoundry-gateway-opik-integration/
-
-When an LLM call is slow, expensive, or wrong, you want to see the whole request: the prompt, the model, the tokens, the tool calls, the latency. If your traces live in one tool and your evaluation lives in another, that picture is split in two. This guide shows how to send TrueFoundry AI Gateway [&#8230;]
-The post Export TrueFoundry AI Gateway traces to Opik with OpenTelemetry appeared first on Comet.
 ## Databricks
 Source: https://www.databricks.com/rss.xml | Home: https://www.databricks.com/blog
 
-### Built for Agents: The Case for Spark Declarative Pipelines
-- date: Fri, 23 Oct 2026
-- link: https://www.databricks.com/blog/built-agents-case-spark-declarative-pipelines
+### Lakebase branching for CI/CD: lessons from 100 PR databases
+- date: Sat, 31 Oct 2026
+- link: https://www.databricks.com/blog/lakebase-branching-cicd-lessons-100-pr-databases
 
-AI agents now write a growing share of production data pipelines (over 70% of SDP...
-### Real-time energy trading and analytics on Databricks
-- date: Fri, 23 Oct 2026
-- link: https://www.databricks.com/blog/real-time-energy-trading-and-analytics-databricks
+The problem: testing against production data shouldn't take over 30 minutesSnorkel...
+### Databricks and SAP unleash end-to-end data & AI capabilities to level up enterprise AI transformation
+- date: Fri, 30 Oct 2026
+- link: https://www.databricks.com/blog/databricks-and-sap-unleash-end-end-data-ai-capabilities-level-enterprise-ai-transformation
 
-Why does real-time energy trading need more than faster data?Energy trading desks...
-### The new economics of AI cost management
-- date: Thu, 22 Oct 2026
-- link: https://www.databricks.com/blog/ai-cost-management
+Today's AI models are more capable than ever. What they still lack is the business...
+### Wealth Management Client Onboarding Needs More Than AI
+- date: Fri, 30 Oct 2026
+- link: https://www.databricks.com/blog/wealth-management-client-onboarding-needs-more-ai
 
-For the past two years, the story around enterprise AI adoption has mostly been about...
-### The Fraud Analyst AI Coworker: Detecting Telecom Fraud in Real-Time on One Platform
-- date: Thu, 22 Oct 2026
-- link: https://www.databricks.com/blog/fraud-analyst-ai-coworker-detecting-telecom-fraud-real-time-one-platform
+Wealth Management client onboarding can stall even when every system has done its job. The document is collected...
+### Deliberate decisions and enterprise AI value
+- date: Fri, 30 Oct 2026
+- link: https://www.databricks.com/blog/deliberate-decisions-and-enterprise-ai-value
 
-BackgroundAccording to the Communications Fraud Control Association's 2025 survey...
-### The AI Bill is coming
-- date: Thu, 22 Oct 2026
-- link: https://www.databricks.com/blog/ai-bill-coming
+AI progress is moving quickly. Expectations are rising, experimentation is spreading...
+### Announcing General Availability of Real-Time Mode for Spark Declarative Pipelines on Databricks
+- date: Thu, 29 Oct 2026
+- link: https://www.databricks.com/blog/announcing-general-availability-real-time-mode-spark-declarative-pipelines-databricks
 
-In this conversation, Catherine Brown talks with Patrick about what happened when...
-### Databricks AI Runtime and NVIDIA make it easier to customize open models with enterprise data
-- date: Wed, 21 Oct 2026
-- link: https://www.databricks.com/blog/databricks-ai-runtime-nvidia-train-fine-tune-models
+We introduced Real-Time Mode (RTM) last year which enabled customers to build low-latency, operational use cases...
+### Smarter cost controls for serverless
+- date: Thu, 29 Oct 2026
+- link: https://www.databricks.com/blog/smarter-cost-controls-serverless
 
-GPUs power today's most advanced AI workloads, from cutting-edge language models...
+At Databricks, our serverless compute usage has grown more than 3x in the past year,...
 ## Patronus AI
 Source: https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.patronus.ai/blog
 
-### Introducing FigmaTrace: A Comprehensive Training Dataset for Figma Design Workflows
-- date: 2026-10-23
+### FigmaTrace: A Training Dataset for Figma Design Workflows
+- date: 2026-10-30
 - link: https://www.patronus.ai/blog/figmatrace-a-comprehensive-training-dataset-for-figma-design-workflows
 
-### Getting GLM-5.2 NVFP4 Post-Training Off the Ground
-- date: 2026-10-23
-- link: https://www.patronus.ai/blog/getting-glm-5-2-nvfp4-post-training-off-the-ground
-
-### Introducing Generative Simulators: Autonomously Scaling Environments for Agents
-- date: 2026-10-23
-- link: https://www.patronus.ai/blog/introducing-generative-simulators
-
-### Introducing SpeedrunBench: A Challenging Benchmark for Frontier Agents
-- date: 2026-10-23
-- link: https://www.patronus.ai/blog/introducing-speedrunbench-a-challenging-benchmark-for-frontier-agents
-
 ### Introducing TRAIL: A Benchmark for Agentic Evaluation
-- date: 2026-10-23
+- date: 2026-10-30
 - link: https://www.patronus.ai/blog/introducing-trail-a-benchmark-for-agentic-evaluation
 
-### Introducing MEMTRACK: A Benchmark for Agent Memory
-- date: 2026-10-23
-- link: https://www.patronus.ai/blog/memtrack
+### We Built Our Own Post-Training Stack
+- date: 2026-10-30
+- link: https://www.patronus.ai/blog/post-training-stack
+
+### Getting GLM-5.2 NVFP4 Post-Training Off the Ground
+- date: 2026-10-29
+- link: https://www.patronus.ai/blog/getting-glm-5-2-nvfp4-post-training-off-the-ground
+
+### Generative Simulators: Scaling Environments for Agents
+- date: 2026-10-29
+- link: https://www.patronus.ai/blog/introducing-generative-simulators
+
+### SpeedrunBench: A Benchmark for Frontier Agents
+- date: 2026-10-29
+- link: https://www.patronus.ai/blog/introducing-speedrunbench-a-challenging-benchmark-for-frontier-agents
 
 ## Humanloop
 Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://humanloop.com/blog
@@ -357,6 +357,18 @@ Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per 
 ## Confident AI (DeepEval)
 Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.confident-ai.com/blog
 
+### Product Changelogs, October 30, 2026
+- date: 2026-10-31
+- link: https://www.confident-ai.com/docs/changelog/2026/10/30
+
+### Introducing Confident Voice
+- date: 2026-10-29
+- link: https://www.confident-ai.com/blog/introducing-confident-voice
+
+### Introducing Confident Monitor
+- date: 2026-10-29
+- link: https://www.confident-ai.com/blog/introducing-confident-ai-monitor
+
 ### Product Changelogs, October 23, 2026
 - date: 2026-10-24
 - link: https://www.confident-ai.com/docs/changelog/2026/10/23
@@ -369,47 +381,43 @@ Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetch
 - date: 2026-10-23
 - link: https://www.confident-ai.com/blog/introducing-confident-trace
 
-### LLM Product Manager Workflows: A Complete Guide to AI Quality
-- date: 2026-10-23
-- link: https://www.confident-ai.com/blog/llm-product-manager-workflows
-
-### LLM Evaluation for Startups: The Complete Guide
-- date: 2026-10-23
-- link: https://www.confident-ai.com/blog/llm-evaluation-for-startups
-
-### Three Ways AI Systems Fail Even When Evals Pass
-- date: 2026-10-23
-- link: https://www.confident-ai.com/blog/three-ways-ai-systems-fail-even-when-evals-pass
-
 ## Langfuse
 Source: https://langfuse.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://langfuse.com/blog
 
-### Export score metadata and provenance to blob storage
-- date: 2026-10-23
-- link: https://langfuse.com/changelog/2026-10-22-blob-storage-score-field-groups
+### Yes, you can copy our eval setup
+- date: 2026-11-02
+- link: https://langfuse.com/blog/2026-07-16-steal-our-eval-setup
 
-### FIPS mode and hardened images for self-hosted Langfuse
-- date: 2026-10-23
-- link: https://langfuse.com/changelog/2026-10-23-fips-mode
+### Monitoring LLM Security &amp; Reducing LLM Risks
+- date: 2026-10-30
+- link: https://langfuse.com/blog/2024-06-monitoring-llm-security
 
-### Deployment Gates for LLMs in Finance
-- date: 2026-10-21
-- link: https://langfuse.com/blog/2026-07-15-llm-certification-financial-services
+### Langfuse Launch Week #2
+- date: 2026-10-30
+- link: https://langfuse.com/blog/2024-11-17-launch-week-2
 
-### How we built Langfuse Halo
-- date: 2026-10-21
-- link: https://langfuse.com/blog/2026-10-21-building-the-langfuse-assistant
+### LLM Product Development for Product Managers
+- date: 2026-10-30
+- link: https://langfuse.com/blog/2024-11-llm-product-management
 
-### Operating Langfuse as an internal service
-- date: 2026-10-21
-- link: https://langfuse.com/blog/2026-10-22-operating-langfuse-as-an-internal-service
+### Set up production evaluations with ease
+- date: 2026-10-30
+- link: https://langfuse.com/changelog/2026-08-22-reusable-evaluators-and-rules
 
-### Provisioning and governing Langfuse across teams
-- date: 2026-10-21
-- link: https://langfuse.com/blog/2026-10-22-provisioning-and-governing-langfuse-across-teams
+### Install Langfuse from the Slack Marketplace
+- date: 2026-10-30
+- link: https://langfuse.com/changelog/2026-10-30-slack-marketplace
 
 ## Daytona
 Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
+
+### Daytona runs the code, Notte runs the browser
+- date: Fri, 30 Oct 2026
+- link: https://www.daytona.io/dotfiles/daytona-runs-the-code-notte-runs-the-browser
+
+### Daytona2: Agent Infrastructure Requires More Than Kubernetes
+- date: Thu, 29 Oct 2026
+- link: https://www.daytona.io/dotfiles/daytona2-agent-infrastructure-requires-more-than-kubernetes
 
 ### Daytona Raises $60M Series B to Build the Agent Cloud
 - date: Tue, 20 Oct 2026
@@ -426,14 +434,6 @@ Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
 ### Searching Over Sandbox States for Coding Agents
 - date: Fri, 18 Sep 2026
 - link: https://www.daytona.io/dotfiles/snapshots-as-search-states-go-explore-with-daytona
-
-### The 7 Best AI Agent Frameworks: Features and Tradeoffs
-- date: Wed, 16 Sep 2026
-- link: https://www.daytona.io/dotfiles/best-ai-agent-frameworks
-
-### Cursor Self-Hosted Machines on Daytona
-- date: Wed, 02 Sep 2026
-- link: https://www.daytona.io/dotfiles/cursor-self-hosted-machines-on-daytona
 
 ## Runloop
 Source: https://www.runloop.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.runloop.ai/blog
