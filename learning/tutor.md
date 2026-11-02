@@ -146,3 +146,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## Value-of-information gating: deciding whether to check, not just what to check
+
+- **Plain explanation** (from the brief): Most "should I double-check this?" designs are binary — always verify, or never. Value-of-information (VOI) gating asks a sharper question: given what I'm about to *do*, is checking this specific fact worth what checking costs? The decision scales with the pending action's consequence, not with how old or how source-changed the information is.
+- **Example / counterexample**: This week's clearest case: AMV-Guard applies this to agent memory — the same remembered shipping address can be used unchecked for a routine order, but should be re-confirmed before a high-value one, because the *action's* stakes differ, not the memory's age. On a test environment, this cut verification cost by a third while keeping 100% safety recall. Counterexample/boundary: it's a genuinely different question from "has the source changed" (the approach a different paper, Concord, takes) — a VOI gate might skip re-checking a fact whose source hasn't changed at all, if the pending action is low-stakes, and might re-check a fact whose source definitely hasn't changed, if the pending action is high-stakes enough to warrant it anyway.
+- **When it does not apply**: when you genuinely can't estimate either the cost of checking or the cost of being wrong (the action's consequence is unknown or unbounded) — the gate has nothing real to compute against, and a simpler default (always check, or ask a human) is more honest than a VOI number that's really a guess dressed up as a calculation.
+- **This week's exercise**: pick one LayerLens system type (Salesforce or Stripe) and sketch two example actions — one where you'd want re-verification effort scaled up, one where you'd want it scaled down — and write one sentence each for what makes the stakes different between them.
+- **Source status**: abstract only — "When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents" (arXiv:2610.31446), read via the arXiv inbox, not independently opened beyond the abstract this run. See `cards/amv-guard-memory-verification.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
