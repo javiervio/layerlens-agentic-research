@@ -162,3 +162,21 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## "Authority never lifts itself": tracking who said something, not just whether it's still true
+
+- **Plain explanation** (from the brief): Most agent-memory safety ideas this knowledge base has tracked so far (Concord's staleness detection, AMV-Guard's value-of-information gating, above) ask "is this remembered fact still accurate?" This week's concept asks a different question entirely: "who actually said this, and with what authority?" A memory system can track provenance (owner, scope, origin, authority) on every entry, and enforce one rule at every point memory is read, written, or acted on: information can rise in authority only through an explicit, authorized act — never just by being repeated, quoted, or rephrased.
+- **Example / counterexample**: the attack this defends against (found in the same week's harvest): an attacker publishes a social-media post quoting their own conversation with their own agent, where *they* stated a preference. A victim agent that reads this post can lose track of the quoting/nesting and record the attacker's preference as its *own* user's preference — because it tracked the content ("prefer tool X") but not the authorship chain (whose words these originally were, and that they never touched the victim's own user). Counterexample/boundary: this is a different failure from a fact simply being wrong or stale — the remembered statement could be word-for-word accurate about what the attacker said; the failure is entirely in *whose* statement it gets filed under.
+- **When it does not apply**: for a system with no memory that persists across more than one interaction (true of most of LayerLens's shipped environments today), there is no "whose authority does this carry forward" question to answer — there's nothing being carried forward at all.
+- **This week's exercise**: imagine a LayerLens environment where an agent could read a Gmail thread containing a quoted instruction ("my manager said to approve X") and that instruction later influenced the agent's behavior in a *different*, later task. Sketch, in a sentence or two, what metadata you'd want attached to that quoted instruction the moment it's first read, so a later system (or a human reviewing the trace) could tell it apart from something the real user actually told the agent directly.
+- **Source status**: both sources are abstract-only, read via the arXiv inbox this run — "Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction" (arXiv:2610.38209, the attack) and "ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents" (arXiv:2610.28093, the proposed defense). See `cards/role-grounding-attack-agent-memory.md` and `cards/clawmmu-protection-coherent-memory.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.
+
+**Level**: pending.
