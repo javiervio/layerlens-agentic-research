@@ -179,4 +179,18 @@ Your running record of building fluency in agentic environments. The agent adds 
 
 **Level**: pending.
 
+---
+
+## "Signed" is not the same claim as "safe"
+
+- **Plain explanation** (from the brief): A signature, a "verified" badge, or an "offline" label tells you who vouched for something, or what boundary was declared — it does not tell you the thing actually behaves the way that vouching implies. This week, two unrelated sources landed on the identical lesson: a research paper showed a signed, authenticated MCP tool concealing data-exfiltrating code past a state-of-the-art defense (the signature covers the tool's identity, not its runtime behavior), and a competitor's own blog post said almost the same thing about SBOMs and model signing in a completely different context (a single activation push turning a model hostile while it still looks signed and compliant on paper).
+- **Example / counterexample**: a signed inter-agent handoff manifest, from a different paper the same week, makes this even sharper: signing cuts unsafe commits from 69.4% to 9.0% by stopping tampering *after* the manifest is created — but if the requirement was extracted wrong *before* signing, the signature just makes the error look official, pushing violations back up to 37.5-75.0% under a targeted attack. The signature protects the message in transit; it says nothing about whether the message was true when it was written. Counterexample/boundary: this distinction dissolves when the signed/proven artifact *is* the complete claim being trusted, with no behavior left to diverge from it — a cryptographic proof that a specific computation produced a specific output (like Anthropic's own provable-inference prototype this week) doesn't have this gap, because the proof and the claim are the same object, not a stand-in for one.
+- **When it does not apply**: anywhere a credential, signature, or label is the full fact being relied on (an API key proving who is calling, a hash proving a file wasn't altered) rather than a proxy standing in for a different, unverified property (that calling party's behavior being trustworthy, or that file's contents being safe to execute).
+- **This week's exercise**: pick one place in LayerLens's own shipped product where a credential, a signature, or a status check currently gates something (a provider key, a signing key, a "verified" label on an environment or a run). Ask: is that check standing in for the actual property being relied on, or is it the actual property itself? Write one sentence for your answer.
+- **Source status**: the MCP-tool paper ("Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains," arXiv:2611.06585) and the multi-agent handoff paper ("Signed but Not Safe: Requirement Integrity in Multi-Agent LLM Handoffs," arXiv:2611.07483) are both abstract-only, read via the arXiv inbox this run. The Arize blog post ("Evil Qwen and activation steering: why SBOMs aren't enough") was read via the competitor-inbox feed excerpt, not the full post. See `cards/signed-sealed-leaked-mcp-toolchains.md` and `cards/signed-but-not-safe-requirement-integrity.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
 **Level**: pending.
