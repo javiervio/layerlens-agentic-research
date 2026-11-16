@@ -1,4 +1,4 @@
-# Competitor / team harvest 2026-W46 (fetched 2026-11-09)
+# Competitor / team harvest 2026-W47 (fetched 2026-11-16)
 
 Recent posts from competitor and reference-team blogs, pulled from their RSS/Atom feeds by a GitHub Actions runner (the cloud research sandbox cannot reach these directly). Read this alongside inbox/arxiv/. Sources with no feed are listed so you cover them via WebSearch and log the gap honestly.
 
@@ -10,7 +10,7 @@ Recent posts from competitor and reference-team blogs, pulled from their RSS/Ato
 - Modal: 6 posts via https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page)
 - Prime Intellect: 6 posts via https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetched per page)
 - LangChain / LangSmith: NO FEED OR SITEMAP FOUND (cover via WebSearch; home https://blog.langchain.com/)
-- Galileo: 6 posts via https://galileo.ai/sitemap.xml (sitemap fallback; titles fetched per page)
+- Galileo: NO FEED OR SITEMAP FOUND (cover via WebSearch; home https://galileo.ai/blog)
 - Comet / Opik: 6 posts via https://www.comet.com/blog/feed
 - Databricks: 6 posts via https://www.databricks.com/rss.xml
 - Patronus AI: 6 posts via https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched per page)
@@ -23,6 +23,10 @@ Recent posts from competitor and reference-team blogs, pulled from their RSS/Ato
 
 ## Braintrust
 Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.braintrust.dev/blog
+
+### Manage Braintrust with Terraform
+- date: 2026-11-10
+- link: https://www.braintrust.dev/blog/terraform
 
 ### Understand how agents use your MCP server
 - date: 2026-11-05
@@ -43,10 +47,6 @@ Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched
 ### Optimizing coding agent usage and costs
 - date: 2026-10-07
 - link: https://www.braintrust.dev/blog/coding-agent-insights
-
-### Faster queries for debugging production agents with Nitro
-- date: 2026-09-24
-- link: https://www.braintrust.dev/blog/nitro
 
 ## Arize
 Source: https://arize.com/blog/feed/ | Home: https://arize.com/blog/
@@ -90,6 +90,16 @@ The post How to build a software factory that tests its own prompts appeared fir
 ## E2B
 Source: https://e2b.dev/rss.xml | Home: https://e2b.dev/blog
 
+### How Artificial Analysis Puts Frontier Models to the Test with E2B
+- date: Tue, 10 Nov 2026
+- link: https://e2b.dev/customers/artificial-analysis
+
+How Artificial Analysis uses E2B to run agentic benchmarks on public and pre-release models, from zero to thousands of tasks in seconds.
+### NVIDIA Vera brings faster compute to E2B sandboxes
+- date: Mon, 09 Nov 2026
+- link: https://e2b.dev/resources/nvidia-vera-brings-faster-compute-to-e2b-sandboxes
+
+Faster compute and memory population, with capacity for 1,550 loaded sandboxes on one server. Here’s why Vera matters for E2B’s agent cloud.
 ### Introducing E2B Workload Identity
 - date: Tue, 03 Nov 2026
 - link: https://e2b.dev/resources/introducing-e2b-workload-identity
@@ -110,16 +120,6 @@ How Niteshift runs Claude Code, Codex, and other coding agents on E2B's agentic 
 - link: https://e2b.dev/resources/sandboxes-are-dead
 
 From code snippets to entire computers, agents have outgrown the sandbox. E2B's next chapter is an agent-driven private cloud that adapts to every task.
-### Best Code Execution Sandboxes for AI Agents in 2026
-- date: Thu, 15 Oct 2026
-- link: https://e2b.dev/resources/best-code-execution-sandboxes-for-ai-agents
-
-Compare the best 2026 code execution sandboxes for AI agents. See how E2B stacks up against alternatives for isolation, BYOC, billing, and open source.
-### How ClickUp Runs AI Code on Sensitive Data at Enterprise Scale
-- date: Thu, 08 Oct 2026
-- link: https://e2b.dev/customers/clickup
-
-How ClickUp Brain² uses E2B sandboxes to run model-written code on sensitive workspace data, with isolated microVMs, prebuilt templates, and thousands of sandboxes in a minute.
 ## Browserbase
 Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.browserbase.com/blog
 
@@ -150,29 +150,29 @@ Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetche
 ## Modal
 Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://modal.com/blog
 
-### How Snorkel runs realistic agent simulations with Modal
-- date: 2026-11-06
-- link: https://modal.com/blog/how-snorkel-runs-realistic-agent-simulations-with-modal
+### Inkling 2 Small is now available on Modal
+- date: 2026-11-14
+- link: https://modal.com/changelog/inkling-2-small-is-now-available-on-modal
 
-### New Image Builder version 2026.10 with updated trust stores
-- date: 2026-11-02
-- link: https://modal.com/changelog/new-image-builder-version-2026-10-with-updated-trust-stores
+### Scaling Intelligence: A landmark commission and exhibition
+- date: 2026-11-13
+- link: https://modal.com/blog/scaling-intelligence
 
-### DeepSeek V4.1 Flash 1017 is now available on Shared Endpoints
-- date: 2026-10-27
-- link: https://modal.com/changelog/deepseek-v4-1-flash-1017-now-available-on-shared-endpoints
+### Sandbox resourcing: burst, don
+- date: 2026-11-12
+- link: https://modal.com/blog/sandbox-bursting
 
-### Exit Snapshots for Sandboxes available in Beta
-- date: 2026-10-27
-- link: https://modal.com/changelog/exit-snapshots-resume-sandbox-preserve-state
+### New Sandbox Events UI for execs, TCP tunnels, and HTTP requests
+- date: 2026-11-12
+- link: https://modal.com/changelog/new-sandbox-events-ui-for-execs-tcp-tunnels-and-http-requests
 
-### Launching a trillion-parameter model at Sakana AI
-- date: 2026-10-23
-- link: https://modal.com/blog/sakana-case-study
+### Modal becomes a gVisor maintainer
+- date: 2026-11-11
+- link: https://modal.com/blog/modal-gvisor-maintainer
 
-### Sunsetting Modal Notebooks, effective today
-- date: 2026-10-23
-- link: https://modal.com/changelog/sunsetting-modal-notebooks
+### View invoices directly in the Modal dashboard
+- date: 2026-11-11
+- link: https://modal.com/changelog/view-invoices-directly-in-the-modal-dashboard
 
 ## Prime Intellect
 Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.primeintellect.ai/blog
@@ -200,33 +200,6 @@ Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetc
 ### On the Nature of the Swarm
 - date: 2026-10-06
 - link: https://www.primeintellect.ai/blog/on-the-nature-of-the-swarm
-
-## Galileo
-Source: https://galileo.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://galileo.ai/blog
-
-### Enterprise AI Governance From Pilot to Production
-- date: unknown
-- link: https://galileo.ai/blog/enterprise-ai-governance-pilot-to-production
-
-### AI Operational Governance Model for Production Agents
-- date: unknown
-- link: https://galileo.ai/blog/ai-operational-governance-model
-
-### Agent Development Lifecycle: 5 Production Stages
-- date: unknown
-- link: https://galileo.ai/blog/agent-development-lifecycle
-
-### Agent Development Lifecycle Stages: 5-Step Guide
-- date: unknown
-- link: https://galileo.ai/blog/agent-development-lifecycle-stages
-
-### Agent Observability Across Development Lifecycle
-- date: unknown
-- link: https://galileo.ai/blog/agent-observability-development-lifecycle
-
-### Enterprise Agent Development Lifecycle Strategy
-- date: unknown
-- link: https://galileo.ai/blog/enterprise-agent-development-lifecycle-strategy
 
 ## Comet / Opik
 Source: https://www.comet.com/blog/feed | Home: https://www.comet.com/blog
@@ -270,61 +243,61 @@ The post Train your own decision model appeared first on Comet.
 ## Databricks
 Source: https://www.databricks.com/rss.xml | Home: https://www.databricks.com/blog
 
-### Read, don't copy: replacing file feeds with OpenSharing - Part 2 (How to Implement)
-- date: Fri, 06 Nov 2026
-- link: https://www.databricks.com/blog/read-dont-copy-replacing-file-feeds-opensharing-part-2-how-implement
+### Teach Genie One your workflows: The ultimate guide for skills in Genie One
+- date: Mon, 16 Nov 2026
+- link: https://www.databricks.com/blog/teach-genie-one-your-workflows-ultimate-guide-skills-genie-one
 
-Many data-sharing architectures begin with a familiar pattern: A provider exports...
-### Read, don't copy: replacing file and API feeds with OpenSharing - Part 1 (The Why)
-- date: Fri, 06 Nov 2026
-- link: https://www.databricks.com/blog/read-dont-copy-replacing-file-and-api-feeds-opensharing-part-1-why
+Every team has “recipes” that govern how they work. The way finance puts together...
+### Apache Spark vs Apache Flink: which should you use?
+- date: Sat, 14 Nov 2026
+- link: https://www.databricks.com/blog/spark-vs-flink
 
-If you ingest data from your customers over SFTP or APIs, you have probably asked...
-### How public sector organizations can govern AI at scale
-- date: Fri, 06 Nov 2026
-- link: https://www.databricks.com/blog/how-public-sector-organizations-can-govern-ai-scale
+For most teams, Apache Spark™ is the better choice. Spark runs batch ETL, SQL analytics,...
+### OpenAI and Databricks: Enterprise AI on your governed data
+- date: Fri, 13 Nov 2026
+- link: https://www.databricks.com/blog/openai-and-databricks-enterprise-ai-your-governed-data
 
-Every government CIO has the same mandate right now: adopt AI, move faster, and do...
-### Real-time fraud detection with Feature Views
-- date: Thu, 05 Nov 2026
-- link: https://www.databricks.com/blog/real-time-fraud-detection-feature-views
+Greg Brockman, co-founder and President of OpenAI, has a simple way to describe AI...
+### Dispelling LTAP myths
+- date: Thu, 12 Nov 2026
+- link: https://www.databricks.com/blog/dispelling-ltap-myths
 
-Real-time fraud detection depends on three kinds of features: what a customer did...
-### A builder’s guide to scaling Databricks Apps
-- date: Thu, 05 Nov 2026
-- link: https://www.databricks.com/blog/builders-guide-scaling-databricks-apps
+Reynold Xin's post "From monolith to Lakebase to LTAP" explained what LTAP is and...
+### How Constellation is building a governed data foundation on Databricks
+- date: Thu, 12 Nov 2026
+- link: https://www.databricks.com/blog/how-constellation-building-governed-data-foundation-databricks
 
-Congratulations, you've built an app on Databricks Apps, and it's gone from a couple...
-### Which Data Collaboration Tool: OpenSharing, Clean Rooms, Marketplace
-- date: Thu, 05 Nov 2026
-- link: https://www.databricks.com/blog/which-data-collaboration-tool-opensharing-clean-rooms-marketplace
+Constellation operates the largest nuclear fleet in the United States. For them,...
+### Eclipse Aerospace simplifies flight-data ingestion with Databricks
+- date: Thu, 12 Nov 2026
+- link: https://www.databricks.com/blog/eclipse-aerospace-simplifies-flight-data-ingestion-databricks
 
-The world of sharing has extended far past tables. We can now securely share all...
+As organizations in aerospace, manufacturing, life sciences, and other data-intensive...
 ## Patronus AI
 Source: https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.patronus.ai/blog
 
-### Getting GLM-5.2 NVFP4 Post-Training Off the Ground
-- date: 2026-11-08
-- link: https://www.patronus.ai/blog/getting-glm-5-2-nvfp4-post-training-off-the-ground
-
-### SpeedrunBench: A Benchmark for Frontier Agents
-- date: 2026-11-08
-- link: https://www.patronus.ai/blog/introducing-speedrunbench-a-challenging-benchmark-for-frontier-agents
-
-### Introducing MEMTRACK: A Benchmark for Agent Memory
-- date: 2026-11-08
-- link: https://www.patronus.ai/blog/memtrack
+### Who Is the Right Expert for AI?
+- date: 2026-11-13
+- link: https://www.patronus.ai/blog/right-expert-for-ai
 
 ### Few Word Do Trick: Open Models Cut the Filler
-- date: 2026-11-07
+- date: 2026-11-11
 - link: https://www.patronus.ai/blog/few-word-do-trick
 
 ### GlobeBench: A Benchmark for Text-Based World Models
-- date: 2026-11-07
+- date: 2026-11-11
 - link: https://www.patronus.ai/blog/globebench
 
+### FigmaTrace: A Training Dataset for Figma Design Workflows
+- date: 2026-11-09
+- link: https://www.patronus.ai/blog/figmatrace-a-comprehensive-training-dataset-for-figma-design-workflows
+
+### Getting GLM-5.2 NVFP4 Post-Training Off the Ground
+- date: 2026-11-09
+- link: https://www.patronus.ai/blog/getting-glm-5-2-nvfp4-post-training-off-the-ground
+
 ### Generative Simulators: Scaling Environments for Agents
-- date: 2026-11-06
+- date: 2026-11-09
 - link: https://www.patronus.ai/blog/introducing-generative-simulators
 
 ## Humanloop
@@ -357,6 +330,10 @@ Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per 
 ## Confident AI (DeepEval)
 Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.confident-ai.com/blog
 
+### Product Changelogs, November 13, 2026
+- date: 2026-11-13
+- link: https://www.confident-ai.com/docs/changelog/2026/11/13
+
 ### Product Changelogs, November 6, 2026
 - date: 2026-11-07
 - link: https://www.confident-ai.com/docs/changelog/2026/11/6
@@ -377,36 +354,32 @@ Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetch
 - date: 2026-10-24
 - link: https://www.confident-ai.com/docs/changelog/2026/10/23
 
-### Confident AI Prompt Monitoring Guide
-- date: 2026-10-23
-- link: https://www.confident-ai.com/blog/confident-ai-prompt-monitoring-guide
-
 ## Langfuse
 Source: https://langfuse.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://langfuse.com/blog
 
+### Should you use an LLM Proxy to Build your Application?
+- date: 2026-11-16
+- link: https://langfuse.com/blog/2024-09-langfuse-proxy
+
+### Langfuse launches AI Gateway
+- date: 2026-11-13
+- link: https://langfuse.com/blog/introducing-gateway
+
+### Call Microsoft Azure and Google AI Studio models through the AI Gateway
+- date: 2026-11-13
+- link: https://langfuse.com/changelog/2026-11-12-ai-gateway-azure-google-ai-studio
+
+### Restrict models per AI Gateway key
+- date: 2026-11-13
+- link: https://langfuse.com/changelog/2026-11-13-ai-gateway-key-model-restrictions
+
+### Call Google Vertex AI models through the AI Gateway
+- date: 2026-11-13
+- link: https://langfuse.com/changelog/2026-11-13-ai-gateway-vertex-ai
+
 ### Langfuse AI Gateway public beta
-- date: 2026-11-09
+- date: 2026-11-12
 - link: https://langfuse.com/changelog/2026-11-04-ai-gateway-public-beta
-
-### Connect your S3 buckets with an IAM role
-- date: 2026-11-09
-- link: https://langfuse.com/changelog/2026-11-06-s3-iam-role-auth
-
-### Skill Management in Langfuse
-- date: 2026-11-06
-- link: https://langfuse.com/changelog/2026-11-03-skill-management
-
-### See when token usage is missing
-- date: 2026-11-06
-- link: https://langfuse.com/changelog/2026-11-06-retiring-tokenization
-
-### State of LLMs on the Application Layer
-- date: 2026-11-04
-- link: https://langfuse.com/blog/2025-10-13-state-of-llms-september-2025
-
-### Catching conversation signals in Langfuse
-- date: 2026-11-04
-- link: https://langfuse.com/blog/2026-09-23-catching-conversation-signals-in-langfuse
 
 ## Daytona
 Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
