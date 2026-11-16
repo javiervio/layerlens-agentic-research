@@ -18,7 +18,7 @@
     "link": "https://doi.org/10.48550/arxiv.2509.17158",
     "rank": 1,
     "signal_kind": "citations",
-    "signal": 63,
+    "signal": 66,
     "sources": [
       "openalex"
     ]
@@ -30,7 +30,7 @@
     "link": "https://doi.org/10.5281/zenodo.20953922",
     "rank": 2,
     "signal_kind": "citations",
-    "signal": 66,
+    "signal": 69,
     "sources": [
       "openalex"
     ]
@@ -42,43 +42,67 @@
     "link": "https://doi.org/10.48550/arxiv.2604.18240",
     "rank": 3,
     "signal_kind": "citations",
-    "signal": 11,
+    "signal": 12,
     "sources": [
       "openalex"
     ]
   },
   {
-    "id": "2611.08237",
-    "arxiv_id": "2611.08237",
-    "title": "Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling",
-    "link": "https://arxiv.org/abs/2611.08237",
+    "id": "2611.08318",
+    "arxiv_id": "2611.08318",
+    "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+    "link": "https://arxiv.org/abs/2611.08318",
     "rank": 4,
     "signal_kind": "upvotes",
-    "signal": 12,
+    "signal": 21,
     "sources": [
       "hf-daily"
     ]
   },
   {
-    "id": "2611.09113",
-    "arxiv_id": "2611.09113",
-    "title": "Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use",
-    "link": "https://arxiv.org/abs/2611.09113",
+    "id": "2611.16409",
+    "arxiv_id": "2611.16409",
+    "title": "Experience-Handoff Reinforcement Learning for Recursive Self-Improvement",
+    "link": "https://arxiv.org/abs/2611.16409",
     "rank": 5,
     "signal_kind": "upvotes",
-    "signal": 2,
+    "signal": 10,
     "sources": [
       "hf-daily"
     ]
   },
   {
-    "id": "2611.07624",
-    "arxiv_id": "2611.07624",
-    "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
-    "link": "https://arxiv.org/abs/2611.07624",
+    "id": "2611.18359",
+    "arxiv_id": "2611.18359",
+    "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+    "link": "https://arxiv.org/abs/2611.18359",
     "rank": 6,
     "signal_kind": "upvotes",
-    "signal": 21,
+    "signal": 85,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2611.15777",
+    "arxiv_id": "2611.15777",
+    "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+    "link": "https://arxiv.org/abs/2611.15777",
+    "rank": 7,
+    "signal_kind": "upvotes",
+    "signal": 85,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2611.15789",
+    "arxiv_id": "2611.15789",
+    "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+    "link": "https://arxiv.org/abs/2611.15789",
+    "rank": 8,
+    "signal_kind": "upvotes",
+    "signal": 80,
     "sources": [
       "hf-daily"
     ]
@@ -88,9 +112,9 @@
     "arxiv_id": null,
     "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
     "link": "https://doi.org/10.48550/arxiv.2606.17546",
-    "rank": 7,
+    "rank": 9,
     "signal_kind": "citations",
-    "signal": 18,
+    "signal": 19,
     "sources": [
       "openalex"
     ]
@@ -100,7 +124,7 @@
     "arxiv_id": null,
     "title": "Simulation environment for algorithms and agents evaluation.",
     "link": "https://doi.org/10.14201/adcaij2015438796",
-    "rank": 8,
+    "rank": 10,
     "signal_kind": "citations",
     "signal": 13,
     "sources": [
@@ -108,13 +132,49 @@
     ]
   },
   {
+    "id": "2611.18130",
+    "arxiv_id": "2611.18130",
+    "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
+    "link": "https://arxiv.org/abs/2611.18130",
+    "rank": 11,
+    "signal_kind": "upvotes",
+    "signal": 8,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2611.08219",
+    "arxiv_id": "2611.08219",
+    "title": "Agent-R^2: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+    "link": "https://arxiv.org/abs/2611.08219",
+    "rank": 12,
+    "signal_kind": "upvotes",
+    "signal": 8,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
+    "id": "2607.13920",
+    "arxiv_id": "2607.13920",
+    "title": "DeepStress: Stress-Testing Deep Search Agents",
+    "link": "https://arxiv.org/abs/2607.13920",
+    "rank": 13,
+    "signal_kind": "upvotes",
+    "signal": 7,
+    "sources": [
+      "hf-daily"
+    ]
+  },
+  {
     "id": "https://openalex.org/W2103181813",
     "arxiv_id": null,
     "title": "Simulations for Evaluating Electronic Markets \u2014 An Agent-Based Environment",
     "link": "https://doi.org/10.1109/saintw.2005.1620057",
-    "rank": 9,
+    "rank": 14,
     "signal_kind": "citations",
-    "signal": 7,
+    "signal": 6,
     "sources": [
       "openalex"
     ]
@@ -124,9 +184,9 @@
     "arxiv_id": null,
     "title": "DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments",
     "link": "https://doi.org/10.48550/arxiv.2506.00739",
-    "rank": 10,
+    "rank": 15,
     "signal_kind": "citations",
-    "signal": 3,
+    "signal": 5,
     "sources": [
       "openalex"
     ]
@@ -136,7 +196,7 @@
     "arxiv_id": null,
     "title": "ClinVerse: A Realistic Multi-Agent Diagnostic Environment for Training and Evaluating Medical Agents",
     "link": "https://doi.org/10.48550/arxiv.2610.34878",
-    "rank": 11,
+    "rank": 16,
     "signal_kind": "citations",
     "signal": 0,
     "sources": [
@@ -144,13 +204,25 @@
     ]
   },
   {
+    "id": "2611.18562",
+    "arxiv_id": "2611.18562",
+    "title": "Training Reasoning Models in Simulation to Natively Use Real Robots",
+    "link": "https://arxiv.org/abs/2611.18562",
+    "rank": 17,
+    "signal_kind": "recency",
+    "signal": 0,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
     "id": "https://openalex.org/W2150468603",
     "arxiv_id": null,
     "title": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
     "link": "https://doi.org/10.1613/jair.3912",
-    "rank": 12,
+    "rank": 18,
     "signal_kind": "citations",
-    "signal": 2482,
+    "signal": 2487,
     "sources": [
       "openalex"
     ]
@@ -160,9 +232,9 @@
     "arxiv_id": null,
     "title": "$\u03c4^2$-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
     "link": "https://doi.org/10.48550/arxiv.2506.07982",
-    "rank": 13,
+    "rank": 19,
     "signal_kind": "citations",
-    "signal": 644,
+    "signal": 671,
     "sources": [
       "openalex"
     ]
@@ -172,11 +244,23 @@
     "arxiv_id": null,
     "title": "Revisiting the Arcade Learning Environment: Evaluation Protocols and Open Problems for General Agents",
     "link": "https://doi.org/10.1613/jair.5699",
-    "rank": 14,
+    "rank": 20,
     "signal_kind": "citations",
-    "signal": 405,
+    "signal": 411,
     "sources": [
       "openalex"
+    ]
+  },
+  {
+    "id": "2611.18397",
+    "arxiv_id": "2611.18397",
+    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+    "link": "https://arxiv.org/abs/2611.18397",
+    "rank": 21,
+    "signal_kind": "upvotes",
+    "signal": 68,
+    "sources": [
+      "hf-daily"
     ]
   },
   {
@@ -184,7 +268,7 @@
     "arxiv_id": null,
     "title": "An application perspective evaluation of multi-agent system in versatile environments",
     "link": "https://doi.org/10.1016/j.eswa.2010.07.047",
-    "rank": 15,
+    "rank": 22,
     "signal_kind": "citations",
     "signal": 53,
     "sources": [
@@ -196,7 +280,7 @@
     "arxiv_id": null,
     "title": "Farm: A Scalable Environment for Multi-agent Development and Evaluation",
     "link": "https://doi.org/10.1007/978-3-540-24625-1_13",
-    "rank": 16,
+    "rank": 23,
     "signal_kind": "citations",
     "signal": 39,
     "sources": [
@@ -204,97 +288,13 @@
     ]
   },
   {
-    "id": "2611.07461",
-    "arxiv_id": "2611.07461",
-    "title": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
-    "link": "https://arxiv.org/abs/2611.07461",
-    "rank": 17,
-    "signal_kind": "upvotes",
-    "signal": 25,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
     "id": "https://openalex.org/W7160291823",
     "arxiv_id": null,
     "title": "PhysicianBench: Evaluating LLM Agents in Real-World EHR Environments",
     "link": "https://doi.org/10.48550/arxiv.2605.02240",
-    "rank": 18,
-    "signal_kind": "citations",
-    "signal": 25,
-    "sources": [
-      "openalex"
-    ]
-  },
-  {
-    "id": "2610.35959",
-    "arxiv_id": "2610.35959",
-    "title": "AgentBaton: Efficient Model Collaboration in Agentic Tasks",
-    "link": "https://arxiv.org/abs/2610.35959",
-    "rank": 19,
-    "signal_kind": "upvotes",
-    "signal": 9,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
-    "id": "2611.09382",
-    "arxiv_id": "2611.09382",
-    "title": "Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations",
-    "link": "https://arxiv.org/abs/2611.09382",
-    "rank": 20,
-    "signal_kind": "upvotes",
-    "signal": 7,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
-    "id": "2610.37739",
-    "arxiv_id": "2610.37739",
-    "title": "OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery",
-    "link": "https://arxiv.org/abs/2610.37739",
-    "rank": 21,
-    "signal_kind": "upvotes",
-    "signal": 6,
-    "sources": [
-      "hf-daily"
-    ]
-  },
-  {
-    "id": "https://openalex.org/W4294771618",
-    "arxiv_id": null,
-    "title": "Developing, evaluating and scaling learning agents in multi-agent environments",
-    "link": "https://doi.org/10.3233/aic-220113",
-    "rank": 22,
-    "signal_kind": "citations",
-    "signal": 4,
-    "sources": [
-      "openalex"
-    ]
-  },
-  {
-    "id": "https://openalex.org/W7133565939",
-    "arxiv_id": null,
-    "title": "A Multi-Objective Game Environment for Evaluating AI Agents",
-    "link": "https://doi.org/10.1109/aisummit66170.2025.11410745",
-    "rank": 23,
-    "signal_kind": "citations",
-    "signal": 2,
-    "sources": [
-      "openalex"
-    ]
-  },
-  {
-    "id": "https://openalex.org/W2382262855",
-    "arxiv_id": null,
-    "title": "Implementation of Agent's Environment Evaluation Model in Intelligent Report System",
-    "link": "https://openalex.org/W2382262855",
     "rank": 24,
     "signal_kind": "citations",
-    "signal": 0,
+    "signal": 25,
     "sources": [
       "openalex"
     ]
