@@ -1,4 +1,4 @@
-# Reference-sources harvest 2026-W47 (fetched 2026-11-16)
+# Reference-sources harvest 2026-W48 (fetched 2026-11-23)
 
 Recent posts from frontier-lab blogs and high-signal analysts, pulled from their feeds/sitemaps by a GitHub Actions runner (the cloud research sandbox cannot reach most of these directly). Read alongside inbox/arxiv/ and inbox/competitors/. Curated for signal, not volume; sources with no feed are listed for WebSearch coverage.
 
@@ -18,38 +18,46 @@ Recent posts from frontier-lab blogs and high-signal analysts, pulled from their
 ## OpenAI
 Source: https://openai.com/blog/rss.xml | Home: https://openai.com/news/
 
-### LVMH’s Media Division announces strategic partnership with OpenAI
-- date: Mon, 16 Nov 2026
-- link: https://openai.com/index/lvmh-media-division-partnership
+### Perplexity and Intelligence
+- date: Sun, 22 Nov 2026
+- link: https://openai.com/index/perplexity-and-intelligence
 
-LVMH’s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.
-### The King’s Trust and OpenAI launch £1m partnership
-- date: Mon, 16 Nov 2026
-- link: https://openai.com/index/the-kings-trust-and-openai
+How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.
+### Combatting adversarial distillation
+- date: Fri, 20 Nov 2026
+- link: https://openai.com/index/combatting-adversarial-distillation
 
-The King’s Trust and OpenAI launch a £1m partnership to help up to 25,000 young people across the UK build practical AI skills for work.
-### A step toward defining the Standard Model on a lattice
-- date: Sun, 15 Nov 2026
-- link: https://openai.com/index/step-toward-defining-the-standard-model
+OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.
+### Hebbia sees improvements in financial research with GPT-6 Astra
+- date: Fri, 20 Nov 2026
+- link: https://openai.com/business/customer-stories/hebbia
 
-Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.
-### Our new blog for science
-- date: Sun, 15 Nov 2026
-- link: https://openai.com/index/our-new-blog-for-science
+Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.
+### Can AI help scientists identify promising drug candidates?
+- date: Fri, 20 Nov 2026
+- link: https://openai.com/index/introducing-medchembench
 
-The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.
-### Introducing ChatGPT Wallet
-- date: Fri, 13 Nov 2026
-- link: https://openai.com/index/introducing-chatgpt-wallet
+MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.
+### How OpenAI’s Performance Factory keeps ChatGPT fast
+- date: Thu, 19 Nov 2026
+- link: https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast
 
-Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.
-### Shield helps technicians hand off legacy portal work with OpenAI
-- date: Fri, 13 Nov 2026
-- link: https://openai.com/business/customer-stories/shield
+Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.
+### Deploying Daybreak Red
+- date: Thu, 19 Nov 2026
+- link: https://openai.com/business/learn/deploying-daybreak-red
 
-Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.
+Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.
 ## Google DeepMind
 Source: https://deepmind.google/blog/rss.xml | Home: https://deepmind.google/discover/blog/
+
+### Introducing Gemini 4 Neon
+- date: Wed, 18 Nov 2026
+- link: https://deepmind.google/blog/introducing-gemini-4-neon/
+
+### Genie 4 is now available
+- date: Wed, 18 Nov 2026
+- link: https://deepmind.google/blog/genie-4-is-now-available/
 
 ### Introducing Gemini 4 Hydrogen
 - date: Thu, 12 Nov 2026
@@ -69,19 +77,19 @@ Predicting how DNA sequences and their variations impact specific human cell typ
 - link: https://deepmind.google/blog/introducing-alphaproof-code/
 
 AlphaProof Code agents wrote three  million lines of proofs in Lean to verify Signal’s core encryption.
-### Opening the datasets behind our AI weather models
-- date: Tue, 10 Nov 2026
-- link: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
-
-Foundational precipitation and geostationary satellite datasets to observe the planet clearly.
-### Gemini Robotics 2.5 accelerates real-world general dexterity
-- date: Mon, 09 Nov 2026
-- link: https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
-
-Our most capable vision-language-action model enhances robot dexterity, reliability, and safety
 ## Google Research
 Source: https://research.google/blog/rss/ | Home: https://research.google/blog/
 
+### How Google Duplex evolved to also call businesses for you in Gemini
+- date: Fri, 20 Nov 2026
+- link: https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/
+
+Generative AI
+### A game you cannot win unless you have a quantum computer
+- date: Thu, 19 Nov 2026
+- link: https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/
+
+Quantum
 ### Advancing science & engineering with Antigravity’s /teamwork
 - date: Fri, 13 Nov 2026
 - link: https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/
@@ -102,19 +110,21 @@ Natural Language Processing
 - link: https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/
 
 Health & Bioscience
-### Agile Deliberation: How AI helps humans define the gray areas
-- date: Wed, 04 Nov 2026
-- link: https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/
-
-Data Mining & Modeling
-### The sleep framework: A new way for LLMs to retain knowledge in continual learning
-- date: Tue, 27 Oct 2026
-- link: https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/
-
-Education Innovation
 ## Microsoft Research
 Source: https://www.microsoft.com/en-us/research/feed/ | Home: https://www.microsoft.com/en-us/research/blog/
 
+### Can AI help build a healthier future?
+- date: Tue, 17 Nov 2026
+- link: https://www.microsoft.com/en-us/research/podcast/can-ai-help-build-a-healthier-future/
+
+What can AI enable in medicine, and how do we get there? Microsoft Research lead Doug Burger, Microsoft Principal Research Manager Ava Amini, Microsoft Chief Scientific Officer Eric Horvitz, and physician-scientist Eric Topol of Scripps Research explore these questions and more.
+The post Can AI help build a healthier future? appeared first on Microsoft Research.
+### TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient
+- date: Mon, 16 Nov 2026
+- link: https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/
+
+AI coding agents can waste time and tokens relearning the same lessons. TokenEconomizer is an open-source plugin that builds on past sessions to cut costs while maintaining task success. It’s a path toward coding agents that learn not only how to solve tasks, but also how to spend computation more effectively. 
+The post TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient appeared first on Microsoft Research.
 ### Microsoft Research Focus – Edition #98
 - date: Thu, 12 Nov 2026
 - link: https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/
@@ -139,71 +149,59 @@ The post Formally verifying agent-written full-stack web apps with PDD Kit appea
 
 Research Manager Mike Walker reflects on a career spanning hacker culture, cybersecurity, and AI, sharing lessons about trust, teamwork, leadership, and why solving difficult problems requires curiosity, judgment, agility—and an understanding of the rules.
 The post Learn the rules: The hacker mindset appeared first on Microsoft Research.
-### From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence
-- date: Fri, 30 Oct 2026
-- link: https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/
-
-Evaluating Microsoft Copilot at enterprise scale requires test data that captures the full complexity of real organizations, yet real enterprise data contains sensitive information that cannot be used for evaluation under any circumstances.
-The post From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence appeared first on Microsoft Research.
-### Microsoft Research Focus – Edition #97
-- date: Thu, 29 Oct 2026
-- link: https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/
-
-Host Sowbhagya Suresh shares some of the latest news and cutting-edge research from across Microsoft—from understanding the challenges facing coding agents to uncovering how people use AI at work and improving extended-range weather forecasting.
-The post Microsoft Research Focus – Edition #97 appeared first on Microsoft Research.
 ## Hugging Face
 Source: https://huggingface.co/blog/feed.xml | Home: https://huggingface.co/blog
 
-### Build a Robot Pick-and-Place Simulation with SimReady Assets
-- date: Fri, 13 Nov 2026
-- link: https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place
+### How to build and maintain an agentic evaluation
+- date: Mon, 23 Nov 2026
+- link: https://huggingface.co/blog/agentic-evals
 
-### XYBench: Helping with the problem behind the question
-- date: Fri, 13 Nov 2026
-- link: https://huggingface.co/blog/allenai/xybench
+### Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup
+- date: Fri, 20 Nov 2026
+- link: https://huggingface.co/blog/inkling2mini
 
-### llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
-- date: Fri, 13 Nov 2026
-- link: https://huggingface.co/blog/ggml-org/llama-cpp-v1
+### Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost
+- date: Fri, 20 Nov 2026
+- link: https://huggingface.co/blog/harness-adapters-at-scale
 
-### LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B
-- date: Thu, 12 Nov 2026
-- link: https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite
+### DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency
+- date: Wed, 18 Nov 2026
+- link: https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin
 
-### The Definitive Fine-Tuning Guide for 3D Generation Models
-- date: Thu, 12 Nov 2026
-- link: https://huggingface.co/blog/3d-lora-finetuning
+### Why your fine-tuning job takes longer than the FLOPs say
+- date: Wed, 18 Nov 2026
+- link: https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time
 
-### BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model
-- date: Wed, 11 Nov 2026
-- link: https://huggingface.co/blog/qvac/botpsy
+### Time-Series Models in the Streamhouse: A New Frontier and Use Cases
+- date: Wed, 18 Nov 2026
+- link: https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse
 
 ## Anthropic
 Source: https://www.anthropic.com/sitemap.xml (sitemap fallback) | Home: https://www.anthropic.com/news
 
-### Preparing for the 2026 US midterms
-- date: 2026-11-13
-- link: https://www.anthropic.com/news/2026-us-midterms
+### Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement
+- date: 2026-11-20
+- link: https://www.anthropic.com/news/ipo-close
 
-### Funding third-party model evaluations
-- date: 2026-11-13
-- link: https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations
-
-### Partnering with Accenture on embedded evaluation
-- date: 2026-11-13
-- link: https://www.anthropic.com/news/accenture-embedded-evaluation
-
-### Activating AI Safety Level 3 protections
-- date: 2026-11-13
-- link: https://www.anthropic.com/news/activating-asl3-protections
-
-### Anthropic update on independent evaluators
-- date: 2026-11-13
-- link: https://www.anthropic.com/news/an-update-on-independent-evaluators
+### LLMs are making formal software verification feasible at a much larger scale
+- date: 2026-11-20
+- link: https://www.anthropic.com/research/formal-verification
 
 ### Focus areas for The Anthropic Institute
-- date: 2026-11-13
+- date: 2026-11-18
 - link: https://www.anthropic.com/news/anthropic-institute-agenda
+
+### Anthropic prices initial public offering
+- date: 2026-11-18
+- link: https://www.anthropic.com/news/anthropic-prices-initial-public-offering
+
+### Expanding the Cyber Verification Program
+- date: 2026-11-18
+- link: https://www.anthropic.com/news/cyber-verification-program
+
+### What 81,000 people told us about AI economics
+- date: 2026-11-18
+- link: https://www.anthropic.com/research/81k-economics
 
 ## Interconnects (Nathan Lambert)
 Source: https://www.interconnects.ai/feed | Home: https://www.interconnects.ai/
@@ -241,92 +239,85 @@ Western open models strike back
 ## Simon Willison
 Source: https://simonwillison.net/atom/everything/ | Home: https://simonwillison.net/
 
-### datasette-maplibre 0.1a0
-- date: 2026-11-15
-- link: https://simonwillison.net/2026/Nov/15/datasette-maplibre/
+### Select Styling Specimens
+- date: 2026-11-22
+- link: https://simonwillison.net/2026/Nov/22/select-styling/
 
-Release: datasette-maplibre 0.1a0
-        The first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap, the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub.)
-I built most of this with a single prompt to Claude Fable 5.2:
+Tool: Select Styling Specimens
+        I got frustrated at how HTML &lt;select&gt; boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:
 
-Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreG
-### datasette 1.0a43
-- date: 2026-11-15
-- link: https://simonwillison.net/2026/Nov/15/datasette/
+So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:
 
-Release: datasette 1.0a43
-        I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone, which is now 53% complete.
-The biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method.
-There are a couple of security fixes, one of which I deemed deserving of a 
-### datasette 0.65.6
-- date: 2026-11-15
-- link: https://simonwillison.net/2026/Nov/15/datasette-2/
+Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser
 
-Release: datasette 0.65.6
-        I backported a minor security fix from 1.0a43:
+After some experimentation I've decided my favorite CSS for select boxes is this:
+select {
+### Muru
+- date: 2026-11-21
+- link: https://simonwillison.net/2026/Nov/21/muru/
 
-Fixed a security issue where a database registered using add_database(db, name=..., route=...) with a route that differs from its name could be downloaded from /&lt;route&gt;.db by actors who were denied access to it. [...]
+Muru
+Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.
+Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production.
+As he did with wrapture, he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process.
+Here's everything he's published 
+### Quoting Ravi Vakil
+- date: 2026-11-20
+- link: https://simonwillison.net/2026/Nov/20/ravi-vakil/
 
-    
-    
-        Tags: security, datasette
-### datasette-apps 0.4a0
-- date: 2026-11-15
-- link: https://simonwillison.net/2026/Nov/15/datasette-apps/
+Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft.
+&mdash; Ravi Vakil, Hurried Announcement: Alessandro Masullo GRH
 
-Release: datasette-apps 0.4a0
-        Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data.
-0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other.
-This means you can have e.g. an app that shows details about 
-### datasette-agent 0.6a0
-- date: 2026-11-15
-- link: https://simonwillison.net/2026/Nov/15/datasette-agent/
+### Quoting Levent Alpöge
+- date: 2026-11-20
+- link: https://simonwillison.net/2026/Nov/20/levent-alpoge/
 
-Release: datasette-agent 0.6a0
-        Accumulated small fixes for Datasette Agent, my agent plugin for Datasette that lets you ask questions about your data. Most notably, it now adds an agent prompt directly to the Datasette homepage, with support for hash-mentions of tables and queries:
+I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one 
+### llm-gemini 0.38.1
+- date: 2026-11-20
+- link: https://simonwillison.net/2026/Nov/20/llm-gemini/
 
-    
-    
-        Tags: datasette-agent, llm, datasette, llms, ai, generative-ai
-### datasette-llm 0.1a11
-- date: 2026-11-14
-- link: https://simonwillison.net/2026/Nov/14/datasette-llm/
+Release: llm-gemini 0.38.1
+        Gemini 4 Carbon only supports low, medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level.
+I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release.
+The xhigh setting for Hydrogen makes a significant difference. I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 ou
+### Token fraud is here and it’s BAD (YouTube)
+- date: 2026-11-20
+- link: https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/
 
-Release: datasette-llm 0.1a11
-        datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.
-This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol.
-This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0) you can run Datasette via uvx like this:
-wget https://dat
+Token fraud is here and it’s BAD (YouTube)
+Claire Vo runs ChatPRD, an AI platform that helps product managers "turn an idea into a spec". The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.
+In this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product's free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial
 ## Latent Space
 Source: https://www.latent.space/feed | Home: https://www.latent.space/
 
-### [AINews] The No AI Slop Manifesto
-- date: Sat, 14 Nov 2026
-- link: https://latent.space/p/ainews-the-no-ai-slop-manifesto/
+### [AINews] Riemann Hypothesis proved...twice independently
+- date: Sat, 21 Nov 2026
+- link: https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/
 
-November 13, 2026 — AIE speakers unite to lay out how to fight slop.
-### [AINews] Jensen Huang resigns after 33 years leading NVIDIA
-- date: Fri, 13 Nov 2026
-- link: https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/
+November 20 2026 —
+### The War Against Slop and an Emerging Weapon to Fight it: Formal Verification
+- date: Fri, 20 Nov 2026
+- link: https://latent.space/p/formal-verification/
 
-November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership?
-### AI Ambition: ArtCraft Cloned Photoshop and Now Wants to "Rebuild Everything"
-- date: Fri, 13 Nov 2026
-- link: https://latent.space/p/artcraft/
+Proving software correct with math has traditionally required specialist work. Now AI and Lean are helping automate the process.
+### [AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T
+- date: Fri, 20 Nov 2026
+- link: https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/
 
-ArtCraft used AI to rewrite Photoshop as open source software. For CEO Brandon Thomas, the vision is even bigger: to take back the internet!
-### [AINews] D-Day (Decision Models Day)
-- date: Thu, 12 Nov 2026
-- link: https://latent.space/p/ainews-d-day-decision-models-day/
+November 19, 2026 — ANT went from $83 at pricing to $111.50 at the open and $97.17 at the close. Plus, Google opens Genie 4 to developers.
+### Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO
+- date: Thu, 19 Nov 2026
+- link: https://latent.space/p/linear-scaling/
 
-November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers.
-### The Jev Revolution: What Engineers Are Already Building with System One Models
-- date: Thu, 12 Nov 2026
-- link: https://latent.space/p/jev-revolution/
+>50% of tickets written by agents, the AI budgets behind $100M-in-months ARR, and selling without SDRs or FDEs
+### [AINews] Gemini 4 Neon: GDM's Opus/Sol Contender
+- date: Thu, 19 Nov 2026
+- link: https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/
 
-At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.
-### [AINews] Mercor $750m Series D at $20B valuation, $3B run rate
-- date: Wed, 11 Nov 2026
-- link: https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/
+November 18, 2026 — Google’s middle tier scores 61 on the Intelligence Index. Plus, Anthropic prices its IPO at $83.
+### [AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse
+- date: Wed, 18 Nov 2026
+- link: https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/
 
-November 10, 2026 — Google GA's Gemini 4 Carbon.
+November 17, 2026 — GPT-6.2 Astra and Sol lower benchmark costs. Early testers disagree on what Astra is like to work with.
