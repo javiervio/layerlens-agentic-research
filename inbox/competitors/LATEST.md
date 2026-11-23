@@ -1,4 +1,4 @@
-# Competitor / team harvest 2026-W47 (fetched 2026-11-16)
+# Competitor / team harvest 2026-W48 (fetched 2026-11-23)
 
 Recent posts from competitor and reference-team blogs, pulled from their RSS/Atom feeds by a GitHub Actions runner (the cloud research sandbox cannot reach these directly). Read this alongside inbox/arxiv/. Sources with no feed are listed so you cover them via WebSearch and log the gap honestly.
 
@@ -51,6 +51,18 @@ Source: https://www.braintrust.dev/sitemap.xml (sitemap fallback; titles fetched
 ## Arize
 Source: https://arize.com/blog/feed/ | Home: https://arize.com/blog/
 
+### 8 ways to reduce the cost of evals
+- date: Sat, 21 Nov 2026
+- link: https://arize.com/blog/reduce-the-cost-of-evals/
+
+Eval cost is mostly a design choice, not a fixed tax. This post has eight ways to cut what your evals cost, from code checks and sampling to cheaper judges and cascades.
+The post 8 ways to reduce the cost of evals appeared first on Arize AI.
+### Alyx gets better at doing things
+- date: Fri, 20 Nov 2026
+- link: https://arize.com/blog/alyx-gets-better-at-doing-thingss/
+
+Investigate Signal issues, configure Managed Agents, create Decision Judges, and build dashboards with natural language.
+The post Alyx gets better at doing things appeared first on Arize AI.
 ### Is the cheap model good enough? How to test a new model in your agent
 - date: Thu, 05 Nov 2026
 - link: https://arize.com/blog/how-to-test-a-new-model-in-your-agent/
@@ -75,18 +87,6 @@ The post Evil Qwen and activation steering: why SBOMs aren&#8217;t enough appear
 
 I built a Halloween Claude Code mod that grades each turn as a treat or a trick and blocks dangerous commands, then traced and evaluated it with Arize AX.
 The post I put a ghost in Claude Code. Then I evaluated it. appeared first on Arize AI.
-### A web page talked our agent into leaking a stranger’s data. Here’s how we caught it.
-- date: Mon, 26 Oct 2026
-- link: https://arize.com/blog/indirect-prompt-injection-ai-agents/
-
-A web page told our support agent to look up a different customer, and the agent complied on 28 of 100 runs. Here's how we found the leak in an Arize Phoenix trace, blocked it with a scope guardrail, and set up an Arize AX monitor on the injection rate.
-The post A web page talked our agent into leaking a stranger&#8217;s data. Here&#8217;s how we caught it. appeared first on Arize AI.
-### How to build a software factory that tests its own prompts
-- date: Thu, 22 Oct 2026
-- link: https://arize.com/blog/how-to-build-a-software-factory-that-tests-its-own-prompts/
-
-A small software factory that turns GitHub issues into released code, traces every station to Arize AX, and uses the verdicts it already produces to test and improve its own prompts before they go live.
-The post How to build a software factory that tests its own prompts appeared first on Arize AI.
 ## E2B
 Source: https://e2b.dev/rss.xml | Home: https://e2b.dev/blog
 
@@ -123,32 +123,40 @@ From code snippets to entire computers, agents have outgrown the sandbox. E2B's 
 ## Browserbase
 Source: https://www.browserbase.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.browserbase.com/blog
 
-### How to build agent infrastructure
-- date: 2026-11-05
-- link: https://browserbase.com/blog/build-vs-buy-agent-infrastructure
-
-### Introducing Stagehand 4.4: browser.disconnect(), crash-safe sessions, and more
-- date: 2026-11-05
-- link: https://browserbase.com/changelog/stagehand-4-4
+### How we use agents to patch, build, and deploy 40M lines of Chromium code in &lt; 1 day
+- date: 2026-11-18
+- link: https://browserbase.com/blog/how-we-deploy-custom-chromium
 
 ### The Browser Blog
-- date: 2026-11-05
+- date: 2026-11-18
 - link: https://browserbase.com/blog/page/1/
 
 ### The Browser Blog
-- date: 2026-11-05
+- date: 2026-11-18
 - link: https://browserbase.com/blog/page/2/
 
 ### The Browser Blog
-- date: 2026-11-05
+- date: 2026-11-18
 - link: https://browserbase.com/blog/page/3/
 
 ### The Browser Blog
-- date: 2026-11-05
+- date: 2026-11-18
 - link: https://browserbase.com/blog/page/4/
+
+### The Browser Blog
+- date: 2026-11-18
+- link: https://browserbase.com/blog/page/5/
 
 ## Modal
 Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://modal.com/blog
+
+### How Abundant designed efficient rollout architecture with Modal Sandboxes
+- date: 2026-11-19
+- link: https://modal.com/blog/abundant-efficient-rollout-architecture-with-modal-sandboxes
+
+### Building new research tools for Maya epigraphy on Modal
+- date: 2026-11-18
+- link: https://modal.com/blog/scaling-intelligence-asya
 
 ### Inkling 2 Small is now available on Modal
 - date: 2026-11-14
@@ -166,16 +174,16 @@ Source: https://modal.com/sitemap.xml (sitemap fallback; titles fetched per page
 - date: 2026-11-12
 - link: https://modal.com/changelog/new-sandbox-events-ui-for-execs-tcp-tunnels-and-http-requests
 
-### Modal becomes a gVisor maintainer
-- date: 2026-11-11
-- link: https://modal.com/blog/modal-gvisor-maintainer
-
-### View invoices directly in the Modal dashboard
-- date: 2026-11-11
-- link: https://modal.com/changelog/view-invoices-directly-in-the-modal-dashboard
-
 ## Prime Intellect
 Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.primeintellect.ai/blog
+
+### RL Residency: A Retrospective
+- date: 2026-11-19
+- link: https://www.primeintellect.ai/blog/rl-residency-retrospective
+
+### Introducing Model Factory
+- date: 2026-11-18
+- link: https://www.primeintellect.ai/blog/introducing-model-factory
 
 ### Learnings from Auditing Public Evaluations
 - date: 2026-11-03
@@ -193,14 +201,6 @@ Source: https://www.primeintellect.ai/sitemap.xml (sitemap fallback; titles fetc
 - date: 2026-10-13
 - link: https://www.primeintellect.ai/blog/moondream
 
-### Rewriting Prime Agent in Rust
-- date: 2026-10-09
-- link: https://www.primeintellect.ai/blog/prime-agent-rust
-
-### On the Nature of the Swarm
-- date: 2026-10-06
-- link: https://www.primeintellect.ai/blog/on-the-nature-of-the-swarm
-
 ## Comet / Opik
 Source: https://www.comet.com/blog/feed | Home: https://www.comet.com/blog
 
@@ -210,6 +210,24 @@ Source: https://www.comet.com/blog/feed | Home: https://www.comet.com/blog
 
 I&#8217;ve been spending time looking at how teams are actually using Claude Code, and one thing keeps coming up: most of the cost surprises aren&#8217;t coming from where people expect. The instinct is to look at conversation history — keep prompts tight, avoid long threads, or explore smaller models. That&#8217;s not wrong, but it&#8217;s often [&#8230;]
 The post Understanding Your Claude Code Spend: What&#8217;s Actually Driving the Cost appeared first on Comet.
+### Build Your Own Judge: When a Fine-Tuned 1.7B Model Beats Jev and LLM-as-a-Judge (and When It Doesn’t)
+- date: Thu, 19 Nov 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/finetune-judge-vs-jev/
+
+We labelled 1,000 production turns, fine-tuned a 1.7B open model on 600 of them, and tested it against Jev and a gpt-4o-mini LLM-as-a-Judge. It won on declines and scope, not on answer correctness.
+The post Build Your Own Judge: When a Fine-Tuned 1.7B Model Beats Jev and LLM-as-a-Judge (and When It Doesn&#8217;t) appeared first on Comet.
+### GPT-5, Gemini 2.5, and Claude Sonnet 4.5 Retirement and Deprecation: What Should You Test Before Switching Models?
+- date: Tue, 17 Nov 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/llm-model-deprecation-what-to-test/
+
+Several of the most-used hosted models retire between November 30, 2026 and January 14, 2027, including GPT-5, Gemini 2.5, and Sonnet 4.5. If you use any of these models, you&#8217;ll need to transition. But upgrading models usually requires more than just swapping out the model parameter in your API calls. On the most obvious level, [&#8230;]
+The post GPT-5, Gemini 2.5, and Claude Sonnet 4.5 Retirement and Deprecation: What Should You Test Before Switching Models? appeared first on Comet.
+### How we made Opik dataset and experiment ingestion 30× faster
+- date: Tue, 17 Nov 2026
+- link: https://live-comet-marketing-site.pantheonsite.io/blog/improve-opik-ingestion-30x/
+
+Opik is Comet’s open-source platform for tracing, evaluating, testing, and monitoring LLM and agent applications. It tracks every call an application makes, including prompts, tool calls, retrievals, and LLM outputs. This gives teams tools to understand the application’s behavior, find where it goes wrong, and identify what to improve, from the developer workstation to production. [&#8230;]
+The post How we made Opik dataset and experiment ingestion 30× faster appeared first on Comet.
 ### Optimizing Agentic Remediation for Financial Services with Opik
 - date: Fri, 06 Nov 2026
 - link: https://live-comet-marketing-site.pantheonsite.io/blog/optimize-finance-agent-with-opik/
@@ -222,59 +240,45 @@ The post Optimizing Agentic Remediation for Financial Services with Opik appeare
 
 Trace a multi-agent Google ADK app with Opik, fix handoffs that split into two traces, and evaluate it on 23 hard support cases to compare two Gemini models on cost, speed and refund safety.
 The post How to Trace and Evaluate a Google ADK Agent with Opik appeared first on Comet.
-### Opik Security Incident: October 2026
-- date: Tue, 27 Oct 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/security-incident-october-2026/
-
-No customer data, accounts, or API keys were accessed. On October 26, 2026, Comet contained a security incident affecting Opik on comet.com. This post explains what happened, what was affected, and what we have done in response. What happened Between October 24 and 26, 2026, an unauthorized party used a comet.com user API key from [&#8230;]
-The post Opik Security Incident: October 2026 appeared first on Comet.
-### Introducing Opik’s Generative Dashboard Builder
-- date: Mon, 26 Oct 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/introducing-opiks-generative-dashboard-builder/
-
-At Comet, we’ve seen firsthand how teams in finance, tech, e-commerce, and beyond use the Opik platform to track critical metrics for monitoring and improving their agents. Those metrics vary widely — for instance, a financial services team checking that its internal support agent follows company policy will track very different metrics than an automotive [&#8230;]
-The post Introducing Opik&#8217;s Generative Dashboard Builder appeared first on Comet.
-### Train your own decision model
-- date: Mon, 26 Oct 2026
-- link: https://live-comet-marketing-site.pantheonsite.io/blog/train-a-decision-model/
-
-Decision models drew wide attention in September, when TypeSafe AI launched Jev, a model that returns probabilities over a fixed set of answers instead of generating text. Open-source alternatives followed almost immediately: Latent.Space counted six in two days. Most writing about decision models since then defines them by their interface, which uses some sort of [&#8230;]
-The post Train your own decision model appeared first on Comet.
 ## Databricks
 Source: https://www.databricks.com/rss.xml | Home: https://www.databricks.com/blog
 
-### Teach Genie One your workflows: The ultimate guide for skills in Genie One
-- date: Mon, 16 Nov 2026
-- link: https://www.databricks.com/blog/teach-genie-one-your-workflows-ultimate-guide-skills-genie-one
+### Interactive Databricks Reference Architectures Across 70 Industries
+- date: Fri, 20 Nov 2026
+- link: https://www.databricks.com/blog/interactive-databricks-reference-architectures-across-70-industries
 
-Every team has “recipes” that govern how they work. The way finance puts together...
-### Apache Spark vs Apache Flink: which should you use?
-- date: Sat, 14 Nov 2026
-- link: https://www.databricks.com/blog/spark-vs-flink
+Why we built itMost Databricks architecture talks used to start with the same slide: ingestion on the left...
+### Why PostgreSQL 19 shipped late
+- date: Thu, 19 Nov 2026
+- link: https://www.databricks.com/blog/why-postgresql-19-shipped-late
 
-For most teams, Apache Spark™ is the better choice. Spark runs batch ETL, SQL analytics,...
-### OpenAI and Databricks: Enterprise AI on your governed data
-- date: Fri, 13 Nov 2026
-- link: https://www.databricks.com/blog/openai-and-databricks-enterprise-ai-your-governed-data
+PostgreSQL 19 is now&nbsp;generally available, and there are some really cool things in...
+### Genie ZeroOps, now in public beta: An autonomous agent that fixes data pipelines, with lessons from 80,000 customer issues
+- date: Thu, 19 Nov 2026
+- link: https://www.databricks.com/blog/genie-zeroops-now-public-beta-autonomous-agent-fixes-data-pipelines-lessons-80000-customer
 
-Greg Brockman, co-founder and President of OpenAI, has a simple way to describe AI...
-### Dispelling LTAP myths
-- date: Thu, 12 Nov 2026
-- link: https://www.databricks.com/blog/dispelling-ltap-myths
+In June we introduced Genie ZeroOps, an autonomous agent that detects, investigates,...
+### Genie One Accuracy: Why Curated Agents Need Governed Context
+- date: Thu, 19 Nov 2026
+- link: https://www.databricks.com/blog/genie-one-accuracy-why-curated-agents-need-governed-context
 
-Reynold Xin's post "From monolith to Lakebase to LTAP" explained what LTAP is and...
-### How Constellation is building a governed data foundation on Databricks
-- date: Thu, 12 Nov 2026
-- link: https://www.databricks.com/blog/how-constellation-building-governed-data-foundation-databricks
+Ask Finance and Underwriting whether the loss ratio improved from 2024 to 2025, and...
+### Four AI Architecture Patterns for Regulated Industries
+- date: Thu, 19 Nov 2026
+- link: https://www.databricks.com/blog/ai-architecture-patterns-regulated-industries
 
-Constellation operates the largest nuclear fleet in the United States. For them,...
-### Eclipse Aerospace simplifies flight-data ingestion with Databricks
-- date: Thu, 12 Nov 2026
-- link: https://www.databricks.com/blog/eclipse-aerospace-simplifies-flight-data-ingestion-databricks
+Enterprise AI cannot replace every deterministic control. These four patterns help...
+### How partners use Genie's free tier on Azure Databricks
+- date: Thu, 19 Nov 2026
+- link: https://www.databricks.com/blog/how-partners-use-genies-free-tier-azure-databricks
 
-As organizations in aerospace, manufacturing, life sciences, and other data-intensive...
+Every Azure Databricks user gets $10 of free Genie usage each month, usage that many...
 ## Patronus AI
 Source: https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.patronus.ai/blog
+
+### Investigating What Open Models Knew When They Answered Questions Incorrectly
+- date: 2026-11-18
+- link: https://www.patronus.ai/blog/what-open-models-knew
 
 ### Who Is the Right Expert for AI?
 - date: 2026-11-13
@@ -295,10 +299,6 @@ Source: https://www.patronus.ai/sitemap.xml (sitemap fallback; titles fetched pe
 ### Getting GLM-5.2 NVFP4 Post-Training Off the Ground
 - date: 2026-11-09
 - link: https://www.patronus.ai/blog/getting-glm-5-2-nvfp4-post-training-off-the-ground
-
-### Generative Simulators: Scaling Environments for Agents
-- date: 2026-11-09
-- link: https://www.patronus.ai/blog/introducing-generative-simulators
 
 ## Humanloop
 Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://humanloop.com/blog
@@ -330,6 +330,10 @@ Source: https://humanloop.com/sitemap.xml (sitemap fallback; titles fetched per 
 ## Confident AI (DeepEval)
 Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.confident-ai.com/blog
 
+### Product Changelogs, November 20, 2026
+- date: 2026-11-20
+- link: https://www.confident-ai.com/docs/changelog/2026/11/20
+
 ### Product Changelogs, November 13, 2026
 - date: 2026-11-13
 - link: https://www.confident-ai.com/docs/changelog/2026/11/13
@@ -350,39 +354,43 @@ Source: https://www.confident-ai.com/sitemap.xml (sitemap fallback; titles fetch
 - date: 2026-10-29
 - link: https://www.confident-ai.com/blog/introducing-confident-ai-monitor
 
-### Product Changelogs, October 23, 2026
-- date: 2026-10-24
-- link: https://www.confident-ai.com/docs/changelog/2026/10/23
-
 ## Langfuse
 Source: https://langfuse.com/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://langfuse.com/blog
 
-### Should you use an LLM Proxy to Build your Application?
-- date: 2026-11-16
-- link: https://langfuse.com/blog/2024-09-langfuse-proxy
+### Comfortable with being uncomfortable
+- date: 2026-11-20
+- link: https://langfuse.com/blog/2026-11-19-comfortable-with-being-uncomfortable
 
-### Langfuse launches AI Gateway
-- date: 2026-11-13
-- link: https://langfuse.com/blog/introducing-gateway
+### Redesigned trace view
+- date: 2026-11-20
+- link: https://langfuse.com/changelog/2026-11-20-redesigned-trace-view
 
-### Call Microsoft Azure and Google AI Studio models through the AI Gateway
-- date: 2026-11-13
-- link: https://langfuse.com/changelog/2026-11-12-ai-gateway-azure-google-ai-studio
+### Steal our eval setup for chat agents
+- date: 2026-11-19
+- link: https://langfuse.com/blog/2026-07-16-steal-our-eval-setup
 
-### Restrict models per AI Gateway key
-- date: 2026-11-13
-- link: https://langfuse.com/changelog/2026-11-13-ai-gateway-key-model-restrictions
+### Catching conversation signals in Langfuse
+- date: 2026-11-19
+- link: https://langfuse.com/blog/2026-09-23-catching-conversation-signals-in-langfuse
 
-### Call Google Vertex AI models through the AI Gateway
-- date: 2026-11-13
-- link: https://langfuse.com/changelog/2026-11-13-ai-gateway-vertex-ai
+### Evaluating proactive agents
+- date: 2026-11-19
+- link: https://langfuse.com/blog/2026-11-19-evaluating-proactive-agents
 
-### Langfuse AI Gateway public beta
-- date: 2026-11-12
-- link: https://langfuse.com/changelog/2026-11-04-ai-gateway-public-beta
+### Read-access audit logs
+- date: 2026-11-19
+- link: https://langfuse.com/changelog/2026-11-17-read-access-audit-logs
 
 ## Daytona
 Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
+
+### One Reward, Three OSes: Building Cross-OS RL
+- date: Wed, 18 Nov 2026
+- link: https://www.daytona.io/dotfiles/one-reward-three-oses-cross-os-rl-on-daytona
+
+### macOS Sandboxes
+- date: Tue, 17 Nov 2026
+- link: https://www.daytona.io/dotfiles/macos-sandboxes
 
 ### 1M to $100M Run Rate in 4 Quarters
 - date: Tue, 03 Nov 2026
@@ -399,14 +407,6 @@ Source: https://www.daytona.io/rss.xml | Home: https://www.daytona.io/blog
 ### Daytona Raises $60M Series B to Build the Agent Cloud
 - date: Tue, 20 Oct 2026
 - link: https://www.daytona.io/dotfiles/daytona-raises-60m-series-b-to-build-the-agent-cloud
-
-### When 2,000 Agents Share One CPU
-- date: Wed, 07 Oct 2026
-- link: https://www.daytona.io/dotfiles/when-2000-agents-share-one-cpu
-
-### Daytona sandboxes are now a Convex component
-- date: Wed, 30 Sep 2026
-- link: https://www.daytona.io/dotfiles/daytona-sandboxes-convex-component
 
 ## Runloop
 Source: https://www.runloop.ai/sitemap.xml (sitemap fallback; titles fetched per page) | Home: https://www.runloop.ai/blog
