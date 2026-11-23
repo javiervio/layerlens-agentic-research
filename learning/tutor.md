@@ -194,3 +194,19 @@ Your running record of building fluency in agentic environments. The agent adds 
 **What you would look for in LayerLens** (you fill this):
 
 **Level**: pending.
+
+---
+
+## "Proof" vs. "test" as an evidence tier
+
+- **Plain explanation** (from the brief): A passing test tells you code (or a plan) worked on the specific inputs you tried. A formal proof — checked mechanically by a tool, backed by a solver — tells you a stated property holds for *every* input a specification covers, including ones no test ever tried. Two academic papers and a Microsoft Research prototype converged on this same distinction in one week: a verified plan that keeps an agent's tool calls provably within policy, a proof that agent-written code meets a formal login specification, and an architecture that keeps "judge" (the authority that decides pass/fail) structurally protected from the parts of the system that propose or govern.
+- **Example / counterexample**: Microsoft's PDD Kit proves a login function picks the right account, checks a password correctly, and issues a token with the right role "for every input" — but it only *tests* the pieces it treats as a trusted boundary (a password-hashing library, a clock, a database lookup), because those are assumed, not proven. Counterexample/boundary: the authors' own caveat is sharp — "a wrong spec is still possible." A proof shows the code matches the *spec*; it says nothing about whether the spec captured what you actually meant. A perfectly-proven system can still do the wrong thing if someone wrote the wrong rule down.
+- **When it does not apply**: most of what makes an agent's behavior interesting — did it use good judgment, was its tradeoff reasonable, did it handle an ambiguous instruction sensibly — can't be reduced to a formal specification at all. Proof is a narrow, powerful tool for hard, precisely-statable rules (an invariant, a safety boundary), not a general replacement for rubric- or outcome-based grading.
+- **This week's exercise**: pick one LayerLens system type and one existing grader on it. Could you state, as a strict rule, one property that grader currently checks only by example (a test-like check) — something you could instead imagine being proven true for every possible input? Write the rule in one sentence, and name the one thing you'd still have to just test (the "trusted boundary") because proving it isn't practical.
+- **Source status**: Soteria (arXiv:2611.17880) and EvoTrias/"Where Autonomy Belongs" (arXiv:2611.15309) are both abstract-only, read via the arXiv inbox this run. Microsoft's PDD Kit post was read in full directly (microsoft.com reliably reachable). See `cards/soteria-verified-planning.md`, `cards/where-autonomy-belongs-evotrias.md`, and `cards/microsoft-pdd-kit.md`.
+
+**Your explanation in your own words** (you fill this):
+
+**What you would look for in LayerLens** (you fill this):
+
+**Level**: pending.

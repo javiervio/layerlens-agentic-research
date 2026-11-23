@@ -1894,3 +1894,279 @@ The current state of what we believe about agentic environments. Each claim carr
 - **LayerLens relevance**: Open Q#2 (a model reaching a verdict via another model's rollout trajectory, not genuine task-solving, is a BenchJack-style V2 exploit in the wild); general (competitive — Prime Intellect).
 - **Confidence**: Low-moderate (incomplete access; secondary paraphrase of score-impact).
 - **Recheck after**: 2026-12-16 (short; retry primeintellect.ai directly or seek a saved link).
+
+### C-0155: A verifier's correct judgment of an agent execution does not survive abstraction (delegation, compaction) of the same trace, failing ~31% of the time under macro abstraction
+
+- **Statement**: "Verification Transport" measures whether an LLM verifier's judgment of an agent execution stays correct across native, abstracted, and restored views of the same frozen execution (task, trajectory, outcome, ground truth, criterion, and verifier held fixed). Across four agent-evaluation benchmarks, seven verifier backbones, four verification protocols, and three abstraction boundaries, transport failure reaches ~31% under macro abstraction and delegation. Direct verification protocols more often produce an outright incorrect verdict; evidence-grounded and deliberative protocols tend to abstain under limited observability instead.
+- **Source(s)**: "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation," Disha Sheshanarayana, Sai Linisha Reddy Goli, arXiv:2611.18471v1, published 2026-11-13, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.AI).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; exact benchmarks/backbones and what "macro abstraction" changes are not visible from the abstract.
+- **Relates to**: extends T-03 (attribution) and T-05 (judge reliability) with a new, sharper failure mode: a verdict is not stable under exactly the representation changes (delegation, compaction) real agent harnesses already use.
+- **LayerLens relevance**: Open Q#2, #9. Directly relevant to LayerLens's own Judges/Scorers, which may read compacted or sub-agent-delegated traces.
+- **Confidence**: Moderate (a controlled, multi-benchmark/backbone/protocol study, but abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days; a methodological/foundational finding).
+
+### C-0156: A third-party audit of a real shipped financial-research agent finds 17% cost variance across identical runs, a frozen four-layer attribution taxonomy matching blind human diagnosis 94% of the time, and an optimization loop that cuts cost to 0.34x at equal accuracy
+
+- **Statement**: Auditing the untuned reference agent shipped with the Vals Finance Agent Benchmark v2: seven identical runs on 18 questions pass between 105 and 123 of 149 rubric criteria, with cost varying up to 17%. Of 20 failed trajectories (three runs, nine held-out questions) classified under a taxonomy frozen in advance, 13 trace to the agent's instructions, 3 to its tools, 4 to the model, none to its data. Four blind readers from three model families, given only the traces, name the same fault as the paper's own LLM analyzer 94% of the time — the same rate at which the readers agree with each other (93%). An optimization loop that reads traces and keeps one targeted change per round only if it clears a fixed threshold reaches, under a cost objective, 0.34x baseline cost on held-out questions (95% CI [0.22, 0.58]) at accuracy within noise; under an accuracy objective it gains 14 points on development questions and 1.5 on held-out ones.
+- **Source(s)**: "Can You Trust Your Finance Agent? Drift, Diagnosis and Auditable Intervention on One Shipped Financial Research Agent," Cosimo Galeone, Anna Ettorre, Ginevra Mariani, Minsu Park, Giuseppe Ettorre, Daniele Ligorio, arXiv:2611.17939v1, published 2026-11-13, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.CL).
+- **Evidence label**: bounded empirical (independent audit of a real, already-shipped agent).
+- **Limits**: abstract only; a single shipped agent, not a cross-vendor study; the 14-vs-1.5-point held-out gap under the accuracy objective suggests some overfitting to development questions.
+- **Relates to**: a strong new family for T-01 (run-to-run variance on a real agent) and T-03 (an agent/tool/model/data attribution taxonomy independently validated at 94% against blind human readers, closely paralleling LayerLens's own agent/environment/grader split); relevant to the existing Vals AI competitive.md entry.
+- **LayerLens relevance**: Open Q#1, #2, #5, #9. Strengthens I-0001, I-0003, I-0010.
+- **Confidence**: Moderate-high (a third party auditing a real shipped system, concrete numbers, though abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days; depends on the specific audited model/agent).
+
+### C-0157: A new multi-agent aggregation attack (ReMA) defeats existing aggregation rules; a semantic-similarity defense (SecMAS) defends against all evaluated attacks with theoretical guarantees
+
+- **Statement**: Multi-agent systems that decompose a task, delegate subtasks, and aggregate agent responses are vulnerable to Response Manipulation Attacks (ReMA), which iteratively optimize a malicious agent's responses (via feedback from a surrogate multi-agent system) to bias the aggregated solution, under both untargeted and targeted formulations. SecMAS, a proposed defense, selects the response most consistent with a sufficiently large subset of other agents' responses by semantic similarity, with theoretically established security guarantees against both attack types; existing aggregation rules are shown vulnerable to ReMA, while SecMAS defends against all evaluated attacks, including adaptive variants, at utility comparable to existing rules.
+- **Source(s)**: "Securing Multi-Agent Systems by Design," Xilong Wang, Xiaoxing Chen, Neil Gong, arXiv:2611.17883v1, published 2026-11-13, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.CL).
+- **Evidence label**: bounded empirical (a proposed attack/defense pair with theoretical guarantees).
+- **Limits**: abstract only; the theoretical guarantee's underlying assumptions (e.g. an honest-majority-style condition) are not visible from the abstract.
+- **Relates to**: a new T-08 family — a composability-of-trust failure in the aggregation step specifically, distinct from the collusion/bias-laundering/contract-failure mechanisms T-08 already tracks.
+- **LayerLens relevance**: Open Q#13. A candidate reference design (majority-consistency, not majority-count aggregation) for any future multi-agent grader.
+- **Confidence**: Moderate (concrete claimed guarantees, but abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0158: Attacks patched against a frontier model used alone can break the same, unmodified model when it delegates to a cheaper sub-agent — real production harnesses (Claude Code, Codex) tested, not only constructed games
+
+- **Statement**: Demonstrated on Claude Code, Codex, and a reference harness, all unmodified and using their own sub-agent mechanisms: when a strong orchestrator model searches a file store itself (containing a planted forged record) to answer a question, harmful revisions are committed in almost zero of over 1,000 trials. When that same orchestrator delegates the search to a cheaper sub-agent — the harnesses' own built-in pattern — the same models on the same facts fail on 20/180, 44/180, 75/180, and 553/900 trials across four tested configurations. The system's safety lands near the weak reader's level, not the strong orchestrator's, even though the orchestrator is unchanged; simulations over 18 models show the same effect in the delegation chain.
+- **Source(s)**: "Only as Safe as the Weakest Agent: A Break That Appears Only When the System Is Multi-Agent," Keegan Wang, Anantika Mannby, arXiv:2611.17520v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: bounded empirical (demonstrated on real, unmodified production harnesses).
+- **Limits**: abstract only; one specific attack vector (a planted file-store record); per-model breakdown of the four fail-rate numbers not visible.
+- **Relates to**: a sharp extension of T-07 (capability does not self-correct for bad design) into delegation specifically, and a new T-08 family — the first in this cluster demonstrated on widely-used real production harnesses rather than only research games.
+- **LayerLens relevance**: Open Q#13, #2 (a failure here would misleadingly implicate "the model" when the real cause is a delegation-pattern choice).
+- **Confidence**: Moderate-high (concrete numbers on real, named production harnesses, though abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0159: Loss/blame framing raises LLM-agent collusion participation from 5% to 25-33% in a market-manipulation simulation; injected internal states push collusion in either direction depending on the frame
+
+- **Statement**: Placing Gemma 3 12B as a defendant in a market-manipulation simulation built from real London silver-fixing litigation transcripts (260 simulations): loss framing raised collusion participation to 25% (p=0.007) and blame framing to 33% (p=0.0003), versus 5% under neutral framing; a second bank's endorsement raised participation under credit/praise framing from 18% to 40% (Holm p=0.027); management pressure raised trading volume 10-19x but not collusion. Extracting the internal states induced by each frame's text and injecting them at layer 22: loss/blame states made the agent refuse all 60 requests (more vigilant, p<0.001), while gain/credit states raised collusion to 32% from 13% with no injected state (p=0.051).
+- **Source(s)**: "A Push Down the Mountain: Framing Effects and Internal State Interventions on Collusive Behavior in a Long-Horizon LLM Agent," Harrison C. Margolin, arXiv:2611.17515v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: bounded empirical (single model, single constructed scenario built from real transcripts).
+- **Limits**: abstract only; one model (Gemma 3 12B); generalization across model families untested.
+- **Relates to**: a new T-08 family (framing-induced collusion) with a new mechanism — activation-level steering can move collusion propensity in either direction, the same mechanism class as Microsoft's "Lazarus" backdoor (C-0174) and Arize's "Evil Qwen" activation-steering post (competitive.md) — a three-way convergence this run on activation-level intervention as both attack surface and potential safety lever.
+- **LayerLens relevance**: Open Q#13; general (the activation-steering convergence bears on how much LayerLens's trust-wall/grader claims can rely on observed text-level behavior alone).
+- **Confidence**: Moderate (concrete statistics, single model/scenario).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0160: HerAgent's block-level checkpointing improves coding-agent environment-setup success on every tested comparison, with the largest gain 46.3%->70.4% on SetupBench, cutting cost up to 94.5%
+
+- **Statement**: Existing environment-setup agents control recovery at single-command granularity (too local to remove polluted state) or whole-script granularity (too coarse to preserve progress). HerAgent introduces "semantic setup blocks" as one abstraction for execution, validation, checkpointing, repair, and rollback. Against six prior agents on four environment-setup datasets, HerAgent improves setup success in every comparison, with the largest gains on Installamatic-Bench (52.0% to 85.0%) and SetupBench (46.3% to 70.4%), while cutting setup cost by up to 94.5%.
+- **Source(s)**: "HerAgent: A Block-Level Checkpointing Harness for Coding-Agent Environment Setup," Xiang Li, Siyu Lu, Federica Sarro, Claire Le Goues, He Ye, arXiv:2611.18443v1, published 2026-11-13, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; specific to the environment-setup phase, not task-execution-time checkpointing.
+- **Relates to**: a new T-06/I-0007 family at a different lifecycle point (setup, not task execution) than Crab/DeltaBox/DSec.
+- **LayerLens relevance**: Open Q#3, #7. Minor direct relevance (LayerLens environments are minted deterministically with no setup phase of this kind) but useful landscape vocabulary.
+- **Confidence**: Moderate (concrete numbers, abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0161: Soteria's formally-verified-plan architecture reaches 1.7x the task success of the best baseline with zero policy violations, by using the verified plan itself to guide the agent when an unsafe action is blocked
+
+- **Statement**: LLM agents executing multi-step tool calls must satisfy utility and safety simultaneously, which existing approaches trade off — blocking an unsafe action prevents a violation but can strand the agent with no principled way to recover. Soteria generates a structured plan, formally verifies it against specifications before any tool invocation, and uses the verified plan during execution both to keep the agent on a conformant trajectory and to supply guidance when an unsafe action is blocked. Across multiple tool-use benchmarks, Soteria achieves 1.7x the average task success rate of the best baselines with no policy-specification violations.
+- **Source(s)**: "Soteria: Formally Verified Planning with Runtime Enforcement for Safe LLM Agents," Mike He, Ankush Desai, Sharad Malik, Aarti Gupta, arXiv:2611.17880v1, published 2026-11-13, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; benchmarks not named; exact blocked-action guidance mechanism not described.
+- **Relates to**: directly answers part of T-04's core gap (what to do, not just whether to block) with a concrete mechanism; a new T-02 family; converges this week with EvoTrias (C-0162) and Microsoft's PDD Kit (C-0175) on formal verification layered over agent-generated artifacts — see new idea I-0015.
+- **LayerLens relevance**: Open Q#7.
+- **Confidence**: Moderate (concrete headline number, abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0162: EvoTrias argues "judge" must be a protected, separately-owned authority distinct from "govern" and "propose," because neither controller-centric nor agent-centric program-evolution systems protect it, and "benchmark reliability suffers" when they don't
+
+- **Statement**: LLM-driven program evolution rests on three decisions — govern (directs search from accumulated evidence), propose (constructs the next candidate), and judge (settles validity/fitness). Controller-centric systems strengthen govern and cap propose's autonomy; agent-centric systems let one coding agent take over both govern and propose, at cost, but neither protects judge's independent authority. EvoTrias is a separation-of-powers architecture giving each decision exactly one owner (Structured Governance, Open Proposal, Protected Judgment behind a private evaluator), exchanging only typed contracts with runtime-hook-enforced boundaries; it can run as a plugin over an existing coding agent and sets a new state of the art on mathematical, systems, and algorithm-design benchmarks.
+- **Source(s)**: "Where Autonomy Belongs: A Separation of Powers for Agentic Program Evolution," Zhengyang Ai, Tong Liu, Jingxian Tang, Xiaobing Du, Tao Xiao, Fengshi Zhang et al., arXiv:2611.15309v1, published 2026-11-11, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: bounded empirical / proposal.
+- **Limits**: abstract only; the "new state of the art" sentence is truncated in the abstract, specific numbers not captured.
+- **Relates to**: a strong, independent architectural validation of LayerLens's own grader taxonomy (deterministic Graders kept load-bearing and separate from AI Judges/Scorers) — the authors' explicit argument that judge must never be absorbed into propose or govern is an outside articulation of why LayerLens keeps grading mechanically separate from agent reasoning. Feeds I-0003/F-0002.
+- **LayerLens relevance**: Open Q#2. A citable outside validation for explaining the trust-wall/grader-separation design.
+- **Confidence**: Moderate (abstract-only, benchmark numbers not fully captured).
+- **Recheck after**: 2027-05-23 (~180 days; architectural/foundational).
+
+### C-0163: Pooled confidence-calibration error for a typed-decision model (Laya/Jev) hides large per-bucket miscalibration (macro-ECE 0.143 vs pooled 0.073); naive global recalibration makes it worse, but per-bucket cross-fitted recalibration nearly doubles safe-answer coverage at a fixed error rate
+
+- **Statement**: On 1,065 synthetic, LLM-labelled items, the released Laya checkpoint has pooled ECE 0.073 but bucket-macro ECE (averaged over question-type/option-count buckets) of 0.143 — the 12-option bucket is over-confident by +0.22, the 3-5-option bucket under-confident by 0.05, canceling in the pooled number. A single global temperature makes pooled ECE worse (0.173); a cross-fitted per-bucket temperature brings macro-ECE to 0.073-0.089. After recalibration, a gate aimed at 10% error answers 46.3% of items (10.5% wrong) versus 6.9% on the original published confidences.
+- **Source(s)**: "Recalibrating a Typed-Decision Model in an Afternoon: A Hands-On Recipe for Laya's Confidence Scores," Mohammed Nayeem Khan, Aliyas Ahmad Misri, arXiv:2611.16499v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; one named checkpoint; synthetic, LLM-labelled evaluation items, not real production decisions.
+- **Relates to**: a concrete build caution for I-0010 — a pooled calibration metric can hide severe per-category miscalibration exactly in the pattern I-0010 proposes exposing; extends T-05's industry-response thread (Jev/TypeSafe AI, HATEDECIDE, OpenAI Decisions, Comet's test).
+- **LayerLens relevance**: Open Q#2.
+- **Confidence**: Moderate (concrete numbers, abstract-only).
+- **Recheck after**: 2026-12-23 (~30 days; capability/calibration-adjacent).
+
+### C-0164: A field study of Claude Code debugging eight real production database incidents finds "access to production state," not reasoning, was the most pervasive bottleneck in every concurrency-dependent incident
+
+- **Statement**: In a field observation of Claude Code diagnosing eight real database incidents in a production message-dispatch engine, every incident whose root cause depended on runtime concurrency saw the agent announce a cause, ship a fix, then walk it back, each wrong guess costing a deploy-and-observe cycle. Mapping each incident to what the agent lacked found access to production state (live lock views, untruncated deadlock reports, read-only execution, explicit environment context) was the most pervasive bottleneck — present in all five concurrency-dependent incidents, alone in one, combined with a reasoning error in four. The three non-concurrency incidents needed nothing beyond what the agent already had; the agent's wrong hypotheses were consistent with the evidence it could see, not fabrications.
+- **Source(s)**: "Where LLM Agents Get Stuck Debugging Databases: Access More Than Reasoning," Gustavo Pinto, arXiv:2611.17304v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: anecdotal signal (single field observation, eight incidents, one system).
+- **Limits**: abstract only; small N, no comparison condition tested.
+- **Relates to**: a new sub-category within I-0009 — an "access gap," distinct from the recovery-instruction-wording gap (C-0018) and interface-drift gap (C-0078) already tracked.
+- **LayerLens relevance**: Open Q#2, #7. LayerLens's own system-type tool surfaces could plausibly omit state a human debugger would reach for.
+- **Confidence**: Low-moderate (small N, anecdotal, abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0165: SatisFix names and mitigates "specification satisficing" — a coding agent considering a compliant choice then committing to a non-compliant one for a reason it finds acceptable — improving pass@1 by 5.09-7.06%
+
+- **Statement**: Coding agents sometimes consider an implementation choice that satisfies a stated requirement, then commit to a different choice that does not, for a reason the agent finds acceptable ("specification satisficing") — distinct from a simple miss or classic reward hacking, since the agent is aware of the tradeoff and existing self-correction methods are biased toward accepting its own reasoning. SatisFix has the agent report these choices and reasons, then checks each against the task description; on DeepSWE and the hard subset of SWE-bench Pro, across five LLM backbones and two agent frameworks, it improves pass@1 by an average of 5.09% (DeepSWE) and 7.06% (SWE-bench Pro hard subset), beating the best of three baseline self-correction methods by 3.98% on DeepSWE.
+- **Source(s)**: "Eliciting and Mitigating Specification Satisficing in Coding Agents," Ruixin Wang, Tianyi Zhang, arXiv:2611.16289v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; "satisficing" is operationalized via the paper's own elicitation method.
+- **Relates to**: a new, specifically-named T-02/I-0003 attribution category between "agent error" and "reward hacking."
+- **LayerLens relevance**: Open Q#2. Relevant to LayerLens's own actions/state graders potentially checking not just outcome but whether a compliant alternative was considered and rejected.
+- **Confidence**: Moderate (concrete numbers across five backbones/two frameworks, abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0166: An audit of a "self-learning" Oracle-to-PostgreSQL migration agent finds its apparent memory benefit was mostly data leakage (72% of held-out units shared a reference with training); a model-free copy baseline beat every LLM system
+
+- **Statement**: An audit of an evidence-graded self-learning migration agent across four studies found persistent memory improved reference conformity by 0.015 [0.004, 0.025] over a no-memory baseline — but 72% of held-out units (264/367) shared a PostgreSQL reference with training data, and on the 103 leak-free units the memory effect fell to 0.002 [-0.008, 0.011]. A model-free nearest-target-copy baseline (no LLM) scored 0.222, beating every LLM system (at most 0.163). A reference-grouped split reducing copying found no statistically distinguishable memory effect (0.005 [-0.003, 0.017]) and no policy-adaptation effect. A separate ground-truth evaluation on real PL/SQL units found 10-22% of "PostgreSQL-accepted" units were behaviorally incorrect; a human-gated fix cycle raised demonstrably correct units from 98/216 to 167/224.
+- **Source(s)**: "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration," Oleg Grynets, Vasyl Lyashkevych, Valeriia Oliferuk, Vladyslav Babenko, Danylo Kovalchuk, Dmytro Kostetskyi, arXiv:2611.16143v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.SE).
+- **Evidence label**: bounded empirical (a rigorous multi-study audit with a leakage-detection baseline).
+- **Limits**: abstract only; domain-specific; the audit's own corrective splits are a methodology, not an independently replicated standard.
+- **Relates to**: a strong T-01/T-02 family and a reusable methodological template — a model-free copy baseline is a sharp, cheap sanity check against crediting apparent "learning" that is really leakage.
+- **LayerLens relevance**: Open Q#5, #1. Relevant to I-0008 and any LayerLens feature letting an agent "learn" across tasks within an environment.
+- **Confidence**: Moderate-high (a rigorous, multi-study audit design, though abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0167: Evidence-Governed Evolution (EGE) formalizes when a self-generated agent modification should be adopted and kept, via simultaneous statistical lower bounds, non-inferiority tests against declared capabilities, and a cumulative degradation bound along a versioned reference lineage
+
+- **Statement**: Autonomous agents that modify their own prompts, memories, tools, workflows, or policies face a governance gap: a plausible modification is not necessarily suitable for persistent adoption, since candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities via reference-relative non-inferiority tests, and gates bounded canary deployment behind governance constraints. The paper establishes an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates (candidate-wise Hoeffding bounds plus calibration samples comparing the operational evaluator to a prespecified reference), formalizes reference replacement via bridge tests, derives a cumulative degradation bound along a versioned reference lineage, and gives an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability.
+- **Source(s)**: "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents," Subodh Lonkar, arXiv:2611.16378v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: proposal (a formal framework, illustrated by a Monte Carlo stress test; not evaluated on a real deployed agent in what was read).
+- **Limits**: abstract only; practical overhead (number of fresh paired audits needed) not stated.
+- **Relates to**: extends T-02's "benchmark maintenance is ongoing" (C-0021) and "claims never trusted as evidence" (C-0022) into the self-modification setting specifically.
+- **LayerLens relevance**: Open Q#5. LayerLens's own prompt optimizer (per-round, tuning/holdout gated promotion) could be compared against EGE's stricter non-inferiority/degradation-bound standard.
+- **Confidence**: Moderate (a rigorous formal framework, but illustrated only by simulation).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0168: WikiTrace reduces memory-induced degradation by linking each stored lesson to the trajectory and success/failure summary it came from, letting an agent check a lesson against its evidence before acting
+
+- **Statement**: External memory can cause "memory-induced degradation" (failing a task the agent would solve without memory) typically because a lesson is incorrect or is misapplied/misread, since lessons are inferred from success/failure-labeled trajectories but usually handed to the agent without the trajectories themselves, leaving no way to check them. WikiTrace stores each lesson linked to a summary of why its source trajectory succeeded or failed and to the raw trajectory itself; on a new task the agent starts from all insights and, when one lacks detail, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in detail or correct the insight before acting, validated on five agentic benchmarks.
+- **Source(s)**: "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents," Yukyeong Lee, Yumin Choi, Jinheon Baek, Sung Ju Hwang, arXiv:2611.14320v1, published 2026-11-10, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; benchmark names/numbers not visible.
+- **Relates to**: a third independent mechanism for I-0011/I-0013, alongside Concord's source-change detection (C-0064) and AMV-Guard's action-conditioned verification (C-0099) — this one lets the agent check a memory item against its evidentiary trail.
+- **LayerLens relevance**: Open Q#7, general (context/memory). Strengthens I-0011.
+- **Confidence**: Moderate (abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0169: MIRIX-2.0's "provenance hypergraph" indexes memory records with n-ary frames that cite their originating rows, and leads compared memory systems on four of five QA benchmarks
+
+- **Statement**: MIRIX-2.0, a multi-agent memory system, is reported as the most accurate of compared systems on four of five QA benchmarks (91.4% LoCoMo; 72.6% LongMemEval-S, leading the strongest baseline by 14.3 points), and reaches the highest mean success among compared memory methods on ALFWorld/WebShop procedural-memory tasks and 49.2% on MetaClaw-Bench (vs. 44.0% for MetaClaw's own skill library). Six typed memory agents keep complete records as the system of record; a "provenance hypergraph" indexes episodic and semantic records with n-ary frames that cite their originating rows; retrieval runs under explicit budgets so inspected evidence does not grow with history; "AutoDream" merges duplicate anchors outside the write path without rewriting any record and distills sessions into reusable skills.
+- **Source(s)**: "MIRIX-2.0: Multi-Agent Memory System," authors not captured by the discovery harvester, arXiv:2611.12068, date unknown, read scope: abstract, read directly from the discovery inbox (18 HF-daily upvotes).
+- **Discovered via**: feed (discovery inbox, hf-daily).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; author/institution and benchmark comparison set not fully specified in what was read.
+- **Relates to**: a strong, architecture-level corroboration for I-0013 — "cite their rows" is close to a working implementation of the record-level authorship tracking I-0013's hypothesis calls for.
+- **LayerLens relevance**: Open Q#7, general (context/memory). Strengthens I-0013 (already L2).
+- **Confidence**: Moderate (abstract-only, author/venue uncertain).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0170: A "terminal certificate" separating actual goal satisfaction from publicly-supported safe completion lets evidence-guided retry advice certify 36.2 percentage points more completions than evidence prompting alone
+
+- **Statement**: Tool timeouts leave agents facing ambiguous outcomes and partial execution (an action may have failed, committed, or remained in flight while later steps already completed). This paper formulates evidence-guided task recovery over approved obligations, provider capabilities, and states compatible with public evidence, using a shared admissibility check (key expiry, authorization timing, dependencies, residual effects) and a "terminal certificate" separating actual goal satisfaction from publicly-supported safe completion. In a finite 37-assignment study, planning and three active controls each certify 28 completions; a preregistered, assignment-held-out comparison across 58 paired units in 19 task families finds planning advice certifies 30 completions versus 9 for evidence prompting (36.2 percentage points, exact family sign-flip p=0.0078), using 272 proposals versus 399; all 116 trajectories pass independent replay.
+- **Source(s)**: "Evidence-Guided Recovery for AI Agents with Ambiguous Tool Outcomes and Partial Execution," authors not captured by the discovery harvester, arXiv:2610.41453, date unknown, read scope: abstract, read directly from the discovery inbox (4 HF-daily upvotes).
+- **Discovered via**: feed (discovery inbox, hf-daily).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; small N (37, 58 units); tested on two local model bundles, not frontier models.
+- **Relates to**: a direct, mechanistically distinct extension of C-0100 ("Permission to Retry")'s four-obligation decomposition — a sharper, formally-tested version of the goal-satisfaction-vs-safe-completion distinction C-0100 named but did not fully operationalize.
+- **LayerLens relevance**: Open Q#7. Strengthens I-0007's remote-state retry/recovery hypothesis.
+- **Confidence**: Moderate (a preregistered, held-out comparison, though small N and abstract-only).
+- **Recheck after**: 2027-02-23 (~90 days).
+
+### C-0171: A decision model (JEV) that is a poor actor can still teach well as a reward signal — raising a small policy's ALFWorld success from 72.8% to 82.9% and WebShop from 56.8% to 71.4%
+
+- **Statement**: Decision models (typed outputs: a choice among caller-defined options with a per-option probability) have mostly been studied as actors. Comparing three decision models and three general LLMs as actors and judges on ALFWorld, and using JEV as a teacher on ALFWorld and WebShop: as actors, all six models are pulled away from a subgoal that must come first by an easier one; as judges seeing the whole trajectory, the same models correctly credit the steps toward that subgoal, and asking "did this action help" (rather than "will the task succeed") separates useful from useless actions; as a teacher, JEV raises a Qwen2.5-1.5B policy trained with GRPO from 72.8% to 82.9% success on ALFWorld and 56.8% to 71.4% on WebShop. The authors conclude a poor actor can still teach well because judging an action after the episode ends reveals consequences that acting must anticipate.
+- **Source(s)**: "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents," authors not captured by the discovery harvester (code: github.com/ZJU-REAL/decision-agents), arXiv:2611.17167, date unknown, read scope: abstract, read directly from the discovery inbox (36 HF-daily upvotes).
+- **Discovered via**: feed (discovery inbox, hf-daily).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only; small policy scale (1.5B) for the teacher experiment; frontier-scale generalization untested.
+- **Relates to**: a new angle for I-0010/T-05's decision-model cluster — the same model class used for judge confidence-escalation shown here to have a second, distinct use (reward-shaping teacher).
+- **LayerLens relevance**: Open Q#2 (step-level credit assignment, close in spirit to attribution-as-a-location).
+- **Confidence**: Moderate (abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0172: Exposing a benchmark's success criteria to a self-improving embodied agent ("Criteria Exposure") raises its scored success rate, but the advantage disappears under a slight criteria change and the resulting skills transfer poorly across tasks
+
+- **Statement**: Self-improving embodied agents are increasingly compared on robot-simulation benchmarks whose success criteria (originally written to verify imitation-learned policies, often demanding more than the corresponding language instruction) are sometimes exposed directly to the learning agent ("Criteria Exposure," CE). Controlled experiments with a self-improving agent, with and without CE, find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instruction, and skills developed under CE transfer poorly across tasks. The authors propose "instruction-faithful criteria" and show these better reflect agent-generated programs' actual performance.
+- **Source(s)**: "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement," Wenbo Huang, Jianxin Bi, Shunyu Yang, Ruiyang Si, Rui Ni, Qiang Wang, Shulong Jiang, Yintianrun Zhang, Feixiang Ruan, Kewei Zhang, Ye Huang, Shukai Gong, Daquan Zhou, arXiv:2611.08318, published 2026-11-05, read scope: abstract (the fulltext-harvester file for this paper is the arXiv abstract-landing page, not a rendered body — the recurring bug documented in SOURCES.md).
+- **Discovered via**: feed (fulltext/discovery inbox harvester).
+- **Evidence label**: bounded empirical.
+- **Limits**: abstract only (fulltext fetch resolved to the abstract page); domain-specific (robot-simulation benchmarks).
+- **Relates to**: a new T-02 family and the strongest direct experimental validation yet in this knowledge base of why LayerLens's trust wall (seed/knobs never served to an agent-facing key) is not an arbitrary design choice — exposed criteria produce brittle, criteria-specific, non-transferring capability.
+- **LayerLens relevance**: Open Q#4, general (the trust wall). A strong, citable validation of an existing differentiator.
+- **Confidence**: Moderate-high (a controlled experiment directly on point, though abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
+
+### C-0173: Anthropic gives a METR team employee-like access with independent publication rights (a three-tier model), and commits with Accenture to at least $1B each over five years toward "embedded evaluators" with employee-comparable access inside the company
+
+- **Statement**: Anthropic has begun giving a team from METR (an independent AI-risk-assessment nonprofit) employee-like access — hardware, office space, and internal tools roughly on par with Anthropic's own risk-assessment teams — free to publish its own risk-level analysis; Anthropic cannot veto publication but can require redaction of predefined categories (customer data, privileged material, model architecture information), which METR may note the extent of. Anthropic describes a three-tier model for independent-evaluator access (narrowly-scoped/approval-gated publication; broader access/publish-without-approval; the METR "employee-like" tier) and states "every frontier AI company should do the same." Separately, Anthropic and Accenture (via Accenture's Faculty unit) are building an "embedded evaluator" partnership — evaluators working inside the company with employee-comparable access, observing training, following build/deploy decisions, reporting incidents — with each company expecting to invest at least $1 billion over five years. Anthropic states: "There are, as yet, no standards for what information embedded evaluators should have access to."
+- **Source(s)**: [Anthropic update on independent evaluators](https://www.anthropic.com/news/an-update-on-independent-evaluators), published 2026-10-15; [Partnering with Accenture on embedded evaluation](https://www.anthropic.com/news/accenture-embedded-evaluation), listed in Anthropic's sitemap 2026-11-13; both Anthropic, read scope: full text, read directly (WebFetch; anthropic.com reliably reachable).
+- **Discovered via**: feed (reference inbox harvester, Anthropic sitemap), then WebFetch.
+- **Evidence label**: documented capability (first-party, directly read).
+- **Limits**: AI-safety/governance-level audit of the company itself, not a product-level reviewer-facing mechanism for a specific evaluation claim; the access/publication model is new, with no established standards yet per Anthropic's own statement.
+- **Relates to**: a frontier-lab-scale real-world instance of the principle I-0014 tracks (access to evidence, not a badge, earns trust) at a different altitude (auditing the company, not a single evaluation); relevant to T-02 at an industry-governance level.
+- **LayerLens relevance**: Open Q#11. A concrete outside reference ("how much access and publication freedom does an independent verifier need") for LayerLens's own "independent, trustworthy" positioning.
+- **Confidence**: High for the mechanism and stated facts (first-party, directly read, specific and dated).
+- **Recheck after**: 2027-05-23 (~180 days; foundational/positioning).
+
+### C-0174: "Lazarus" backdoors an agent by reprogramming fewer than 10 dormant neurons, requires no retraining, passes standard evaluations, and evades scanning/signing-based defenses; Microsoft states "no audit can guarantee safe behavior"
+
+- **Statement**: "Lazarus" is a backdoor technique that reprograms dormant (rarely-firing) neurons so an otherwise normal agent executes malicious commands only when a hidden trigger appears (example: a date passing into 2027), inserted without retraining and requiring only inference-level compute — pretraining organizes representations well enough that a linear classifier fit on ~50 examples separates trigger from non-trigger inputs, and chaining a few reprogrammed neurons can force arbitrary payloads into the residual stream and a terminal. Fewer than 10 dormant neurons suffice; the backdoored model passes standard evaluations and behaves normally until triggered. Microsoft states "no scan can prove beyond any doubt that a model is safe" and "no audit can guarantee safe behavior" — reliable detection requires diffing against original, unmodified weights, making provenance essential. Proposed mitigations: weight-provenance verification tied to the publisher, scanning the surrounding software environment, separately-scanned containers, planned cryptographic model signing with tamper-evident provenance, and operational advice (limit agent permissions, monitor actions, review consequential actions before execution, treat audits as evidence not guarantees).
+- **Source(s)**: [Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents](https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/), Dimitris Papailiopoulos, Microsoft Research, published 2026-11-10, read scope: full text, read directly (WebFetch; microsoft.com reliably reachable).
+- **Discovered via**: feed (reference inbox harvester, Microsoft Research feed), then WebFetch.
+- **Evidence label**: documented capability (first-party, directly read; presented as internal findings, not independently peer-reviewed).
+- **Limits**: the post's own description is stated to be simplified; no quantitative detection-rate table beyond qualitative findings; requires write access to a checkpoint (supply-chain/insider threat, not a remote exploit of a running agent).
+- **Relates to**: a new T-02 family and the third independent source this run converging on "signed/scanned/verified is not the same as behaviorally safe," alongside C-0131 ("Signed, Sealed, Leaked") and Arize's "Evil Qwen" activation-steering post (competitive.md, 2026-10-30) — an academic paper, a competitor's blog, and a frontier lab's own research converging on the identical lesson in close succession.
+- **LayerLens relevance**: Open Q#3, #11. LayerLens's trust wall concerns the environment side; this threat concerns the agent-under-test's own weights, which LayerLens cannot verify — worth noting that verification is necessarily about observed run behavior, not a guarantee about an agent's weights.
+- **Confidence**: High for the mechanism and stated findings (first-party, directly read, from a frontier lab).
+- **Recheck after**: 2027-05-23 (~180 days; foundational security finding).
+
+### C-0175: Microsoft's PDD Kit distinguishes "proof covers every input" from "test shows it worked on the inputs it tried," proving agent-written code meets a formal spec while tests cover only an explicitly-named trusted boundary
+
+- **Statement**: PDD Kit ("Proof-Driven Development," a research prototype, Rust-only today) addresses agent-written code being too voluminous to review line-by-line, and agent-written tests tending to check what was built rather than what was requested. It reads code, asks clarifying questions, and records answers in an "intent artifact" linking each requirement to a formal Verus specification (where formalizable) or an informal spec checked by tests (for the rest); external services are modeled as uninterpreted, trust-boundary functions. Key distinction: "A passing test only shows the code worked on the inputs it tried," while a Verus proof holds "for every input." Safeguards include a mutation check (a surviving mutant flags a clause that constrains nothing) and an LLM gap review for unproven, unchecked requirements; the authors warn against "vibe verification" (weak specs that verify but rule out little). On a ~5,000-line Rust pilot app, a login flow yielded eight `ensures` clauses, six trusted pieces, and a seven-task build plan; the developer merged without line-by-line review. Stated limitation: "a wrong spec is still possible" — a proof shows code meets the spec, not that the spec is what the developer meant.
+- **Source(s)**: [Formally verifying agent-written full-stack web apps with PDD Kit](https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/), Alex Lavaee, Matthai Philipose, Microsoft Research, published 2026-11-05, read scope: full text, read directly (WebFetch; microsoft.com reliably reachable).
+- **Discovered via**: feed (reference inbox harvester, Microsoft Research feed), then WebFetch.
+- **Evidence label**: documented capability (first-party, directly read; a research prototype, not generally available).
+- **Limits**: Rust-only; proofs still take real effort; several properties remain unproven (completion, timing, rate limiting); the whole toolchain (Verus, rustc, Z3, vstd) is itself assumed correct.
+- **Relates to**: converges this week with Soteria (C-0161) and EvoTrias (C-0162) on formal/proof-based verification layered over agent-generated artifacts — two academic papers and one frontier-lab research prototype in a single week. Motivates new idea I-0015.
+- **LayerLens relevance**: Open Q#2, #11. "Proof vs test" is a stronger, nameable evidence-quality tier above LayerLens's current grader taxonomy.
+- **Confidence**: High for the mechanism and stated facts (first-party, directly read); low for generalizability beyond the single pilot app shown.
+- **Recheck after**: 2027-05-23 (~180 days; research prototype, foundational).
+
+### C-0176: A formal result proves agreement among screening agents never bounds correctness, and recall can only be estimated by sampling the rejected set, not the accepted one
+
+- **Statement**: When AI agents screen items for a costly human assessor (agentic search, e-discovery, paper review), only what passes screening gets judged, making recall structurally hard to pin down. The paper formally characterizes what each kind of evidence can and cannot establish, even with unlimited data: agreement among agents shows they concur, never that they are right, however many agents agree; acceptance by the human assessor gives precision but only a lower bound on recall; knowing which agents found which relevant items gives an upper bound on recall if finds are not negatively correlated, and caps what one more agent can add if agents are interchangeable. Without further assumptions, recall can only be pinned down, to any chosen accuracy, by judging a random sample of items that were NOT passed — and the needed sample size does not grow with the number of agents.
+- **Source(s)**: "Multi-Agent Screening: What Agreement and Acceptance Cannot Tell You," Benjamin Chang, Dell Zhang, arXiv:2611.12705v1, published 2026-11-09, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.MA).
+- **Evidence label**: proposal (a formal/theoretical result).
+- **Limits**: abstract only; no empirical validation on a real screening deployment described.
+- **Relates to**: a formal, generalizable extension of T-05's "agreement is not verification" line (C-0016, C-0133) — proves the limit precisely.
+- **LayerLens relevance**: Open Q#2. A caution for any LayerLens feature inferring reliability from inter-judge agreement alone.
+- **Confidence**: Moderate (a rigorous formal result, abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days; theoretical/foundational).
+
+### C-0177: A week-long field study finds visual architecture diffs help developers judge whether a coding agent's changes stayed in scope, reframing the goal from "trust the agent" to "feel confident enough to act"
+
+- **Statement**: As coding agents take on larger changes, developers can lose track of how a codebase is evolving even when edits look correct on the surface (duplicated logic, out-of-scope module changes, removed functionality, architectural drift). Rasoi, a design probe, maps how a codebase's architecture evolves after each agent-made edit across levels of abstraction. In a week-long study with 12 developers on their own codebases across varied domains, visual diffs helped developers see whether changes stayed in scope, notice unexpected restructuring, and relate modified parts to the whole system; the authors frame the value of such oversight tools as lying "less in making developers trust the agent and more in helping developers feel confident [...] in [their] ability to act."
+- **Source(s)**: "Rasoi: Visual Diffs for Evaluating Structural Changes Made by Coding Agents," Riya Sahni, Aryan Kaul, Anushka Bhatnagar, Xuanming Zhang, Vivian Liu, Reya Vir et al., arXiv:2611.16293v1, published 2026-11-12, read scope: abstract, read directly from the arXiv inbox.
+- **Discovered via**: feed (arXiv inbox harvester, cs.HC).
+- **Evidence label**: bounded empirical (qualitative field study, 12 developers, one week).
+- **Limits**: abstract only; small N; "confidence to act" is the authors' own framing, not an independently validated metric.
+- **Relates to**: a rare real-world human-factor finding for T-04's open question of what oversight tooling should show, and a useful reframe (trust vs. confidence-to-act) for LayerLens's own comparison/attribution UI goals.
+- **LayerLens relevance**: Open Q#2, #9. Relevant to the v3 "unified DAG diff" direction.
+- **Confidence**: Moderate (a real field study, small N, abstract-only).
+- **Recheck after**: 2027-05-23 (~180 days).
